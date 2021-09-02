@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace ShrineFoxcom
+{
+    public partial class PatchCreatorRedirect : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.Redirect("https://shrinefox.com/apps/PatchCreator");
+        }
+    }
+}

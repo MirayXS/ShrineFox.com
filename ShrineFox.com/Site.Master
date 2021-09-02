@@ -1,0 +1,13 @@
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ShrineFoxcom.SiteMaster" %>
+<!doctype html>
+<html>
+    <head runat="server">
+        <title>ShrineFox.com <%: Page.Title %></title>
+        <asp:PlaceHolder ID="Header" runat="server"></asp:PlaceHolder>
+    </head>
+    <asp:PlaceHolder ID="BeforeContent" runat="server"></asp:PlaceHolder>
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    </form>
+    <asp:PlaceHolder ID="Footer" runat="server"></asp:PlaceHolder>
+</html>

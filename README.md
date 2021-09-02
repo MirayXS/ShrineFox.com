@@ -6,7 +6,7 @@ It automatically updates its listing via Gamebanana's API every 6 hours.
 Additional utilities for creating game patches and searching for specific game files are included. 
 This repository also ties the website to its phpbb froum and wordpress blog/news/guides sites, sharing ``.CSS``/``.JS`` and generating HTML layouts for them.
 ## How it works
-- A file named ``amicitia.tsv`` must be placed in the ``./App_Data/`` folder. It is a spreadsheet that can be opened/exported by Google Sheets. Here is a sample.  
+- A file named ``amicitia.tsv`` must be placed in the ``./App_Data/`` folder. It is a spreadsheet that can be opened/exported by Google Sheets. [Here is a sample](https://drive.google.com/file/d/1KjfcD8c7SEv3fkBYIaqyjX6d6n4of5w3/view?usp=sharing).  
 - A file named ``pw.txt`` also goes in the ``./App_Data/`` folder. It contains the password for the Admin page, where you can update ``amicitia.tsv`` on demand, manage a Discord bot, and re-generate HTML on demand.
 
 # Credits

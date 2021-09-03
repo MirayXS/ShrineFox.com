@@ -790,3 +790,8 @@ table.gsc-search-box {
     opacity: 0;
     -webkit-transition: all .5s;
 }
+
+.maincontent:hover.active {
+    opacity: 1 !important;
+    transition: 0.25s;
+}

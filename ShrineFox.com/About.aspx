@@ -13,10 +13,13 @@ Ever since I was introduced to modding,
 	was made possible by them.
 <br><br><hr>
 <h2>Contact</h2>
-If you would like to report a bug, please open an issue on Github.
-<br>If you have a modding related question, ask on the forum or subreddit.
-<br>For concerns about anything linked here that I didn't make, contact the creator where they uploaded it.
-<br><br>If you still need to get in touch with me, contact <code>rуan＠shrinefox¸com</code> (type it manually).
+If you would like to report a software bug, please <a href="https://shrinefox.com/forum/viewtopic.php?f=3&t=23">open an issue on Github</a>.
+<br>If you have a modding related question, ask on the <a href="https://shrinefox.com/forum">forum</a> or <a href="https://reddit.com/r/Amicitia">subreddit</a>.
+<br>For concerns about anything linked here that I didn't make, contact the creator.
+<br><br>If you still need to get in touch with me, contact <code>rуan＠shrinefox¸com</code> (retype it manually).
+<h2>Source</h2>
+This project is licensed under GPL-3.0, so it's open source and you can use any part of it to create your own projects, commercial or otherwise. 
+See the <a href="https://github.com/ShrineFox/ShrineFox.com">repository on Github</a>.
 <br><br><hr>
 <h2>Credits</h2>
 <table class="table table-striped table-hover">
@@ -35,6 +38,7 @@ If you would like to report a bug, please open an issue on Github.
 		<td>
 			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2
 			<br><a href="https://quarktheme.com/">Quark</a> by Anthony Hortin (modified by <a href="https://worproject.ml/">worproject</a>)
+			<br><a href="https://gretathemes.com/wordpress-themes/justread/">JustRead</a> by GretaThemes
 			<br><a href="https://www.phpbb.com/customise/db/style/prolight/">Prolight (phpbb)</a> by eeji
 		</td>
 	</tr>
@@ -53,6 +57,7 @@ If you would like to report a bug, please open an issue on Github.
 			<br>Cherry Cream Soda
 			<br>Crowpocalypse
 			<br>DeathChaos
+			<br>lipsum
 			<br>regularpanties
 			<br>Sierra
 			<br>TekkaGB

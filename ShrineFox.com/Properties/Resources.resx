@@ -127,6 +127,9 @@
   <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SidebarAccordions\Browse.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="colours" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forum\colours.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="footer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blog\footer.php;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -168,5 +171,8 @@
   </data>
   <data name="pw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\App_Data\pw.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="style" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blog\style.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

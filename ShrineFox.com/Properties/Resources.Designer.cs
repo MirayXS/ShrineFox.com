@@ -118,6 +118,43 @@ namespace ShrineFoxcom.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /*
+        ///--------------------------------------------------------------
+        ///Colours and backgrounds for common.css
+        ///-------------------------------------------------------------- */
+        ///
+        ///html, body {
+        ///    color: var(--pagetext);
+        ///    background-color: var(--postbackground);
+        ///}
+        ///
+        ///h1 {
+        ///	color: rgba(var(--text),0.05);
+        ///}
+        ///
+        ///h2 {
+        ///	color: var(--pageheading);
+        ///}
+        ///
+        ///h3 {
+        ///	border-bottom-color: var(--pageheading);
+        ///	color: var(--pageheading);
+        ///}
+        ///
+        ///hr {
+        ///	border-color: rgba(var(--text),0.05);
+        ///	border-top-color: var(--pageheading);
+        ///}
+        ///
+        ///.search-box [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string colours {
+            get {
+                return ResourceManager.GetString("colours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?php
         ////**
         /// * The template for displaying the footer
@@ -282,7 +319,7 @@ namespace ShrineFoxcom.Properties {
         ///        &lt;!--Accordions--&gt;
         ///    &lt;/div&gt;
         ///&lt;/td&gt;
-        ///&lt;td class=&quot;maincontent&quot;&gt;.
+        ///&lt;td class=&quot;maincontent&quot;&gt;&lt;!--MainNavigation--&gt;.
         /// </summary>
         internal static string IndexSidebar {
             get {
@@ -329,13 +366,14 @@ namespace ShrineFoxcom.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!-- INCLUDE config.html --&gt;
         ///&lt;!DOCTYPE html&gt;
+        ///&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
         ///&lt;html dir=&quot;{S_CONTENT_DIRECTION}&quot; lang=&quot;{S_USER_LANG}&quot;&gt;
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
         ///    {META}
-        ///    &lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATIONS_COUNT --&gt;({UNREAD_NOTIFICATIONS_COUNT}) &lt;!-- ENDIF --&gt;&lt;!-- IF not S_VIEWTOPIC and not S_VIEWFORUM --&gt;{SITENAME} - &lt;!-- ENDIF --&gt;&lt;!-- IF S_IN_MCP --&gt;{L_MCP} - &lt;!-- ELSEIF S_IN_UCP --&gt;{ [rest of string was truncated]&quot;;.
+        ///    &lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATIONS_COUNT --&gt;({UNREAD_NOTIFICATIONS_COUNT}) &lt;!-- ENDIF --&gt;&lt;!-- IF not S_VIEWTOPIC and not S_VIEWFORUM --&gt;{SITENAME} - [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_header {
             get {
@@ -370,6 +408,25 @@ namespace ShrineFoxcom.Properties {
         internal static string pw {
             get {
                 return ResourceManager.GetString("pw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /*!
+        ///Theme Name: Justread
+        ///Theme URI: https://gretathemes.com/wordpress-themes/justread/
+        ///Author: GretaThemes
+        ///Author URI: https://gretathemes.com
+        ///Description: Justread is a clean and modern WordPress theme that focuses on reading experience. Justread has a grid layout with single column content. The theme uses system fonts and SVG for fast loading. Enjoy reading long content with comfortability.
+        ///Version: 1.2.0
+        ///License: GNU General Public License v2 or later
+        ///License URI: LICENSE
+        ///Text Domain: justread
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string style {
+            get {
+                return ResourceManager.GetString("style", resourceCulture);
             }
         }
     }

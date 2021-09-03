@@ -1,10 +1,13 @@
 function toggleSidebar() {
-	if (getCookie("sidebar") == "true")
+	if (getCookie("sidebar") == "true") {
 		document.getElementById("sidebar").classList.toggle('active');
+		document.getElementByClassName("maincontent").classList.toggle('active');
+    }
 }
 
 function toggleCookie(ref) {
 	document.getElementById("sidebar").classList.toggle('active');
+	document.getElementByClassName("maincontent").classList.toggle('active');
 
 	if (getCookie("sidebar") == "true") {
 		setCookie("sidebar", "false", 999);

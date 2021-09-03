@@ -26,8 +26,12 @@ hr {
 	border-top-color: var(--pageheading);
 }
 
-fieldset {
-    font-size: 1.5em;
+.search-box fieldset {
+	font-size: 1.5em;
+}
+
+.message-box {
+	width: 100%;
 }
 
 #sidebar, .postprofile {
@@ -318,7 +322,7 @@ dl.details dd {
 }
 
 .jumpbox .dropdown .pointer-inner {
-	border-color: #E1EBF2 transparent;
+	border-color: transparent;
 }
 
 .jumpbox-sub-link {
@@ -638,9 +642,8 @@ Colours and backgrounds for buttons.css
 .button:hover,
 .button:focus {
 	border-color: var(--hyperlink);
-	background-color: var(--pageheading);
+	background-color: rgba(0,0,0,0.1);
 }
-
 
 .button .icon,
 .button-secondary {
@@ -1143,7 +1146,7 @@ input.disabled {
 }
 
 .dropdown .pointer-inner {
-	border-color: #FFF transparent;
+	border-color: var(--postbackground) transparent;
 }
 
 .dropdown-extended .pointer-inner {
@@ -1151,20 +1154,12 @@ input.disabled {
 }
 
 .dropdown .dropdown-contents {
-	background: #fff;
+	background: var(--postbackground);
 	border-color: rgba(var(--text),0.05);
-	}
+}
 
 .dropdown-up .dropdown-contents {
 	box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown li, .dropdown li li {
-	border-color: #DCDCDC;
-}
-
-.dropdown li.separator {
-	border-color: #DCDCDC;
 }
 
 /* Notifications
@@ -1182,4 +1177,8 @@ li.notification-reported strong, li.notification-disapproved strong {
 	background-color: var(--hyperlink);
 	color: rgba(var(--text),0.05);
 	border-color:rgba(var(--text),0.05);
+}
+
+body {
+	overflow-x: hidden;
 }

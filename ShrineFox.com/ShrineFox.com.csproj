@@ -170,7 +170,6 @@
     <Content Include="App_Data\pw.txt" />
     <Content Include="Browse.aspx" />
     <Content Include="css\custom.css" />
-    <Content Include="css\notice.css" />
     <Content Include="css\spectre.min.css" />
     <Content Include="css\theme.min.css" />
     <Content Include="css\ytv.css" />

@@ -276,10 +276,6 @@ body {
 	color: var(--pagetext);
 }
 
-p {
-	margin: 1em;
-}
-
 p:last-child {
 	margin-bottom: 0;
 }
@@ -288,8 +284,8 @@ p:last-child {
 	font-size: 14pt;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 2.5em;
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
+	margin-top: 2em;
 }
 
 blockquote {
@@ -2239,4 +2235,17 @@ mark, ins {
 
 .wrap p {
     line-height: 2em;
+}
+
+.accordion-container .itemTitle a {
+	color: var(--text);
+	background: transparent;
+	font-size: initial;
+}
+
+.accordion-container .itemTitle a:hover {
+	color: var(--hyperlink);
+	background: rgba(var(--link), 0.3);
+	transition: 0.25s;
+	text-decoration: none;
 }

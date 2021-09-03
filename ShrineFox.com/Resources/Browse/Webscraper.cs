@@ -25,8 +25,8 @@ namespace ShrineFoxcom.Resources.Browse
             // Load existing posts that aren't from gamebanana
             Posts = Post.Get().Where(x => !x.URL.Contains("gamebanana")).ToList();
             
-            LiteralControl loadingMsg = new LiteralControl();
-            loadingMsg.Text = "<br>Loading Gamebanana data...";
+            LiteralControl notice = new LiteralControl();
+
             // For each game on Gamebanana...
             foreach (var gameTuple in Post.GameList)
             {
@@ -40,11 +40,6 @@ namespace ShrineFoxcom.Resources.Browse
                     {
                         if (!noneFound)
                         {
-                            // Load feed
-                            loadingMsg.Text = $"<br>Loading {game} {type} from Gamebanana (page {i}/10)...";
-                            control.Controls.RemoveAt(0);
-                            control.Controls.Add(loadingMsg);
-
                             Task.Run(async () =>
                             {
                                 await FeedGenerator.GetFeed(i, game, (TypeFilter)Enum.Parse(typeof(TypeFilter), type));
@@ -57,44 +52,37 @@ namespace ShrineFoxcom.Resources.Browse
                                 switch (Regex.Match(FeedGenerator.exception.Message, @"\d+").Value)
                                 {
                                     case "443":
-                                        loadingMsg.Text = Post.Notice("red", "<b>Error 443</b>: Unable to connect to Gamebanana.");
-                                        control.Controls.RemoveAt(0);
-                                        control.Controls.Add(loadingMsg);
+                                        notice.Text = Post.Notice("red", "<b>Error 443</b>: Unable to connect to Gamebanana.");
+                                        control.Controls.Add(notice);
                                         break;
                                     case "500":
-                                        loadingMsg.Text = Post.Notice("red", "<b>Error 500</b>: Unable to connect to Gamebanana.");
-                                        control.Controls.RemoveAt(0);
-                                        control.Controls.Add(loadingMsg);
+                                        notice.Text = Post.Notice("red", "<b>Error 500</b>: Unable to connect to Gamebanana.");
+                                        control.Controls.Add(notice);
                                         break;
                                     case "503":
-                                        loadingMsg.Text = Post.Notice("red", "<b>Error 503</b>: Unable to connect to Gamebanana.");
-                                        control.Controls.RemoveAt(0);
-                                        control.Controls.Add(loadingMsg);
+                                        notice.Text = Post.Notice("red", "<b>Error 503</b>: Unable to connect to Gamebanana.");
+                                        control.Controls.Add(notice);
                                         break;
                                     case "504":
-                                        loadingMsg.Text = Post.Notice("red", "<b>Error 504</b>: Gamebanana's servers are unavailable.");
-                                        control.Controls.RemoveAt(0);
-                                        control.Controls.Add(loadingMsg);
+                                        notice.Text = Post.Notice("red", "<b>Error 504</b>: Gamebanana's servers are unavailable.");
+                                        control.Controls.Add(notice);
                                         break;
                                     default:
-                                        loadingMsg.Text = Post.Notice("red", "<b>Exception</b>: {FeedGenerator.exception.Message}");
-                                        control.Controls.RemoveAt(0);
-                                        control.Controls.Add(loadingMsg);
+                                        notice.Text = Post.Notice("red", "<b>Exception</b>: {FeedGenerator.exception.Message}");
+                                        control.Controls.Add(notice);
                                         break;
                                 }
                                 return;
                             }
                             // Add to TSV if not empty
                             if (feed == null) {
-                                loadingMsg.Text += Post.Notice("red", "<b>Exception</b>: Feed is null, Gamebanana fetch failed.");
-                                control.Controls.RemoveAt(0);
-                                control.Controls.Add(loadingMsg);
+                                notice.Text += Post.Notice("red", "<b>Exception</b>: Feed is null, Gamebanana fetch failed.");
+                                control.Controls.Add(notice);
                             }
                             else if (feed.Count > 0)
                             {
-                                loadingMsg.Text += $"<br>{feed.Count} item(s) found";
-                                control.Controls.RemoveAt(0);
-                                control.Controls.Add(loadingMsg);
+                                notice.Text += $"<br>{feed.Count} item(s) found";
+                                control.Controls.Add(notice);
                                 foreach (var item in feed)
                                 {
                                     Post post = new Post();
@@ -143,10 +131,6 @@ namespace ShrineFoxcom.Resources.Browse
                     }
                 }
             }
-
-            loadingMsg.Text = $"<br>Done fetching Gamebanana Data. Updating database...";
-            control.Controls.RemoveAt(0);
-            control.Controls.Add(loadingMsg);
             // Save new TSVs
             List<string> lines = new List<string>();
             lines.Add($"ID\tType\tTitle\tGames\tAuthors\tDate\tTags\tDescription\tUpdate\tEmbed\tURL\tSourceURL");
@@ -155,8 +139,8 @@ namespace ShrineFoxcom.Resources.Browse
                 lines.Add($"{post.Id}\t{post.Type}\t{post.Title}\t{String.Join(",", post.Games)}\t{String.Join(",", post.Authors)}\t{post.Date}\t{String.Join(",", post.Tags)}\t{post.Description}\t{post.UpdateText}\t{post.EmbedURL}\t{post.URL}\t");
             }
             File.WriteAllLines($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv", lines.ToArray());
-            loadingMsg.Text = Post.Notice("green", "<b>Success</b>! Gamebanana database has been updated. Refresh to see changes.");
-            control.Controls.Add(loadingMsg);
+            notice.Text = Post.Notice("green", "<b>Success</b>! Gamebanana database has been updated. Refresh to see changes.");
+            control.Controls.Add(notice);
         }
     }
 

@@ -2234,7 +2234,7 @@ mark, ins {
 }
 
 .wrap p {
-    line-height: 2em;
+    line-height: 1.65em;
 }
 
 .accordion-container .itemTitle a {
@@ -2245,7 +2245,18 @@ mark, ins {
 
 .accordion-container .itemTitle a:hover {
 	color: var(--hyperlink);
-	background: rgba(var(--link), 0.3);
 	transition: 0.25s;
 	text-decoration: none;
+}
+
+.accordion-container .itemTitle:hover {
+	background: rgba(var(--link), 0.3);
+	color: var(--text);
+	background: transparent;
+	font-size: initial;
+}
+
+#main, main, .wrap {
+	width: 100% !important;
+	margin-left: 0 !important;
 }

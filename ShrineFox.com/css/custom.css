@@ -592,12 +592,12 @@ svg {
 }
 
 .notices a {
-    color: #1c7dff;
+    color: #36c;
 }
 
 .notices.yellow {
     background: #deb20037;
-    color: #deb200;
+    color: #de8900;
     border: 1px solid #deb200;
     border-left: 7px solid #deb200;
 }
@@ -605,7 +605,7 @@ svg {
 .notices.yellow a, .notices.yellow a.active,
 .notices.yellow a:active, .notices.yellow a:focus,
 .notices.yellow a:hover {
-    color: #de8900;
+    color: #e85600;
     text-decoration: underline;
 }
 
@@ -619,7 +619,7 @@ svg {
 .notices.red a, .notices.red a.active,
 .notices.red a:active, .notices.red a:focus,
 .notices.red a:hover {
-    color: #de0000;
+    color: #960000;
     text-decoration: underline;
 }
 
@@ -633,7 +633,7 @@ svg {
 .notices.blue a, .notices.blue a.active,
 .notices.blue a:active, .notices.blue a:focus,
 .notices.blue a:hover {
-    color: #1c7dff;
+    color: #36c;
     text-decoration: underline;
 }
 
@@ -647,7 +647,7 @@ svg {
 .notices.green a, .notices.green a.active,
 .notices.green a:active, .notices.green a:focus,
 .notices.green a:hover {
-    color: #18c718;
+    color: #008800;
     text-decoration: underline;
 }
 

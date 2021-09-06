@@ -10,6 +10,8 @@ namespace ShrineFoxcom
 {
     public partial class TextSearch : Page
     {
+        public static List<Tuple<int, string, string>> matches = new List<Tuple<int, string, string>>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Sidebar
@@ -17,144 +19,146 @@ namespace ShrineFoxcom
             SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("textsearchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
 
-            Page.MaintainScrollPositionOnPostBack = true;
-            HiddenPostsLink.Visible = false;
+            // Hide Next Occurence Button
+            Next.Visible = false;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Search_Click(object sender, EventArgs e)
         {
-            results.InnerHtml = "";
-            string txtPath = Server.MapPath("txt\\" + gameList.SelectedValue + ".txt");
-            var txtLines = File.ReadAllLines(txtPath);
-            int lineNumber = 0;
-            string match = GetLine(txtLines, 0, out lineNumber);
-            if (match != "")
-            {
-                Hidden1.Value = lineNumber.ToString();
-                string filename = GetFilename(txtLines, lineNumber);
-                results.InnerHtml += $"<div class=\"card\"><p><b>{filename}</b><br>{match}</p></div><br>";
-                HiddenPostsLink.Visible = true;
-            }
-            else
-            {
-                results.InnerHtml += $"<div class=\"notices red\"><p>No matches found!</p></div>";
-                tip.InnerHtml = "";
-            }
+            // Start with empty list of matches
+            matches = new List<Tuple<int, string, string>>();
+            // Get first matches
+            GetMatches();
+            // Show all matches so far
+            ShowMatches();
         }
 
-        protected void HiddenPostsLink_Click(object sender, EventArgs e)
+        private void GetMatches()
         {
-            string txtPath = Server.MapPath("txt\\" + gameList.SelectedValue + ".txt");
-            var txtLines = File.ReadAllLines(txtPath);
-            int lineNumber;
-            string match = GetLine(txtLines, Convert.ToInt32(Hidden1.Value) + 1, out lineNumber);
-            if (match != "")
+            // Determine type from radio buttons
+            string type = "";
+            // Only supports P5/P5R for now until I dump the rest of the scripts
+            if (gameList.SelectedValue == "P5" || gameList.SelectedValue == "P5R")
             {
-                Hidden1.Value = lineNumber.ToString();
-                string filename = GetFilename(txtLines, lineNumber);
-                results.InnerHtml += $"<div class=\"card\"><p><b>{filename}</b><br>{match}</p></div><br>";
-                HiddenPostsLink.Visible = true;
+                if (radioMsg.Checked)
+                    type = "msg";
+                else
+                    type = "flow";
             }
-            else
+
+            // Get lines from text document
+            string txtPath = Server.MapPath("txt\\" + gameList.SelectedValue + $"{type}.txt");
+            var txtLines = File.ReadAllLines(txtPath);
+
+            // Use lowercase if search is not case sensitive
+            string searchTerm = SearchBox.Text;
+            if (!CaseSensitive.Checked)
+                searchTerm = searchTerm.ToLower();
+
+            // Keep track of matches found in this search
+            int matchCount = 0;
+
+            // Start from after the last matching line found
+            int startingLine = 0;
+            if (matches.Count > 0)
+                startingLine = matches.Last().Item1 + 1;
+
+            // For each line in text document...
+            for (int i = startingLine; i < txtLines.Length; i++)
             {
-                HiddenPostsLink.Visible = false;
+                // Add line number, line and filename to match list if found
+                if (txtLines[i].Contains(searchTerm) || (!CaseSensitive.Checked && txtLines[i].ToLower().Contains(searchTerm)))
+                {
+                    string textBlock = "";
+                    // Get all text before line but after previous text block
+                    for (int x = i - 1; x > 0; x--)
+                    {
+                        if (txtLines[x].Contains("\\") || txtLines[x].Contains("////") || txtLines[x].Contains("[msg") || txtLines[x].Contains("[sel") || txtLines[x].Equals(""))
+                            break;
+                        textBlock = txtLines[x] + "<br>" + textBlock;
+                    }
+                    // Add current line with search term highlighted
+                    int removeIndex = txtLines[i].ToLower().IndexOf(searchTerm.ToLower());
+                    textBlock += "<br>" + txtLines[i].Remove(removeIndex, searchTerm.Length).Insert(removeIndex, $"<span style=\"background:rgba(var(--link), 0.5);\">{SearchBox.Text}</span>");
+                    // Get all text after line but before next text block
+                    for (int x = i + 1; x < txtLines.Length; x++)
+                    {
+                        if (txtLines[x].Contains("\\") || txtLines[x].Contains("////") || txtLines[x].Contains("[msg") || txtLines[x].Contains("[sel") || txtLines[x].Equals(""))
+                            break;
+                        textBlock += "<br>" + txtLines[x];
+                    }
+
+                    // Add match to list
+                    matches.Add(new Tuple<int, string, string>(i, textBlock, GetFilename(txtLines, i)));
+                    matchCount++;
+                }
+
+                // Stop looking if 10 matches were found
+                if (matchCount >= 10)
+                    return;
             }
         }
 
-        string GetLine(string[] lines, int startingLineNumber, out int lineNumber)
+        private void ShowMatches()
         {
             string result = "";
-            for (int x = startingLineNumber; x < lines.Count(); x++)
+
+            // Show matches or notice if none found
+            if (matches.Count > 0)
             {
-                if (CaseSensitive.Checked)
+                for (int i = 0; i < matches.Count; i++)
                 {
-                    if (lines[x].Contains(TextBox1.Text.Replace("[n]", " ")))
-                    {
-                        lineNumber = x;
-                        result = lines[x];
-                        for (int y = lineNumber + 1; lineNumber < lines.Count(); y++)
-                        {
-                            if (!lines[y].Equals(""))
-                            {
-                                result = result + "\n" + lines[y];
-                            }
-                        }
-                        for (int y = lineNumber - 1; lineNumber > 0; y--)
-                        {
-                            if (!lines[y].Equals(""))
-                            {
-                                result = lines[y] + "\n" + result;
-                            }
-                        }
-                        return result;
-                    }
-                }
-                else
-                {
-                    if (lines[x].ToLower().Contains(TextBox1.Text.Replace("[n]", " ").ToLower()))
-                    {
-                        lineNumber = x;
-                        result = lines[x];
-
-                        for (int y = lineNumber - 1; lineNumber > 0; y--)
-                        {
-                            if (!String.IsNullOrEmpty(lines[y]))
-                            {
-                                result = lines[y] + "<br>" + result;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-
-                        for (int y = lineNumber + 1; lineNumber < lines.Count(); y++)
-                        {
-                            if (!String.IsNullOrEmpty(lines[y]))
-                            {
-                                result = result + "<br>" + lines[y];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                        
-                        return result;
-                    }
+                    result += $"<div class=\"card\"><p><b>{matches[i].Item3}</b> (line {matches[i].Item1})<br>{matches[i].Item2}</p></div>";
+                    Next.Visible = true;
+                    SearchTip.InnerHtml = ShowTip(Path.GetExtension(matches[i].Item3).Replace(".", "").ToLower());
                 }
             }
+            else
+            {
+                result = Post.Notice("red", "No matches found!");
+                Next.Visible = false;
+            }
 
-            lineNumber = 0;
-            return "";
+            results.InnerHtml = result;
         }
 
         string GetFilename(string[] lines, int lineNumber)
         {
-            tip.InnerHtml = $"<div class=\"notices blue\"><p>";
             for (int x = lineNumber; x > 0; x--)
                 if (!lines[x].Contains("[") && lines[x].Contains(".") && lines[x].Contains("\\"))
-                {
-                    if (lines[x].ToLower().Contains("eboot") || lines[x].ToLower().Contains("slus"))
-                        tip.InnerHtml += "Unfortunately, text contained in the executable cannot be edited by normal means.";
-                    else
-                    {
-                        if (lines[x].ToLower().Contains(".bf"))
-                            tip.InnerHtml += "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BF files. ";
-                        if (lines[x].ToLower().Contains(".bmd"))
-                            tip.InnerHtml += "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BMD files. ";
-                        if (lines[x].ToLower().Contains(".pak") || lines[x].ToLower().Contains(".pac"))
-                            tip.InnerHtml += "<b><a href=\"https://shrinefox.com?tool=amicitia\">Amicitia</a></b> or <b><a href=\"https://shrinefox.com?tool=packtools\">PackTools</a></b> can open PAC files. ";
-                        if (lines[x].ToLower().Contains(".pm1"))
-                            tip.InnerHtml += "<b><a href=\"https://shrinefox.com?tool=pm1editor\">PM1 Message Script Editor</a></b> or <b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in PM1 files. ";
-                        if (lines[x].ToLower().Contains(".bvp"))
-                            tip.InnerHtml += "<b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\"> PersonaEditor</a></b> can edit text in BVP files. ";
-                    }
-                    tip.InnerHtml += "</p></div>";
-                    return lines[x];
-                }
-                    
+                    return lines[x].Replace("// File:", "");
+
             return "";
+        }
+
+        protected void Next_Click(object sender, EventArgs e)
+        {
+            // Get next matches
+            GetMatches();
+            // Show all matches so far
+            ShowMatches();
+        }
+
+        public static string ShowTip(string fileName)
+        {
+            fileName = fileName.ToLower();
+            string notice = "";
+            if (fileName.Contains("eboot") || fileName.Contains("slus"))
+                notice += Post.Notice("red", "Unfortunately, text contained in the executable cannot be edited by normal means.");
+            else
+            {
+                if (fileName.Contains(".bf"))
+                    notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BF files.");
+                if (fileName.Contains(".bmd"))
+                    notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BMD files.");
+                if (fileName.Contains(".pak") || fileName.Contains(".pac"))
+                    notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=amicitia\">Amicitia</a></b> or <b><a href=\"https://shrinefox.com?tool=packtools\">PackTools</a></b> can open PAC files.");
+                if (fileName.Contains(".pm1"))
+                    notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=pm1editor\">PM1 Message Script Editor</a></b> or <b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in PM1 files.");
+                if (fileName.Contains(".bvp"))
+                    notice += Post.Notice("blue", "<b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\"> PersonaEditor</a></b> can edit text in BVP files.");
+            }
+            return notice;
         }
     }
 }

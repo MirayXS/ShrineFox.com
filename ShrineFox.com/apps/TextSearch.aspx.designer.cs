@@ -24,15 +24,6 @@ namespace ShrineFoxcom
         protected global::System.Web.UI.WebControls.PlaceHolder Sidebar;
 
         /// <summary>
-        /// tip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tip;
-
-        /// <summary>
         /// gameList control.
         /// </summary>
         /// <remarks>
@@ -42,22 +33,22 @@ namespace ShrineFoxcom
         protected global::System.Web.UI.WebControls.DropDownList gameList;
 
         /// <summary>
-        /// TextBox1 control.
+        /// SearchBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox SearchBox;
 
         /// <summary>
-        /// Button1 control.
+        /// SearchBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button SearchBtn;
 
         /// <summary>
         /// CaseSensitive control.
@@ -67,6 +58,33 @@ namespace ShrineFoxcom
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CaseSensitive;
+
+        /// <summary>
+        /// radioMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton radioMsg;
+
+        /// <summary>
+        /// radioFlow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton radioFlow;
+
+        /// <summary>
+        /// SearchTip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SearchTip;
 
         /// <summary>
         /// Div1 control.
@@ -105,12 +123,12 @@ namespace ShrineFoxcom
         protected global::System.Web.UI.WebControls.Panel HiddenPostsPanel;
 
         /// <summary>
-        /// HiddenPostsLink control.
+        /// Next control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton HiddenPostsLink;
+        protected global::System.Web.UI.WebControls.LinkButton Next;
     }
 }

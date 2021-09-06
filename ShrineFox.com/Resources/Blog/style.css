@@ -280,8 +280,8 @@ p:last-child {
 	margin-bottom: 0;
 }
 
-.itemTitle {
-	font-size: 14pt;
+.itemTitle a {
+	font-size: 7pt !important;
 }
 
 .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
@@ -2240,7 +2240,6 @@ mark, ins {
 .accordion-container .itemTitle a {
 	color: var(--text);
 	background: transparent;
-	font-size: initial;
 }
 
 .accordion-container .itemTitle a:hover {
@@ -2253,7 +2252,6 @@ mark, ins {
 	background: rgba(var(--link), 0.3);
 	color: var(--text);
 	background: transparent;
-	font-size: initial;
 }
 
 #main, main, .wrap {

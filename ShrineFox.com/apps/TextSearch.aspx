@@ -26,14 +26,14 @@
         <!--Options -->
         <div class="">
             <div class="columns">
-                <div class="column col-3">
-                    <asp:CheckBox ID="CaseSensitive" runat="server" Text="Case Sensitive" Enabled="true" Checked="false" />
-                </div>
-                <div class="column col-3">
+                <div class="column col-2">
                     <asp:RadioButton id="radioMsg" Text="MessageScript" Checked="True" GroupName="RadioGroup1" runat="server" />
                 </div>
-                <div class="column col-3">
+                <div class="column col-2">
                     <asp:RadioButton id="radioFlow" Text="FlowScript" GroupName="RadioGroup1" runat="server"/>
+                </div>
+                <div class="column col-2">
+                    <asp:CheckBox ID="CaseSensitive" runat="server" Text="Case Sensitive" Enabled="true" Checked="false" />
                 </div>
             </div>
         </div>

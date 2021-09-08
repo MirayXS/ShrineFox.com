@@ -12,6 +12,7 @@
 *.key
 *.p7b
 *.txt
+*.yml
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

@@ -51,15 +51,6 @@ namespace ShrineFoxcom
         protected global::System.Web.UI.WebControls.Button SearchBtn;
 
         /// <summary>
-        /// CaseSensitive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CaseSensitive;
-
-        /// <summary>
         /// radioMsg control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace ShrineFoxcom
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton radioFlow;
+
+        /// <summary>
+        /// CaseSensitive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CaseSensitive;
 
         /// <summary>
         /// SearchTip control.

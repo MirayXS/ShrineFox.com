@@ -526,6 +526,8 @@ svg {
     background: transparent;
     margin-bottom: 3em;
     background: rgba(var(--text),0.05);
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .card .card-image {

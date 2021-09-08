@@ -20,7 +20,7 @@
             <div class="column col-3">
                 <b>Format:</b>
             </div>
-            <div class="column col-4">
+            <div class="column col-3">
                 <asp:RadioButton id="radioNew" Text="New Format" Checked="True" GroupName="RadioGroup1" runat="server" />
             </div>
             <div class="column col-3">

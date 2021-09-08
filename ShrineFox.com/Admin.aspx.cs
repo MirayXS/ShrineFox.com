@@ -28,6 +28,7 @@ namespace ShrineFoxcom
         LiteralControl gbTxt = new LiteralControl();
         Button gbBtn = new Button();
         LiteralControl botTxt = new LiteralControl();
+        LiteralControl botStatus = new LiteralControl();
         Button botActiveBtn = new Button();
         LiteralControl htmlTxt = new LiteralControl();
         Button htmlBtn = new Button();
@@ -42,11 +43,15 @@ namespace ShrineFoxcom
             Sidebar.Controls.Add(SidebarHtml);
 
             // Get Login State
+
             object value = Session["loggedIn"];
             if (value == null || !this.IsPostBack)
                 Session["loggedIn"] = false;
             else if (value != null)
                 Session["loggedIn"] = (bool)value;
+            #if DEBUG
+                Session["loggedIn"] = true;
+            #endif
 
             // Last Browse Update Time
             lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv");
@@ -132,6 +137,7 @@ namespace ShrineFoxcom
             botActiveBtn.Attributes.Add("class", "btn btn-primary");
 
             control.Controls.Add(botTxt);
+            control.Controls.Add(botStatus);
             control.Controls.Add(botActiveBtn);
         }
 
@@ -145,6 +151,7 @@ namespace ShrineFoxcom
             htmlBtn.Attributes.Add("class", "btn btn-primary");
 
             control.Controls.Add(htmlTxt);
+            control.Controls.Add(botStatus);
             control.Controls.Add(htmlBtn);
         }
 
@@ -156,7 +163,20 @@ namespace ShrineFoxcom
 
         private void botActiveBtn_Click(object sender, EventArgs e)
         {
-           
+            /*LiteralControl notice = new LiteralControl();
+            if (!FrostBot.Program.active)
+            {
+                FrostBot.Program.Main();
+                notice.Text = Post.Notice("green", "<b>Bot Activated</b> successfully!");
+            }
+            else
+            {
+                FrostBot.Program.Close();
+                notice.Text = Post.Notice("red", "<b>Bot Deactivated</b>.");
+            }
+
+            botStatus.Controls.Clear();
+            botStatus.Controls.Add(notice);*/
         }
 
         private void htmlBtn_Click(object sender, EventArgs e)

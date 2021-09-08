@@ -37,17 +37,13 @@ namespace ShrineFoxcom
         {
             // Determine type from radio buttons
             string type = "";
-            // Only supports P5/P5R for now until I dump the rest of the scripts
-            if (gameList.SelectedValue == "P5" || gameList.SelectedValue == "P5R")
-            {
-                if (radioMsg.Checked)
-                    type = "msg";
-                else
-                    type = "flow";
-            }
+            if (radioMsg.Checked)
+                type = "msg";
+            else
+                type = "flow";
 
             // Get lines from text document
-            string txtPath = Server.MapPath("txt\\" + gameList.SelectedValue + $"{type}.txt");
+            string txtPath = Server.MapPath("..\\App_Data\\txt\\" + gameList.SelectedValue + $"{type}.txt");
             var txtLines = File.ReadAllLines(txtPath);
 
             // Use lowercase if search is not case sensitive
@@ -79,7 +75,7 @@ namespace ShrineFoxcom
                     }
                     // Add current line with search term highlighted
                     int removeIndex = txtLines[i].ToLower().IndexOf(searchTerm.ToLower());
-                    textBlock += "<br>" + txtLines[i].Remove(removeIndex, searchTerm.Length).Insert(removeIndex, $"<span style=\"background:rgba(var(--link), 0.5);\">{SearchBox.Text}</span>");
+                    textBlock += txtLines[i].Remove(removeIndex, searchTerm.Length).Insert(removeIndex, $"<span style=\"background:rgba(var(--link), 0.5);\">{SearchBox.Text}</span>");
                     // Get all text after line but before next text block
                     for (int x = i + 1; x < txtLines.Length; x++)
                     {
@@ -108,9 +104,9 @@ namespace ShrineFoxcom
             {
                 for (int i = 0; i < matches.Count; i++)
                 {
-                    result += $"<div class=\"card\"><p><b>{matches[i].Item3}</b> (line {matches[i].Item1})<br>{matches[i].Item2}</p></div>";
+                    result += $"<div class=\"card\"><p><b>{matches[i].Item3}</b><br>{matches[i].Item2}</p></div>";
                     Next.Visible = true;
-                    SearchTip.InnerHtml = ShowTip(Path.GetExtension(matches[i].Item3).Replace(".", "").ToLower());
+                    SearchTip.InnerHtml = ShowTip(Path.GetExtension(matches[i].Item3).ToLower());
                 }
             }
             else

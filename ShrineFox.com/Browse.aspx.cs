@@ -20,8 +20,8 @@ namespace ShrineFoxcom
         {
             // If it's been more than half a day since an update, get Gamebanana data
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv");
-            if (DateTime.Now > lastWriteTime.AddHours(6))
-                Webscraper.UpdateTSVs(Warning);
+            /*if (DateTime.Now > lastWriteTime.AddHours(6))
+                Webscraper.UpdateTSVs(Warning);*/
 
             // The number of posts on one page
             int maxPostsPerPage = 15;
@@ -191,6 +191,8 @@ namespace ShrineFoxcom
             string[] aemulus = new string[] { "P5", "P5S", "P3FES", "P4G" };
             string[] hostFS = new string[] { "P3FES", "P4", "SMT3" };
             string[] modCpk = new string[] { "PQ", "PQ2", "P3D", "P5D", "P5" };
+            // Temporary GB Warning
+            Pagination1Html.Text += Post.Notice("red", "<b>GameBanana.com is currently experiencing issues</b>, so the latest submissions will not be viewable until the issue is resolved.");
             // Cheats Construction
             if (type == "cheat")
             {

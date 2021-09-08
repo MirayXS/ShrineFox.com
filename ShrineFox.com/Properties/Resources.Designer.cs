@@ -263,10 +263,9 @@ namespace ShrineFoxcom.Properties {
         ///            &lt;section class=&quot;container grid-lg&quot;&gt;
         ///                &lt;nav class=&quot;navbar&quot;&gt;
         ///                    &lt;section class=&quot;navbar-section logo&quot;&gt;
-        ///                        &lt;a href=&quot;https://shrinefox.com&quot; class=&quot;navbar-brand mr-10&quot;&gt;
-        ///                            &lt;!--Logo--&gt;
-        ///                            &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        ///                     [rest of string was truncated]&quot;;.
+        ///                        &lt;span class=&quot;toggle-btn&quot; onclick=&quot;toggleCookie(this)&quot;&gt;&lt;i id=&quot;toggle-icon&quot; class=&quot;fa fa-bars&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        ///                        &lt;a onclick=&quot;toggleCookie(this)&quot; class=&quot;navbar-brand mr-10&quot;&gt;
+        ///                 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexBeforeContent {
             get {
@@ -313,10 +312,14 @@ namespace ShrineFoxcom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;toggle-btn&quot; onclick=&quot;toggleCookie(this)&quot;&gt;&lt;i id=&quot;toggle-icon&quot; class=&quot;fa fa-bars&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Explore&lt;/div&gt;
-        ///&lt;td class=&quot;sidebar&quot; id=&quot;sidebar&quot;&gt;
+        ///   Looks up a localized string similar to &lt;td class=&quot;sidebar&quot; id=&quot;sidebar&quot;&gt;
         ///    &lt;div class=&quot;accordion-container&quot;&gt;
-        ///        &lt;!--Accordions--&gt;
+        ///        &lt;div class=&quot;scroll-bar-wrap&quot;&gt;
+        ///            &lt;div class=&quot;scroll-box&quot;&gt;
+        ///                &lt;!--Accordions--&gt;
+        ///            &lt;/div&gt;
+        ///            &lt;div class=&quot;cover-bar&quot;&gt;&lt;/div&gt;
+        ///        &lt;/div&gt;
         ///    &lt;/div&gt;
         ///&lt;/td&gt;
         ///&lt;td class=&quot;maincontent&quot;&gt;&lt;!--MainNavigation--&gt;.

@@ -26,16 +26,17 @@
         <!--Options -->
         <div class="">
             <div class="columns">
-                <div class="column col-2">
-                    <asp:RadioButton id="radioMsg" Text="MessageScript" Checked="True" GroupName="RadioGroup1" runat="server" />
+                <div class="column col-3">
+                    <asp:RadioButton id="radioMsg" Text=".MSG" Checked="True" GroupName="RadioGroup1" runat="server" />
                 </div>
-                <div class="column col-2">
-                    <asp:RadioButton id="radioFlow" Text="FlowScript" GroupName="RadioGroup1" runat="server"/>
+                <div class="column col-3">
+                    <asp:RadioButton id="radioFlow" Text=".FLOW" GroupName="RadioGroup1" runat="server"/>
                 </div>
-                <div class="column col-2">
+                <div class="column col-4">
                     <asp:CheckBox ID="CaseSensitive" runat="server" Text="Case Sensitive" Enabled="true" Checked="false" />
                 </div>
             </div>
+            <a href="https://docs.shrinefox.com/flowscript/intro-to-scripting">Learn more about .MSG/.FLOW scripts</a>
         </div>
     </div>
     <br>

@@ -141,19 +141,19 @@ namespace ShrineFoxcom
             string notice = "";
             if (fileName.Contains("eboot") || fileName.Contains("slus"))
                 notice += Post.Notice("red", "Unfortunately, text contained in the executable cannot be edited by normal means.");
-            else
-            {
-                if (fileName.Contains(".bf"))
-                    notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BF files.");
-                if (fileName.Contains(".bmd"))
-                    notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BMD files.");
-                if (fileName.Contains(".pak") || fileName.Contains(".pac"))
-                    notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=amicitia\">Amicitia</a></b> or <b><a href=\"https://shrinefox.com?tool=packtools\">PackTools</a></b> can open PAC files.");
-                if (fileName.Contains(".pm1"))
-                    notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=pm1editor\">PM1 Message Script Editor</a></b> or <b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in PM1 files.");
-                if (fileName.Contains(".bvp"))
-                    notice += Post.Notice("blue", "<b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\"> PersonaEditor</a></b> can edit text in BVP files.");
-            }
+            if (fileName.Contains(".bf"))
+                notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BF files.");
+            if (fileName.Contains(".bmd"))
+                notice += Post.Notice("blue", "<b><a href=\"https://amicitia.miraheze.org/wiki/AtlusScriptCompiler\">AtlusScriptCompiler</a></b> can decompile BMD files.");
+            if (fileName.Contains(".pak") || fileName.Contains(".pac"))
+                notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=amicitia\">Amicitia</a></b> or <b><a href=\"https://shrinefox.com?tool=packtools\">PackTools</a></b> can open PAC files.");
+            if (fileName.Contains(".pm1"))
+                notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com?tool=pm1editor\">PM1 Message Script Editor</a></b> or <b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in PM1 files.");
+            if (fileName.Contains(".bvp"))
+                notice += Post.Notice("blue", "<b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in BVP files.");
+            if (fileName.Contains(".tbl"))
+                notice += Post.Notice("blue", "<b><a href=\"https://shrinefox.com/browse?post=binarytemplates\">010 Editor</a></b> can edit text in TBL files.");
+
             return notice;
         }
     }

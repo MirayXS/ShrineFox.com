@@ -68,7 +68,7 @@ namespace ShrineFoxcom.Resources.Browse
                                         control.Controls.Add(notice);
                                         break;
                                     default:
-                                        notice.Text = Post.Notice("red", "<b>Exception</b>: {FeedGenerator.exception.Message}");
+                                        notice.Text = Post.Notice("red", $"<b>Exception</b>: {FeedGenerator.exception.Message}");
                                         control.Controls.Add(notice);
                                         break;
                                 }

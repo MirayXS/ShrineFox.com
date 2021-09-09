@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 
-namespace ShrineFoxcom
+namespace ShrineFox.com
 {
     public class Post
     {

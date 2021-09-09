@@ -5,7 +5,7 @@ using System.Web.Routing;
 using System.Web.UI;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace ShrineFoxcom
+namespace ShrineFox.com
 {
     public static class RouteConfig
     {

@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ShrineFoxcom.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ShrineFox.com.Global" Language="C#" %>

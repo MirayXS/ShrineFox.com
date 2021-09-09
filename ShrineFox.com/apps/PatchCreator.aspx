@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Patch Creator" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFoxcom.PatchCreator" %>
+﻿<%@ Page Title="Patch Creator" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFox.com.PatchCreator" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>

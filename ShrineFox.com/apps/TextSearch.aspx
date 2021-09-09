@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Text Search" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TextSearch.aspx.cs" Inherits="ShrineFoxcom.TextSearch" MaintainScrollPositionOnPostback="true" %>
+﻿<%@ Page Title="Text Search" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TextSearch.aspx.cs" Inherits="ShrineFox.com.TextSearch" MaintainScrollPositionOnPostback="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>

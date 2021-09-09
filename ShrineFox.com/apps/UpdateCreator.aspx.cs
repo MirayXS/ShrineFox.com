@@ -11,7 +11,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShrineFoxcom
+namespace ShrineFox.com
 {
     public partial class UpdateCreator : Page
     {

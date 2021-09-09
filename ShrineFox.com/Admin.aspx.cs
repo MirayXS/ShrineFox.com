@@ -1,5 +1,5 @@
 ﻿using Humanizer;
-using ShrineFoxcom.Resources.Browse;
+using ShrineFox.com.Resources.Browse;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,7 +12,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShrineFoxcom
+namespace ShrineFox.com
 {
     public partial class Admin : Page
     {

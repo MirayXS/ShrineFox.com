@@ -1,4 +1,4 @@
-﻿<%@ Page Title="404 Not Found" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="404.aspx.cs" Inherits="ShrineFoxcom.NotFound" %>
+﻿<%@ Page Title="404 Not Found" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="404.aspx.cs" Inherits="ShrineFox.com.NotFound" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>

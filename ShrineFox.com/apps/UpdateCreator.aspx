@@ -1,4 +1,4 @@
-﻿<%@ Page Title="PS4 Update Creator" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateCreator.aspx.cs" Inherits="ShrineFoxcom.UpdateCreator" %>
+﻿<%@ Page Title="PS4 Update Creator" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateCreator.aspx.cs" Inherits="ShrineFox.com.UpdateCreator" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>

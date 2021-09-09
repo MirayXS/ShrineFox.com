@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace ShrineFoxcom
+namespace ShrineFox.com
 {
     public class Global : HttpApplication
     {

@@ -15,6 +15,10 @@ namespace ShrineFox.com
             // Header
             LiteralControl HeaderHtml = new LiteralControl();
             HeaderHtml.Text = Properties.Resources.IndexHeader;
+            #if DEBUG
+                HeaderHtml.Text = HeaderHtml.Text.Replace("https://shrinefox.com/","./");
+            #endif
+
             // Ensure path to resources is correct
             if (Request.Url.AbsoluteUri.ToLower().Contains("/apps"))
                 HeaderHtml.Text = HeaderHtml.Text;

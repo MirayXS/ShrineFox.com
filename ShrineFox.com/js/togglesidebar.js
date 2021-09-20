@@ -1,12 +1,12 @@
 function toggleSidebar() {
 	if (getCookie("sidebar") == "true") {
-		document.getElementById("sidebar").classList.toggle('active');
+		document.getElementById("toggle-accordions").classList.toggle('active');
 		document.getElementsByClassName("maincontent")[0].classList.toggle('active');
     }
 }
 
 function toggleCookie(ref) {
-	document.getElementById("sidebar").classList.toggle('active');
+	document.getElementById("toggle-accordions").classList.toggle('active');
 	document.getElementsByClassName("maincontent")[0].classList.toggle('active');
 
 	if (getCookie("sidebar") == "true") {

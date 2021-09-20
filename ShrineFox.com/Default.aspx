@@ -4,22 +4,22 @@
 <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>
 <a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 <h1><%: Page.Title %></h1>
-You've found the internet's <a href="https://shrinefox.com/browse">largest collection</a> of SMT mods, tools, and guides.
-What started as our humble Skype group has now spawned multiple modding communities. 
-    Ours is named <i>Amicitia</i>, after the latin word for friendship (and TGE's <a href="https://shrinefox.com/browse?post=amicitia">premiere tool</a>).
-
-<br><br>This site's goal is to feature all resources in a convenient place. If you're just getting started, 
-    I recommend browsing our <a href="https://shrinefox.com/guides">guides</a>.
-
-<br><br>I also mod other games and systems, as seen on my YouTube channel below. 
-    Read about my miscellaneous projects on <a href="https://shrinefox.com/blog">my blog</a>, or catch up on <a href="https://shrinefox.com/news">Amicitia news</a>.
+You've found the internet's <a href="https://shrinefox.com/browse">largest collection</a> of SMT mods, tools, and guides. 
+This site's goal is to feature all modding resources in one convenient place. We're mainly supported by the <i>Amicitia</i> modding group, 
+named after TGEnigma's <a href="https://shrinefox.com/browse?post=amicitia">premiere tool</a> of the same name.
+<br><br>If you're just getting started, we recommend browsing our <a href="https://shrinefox.com/browse?type=guide">guides</a>.
+<br>Feel free to also catch up on <a href="https://shrinefox.com/news">Amicitia news</a>, or my miscellaneous projects 
+on <a href="https://shrinefox.com/blog">my blog</a>.
 <br><br>
-
 <hr>
 <!--YouTube Playlist-->
 <h2>Latest Videos</h2>
-From time to time, I showcase my mods in action via cinematic highlight reels. 
-    I plan to make more of them in the future. You can expect video tutorials as well!
+I also mod other games and systems, as seen on my YouTube channel below.
+<br>From time to time, I showcase these mods with cinematic highlight reels. 
+I plan to make more of them in the future. You can expect video tutorials as well!
+<br><br>
+<script src="https://apis.google.com/js/platform.js"></script>
+<div class="g-ytsubscribe" data-channel="ShrineFox" data-layout="default" data-count="default"></div>
 <br><br>
 <div style="margin-left: auto;margin-right:auto;max-width:800px;">
     <div id="YourPlayerID" style="height: 100%;"></div>

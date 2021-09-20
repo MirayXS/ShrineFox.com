@@ -17,13 +17,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://shrinefox.com/css/all.css" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="https://shrinefox.com/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="https://shrinefox.com/css/spectre.min.css">
 <link rel="stylesheet" type="text/css" href="https://shrinefox.com/css/theme.min.css">
 <link rel="stylesheet" type="text/css" href="https://shrinefox.com/css/custom.css">
 <link rel="stylesheet" type="text/css" href="https://shrinefox.com/css/ytv.css">
+<script defer src="https://shrinefox.com/js/all.js"></script>
 <script type="text/javascript" src="https://shrinefox.com/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="https://kit.fontawesome.com/4c3075832a.js"></script>
 <script type="text/javascript" src="https://shrinefox.com/js/togglesidebar.js"></script>
 <script type="text/javascript" src="https://shrinefox.com/js/ytv.js"></script>
 <script type="text/javascript" src="https://shrinefox.com/js/FeedEk.min.js"></script>
@@ -45,7 +46,7 @@
             <section class="container grid-lg">
                 <nav class="navbar">
                     <section class="navbar-section logo">
-                        <a href="https://shrinefox.com" class="navbar-brand mr-10">
+                        <a onclick="toggleCookie(this)" class="navbar-brand mr-10">
                             <!--Logo-->
                             <svg version="1.0" class="amicitialogo" xmlns="http://www.w3.org/2000/svg"
                                  width="500.000000pt" height="500.000000pt" viewBox="0 0 500.000000 500.000000"
@@ -185,10 +186,17 @@
                 <section class="container grid-lg">
                     <table style="width:100%;">
                         <tr>
-<div class="toggle-btn" onclick="toggleCookie(this)"><i id="toggle-icon" class="fa fa-bars" aria-hidden="true"></i> Explore</div>
 <td class="sidebar" id="sidebar">
     <div class="accordion-container">
-        <div class="accordion">
+        <table>
+            <tr>
+                <td class="toggle-btn" onclick="toggleCookie(this)" style="vertical-align:top;">
+                    <i id="toggle-icon" class="fa fa-bars" aria-hidden="true"></i>
+                </td>
+                <td class="toggle-accordions" id="toggle-accordions">
+                    <div class="scroll-bar-wrap">
+                        <div class="scroll-box">
+                            <div class="accordion">
     <input id="accordion-guides" type="checkbox" name="guides-accordion-checkbox" hidden="" checked="checked">
     <label class="accordion-header c-hand" for="accordion-guides"><i class="fa fa-angle-right"></i> Guides</label>
     <div class="accordion-body">
@@ -282,6 +290,12 @@
         </ul>
     </div>
 </div></div>
+                        </div>
+                        <div class="cover-bar"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </td>
 <td class="maincontent"><a href="https://shrinefox.com"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i><a href="https://shrinefox.com/guides">Guides</a>

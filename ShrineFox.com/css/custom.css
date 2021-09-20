@@ -428,10 +428,6 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
         margin-right: 0rem;
         font-size: 7pt;
     }
-
-    .navbar .navbar-section {
-        flex: 0;
-    }
 }
 
 footer {
@@ -494,21 +490,21 @@ svg {
     fill: var(--wavetext) !important;
 }
 
-#sidebar {
+#toggle-accordions {
     position: relative;
     display: none;
 }
 
 
 
-#sidebar.active {
+#toggle-accordions.active {
     display: initial !important;
 }
 
 .toggle-btn {
     cursor: pointer;
     width: fit-content;
-    font-size: 19pt;
+    font-size: 30pt;
     font-weight: bold;
     position: relative;
 }
@@ -725,7 +721,7 @@ table.gsc-search-box {
 
 .accordion-container {
     position: sticky;
-    top: 9em;
+    top: 6em;
 }
 
 /* Scrollbar Styling */
@@ -797,3 +793,4 @@ table.gsc-search-box {
     opacity: 1 !important;
     transition: 0.25s;
 }
+

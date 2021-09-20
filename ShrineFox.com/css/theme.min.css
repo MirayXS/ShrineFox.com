@@ -595,7 +595,13 @@ body.sticky-footer #page-wrapper {
 }
 
 .dropmenu ul li a:before {
-    font-family: FontAwesome;
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    /* >> Weight of the font (mandatory):
+        - 400 for Regular and Brands symbols;
+        - 900 for Solid symbols;
+        - 300 for Light symbols. */
+    font-weight: 900;
     display: inline-block;
     float: right;
     margin-right: -20px;

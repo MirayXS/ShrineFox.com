@@ -23,7 +23,13 @@ namespace ShrineFox.com.Resources.Browse
         public static void UpdateTSVs(PlaceHolder control)
         {
             // Load existing posts that aren't from gamebanana
-            Posts = Post.Get().Where(x => !x.URL.Contains("gamebanana")).ToList();
+            Posts = Post.Get();
+            var NewPosts = new List<Post>();
+            // Remove duplicate posts
+            for (int i = 0; i < Posts.Count(); i++)
+                if (!NewPosts.Any(x => x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
+                    NewPosts.Add(Posts[i]);
+            Posts = NewPosts;
             
             LiteralControl notice = new LiteralControl();
 
@@ -83,7 +89,8 @@ namespace ShrineFox.com.Resources.Browse
                             {
                                 notice.Text += $"<br>{feed.Count} item(s) found";
                                 control.Controls.Add(notice);
-                                foreach (var item in feed)
+                                // Add to TSV if not duplicate of existing post
+                                foreach (var item in feed.Where(x => !Posts.Any(y => y.URL.TrimEnd('/').EndsWith("/" + x.Link.ToString().TrimEnd('/').Split('/').Last()))))
                                 {
                                     Post post = new Post();
                                     post.Authors = new List<string>() { item.Owner.Name.Trim(' ') };

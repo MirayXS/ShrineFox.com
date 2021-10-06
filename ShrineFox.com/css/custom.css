@@ -794,3 +794,29 @@ table.gsc-search-box {
     transition: 0.25s;
 }
 
+.yt-overlay {
+    position: absolute;
+    top: 0em;
+    font-weight: bold;
+    margin-left: 40%;
+    text-align: right;
+    z-index: 1;
+    font-size: 55pt;
+}
+
+.yt-overlay svg path {
+    fill: #FFFFFFAF !important;
+    -webkit-transition: all .5s;
+}
+
+.yt-overlay:hover svg path {
+    fill: #FFF !important;
+}
+
+.card .card-image:first-child {
+    position: relative;
+}
+
+svg.svg-inline--fa.fa-angle-right.fa-w-8 path {
+    fill: var(--pageheading) !important;
+}

@@ -100,19 +100,20 @@ namespace ShrineFox.com
                 if (post.EmbedURL.Contains("youtu"))
                 {
                     string videoID = post.EmbedURL.Substring(post.EmbedURL.IndexOf("v=") + 2);
-                    string ytThumb = $"https://img.youtube.com/vi/{videoID}/default.jpg";
-                    result = result.Replace("POSTMEDIAURL", ytThumb);
+                    string ytThumb = $"https://img.youtube.com/vi/{videoID}/hqdefault.jpg";
+                    result = result.Replace("POSTMEDIAURL", ytThumb).Replace("display:none","display:block");
                 }
                 else if (post.EmbedURL.Contains("streamable.com"))
                 {
                     // Use Streamable thumbnail as image and link to video
                     string videoID = post.EmbedURL.Replace("https://streamable.com/", "");
-                    result = result.Replace("POSTMEDIAURL", $"https:///cdn-cf-east.streamable.com/image/{videoID}.jpg\">");
+                    result = result.Replace("POSTMEDIAURL", $"https:///cdn-cf-east.streamable.com/image/{videoID}.jpg\">").Replace("display:none", "display:block");
                 }
                 else if (post.EmbedURL != null && post.EmbedURL.Trim() != "") // Use provided image link
                     result = result.Replace("POSTMEDIAURL", post.EmbedURL);
                 else // If no URL, use default Amicitia icon and hide image link
                     result = result.Replace("POSTMEDIAURL", "https://shrinefox.com/images/logo.svg");
+                result = result.Replace("EMBEDURL", post.EmbedURL);
             }
             else
             {

@@ -27,7 +27,7 @@ namespace ShrineFox.com.Resources.Browse
             var NewPosts = new List<Post>();
             // Remove duplicate posts
             for (int i = 0; i < Posts.Count(); i++)
-                if (!NewPosts.Any(x => x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
+                if (!NewPosts.Any(x => x.URL.Contains("gamebanana") && x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
                     NewPosts.Add(Posts[i]);
             Posts = NewPosts;
             

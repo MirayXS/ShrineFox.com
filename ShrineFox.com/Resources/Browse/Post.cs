@@ -187,7 +187,8 @@ namespace ShrineFox.com
             new Tuple<string, string>("PQ", "Persona Q"),
             new Tuple<string, string>("PQ2", "Persona Q2"),
             new Tuple<string, string>("CFB", "Catherine Full Body"),
-            new Tuple<string, string>("SMT3", "SMT3: Nocturne")
+            new Tuple<string, string>("SMT3", "SMT3: Nocturne"),
+            new Tuple<string, string>("SMTV", "SMT V")
         };
 
         public static List<string> TypeList = new List<string>()

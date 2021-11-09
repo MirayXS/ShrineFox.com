@@ -202,6 +202,11 @@ namespace ShrineFox.com
                 Pagination1Html.Text += Post.Notice("green", "Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.");
                 Pagination1Html.Text += Post.Notice("blue", "To learn how to install and run P5R mods on PS4, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.");
             }
+            // SMTV Modding News Link
+            if (game.ToUpper().Equals("SMTV") && type != "cheat")
+            {
+                Pagination1Html.Text += Post.Notice("green", "See <a href=\"https://shrinefox.com/news/smtv-modding-has-begun\">this article</a> for the latest info about creating and installing SMT V mods.");
+            }
             // Mod install guides, P4G Vita/PC difference
             if (aemulus.Any(x => x.Equals(game.ToUpper())) && type != "tool" && type != "guide" && type != "cheat")
             {

@@ -294,6 +294,9 @@ namespace ShrineFox.com.Resources.Browse
                 case "SMT3":
                     url += "10084&";
                     break;
+                case "SMTV":
+                    url += "14768&";
+                    break;
             }
             // Consistent args
             url += $"&_aArgs[]=_sbIsNsfw = false&_sRecordSchema=FileDaddy&_nPerpage=50";

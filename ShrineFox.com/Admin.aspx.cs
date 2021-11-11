@@ -22,6 +22,7 @@ namespace ShrineFox.com
         PlaceHolder GameBanana = new PlaceHolder();
         PlaceHolder DiscordBot = new PlaceHolder();
         PlaceHolder Html = new PlaceHolder();
+        PlaceHolder PostForm = new PlaceHolder();
         // Controls
         TextBox loginTxtBox = new TextBox();
         Button loginBtn = new Button();
@@ -32,6 +33,29 @@ namespace ShrineFox.com
         Button botActiveBtn = new Button();
         LiteralControl htmlTxt = new LiteralControl();
         Button htmlBtn = new Button();
+        // New Browse Post form
+        Label postIdLbl = new Label();
+        Label postTitleLbl = new Label();
+        Label postGamesLbl = new Label();
+        Label postTypeLbl = new Label();
+        Label postAuthorsLbl = new Label();
+        Label postDateLbl = new Label();
+        Label postDescriptionLbl = new Label();
+        Label postTagsLbl = new Label();
+        Label postDownloadLbl = new Label();
+        Label postThumbUrlLbl = new Label();
+        LiteralControl postTxt = new LiteralControl();
+        TextBox postIdTxt = new TextBox();
+        TextBox postTitleTxt = new TextBox();
+        TextBox postGamesTxt = new TextBox();
+        TextBox postTypeTxt = new TextBox();
+        TextBox postAuthorsTxt = new TextBox();
+        TextBox postDateTxt = new TextBox();
+        TextBox postDescriptionTxt = new TextBox();
+        TextBox postTagsTxt = new TextBox();
+        TextBox postDownloadTxt = new TextBox();
+        TextBox postThumbUrlTxt = new TextBox();
+        Button submitPostBtn = new Button();
 
         DateTime lastWriteTime;
 
@@ -43,7 +67,6 @@ namespace ShrineFox.com
             Sidebar.Controls.Add(SidebarHtml);
 
             // Get Login State
-
             object value = Session["loggedIn"];
             if (value == null || !this.IsPostBack)
                 Session["loggedIn"] = false;
@@ -67,6 +90,21 @@ namespace ShrineFox.com
             gbBtn.Click += new EventHandler(gbBtn_Click);
             botActiveBtn.Click += new EventHandler(botActiveBtn_Click);
             htmlBtn.Click += new EventHandler(htmlBtn_Click);
+            submitPostBtn.Click += new EventHandler(submitPostBtn_Click);
+        }
+
+        private void submitPostBtn_Click(object sender, EventArgs e)
+        {
+            Warning.Controls.Clear();
+            if (postIdTxt.Text != "" && postTypeTxt.Text != "" && postTitleTxt.Text != "" && postGamesTxt.Text != "" && postAuthorsTxt.Text != "" 
+                && postDateTxt.Text != "" && postDownloadTxt.Text != "")
+            {
+                File.AppendAllText($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv", $"\n{postIdTxt.Text}\t{postTypeTxt.Text}\t{postTitleTxt.Text}\t{postGamesTxt.Text}\t{postAuthorsTxt.Text}\t{postDateTxt.Text}\t{postTagsTxt.Text}\t{postDescriptionTxt.Text}\t\t{postThumbUrlTxt.Text}\t{postDownloadTxt.Text}\t");
+                Notice.Text = Post.Notice("green", "Updated TSV! Refresh the Browse page to see changes.");
+            }
+            else
+                Notice.Text = Post.Notice("red", "Failed to update TSV because one or more text fields were blank.");
+            Warning.Controls.Add(Notice);
         }
 
         public void LoginControls(PlaceHolder control)
@@ -107,10 +145,12 @@ namespace ShrineFox.com
             GBControls(GameBanana);
             BotControls(DiscordBot);
             HtmlControls(Html);
+            PostControls(PostForm);
             // Add Controls to page 
             control.Controls.Add(GameBanana);
             control.Controls.Add(DiscordBot);
             control.Controls.Add(Html);
+            control.Controls.Add(PostForm);
         }
 
         public void GBControls(PlaceHolder control)
@@ -153,6 +193,49 @@ namespace ShrineFox.com
             control.Controls.Add(htmlTxt);
             control.Controls.Add(botStatus);
             control.Controls.Add(htmlBtn);
+        }
+
+        public void PostControls(PlaceHolder control)
+        {
+            control.Controls.Clear();
+
+            postTxt.Text = "<h2>Add Browse Post</h2>" +
+                    "Remotely create a new Browse entry.<br><br>";
+            submitPostBtn.Text = "Add Post";
+            submitPostBtn.Attributes.Add("class", "btn btn-primary");
+            postIdLbl.Text = "Post ID:";
+            postTitleLbl.Text = "Title:";
+            postGamesLbl.Text = "Games:";
+            postTypeLbl.Text = "Type:";
+            postAuthorsLbl.Text = "Authors:";
+            postDateLbl.Text = "Date:";
+            postDescriptionLbl.Text = "Description:";
+            postTagsLbl.Text = "Tags:";
+            postDownloadLbl.Text = "Download:";
+            postThumbUrlLbl.Text = "Thumbnail:";
+            postIdTxt.Attributes.Add("class", "form-input");
+            postTitleTxt.Attributes.Add("class", "form-input");
+            postGamesTxt.Attributes.Add("class", "form-input");
+            postTypeTxt.Attributes.Add("class", "form-input");
+            postAuthorsTxt.Attributes.Add("class", "form-input");
+            postDateTxt.Attributes.Add("class", "form-input");
+            postDescriptionTxt.Attributes.Add("class", "form-input");
+            postTagsTxt.Attributes.Add("class", "form-input");
+            postDownloadTxt.Attributes.Add("class", "form-input");
+            postThumbUrlTxt.Attributes.Add("class", "form-input");
+
+            control.Controls.Add(postTxt);
+            control.Controls.Add(postIdLbl); control.Controls.Add(postIdTxt);
+            control.Controls.Add(postTitleLbl); control.Controls.Add(postTitleTxt);
+            control.Controls.Add(postGamesLbl); control.Controls.Add(postGamesTxt);
+            control.Controls.Add(postTypeLbl); control.Controls.Add(postTypeTxt);
+            control.Controls.Add(postAuthorsLbl); control.Controls.Add(postAuthorsTxt);
+            control.Controls.Add(postDateLbl); control.Controls.Add(postDateTxt);
+            control.Controls.Add(postDescriptionLbl); control.Controls.Add(postDescriptionTxt);
+            control.Controls.Add(postTagsLbl); control.Controls.Add(postTagsTxt);
+            control.Controls.Add(postDownloadLbl); control.Controls.Add(postDownloadTxt);
+            control.Controls.Add(postThumbUrlLbl); control.Controls.Add(postThumbUrlTxt);
+            control.Controls.Add(submitPostBtn);
         }
 
         private void gbBtn_Click(object sender, EventArgs e)

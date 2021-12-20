@@ -211,6 +211,7 @@
     <Content Include="Apps.aspx" />
     <Content Include="apps\Files.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
     <Content Include="Browse.aspx" />
     <Content Include="css\custom.css" />

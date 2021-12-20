@@ -25,12 +25,15 @@ namespace ShrineFox.com.Resources.Browse
             // Load existing posts that aren't from gamebanana
             Posts = Post.Get();
             var NewPosts = new List<Post>();
-            // Remove duplicate posts
+            // Remove duplicate posts and exclusions
+            var exclusions = Properties.Resources.exclude.Split('\n');
             for (int i = 0; i < Posts.Count(); i++)
                 if (!NewPosts.Any(x => x.URL.Contains("gamebanana") && x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
-                    NewPosts.Add(Posts[i]);
+                    if (!exclusions.Any(x => Posts[i].Authors.Any(y => y.Contains(x)) || x.Contains(Posts[i].Title)))
+                        NewPosts.Add(Posts[i]);
+                    
             Posts = NewPosts;
-            
+
             LiteralControl notice = new LiteralControl();
 
             // For each game on Gamebanana...
@@ -50,7 +53,7 @@ namespace ShrineFox.com.Resources.Browse
                             {
                                 await FeedGenerator.GetFeed(i, game, (TypeFilter)Enum.Parse(typeof(TypeFilter), type));
                             }).GetAwaiter().GetResult();
-                            
+
                             ObservableCollection<GameBananaRecord> feed = FeedGenerator.CurrentFeed.Records;
                             // Print errors
                             if (FeedGenerator.error)
@@ -81,7 +84,8 @@ namespace ShrineFox.com.Resources.Browse
                                 return;
                             }
                             // Add to TSV if not empty
-                            if (feed == null) {
+                            if (feed == null)
+                            {
                                 notice.Text += Post.Notice("red", "<b>Exception</b>: Feed is null, Gamebanana fetch failed.");
                                 control.Controls.Add(notice);
                             }
@@ -89,46 +93,49 @@ namespace ShrineFox.com.Resources.Browse
                             {
                                 notice.Text += $"<br>{feed.Count} item(s) found";
                                 control.Controls.Add(notice);
-                                // Add to TSV if not duplicate of existing post
+                                // Add to TSV if not duplicate of existing post or exclusion
                                 foreach (var item in feed)
                                 {
                                     if (!Posts.Any(y => y.URL.TrimEnd('/').EndsWith("/" + item.Link.ToString().TrimEnd('/').Split('/').Last())))
                                     {
-                                        Post post = new Post();
-                                        post.Authors = new List<string>() { item.Owner.Name.Trim(' ') };
-                                        if (item.HasUpdates)
+                                        if (!exclusions.Any(x => item.Owner.Name.Trim(' ').Contains(x) || item.Title.Contains(x)))
                                         {
-                                            post.Date = item.DateUpdated.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
-                                            post.UpdateText = $"<b>Updated {post.Date}</b>";
-                                        }
-                                        else
-                                            post.Date = item.DateAdded.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
-                                        if (item.HasDescription)
-                                            post.Description = item.Description;
-                                        else
-                                            post.Description = Post.TruncateLongString(item.ConvertedText.Replace("\t", "").Replace("\r<br>", "").Replace("\r", ""), 150).TrimEnd('\n').TrimEnd('\\').Replace("\n", "<br>");
-                                        post.EmbedURL = item.Image.ToString();
-                                        post.URL = item.Link.ToString();
-                                        if (post.URL.Contains("/tuts/"))
-                                            post.Type = "guide";
-                                        else if (post.URL.Contains("/mods/") || post.URL.Contains("/wips/") || post.URL.Contains("/sounds/"))
-                                            post.Type = "mod";
-                                        else if (post.URL.Contains("/tools/"))
-                                            post.Type = "tool";
-                                        else
-                                            post.Type = "mod";
-                                        post.Games = new List<string>() { game };
-                                        post.Tags = new List<string>() { item.CategoryName.Replace("Other/", "").Replace("Game file", "") };
-                                        post.Games = new List<string>() { game.Trim(' ') };
-                                        post.Tags = new List<string>() { item.CategoryName.Replace("Other/", "").Replace("Game file", "").Trim(' ') };
-                                        post.Title = item.Title;
-                                        post.SourceURL = "";
-                                        Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-                                        post.Id = game.ToLower() + "-" + rgx.Replace(item.Title.ToLower().Replace(" ", ""), "");
-                                        if (type.ToLower() == "wips" && !post.Title.ToLower().Contains("wip"))
-                                            post.Title = "(WIP) " + post.Title;
+                                            Post post = new Post();
+                                            post.Authors = new List<string>() { item.Owner.Name.Trim(' ') };
+                                            if (item.HasUpdates)
+                                            {
+                                                post.Date = item.DateUpdated.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
+                                                post.UpdateText = $"<b>Updated {post.Date}</b>";
+                                            }
+                                            else
+                                                post.Date = item.DateAdded.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
+                                            if (item.HasDescription)
+                                                post.Description = item.Description;
+                                            else
+                                                post.Description = Post.TruncateLongString(item.ConvertedText.Replace("\t", "").Replace("\r<br>", "").Replace("\r", ""), 150).TrimEnd('\n').TrimEnd('\\').Replace("\n", "<br>");
+                                            post.EmbedURL = item.Image.ToString();
+                                            post.URL = item.Link.ToString();
+                                            if (post.URL.Contains("/tuts/"))
+                                                post.Type = "guide";
+                                            else if (post.URL.Contains("/mods/") || post.URL.Contains("/wips/") || post.URL.Contains("/sounds/"))
+                                                post.Type = "mod";
+                                            else if (post.URL.Contains("/tools/"))
+                                                post.Type = "tool";
+                                            else
+                                                post.Type = "mod";
+                                            post.Games = new List<string>() { game };
+                                            post.Tags = new List<string>() { item.CategoryName.Replace("Other/", "").Replace("Game file", "") };
+                                            post.Games = new List<string>() { game.Trim(' ') };
+                                            post.Tags = new List<string>() { item.CategoryName.Replace("Other/", "").Replace("Game file", "").Trim(' ') };
+                                            post.Title = item.Title;
+                                            post.SourceURL = "";
+                                            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+                                            post.Id = game.ToLower() + "-" + rgx.Replace(item.Title.ToLower().Replace(" ", ""), "");
+                                            if (type.ToLower() == "wips" && !post.Title.ToLower().Contains("wip"))
+                                                post.Title = "(WIP) " + post.Title;
 
-                                        Posts.Add(post);
+                                            Posts.Add(post);
+                                        }
                                     }
                                     else
                                     {

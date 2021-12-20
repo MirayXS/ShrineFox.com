@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ShrineFox.com
@@ -16,8 +17,9 @@ namespace ShrineFox.com
     public partial class UpdateCreator : Page
     {
         CheckBoxList cbList = new CheckBoxList();
-        string titleID = "";
-        string path = "";
+        public static bool regionIsUSA = true;
+        public static bool downloadIsPKG = true;
+        public static string selectedGame = "p5r";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,51 +27,102 @@ namespace ShrineFox.com
             LiteralControl SidebarHtml = new LiteralControl();
             SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("ps4patchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
-        }
-
-        protected void SelectionChanged()
-        {
-            if (radio_CUSA17416.Checked)
-                titleID = "CUSA17416";
-            else
-                titleID = "CUSA17419";
-
-            RadioButton selRB = radioButtonsContainer2.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked);
-            if (selRB != null)
-                path = selRB.ToolTip;
-        }
-
-
-        protected void Download_Click(object sender, EventArgs e)
-        {
-            // Ensure valid options selected
-            SelectionChanged();
-            FileInfo fileInfo = new FileInfo(System.AppDomain.CurrentDomain.BaseDirectory + $"ppp\\{path}\\eboot.bin");
-
-            //Download file
-            if (File.Exists(fileInfo.FullName))
+            if (!Page.IsPostBack)
             {
-                Response.Clear();
-                Response.BufferOutput = false; // for large files...
-                System.Web.HttpContext c = System.Web.HttpContext.Current;
-                Response.ContentType = "application/octet-stream";
-                Response.AddHeader("content-disposition", "attachment;filename=" + "eboot.bin");
-                Response.Flush();
-                Response.WriteFile(fileInfo.FullName);
-                Response.Close();
+                
             }
         }
 
-        protected void Select_Click(object sender, EventArgs e)
+        private void Radio_Click(object sender, EventArgs e)
         {
-            foreach (ListItem li in cbList.Items)
-                li.Selected = true;
+            throw new NotImplementedException();
         }
 
-        protected void Deselect_Click(object sender, EventArgs e)
+        protected void GameTab_Click(object sender, EventArgs e)
         {
-            foreach (ListItem li in cbList.Items)
-                li.Selected = false;
+            LinkButton clickedButton = (LinkButton)sender;
+
+            // Un-highlight tabs
+            p5rtab.Attributes.Add("class", "tab-item");
+            p3dtab.Attributes.Add("class", "tab-item");
+            p4dtab.Attributes.Add("class", "tab-item");
+            p5dtab.Attributes.Add("class", "tab-item");
+
+            // Highlight selected tab
+            switch (clickedButton.ID)
+            {
+                case "p5r":
+                    selectedGame = "p5r";
+                    p5rtab.Attributes.Add("class", "tab-item active");
+                    break;
+                case "p3d":
+                    selectedGame = "p3d";
+                    p3dtab.Attributes.Add("class", "tab-item active");
+                    break;
+                case "p4d":
+                    selectedGame = "p4d";
+                    p4dtab.Attributes.Add("class", "tab-item active");
+                    break;
+                case "p5d":
+                    selectedGame = "p5d";
+                    p5dtab.Attributes.Add("class", "tab-item active");
+                    break;
+                default:
+                    break;
+            }
         }
+
+        private void PatchTab_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Checkbox_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void Download_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public static class P5RPatches
+    {
+        static bool _0505 { get; set; } = true;
+        static bool all_dlc { get; set; } = false;
+        static bool dlc_msg { get; set; } = true;
+        static bool intro_skip { get; set; } = true;
+        static bool mod_support { get; set; } = false;
+        static bool mod_support2 { get; set; } = true;
+        static bool no_trp { get; set; } = false;
+        static bool p5_save { get; set; } = false;
+        static bool square { get; set; } = true;
+        static bool env { get; set; } = false;
+        static bool zzz { get; set; } = false;
+    }
+
+    public static class P3DPatches
+    {
+        static bool intro_skip { get; set; } = true;
+        static bool mod { get; set; } = false;
+        static bool no_trp { get; set; } = false;
+        static bool overlay { get; set; } = false;
+    }
+
+    public static class P5DPatches
+    {
+        static bool intro_skip { get; set; } = true;
+        static bool mod { get; set; } = false;
+        static bool no_trp { get; set; } = false;
+        static bool overlay { get; set; } = false;
+    }
+
+    public static class P4DPatches
+    {
+        static bool intro_skip { get; set; } = true;
+        static bool mod { get; set; } = false;
+        static bool no_trp { get; set; } = false;
     }
 }

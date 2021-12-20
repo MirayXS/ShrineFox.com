@@ -61,34 +61,92 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-apps&quot; type=&quot;checkbox&quot; name=&quot;apps-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-apps&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Apps&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a href=&quot;https://shrinefox.com/apps/PatchCreator&quot; class=&quot;rpcs3patchlink&quot;&gt;RPCS3 Patch Creator&lt;/a&gt;
+        ///            &lt;/li&gt;
+        ///            &lt;li class=&quot;menu- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Apps {
             get {
                 return ResourceManager.GetString("Apps", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-blog&quot; type=&quot;checkbox&quot; name=&quot;blog-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-blog&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Blog&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;div id=&quot;blog-latest&quot;&gt;&lt;/div&gt;
+        ///        &lt;/ul&gt;
+        ///    &lt;/div&gt;
+        ///&lt;/div&gt;
+        ///&lt;script&gt;
+        ///    $(&apos;#blog-latest&apos;).FeedEk({
+        ///        FeedUrl: &apos;https://shrinefox.com/blog/feed&apos;,
+        ///        MaxCount: 6,
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Blog {
             get {
                 return ResourceManager.GetString("Blog", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-browse&quot; type=&quot;checkbox&quot; name=&quot;browse-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-browse&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Browse&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a href=&quot;https://shrinefox.com/browse&quot; class=&quot;typeall&quot;&gt;All&lt;/a&gt;
+        ///            &lt;/li&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Browse {
             get {
                 return ResourceManager.GetString("Browse", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to /*
+        ///--------------------------------------------------------------
+        ///Colours and backgrounds for common.css
+        ///-------------------------------------------------------------- */
+        ///
+        ///html, body {
+        ///    color: var(--pagetext);
+        ///    background-color: var(--postbackground);
+        ///}
+        ///
+        ///h1 {
+        ///	color: rgba(var(--text),0.05);
+        ///}
+        ///
+        ///h2 {
+        ///	color: var(--pageheading);
+        ///}
+        ///
+        ///h3 {
+        ///	border-bottom-color: var(--pageheading);
+        ///	color: var(--pageheading);
+        ///}
+        ///
+        ///hr {
+        ///	border-color: rgba(var(--text),0.05);
+        ///	border-top-color: var(--pageheading);
+        ///}
+        ///
+        ///.search-box [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string colours {
             get {
@@ -97,7 +155,7 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to bloody11.
         /// </summary>
         internal static string exclude {
             get {
@@ -106,7 +164,21 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;?php
+        ////**
+        /// * The template for displaying the footer
+        /// *
+        /// * Contains the closing of the #content div and all content after.
+        /// *
+        /// * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+        /// *
+        /// * @package Justread
+        /// */
+        ///
+        ///?&gt;
+        ///
+        ///	&lt;/div&gt;&lt;!-- #content --&gt;
+        ///			&lt;!--INDEXFOOTER--&gt;.
         /// </summary>
         internal static string footer {
             get {
@@ -115,7 +187,15 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-forum&quot; type=&quot;checkbox&quot; name=&quot;forum-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-forum&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Community&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a href=&quot;{U_LOGIN_LOGOUT}&quot; title=&quot;{L_LOGIN_LOGOUT}&quot; accesskey=&quot;x&quot;&gt;{L_LOGIN_LOGOUT}&lt;/a&gt;
+        ///            &lt;/li&gt;
+        ///            &lt;!-- IF U_ACP --&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Forum {
             get {
@@ -124,7 +204,15 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-forum&quot; type=&quot;checkbox&quot; name=&quot;forum-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-forum&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Community&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a href=&quot;{U_LOGIN_LOGOUT}&quot; title=&quot;{L_LOGIN_LOGOUT}&quot; accesskey=&quot;x&quot;&gt;{L_LOGIN_LOGOUT}&lt;/a&gt;
+        ///            &lt;/li&gt;
+        ///            &lt;!-- IF U_ACP --&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Forum1 {
             get {
@@ -133,7 +221,16 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
+        ///    &lt;input id=&quot;accordion-games&quot; type=&quot;checkbox&quot; name=&quot;games-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
+        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-games&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Games&lt;/label&gt;
+        ///    &lt;div class=&quot;accordion-body&quot;&gt;
+        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a href=&quot;https://shrinefox.com/browse&quot; class=&quot;gameall&quot;&gt;All&lt;/a&gt;
+        ///            &lt;/li&gt;
+        ///            &lt;li class=&quot;menu-item&quot;&gt;
+        ///                &lt;a hre [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Games {
             get {
@@ -142,7 +239,24 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;?php
+        ////**
+        /// * The header for our theme
+        /// *
+        /// * This is the template that displays all of the &lt;head&gt; section and everything up until &lt;div id=&quot;content&quot;&gt;
+        /// *
+        /// * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+        /// *
+        /// * @package Justread
+        /// */
+        ///
+        ///?&gt;
+        ///&lt;!doctype html&gt;
+        ///&lt;html class=&quot;no-js&quot; &lt;?php language_attributes(); ?&gt;&gt;
+        ///&lt;head&gt;
+        ///	&lt;meta charset=&quot;&lt;?php bloginfo( &apos;charset&apos; ); ?&gt;&quot;&gt;
+        ///	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///	&lt;link rel=&quot;profile&quot; href=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string header {
             get {
@@ -151,7 +265,17 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;body&gt;
+        ///    &lt;div id=&quot;page-wrapper&quot;&gt;
+        ///        &lt;!--Navbar--&gt;
+        ///        &lt;section id=&quot;header&quot; class=&quot;section scrolled&quot;&gt;
+        ///            &lt;section class=&quot;container grid-lg&quot;&gt;
+        ///                &lt;nav class=&quot;navbar&quot;&gt;
+        ///                    &lt;section class=&quot;navbar-section logo&quot;&gt;
+        ///                        &lt;a onclick=&quot;toggleCookie(this)&quot; class=&quot;navbar-brand mr-10&quot;&gt;
+        ///                            &lt;!--Logo--&gt;
+        ///                            &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                     [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexBeforeContent {
             get {
@@ -160,7 +284,21 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to                         &lt;/section&gt;
+        ///                    &lt;/section&gt;
+        ///                &lt;/section&gt;
+        ///            &lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///    &lt;/table&gt;
+        ///    &lt;!--Footer--&gt;
+        ///    &lt;footer&gt;
+        ///        &lt;table&gt;
+        ///            &lt;tbody&gt;
+        ///                &lt;tr&gt;
+        ///                    &lt;td id=&quot;social_links&quot;&gt;
+        ///                        &lt;a href=&quot;https://twitter.com/AmicitiaTeam&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt; AmicitiaTeam&lt;/a&gt;
+        ///                        &lt;br&gt;&lt;a href=&quot;https://reddit.com/r/Amicitia&quot;&gt;&lt;i class=&quot;fab fa-reddit&quot;&gt;&lt;/i&gt; r/Amicitia&lt;/a&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexFooter {
             get {
@@ -169,7 +307,13 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///&lt;link href=&quot;https://shrinefox.com/css/all.css&quot; rel=&quot;stylesheet&quot;&gt;
+        ///&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://shrinefox.com/images/favicon.ico&quot;&gt;
+        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/spectre.min.css&quot;&gt;
+        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/theme.min.css&quot;&gt;
+        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/custom.css&quot;&gt;
+        ///&lt;link rel=&quot;styles [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexHeader {
             get {
@@ -178,7 +322,17 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;td class=&quot;sidebar&quot; id=&quot;sidebar&quot;&gt;
+        ///    &lt;div class=&quot;accordion-container&quot;&gt;
+        ///        &lt;table&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td class=&quot;toggle-btn&quot; onclick=&quot;toggleCookie(this)&quot; style=&quot;vertical-align:top;&quot;&gt;
+        ///                    &lt;i id=&quot;toggle-icon&quot; class=&quot;fa fa-bars&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+        ///                &lt;/td&gt;
+        ///                &lt;td class=&quot;toggle-accordions&quot; id=&quot;toggle-accordions&quot;&gt;
+        ///                    &lt;div class=&quot;scroll-bar-wrap&quot;&gt;
+        ///                        &lt;div class=&quot;scroll-box&quot;&gt;
+        ///                           [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexSidebar {
             get {
@@ -187,7 +341,16 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        /// width=&quot;500.000000pt&quot; height=&quot;500.000000pt&quot; viewBox=&quot;0 0 500.000000 500.000000&quot;
+        /// preserveAspectRatio=&quot;xMidYMid meet&quot;&gt;
+        ///  &lt;metadata&gt;
+        ///  &lt;/metadata&gt;
+        ///  &lt;g transform=&quot;translate(0.000000,500.000000) scale(0.100000,-0.100000)&quot;
+        ///  fill=&quot;#ffffff&quot; stroke=&quot;none&quot;&gt;
+        ///    &lt;path d=&quot;M2256 4489 c-926 -119 -1651 -850 -1766 -1779 -15 -125 -12 -405 5
+        ///-529 65 -450 258 -836 579 -1157 67 -66 164 -152 216 -191 136 -100 310 -203
+        ///343 -203 14 0 48 114 141 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string logo {
             get {
@@ -196,7 +359,16 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to 		&lt;!-- EVENT overall_footer_content_after --&gt;
+        ///	&lt;/div&gt;
+        ///&lt;!-- EVENT overall_footer_page_body_after --&gt;
+        ///&lt;/div&gt;
+        ///&lt;!--INDEXFOOTER--&gt;
+        ///&lt;div id=&quot;darkenwrapper&quot; class=&quot;darkenwrapper&quot; data-ajax-error-title=&quot;{L_AJAX_ERROR_TITLE}&quot; data-ajax-error-text=&quot;{L_AJAX_ERROR_TEXT}&quot; data-ajax-error-text-abort=&quot;{L_AJAX_ERROR_TEXT_ABORT}&quot; data-ajax-error-text-timeout=&quot;{L_AJAX_ERROR_TEXT_TIMEOUT}&quot; data-ajax-error-text-parsererror=&quot;{L_AJAX_ERROR_TEXT_PARSERERROR}&quot;&gt;
+        ///    &lt;div id=&quot;darken&quot; class=&quot;darken&quot;&gt;&amp;nbsp;&lt;/div&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;div [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_footer {
             get {
@@ -205,7 +377,16 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.ENAME} - [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;!-- INCLUDE config.html --&gt;
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///&lt;html dir=&quot;{S_CONTENT_DIRECTION}&quot; lang=&quot;{S_USER_LANG}&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        ///    {META}
+        ///    &lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATIONS_COUNT --&gt;({UNREAD_NOTIFICATIONS_COUNT}) &lt;!-- ENDIF --&gt;&lt;!-- IF not S_VIEWTOPIC and not S_VIEWFORUM --&gt;{SITENAME} - [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_header {
             get {
@@ -214,7 +395,18 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to &lt;div class=&quot;column col-6 col-sm-12&quot;&gt;
+        ///    &lt;div class=&quot;card&quot;&gt;
+        ///        &lt;div class=&quot;card-image&quot;&gt;
+        ///            &lt;img class=&quot;img-responsive&quot; src=&quot;POSTMEDIAURL&quot;&gt;
+        ///            &lt;div class=&quot;yt-overlay&quot; style=&quot;display:none&quot;&gt;&lt;a href=&quot;EMBEDURL&quot;&gt;&lt;i class=&quot;fas fa-play-circle&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/a&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;card-header&quot;&gt;
+        ///            &lt;div class=&quot;card-title h5&quot;&gt;
+        ///                POSTID POSTTITLE
+        ///            &lt;/div&gt;
+        ///            &lt;div class=&quot;card-subtitle text-gray&quot;&gt;
+        ///                GAMEBANANA POSTTYPE  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Post {
             get {
@@ -223,7 +415,7 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to swFQEb2kLh*6U^&amp;rpGUKohAjCL5Be9NV7WF4LZdMqZNkTiiVi3Qsx$Pktia@axHNAW$DEpB8s9pSmJ4.
         /// </summary>
         internal static string pw {
             get {
@@ -232,7 +424,17 @@ namespace ShrineFox.com.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string.
+        ///   Looks up a localized string similar to /*!
+        ///Theme Name: Justread
+        ///Theme URI: https://gretathemes.com/wordpress-themes/justread/
+        ///Author: GretaThemes
+        ///Author URI: https://gretathemes.com
+        ///Description: Justread is a clean and modern WordPress theme that focuses on reading experience. Justread has a grid layout with single column content. The theme uses system fonts and SVG for fast loading. Enjoy reading long content with comfortability.
+        ///Version: 1.2.0
+        ///License: GNU General Public License v2 or later
+        ///License URI: LICENSE
+        ///Text Domain: justread
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string style {
             get {

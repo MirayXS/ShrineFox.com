@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShrineFox.com;
+using ShrineFoxCom;
 
-namespace ShrineFox.com
+namespace ShrineFoxCom
 {
     public partial class SiteMaster : MasterPage
     {

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShrineFox.com
+namespace ShrineFoxCom
 {
     public partial class PatchCreator : Page
     {

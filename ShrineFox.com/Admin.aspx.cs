@@ -1,5 +1,5 @@
 ﻿using Humanizer;
-using ShrineFox.com.Resources.Browse;
+using ShrineFoxCom.Resources.Browse;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,7 +12,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShrineFox.com
+namespace ShrineFoxCom
 {
     public partial class Admin : Page
     {
@@ -127,7 +127,8 @@ namespace ShrineFox.com
         protected void loginBtn_Click(object sender, EventArgs e)
         {
             Warning.Controls.Clear();
-            if (loginTxtBox.Text != Properties.Resources.pw)
+            string password = File.ReadAllText($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//pw.txt");
+            if (loginTxtBox.Text != password)
                 Notice.Text = Post.Notice("red", "Login failed! Your credentials were incorrect, please try again.");
             else
             {

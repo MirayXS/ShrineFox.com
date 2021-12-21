@@ -14,7 +14,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows;
 
-namespace ShrineFox.com.Resources.Browse
+namespace ShrineFoxCom.Resources.Browse
 {
     public class Webscraper
     {

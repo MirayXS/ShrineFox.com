@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShrineFox.com
+namespace ShrineFoxCom
 {
 
 

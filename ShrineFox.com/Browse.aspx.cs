@@ -1,5 +1,5 @@
 ﻿using Humanizer;
-using ShrineFox.com.Resources.Browse;
+using ShrineFoxCom.Resources.Browse;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,7 +12,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ShrineFox.com
+namespace ShrineFoxCom
 {
     public partial class Browse : Page
     {

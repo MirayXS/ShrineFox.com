@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShrineFox.com.Properties {
+namespace ShrineFoxCom.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ShrineFox.com.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShrineFox.com.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShrineFoxCom.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -411,15 +411,6 @@ namespace ShrineFox.com.Properties {
         internal static string Post {
             get {
                 return ResourceManager.GetString("Post", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to swFQEb2kLh*6U^&amp;rpGUKohAjCL5Be9NV7WF4LZdMqZNkTiiVi3Qsx$Pktia@axHNAW$DEpB8s9pSmJ4.
-        /// </summary>
-        internal static string pw {
-            get {
-                return ResourceManager.GetString("pw", resourceCulture);
             }
         }
         

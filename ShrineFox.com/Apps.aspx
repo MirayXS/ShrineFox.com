@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Apps" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Apps.aspx.cs" Inherits="ShrineFox.com.Apps" %>
+﻿<%@ Page Title="Apps" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Apps.aspx.cs" Inherits="ShrineFoxCom.Apps" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>

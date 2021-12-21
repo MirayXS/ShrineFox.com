@@ -820,3 +820,9 @@ table.gsc-search-box {
 svg.svg-inline--fa.fa-angle-right.fa-w-8 path {
     fill: var(--pageheading) !important;
 }
+
+.form-checkbox input, .form-radio input {
+    position: initial !important;
+    width: initial !important;
+    height: initial !important;
+}

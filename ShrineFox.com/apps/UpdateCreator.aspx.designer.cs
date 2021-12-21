@@ -120,7 +120,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton usa;
+        protected global::System.Web.UI.WebControls.RadioButton usa;
 
         /// <summary>
         /// eur control.
@@ -129,7 +129,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton eur;
+        protected global::System.Web.UI.WebControls.RadioButton eur;
 
         /// <summary>
         /// UpdatePanel_PatchTabs control.
@@ -156,7 +156,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mod_support;
+        protected global::System.Web.UI.WebControls.LinkButton mod_support;
 
         /// <summary>
         /// mod_support2_tab control.
@@ -174,7 +174,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor mod_support2;
+        protected global::System.Web.UI.WebControls.LinkButton mod_support2;
 
         /// <summary>
         /// _0505_tab control.
@@ -192,7 +192,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor _0505;
+        protected global::System.Web.UI.WebControls.LinkButton _0505;
 
         /// <summary>
         /// intro_skip_tab control.
@@ -210,7 +210,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor intro_skip;
+        protected global::System.Web.UI.WebControls.LinkButton intro_skip;
 
         /// <summary>
         /// all_dlc_tab control.
@@ -228,7 +228,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor all_dlc;
+        protected global::System.Web.UI.WebControls.LinkButton all_dlc;
 
         /// <summary>
         /// dlc_msg_tab control.
@@ -246,7 +246,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor dlc_msg;
+        protected global::System.Web.UI.WebControls.LinkButton dlc_msg;
 
         /// <summary>
         /// no_trp_tab control.
@@ -264,7 +264,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor no_trp;
+        protected global::System.Web.UI.WebControls.LinkButton no_trp;
 
         /// <summary>
         /// square_tab control.
@@ -282,7 +282,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor square;
+        protected global::System.Web.UI.WebControls.LinkButton square;
 
         /// <summary>
         /// p5_save_tab control.
@@ -300,7 +300,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor p5_save;
+        protected global::System.Web.UI.WebControls.LinkButton p5_save;
 
         /// <summary>
         /// env_tab control.
@@ -318,7 +318,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor env;
+        protected global::System.Web.UI.WebControls.LinkButton env;
 
         /// <summary>
         /// zzz_tab control.
@@ -336,7 +336,25 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor zzz;
+        protected global::System.Web.UI.WebControls.LinkButton zzz;
+
+        /// <summary>
+        /// overlay_tab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl overlay_tab;
+
+        /// <summary>
+        /// overlay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton overlay;
 
         /// <summary>
         /// UpdatePanel_Description control.
@@ -390,6 +408,42 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox enable;
+        protected global::System.Web.UI.WebControls.CheckBox enable;
+
+        /// <summary>
+        /// titleID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl titleID;
+
+        /// <summary>
+        /// appliedPatches control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl appliedPatches;
+
+        /// <summary>
+        /// pkg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton pkg;
+
+        /// <summary>
+        /// eboot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton eboot;
     }
 }

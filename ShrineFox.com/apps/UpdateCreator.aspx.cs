@@ -23,7 +23,7 @@ namespace ShrineFox.com
         public static string selectedPatch = "mod_support";
         public static string selectedRegion = "usa";
 
-        List<Game> Games = new List<Game>()
+        public static List<Game> Games = new List<Game>()
         {
             new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17416", Region = "usa" },
             new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17419", Region = "eur" },
@@ -32,14 +32,14 @@ namespace ShrineFox.com
             new Game() { Name = "Persona 5 Dancing", ID = "p5d", TitleID = "CUSA12380", Region = "usa" }
         };
 
-        List<Patch> P5RPatches = new List<Patch>()
+        public static List<Patch> P5RPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory." +
                             "<br>Only useful if you're downloading the patched eboot.bin and creating the PKG yourself." },
             new Patch() { ID = "mod_support2", Name = "Mod Support(Alt)", ShortDesc = "mod.cpk file replacement via FTP", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file from <code>/data/p5r</code> on the PS4's internal memory via FTP.", Enabled = true },
-            new Patch() { ID = "0505", Name = "5.05 Backport", ShortDesc = "Run on firmware 5.05+", Image = "",
+            new Patch() { ID = "_0505", Name = "5.05 Backport", ShortDesc = "Run on firmware 5.05+", Image = "",
                 LongDesc = "Allows the game to run on the lowest possible moddable PS4 firmware, and all those above it.", Enabled = true },
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "",
                 LongDesc = "Skips boot logos and intro movie (can still be viewed in Thieves Den).", Enabled = true },
@@ -59,7 +59,7 @@ namespace ShrineFox.com
                 LongDesc = "Only useful for very specific mod testing scenarios." },
             new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", Image = "", Enabled = true }
         };
-        List<Patch> P3DPatches = new List<Patch>()
+        public static List<Patch> P3DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
@@ -70,7 +70,7 @@ namespace ShrineFox.com
             new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
             new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", Image = "", Enabled = true }
         };
-        List<Patch> P4DPatches = new List<Patch>()
+        public static List<Patch> P4DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
@@ -80,7 +80,7 @@ namespace ShrineFox.com
                 LongDesc = "Skips boot logos and intro movie.", Enabled = true },
             new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
         };
-        List<Patch> P5DPatches = new List<Patch>()
+        public static List<Patch> P5DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
@@ -98,6 +98,8 @@ namespace ShrineFox.com
             LiteralControl SidebarHtml = new LiteralControl();
             SidebarHtml.Text = ShrineFoxCom.Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", ShrineFoxCom.Properties.Resources.Browse + ShrineFoxCom.Properties.Resources.Apps.Replace("ps4patchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
+            if (Page.IsPostBack)
+                System.Threading.Thread.Sleep(200);
         }
 
         protected void GameTab_Click(object sender, EventArgs e)
@@ -109,40 +111,25 @@ namespace ShrineFox.com
             p3dtab.Attributes.Add("class", "tab-item");
             p4dtab.Attributes.Add("class", "tab-item");
             p5dtab.Attributes.Add("class", "tab-item");
-            usa.Enabled = false;
-            eur.Enabled = false;
 
-            // Highlight selected tab, enable available regions
-            switch (clickedButton.ID)
+            // Set selected game to ID of clicked tab and update region
+            selectedGame = clickedButton.ID;
+            SetRegion();
+
+            // Highlight selected tab
+            switch (selectedGame)
             {
                 case "p5r":
-                    selectedGame = "p5r";
                     p5rtab.Attributes.Add("class", "tab-item active");
-                    usa.Enabled = true;
-                    selectedRegion = "usa";
-                    usa.Checked = true;
-                    eur.Enabled = true;
                     break;
                 case "p3d":
-                    selectedGame = "p3d";
                     p3dtab.Attributes.Add("class", "tab-item active");
-                    usa.Enabled = true;
-                    selectedRegion = "usa";
-                    usa.Checked = true;
                     break;
                 case "p4d":
-                    selectedGame = "p4d";
                     p4dtab.Attributes.Add("class", "tab-item active");
-                    eur.Enabled = true;
-                    selectedRegion = "eur";
-                    eur.Checked = true;
                     break;
                 case "p5d":
-                    selectedGame = "p5d";
                     p5dtab.Attributes.Add("class", "tab-item active");
-                    usa.Enabled = true;
-                    selectedRegion = "usa";
-                    usa.Checked = true;
                     break;
                 default:
                     break;
@@ -151,6 +138,28 @@ namespace ShrineFox.com
             // Show available patches for selected game
             selectedPatch = "mod_support";
             SetPatchTabs();
+        }
+
+        private void SetRegion()
+        {
+            // Disable radio buttons for unsupported regions
+            var games = Games.Where(x => x.ID.Equals(selectedGame));
+            usa.Enabled = false;
+            eur.Enabled = false;
+            if (games.Any(x => x.Region.Equals("usa")))
+                usa.Enabled = true;
+            if (games.Any(x => x.Region.Equals("eur")))
+                eur.Enabled = true;
+            // Maintain region selection if selected game supports the same region
+            if (!games.Any(x => x.Region.Equals(selectedRegion)))
+                selectedRegion = games.First().Region;
+            // Check radio button of currently selected region
+            usa.Checked = false;
+            eur.Checked = false;
+            if (selectedRegion == "usa")
+                usa.Checked = true;
+            if (selectedRegion == "eur")
+                eur.Checked = true;
         }
 
         private void SetPatchTabs()
@@ -253,6 +262,9 @@ namespace ShrineFox.com
 
         private void SetDescription()
         {
+            var game = Games.First(x => x.ID.Equals(selectedGame) && x.Region.Equals(selectedRegion));
+            titleID.InnerHtml = $"Patches applied to <b>{game.TitleID}</b> ({game.Name}, {game.Region.ToUpper()})";
+
             // Get list of all patches for selected game
             List<Patch> patches = new List<Patch>();
             switch (selectedGame)
@@ -275,22 +287,25 @@ namespace ShrineFox.com
             var patch = patches.First(x => x.ID.Equals(selectedPatch));
             patch_name.InnerText = patch.Name;
             image.Src = patch.Image;
-            description.InnerText = patch.ShortDesc;
-            description_long.InnerText = patch.LongDesc;
+            description.InnerHtml = patch.ShortDesc;
+            description_long.InnerHtml = patch.LongDesc;
             enable.Checked = patch.Enabled;
 
-            // Show applied patches & titleID near download
+            // Show applied patches & titleID near download button
             appliedPatches.InnerText = "";
             foreach (var enabledPatch in patches.Where(x => x.Enabled))
                 appliedPatches.InnerText += $"{enabledPatch.Name}, ";
             appliedPatches.InnerText = appliedPatches.InnerText.TrimEnd(' ').TrimEnd(',');
-            if (eur.Checked)
-                selectedRegion = "eur";
-            else
-                selectedRegion = "usa";
 
-            var game = Games.First(x => x.ID.Equals(selectedGame) && x.Region.Equals(selectedRegion));
-            titleID.InnerText = $"Patches applied to {game.TitleID}";
+            // Show relative path to downloaded file near download button
+            dlPath.InnerText = $"{game.ID}/{game.TitleID}/";
+            foreach (var enabledPatch in patches.Where(x => x.Enabled))
+                dlPath.InnerText += $"{enabledPatch.ID}/";
+            dlPath.InnerText += "eboot.bin";
+            // Correct inconsistencies with actual patch names
+            dlPath.InnerText.Replace("_0505","0505");
+            if (selectedGame != "p5r")
+                dlPath.InnerText.Replace("mod_support", "mod");
         }
 
         protected void PatchTab_Click(object sender, EventArgs e)
@@ -303,20 +318,25 @@ namespace ShrineFox.com
 
         protected void Patch_CheckedChanged(object sender, EventArgs e)
         {
+            CheckBox checkedBox = (CheckBox)sender;
             // Toggle whether patch is enabled
             switch (selectedGame)
             {
                 case "p5r":
-                    P5RPatches.First(x => x.ID.Equals(selectedPatch)).Enabled = enable.Checked;
+                    foreach (var patch in P5RPatches.Where(x => x.ID.Equals(selectedPatch)))
+                        patch.Enabled = checkedBox.Checked;
                     break;
                 case "p3d":
-                    P3DPatches.First(x => x.ID.Equals(selectedPatch)).Enabled = enable.Checked;
+                    foreach (var patch in P3DPatches.Where(x => x.ID.Equals(selectedPatch)))
+                        patch.Enabled = checkedBox.Checked;
                     break;
                 case "p4d":
-                    P4DPatches.First(x => x.ID.Equals(selectedPatch)).Enabled = enable.Checked;
+                    foreach (var patch in P4DPatches.Where(x => x.ID.Equals(selectedPatch)))
+                        patch.Enabled = checkedBox.Checked;
                     break;
                 case "p5d":
-                    P5DPatches.First(x => x.ID.Equals(selectedPatch)).Enabled = enable.Checked;
+                    foreach (var patch in P5DPatches.Where(x => x.ID.Equals(selectedPatch)))
+                        patch.Enabled = checkedBox.Checked;
                     break;
             }
 

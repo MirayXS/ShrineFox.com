@@ -825,4 +825,18 @@ svg.svg-inline--fa.fa-angle-right.fa-w-8 path {
     position: initial !important;
     width: initial !important;
     height: initial !important;
+    margin: 5px !important;
+}
+
+.menu .menu-item > a {
+    color: var(--hyperlink) !important;
+}
+
+.modal.active .modal-overlay, .modal:target .modal-overlay {
+    background: rgba(var(--bg), 0.7) !important;
+}
+
+.modal {
+    transition: 0.25s;
+    -webkit-transition: all .5s;
 }

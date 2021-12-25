@@ -25,71 +25,73 @@ namespace ShrineFox.com
 
         public static List<Game> Games = new List<Game>()
         {
-            new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17416", Region = "usa" },
-            new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17419", Region = "eur" },
-            new Game() { Name = "Persona 3 Dancing", ID = "p3d", TitleID = "CUSA12636", Region = "usa" },
-            new Game() { Name = "Persona 4 Dancing", ID = "p4d", TitleID = "CUSA12811", Region = "eur" },
-            new Game() { Name = "Persona 5 Dancing", ID = "p5d", TitleID = "CUSA12380", Region = "usa" }
+            new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17416", Region = "usa",
+                CRC32 = "E2452B1C", MD5 = "E669D7F9F9AB3989A2ED9D8D615547BD", SHA1 = "25ABE8EFBD0D0CB7307927CD6AE6F1BB5ED506F4" },
+            new Game() { Name = "Persona 5 Royal", ID = "p5r", TitleID = "CUSA17419", Region = "eur",
+                CRC32 = "8221F3EE", MD5 = "9FA6741E1EC98F0DF6027DB553168B45", SHA1 = "98DE4F768453F32FFB17C57C2480518F80999EF8" },
+            new Game() { Name = "Persona 3 Dancing", ID = "p3d", TitleID = "CUSA12636", Region = "usa",
+                CRC32 = "FD46F56F", MD5 = "73482E870BEB91F5AD8BA0AEC4515F68", SHA1 = "A4889A43400DC4FD333B9B9C109816B47777C339" },
+            new Game() { Name = "Persona 4 Dancing", ID = "p4d", TitleID = "CUSA12811", Region = "eur",
+                CRC32 = "9B2CDA6E", MD5 = "7794E4C921AFB7B759F481C564AFF1CB", SHA1 = "176AF1377B97217E2E02DCC855E64FB730B80960" },
+            new Game() { Name = "Persona 5 Dancing", ID = "p5d", TitleID = "CUSA12380", Region = "usa",
+                CRC32 = "50A4FB33", MD5 = "D4E08AE0C5C7027B4FC01E55CDD23EF6", SHA1 = "521C247ADB8AA675C370257D53D60B77812E343A" }
         };
 
         public static List<Patch> P5RPatches = new List<Patch>()
         {
-            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
-                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory." +
-                            "<br>Only useful if you're downloading the patched eboot.bin and creating the PKG yourself." },
-            new Patch() { ID = "mod_support2", Name = "Mod Support(Alt)", ShortDesc = "mod.cpk file replacement via FTP", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
-                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file from <code>/data/p5r</code> on the PS4's internal memory via FTP.", Enabled = true },
-            new Patch() { ID = "_0505", Name = "5.05 Backport", ShortDesc = "Run on firmware 5.05+", Image = "",
-                LongDesc = "Allows the game to run on the lowest possible moddable PS4 firmware, and all those above it.", Enabled = true },
-            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "",
-                LongDesc = "Skips boot logos and intro movie (can still be viewed in Thieves Den).", Enabled = true },
-            new Patch() { ID = "all_dlc", Name = "Content Enabler", ShortDesc = "Enables on-disc content", Image = "",
-                LongDesc = "<b>This will make saves created with this patch incompatible</b> with the game when the patch is disabled!"},
-            new Patch() { ID = "dlc_msg", Name = "Skip DLC Messages", ShortDesc = "Skip DLC Messages on New Game", Image = "", 
-                LongDesc = "Especially useful when using the Content Enabler patch together with a mod that skips the title screen and boots directly into a field.", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
-            new Patch() { ID = "square", Name = "Global Square Menu", ShortDesc = "Square button menu usable everywhere", Image = "", 
-                LongDesc = "Enables the square menu globally (e.g. in Thieves Den and in Velvet Room or during events or game sections which disable it).", Enabled = true },
-            new Patch() { ID = "p5_save", Name = "P5 Save Bonus", ShortDesc = "Enables P5 save bonus without P5 saves present on system", Image = "", Enabled = true },
-            new Patch() { ID = "env", Name = "ENV Tests", ShortDesc = "Test same ENV on all fields", Image = "", 
-                LongDesc = "Maps all <code>env/env*.ENV</code> files to <code>env/env0000_000_000.ENV</code>." +
-                "<br>Useful for testing custom/swapped ENV files on different fields without replacing them all manually." +
-                "<br><b>Crashes the game</b> if <code>env/env0000_000_000.ENV</code> is not present in <kbd>mod.cpk</kbd>."},
-            new Patch() { ID = "zzz", Name = "Random Tests", ShortDesc = "Only useful for very specific mod testing scenarios.", Image = "",
-                LongDesc = "Only useful for very specific mod testing scenarios." },
-            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", Image = "", Enabled = true }
+            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via FTP", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
+                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file from <code>/data/p5r</code> on the PS4's internal memory via FTP." +
+                "<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "_0505", Name = "5.05 Backport", ShortDesc = "Run on firmware 5.05+", Image = "https://i.postimg.cc/J44my5mT/505.png",
+                LongDesc = "Allows the game to run on the lowest possible moddable PS4 firmware, and all those above it." +
+                "<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/Jz4DKX80/p5rintro.png",
+                LongDesc = "Skips boot logos and intro movie (can still be viewed in Thieves Den)." +
+                "<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "all_dlc", Name = "Content Enabler", ShortDesc = "Enables on-disc content", Image = "https://i.postimg.cc/nrJMmjTH/p5rdlc.jpg",
+                LongDesc = "<b>This will make saves created with this patch incompatible</b> with the game when the patch is disabled!" +
+                "<br>Also hides DLC unlock messages when starting a new game."},
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+            new Patch() { ID = "square", Name = "Global Square Menu", ShortDesc = "Square button menu usable everywhere", Image = "https://i.postimg.cc/02Zr6NSs/square.png", 
+                LongDesc = "Enables the square menu globally (e.g. in Thieves Den and in Velvet Room or during events or game sections which disable it)." +
+                "<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "p5_save", Name = "P5 Save Bonus", ShortDesc = "Enables P5 save bonus without P5 saves present on system", 
+                LongDesc = "><b>Enabled by default.</b>", Image = "https://i.postimg.cc/9MTrztd8/p5rsave.png", Enabled = true },
         };
         public static List<Patch> P3DPatches = new List<Patch>()
         {
-            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
+            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/GtxtxLSv/p3dmod.png",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
                            $"<br>or placed in <code>/data/p3d</code> on the PS4's internal memory via FTP." +
-                            "<br>The latter takes priority.", Enabled = true },
-            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "",
-                LongDesc = "Skips boot logos and intro movie.", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
-            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", Image = "", Enabled = true }
+                            "<br>The latter takes priority." +
+                            "<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/yNDJCzkz/p3dintro.png",
+                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", 
+                LongDesc = "<b>Enabled by default.</b>", Image = "https://i.postimg.cc/ZY8WSHK0/ps4.png", Enabled = true }
         };
         public static List<Patch> P4DPatches = new List<Patch>()
         {
-            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
+            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/7PSb1VFw/weedyosuke.gif",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
                            $"<br>or placed in <code>/data/p4d</code> on the PS4's internal memory via FTP." +
-                            "<br>The latter takes priority.", Enabled = true },
-            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "",
-                LongDesc = "Skips boot logos and intro movie.", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
+                            "<br>The latter takes priority.<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/527Hrt93/p4dintro.png",
+                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
         };
         public static List<Patch> P5DPatches = new List<Patch>()
         {
-            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "",
+            new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/TYc5r9ZB/Mod-Support.jpg",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
                            $"<br>or placed in <code>/data/p5d</code> on the PS4's internal memory via FTP." +
-                            "<br>The latter takes priority.", Enabled = true },
-            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "",
-                LongDesc = "Skips boot logos and intro movie.", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "" },
-            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", Image = "", Enabled = true }
+                            "<br>The latter takes priority.<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/W4xd2fkq/p5dintro.png",
+                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots",
+                LongDesc = "<b>Enabled by default.</b>", Image = "https://i.postimg.cc/ZY8WSHK0/ps4.png", Enabled = true }
         };
 
         protected void Page_Load(object sender, EventArgs e)
@@ -166,33 +168,27 @@ namespace ShrineFox.com
         {
             // Hide all tabs
             mod_support_tab.Attributes.Add("class", "tab-item d-none");
-            mod_support2_tab.Attributes.Add("class", "tab-item d-none");
             _0505_tab.Attributes.Add("class", "tab-item d-none");
             intro_skip_tab.Attributes.Add("class", "tab-item d-none");
             all_dlc_tab.Attributes.Add("class", "tab-item d-none");
-            dlc_msg_tab.Attributes.Add("class", "tab-item d-none");
             no_trp_tab.Attributes.Add("class", "tab-item d-none");
             square_tab.Attributes.Add("class", "tab-item d-none");
             p5_save_tab.Attributes.Add("class", "tab-item d-none");
-            env_tab.Attributes.Add("class", "tab-item d-none");
-            zzz_tab.Attributes.Add("class", "tab-item d-none");
             overlay_tab.Attributes.Add("class", "tab-item d-none");
+            // Enable Checkbox
+            enable.Enabled = true;
 
             // Show tabs for available patches
             switch (selectedGame)
             {
                 case "p5r":
                     mod_support_tab.Attributes.Add("class", "tab-item");
-                    mod_support2_tab.Attributes.Add("class", "tab-item");
                     _0505_tab.Attributes.Add("class", "tab-item");
                     intro_skip_tab.Attributes.Add("class", "tab-item");
                     all_dlc_tab.Attributes.Add("class", "tab-item");
-                    dlc_msg_tab.Attributes.Add("class", "tab-item");
                     no_trp_tab.Attributes.Add("class", "tab-item");
                     square_tab.Attributes.Add("class", "tab-item");
                     p5_save_tab.Attributes.Add("class", "tab-item");
-                    env_tab.Attributes.Add("class", "tab-item");
-                    zzz_tab.Attributes.Add("class", "tab-item");
                     break;
                 case "p3d":
                     mod_support_tab.Attributes.Add("class", "tab-item");
@@ -215,44 +211,38 @@ namespace ShrineFox.com
                     break;
             }
 
-            // Highlight selected patch tab
+            // Highlight selected patch tab, disable non-optional mods checkbox
             switch (selectedPatch)
             {
                 case "mod_support":
                     mod_support_tab.Attributes.Add("class", "tab-item active");
-                    break;
-                case "mod_support2":
-                    mod_support2_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
                 case "_0505":
                     _0505_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
                 case "intro_skip":
                     intro_skip_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
                 case "all_dlc":
                     all_dlc_tab.Attributes.Add("class", "tab-item active");
-                    break;
-                case "dlc_msg":
-                    dlc_msg_tab.Attributes.Add("class", "tab-item active");
                     break;
                 case "no_trp":
                     no_trp_tab.Attributes.Add("class", "tab-item active");
                     break;
                 case "square":
                     square_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
                 case "p5_save":
                     p5_save_tab.Attributes.Add("class", "tab-item active");
-                    break;
-                case "env":
-                    env_tab.Attributes.Add("class", "tab-item active");
-                    break;
-                case "zzz":
-                    zzz_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
                 case "overlay":
                     overlay_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
                     break;
             }
 
@@ -263,7 +253,7 @@ namespace ShrineFox.com
         private void SetDescription()
         {
             var game = Games.First(x => x.ID.Equals(selectedGame) && x.Region.Equals(selectedRegion));
-            titleID.InnerHtml = $"Patches applied to <b>{game.TitleID}</b> ({game.Name}, {game.Region.ToUpper()})";
+            titleID.InnerHtml = $"Patches applied to <b>{game.TitleID}</b> ({game.Name}, {game.Region.ToUpper()}):";
 
             // Get list of all patches for selected game
             List<Patch> patches = new List<Patch>();
@@ -291,21 +281,76 @@ namespace ShrineFox.com
             description_long.InnerHtml = patch.LongDesc;
             enable.Checked = patch.Enabled;
 
+            // Show FPKG hash
+            crc32.InnerText = game.CRC32;
+            md5.InnerText = game.MD5;
+            sha1.InnerText = game.SHA1;
+
+            // Update download links
+            SetPKGLink();
+            SetEBOOTLink();
+
             // Show applied patches & titleID near download button
             appliedPatches.InnerText = "";
             foreach (var enabledPatch in patches.Where(x => x.Enabled))
                 appliedPatches.InnerText += $"{enabledPatch.Name}, ";
             appliedPatches.InnerText = appliedPatches.InnerText.TrimEnd(' ').TrimEnd(',');
 
-            // Show relative path to downloaded file near download button
-            dlPath.InnerText = $"{game.ID}/{game.TitleID}/";
-            foreach (var enabledPatch in patches.Where(x => x.Enabled))
-                dlPath.InnerText += $"{enabledPatch.ID}/";
-            dlPath.InnerText += "eboot.bin";
-            // Correct inconsistencies with actual patch names
-            dlPath.InnerText.Replace("_0505","0505");
-            if (selectedGame != "p5r")
-                dlPath.InnerText.Replace("mod_support", "mod");
+            // Put checkmark next to enabled patch tabs
+            foreach (var gamePatch in patches)
+            {
+                switch (gamePatch.ID)
+                {
+                    case "mod_support":
+                        if (gamePatch.Enabled)
+                            mod_support.Text = "Mod Support <i class=\"fas fa-check-square\"></i>";
+                        else
+                            mod_support.Text = "Mod Support";
+                        break;
+                    case "_0505":
+                        if (gamePatch.Enabled)
+                            _0505.Text = "5.05 Backport <i class=\"fas fa-check-square\"></i>";
+                        else
+                            _0505.Text = "5.05 Backport";
+                        break;
+                    case "intro_skip":
+                        if (gamePatch.Enabled)
+                            intro_skip.Text = "Intro Skip <i class=\"fas fa-check-square\"></i>";
+                        else
+                            intro_skip.Text = "Intro Skip";
+                        break;
+                    case "all_dlc":
+                        if (gamePatch.Enabled)
+                            all_dlc.Text = "Content Enabler <i class=\"fas fa-check-square\"></i>";
+                        else
+                            all_dlc.Text = "Content Enabler";
+                        break;
+                    case "no_trp":
+                        if (gamePatch.Enabled)
+                            no_trp.Text = "Disable Trophies <i class=\"fas fa-check-square\"></i>";
+                        else
+                            no_trp.Text = "Disable Trophies";
+                        break;
+                    case "square":
+                        if (gamePatch.Enabled)
+                            square.Text = "Global Square Menu <i class=\"fas fa-check-square\"></i>";
+                        else
+                            square.Text = "Global Square Menu";
+                        break;
+                    case "p5_save":
+                        if (gamePatch.Enabled)
+                            p5_save.Text = "P5 Save Bonus <i class=\"fas fa-check-square\"></i>";
+                        else
+                            p5_save.Text = "P5 Save Bonus";
+                        break;
+                    case "overlay":
+                        if (gamePatch.Enabled)
+                            overlay.Text = "Disable Screenshot Overlay <i class=\"fas fa-check-square\"></i>";
+                        else
+                            overlay.Text = "Disable Screenshot Overlay";
+                        break;
+                }
+            }
         }
 
         protected void PatchTab_Click(object sender, EventArgs e)
@@ -354,14 +399,106 @@ namespace ShrineFox.com
             SetDescription();
         }
 
-        protected void PKG_Click(object sender, EventArgs e)
+        protected void SetPKGLink()
         {
+            string url = "http://up-4.net/d/";
 
+            switch (selectedGame)
+            {
+                case "p5r":
+                    switch (selectedRegion)
+                    {
+                        case "eur":
+                            if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("all_dlc")))
+                            {
+                                if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                                    url += "QmFH";
+                                else
+                                    url += "QmCl";
+                            }
+                            else if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                                url += "QmFJ";
+                            else
+                                url += "QmFI";
+                            break;
+                        case "usa":
+                            if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("all_dlc")))
+                            {
+                                if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                                    url += "QmCi";
+                                else
+                                    url += "QmCh";
+                            }
+                            else if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                                url += "QmCk";
+                            else
+                                url += "QmCj";
+                            break;
+                    }
+                    break;
+                case "p3d":
+                    if (P3DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAL";
+                    else
+                        url += "QmAG";
+                    break;
+                case "p4d":
+                    if (P4DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAh";
+                    else
+                        url += "QmAY";
+                    break;
+                case "p5d":
+                    if (P5DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAn";
+                    else
+                        url += "QmAk";
+                    break;
+            }
+
+            pkg.NavigateUrl = url;
         }
 
-        protected void EBOOT_Click(object sender, EventArgs e)
+        protected void SetEBOOTLink()
         {
+            string url = "http://up-4.net/d/";
 
+            switch (selectedGame)
+            {
+                case "p5r":
+                    if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("all_dlc")))
+                    {
+                        if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                            url += "QmAq";
+                        else
+                            url += "QmAo";
+                    }
+                    else if (P5RPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAx";
+                    else
+                        url += "QmAs";
+                    break;
+                case "p3d":
+                    if (P3DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAJ";
+                    else
+                        url += "QmAD";
+                    break;
+                case "p4d":
+                    if (P4DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAa";
+                    else
+                        url += "QmAW";
+                    break;
+                case "p5d":
+                    if (P5DPatches.Where(y => y.Enabled).Any(x => x.ID.Equals("no_trp")))
+                        url += "QmAm";
+                    else
+                        url += "QmAi";
+                    break;
+            }
+
+            eboot.NavigateUrl = url;
         }
     }
 
@@ -371,6 +508,9 @@ namespace ShrineFox.com
         public string ID { get; set; } = "";
         public string TitleID { get; set; } = "";
         public string Region { get; set; } = "";
+        public string CRC32 { get; set; } = "";
+        public string MD5 { get; set; } = "";
+        public string SHA1 { get; set; } = "";
     }
 
     public class Patch

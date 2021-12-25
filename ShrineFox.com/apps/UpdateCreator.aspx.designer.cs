@@ -129,7 +129,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton usa;
+        protected global::System.Web.UI.WebControls.LinkButton usa;
 
         /// <summary>
         /// eur control.
@@ -138,7 +138,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton eur;
+        protected global::System.Web.UI.WebControls.LinkButton eur;
 
         /// <summary>
         /// mod_support_tab control.
@@ -327,7 +327,7 @@ namespace ShrineFox.com
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox enable;
+        protected global::System.Web.UI.WebControls.LinkButton enable;
 
         /// <summary>
         /// titleID control.

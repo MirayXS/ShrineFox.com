@@ -30,10 +30,10 @@
                             <li class="tab-item tab-action">
                                 <div class="input-group input-inline">
                                     <label class="form-radio">
-                                        <asp:RadioButton GroupName="region" id="usa" Text="USA" runat="server" AutoPostBack="true" OnCheckedChanged="Radio_CheckedChanged" OnClientCheckedChanged="ShowProgress();" Checked="true"/>
+                                        <asp:LinkButton id="usa" runat="server" OnClick="Radio_Click" OnClientClick="ShowProgress();"><i class="fas fa-circle"></i> USA</asp:LinkButton>
                                     </label>
                                     <label class="form-radio">
-                                        <asp:RadioButton GroupName="region" id="eur" Text="EUR" AutoPostBack="true" OnCheckedChanged="Radio_CheckedChanged" OnClientCheckedChanged="ShowProgress();" runat="server"/>
+                                        <asp:LinkButton id="eur" runat="server" OnClick="Radio_Click" OnClientClick="ShowProgress();"><i class="far fa-circle"></i> EUR</asp:LinkButton>
                                     </label>
                                 </div>
                             </li>
@@ -62,8 +62,53 @@
                             </div>
                             <div class="card-footer" style="font-size:16pt;">
                                 <label class="form-checkbox float-right">
-                                    <asp:CheckBox OnCheckedChanged="Patch_CheckedChanged" OnClientCheckedChanged="ShowProgress();" id="enable" enabled="false" runat="server" checked="true" AutoPostBack="true" Text="Enable This Patch"/>
+                                    <asp:LinkButton id="enable" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Enable This Patch</asp:LinkButton>
                                 </label>
+                            </div>
+                        </div>
+                        <!--Download Button-->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5" id="titleID" runat="server">Patches Applied to <b>CUSA17416</b> (Persona 5 Royal, USA):</div>
+                                <div class="card-subtitle text-gray" id="appliedPatches" runat="server">Mod Support, 5.05 Backport, DLC Msg Skip, Square Menu</div>
+                            </div>
+                            <div class="card-footer">
+                                <label class="form-checkbox float-right">
+                                    <div class="dropdown dropdown-right"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download As... <i class="icon icon-caret"></i></a>
+                                        <ul class="menu text-left">
+                                            <li class="menu-item"><asp:HyperLink runat="server" id="pkg" NavigateUrl="http://up-4.net/d/QmCj" target="_blank" Text="PKG"/></li>
+                                            <li class="menu-item"><asp:HyperLink runat="server" id="eboot" NavigateUrl="http://up-4.net/d/QmAs" target="_blank" Text="eboot.bin"/></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <!--PKG Info-->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title h5">Base Game FPKG Hash</div>
+                                <div class="card-subtitle text-gray">In order to install the Update <kbd>PKG</kbd>, you must have installed the same base game <kbd>FPKG</kbd> I generated it from.
+                                    <br>Use a program like <a href="https://download.cnet.com/HashTab/3000-2094_4-84837.html">HashTab</a> to check if your base game <kbd>FPKG</kbd> matches.
+                                    <br>If it doesn't match, grab the <kbd>eboot.bin</kbd> instead and follow <a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/">the guide</a> to create your own.
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><b>CRC32</b></td>
+                                            <td id="crc32" runat="server">E2452B1C</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>MD5</b></td>
+                                            <td id="md5" runat="server">E669D7F9F9AB3989A2ED9D8D615547BD</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>SHA-1</b></td>
+                                            <td id="sha1" runat="server">25ABE8EFBD0D0CB7307927CD6AE6F1BB5ED506F4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </ContentTemplate>
@@ -72,8 +117,8 @@
                         <asp:AsyncPostBackTrigger ControlID="p3d" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="p4d" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="p5d" EventName="Click" />
-                        <asp:AsyncPostBackTrigger ControlID="usa" EventName="CheckedChanged" />
-                        <asp:AsyncPostBackTrigger ControlID="eur" EventName="CheckedChanged" />
+                        <asp:AsyncPostBackTrigger ControlID="usa" EventName="Click" />
+                        <asp:AsyncPostBackTrigger ControlID="eur" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="mod_support" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="_0505" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="intro_skip" EventName="Click" />
@@ -82,54 +127,9 @@
                         <asp:AsyncPostBackTrigger ControlID="square" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="p5_save" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="overlay" EventName="Click" />
-                        <asp:AsyncPostBackTrigger ControlID="enable" EventName="CheckedChanged" />
+                        <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
                     </Triggers>
                 </asp:UpdatePanel>
-                <!--Download Button-->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title h5" id="titleID" runat="server">Patches Applied to <b>CUSA17416</b> (Persona 5 Royal, USA):</div>
-                        <div class="card-subtitle text-gray" id="appliedPatches" runat="server">Mod Support, 5.05 Backport, DLC Msg Skip, Square Menu</div>
-                    </div>
-                    <div class="card-footer">
-                        <label class="form-checkbox float-right">
-                            <div class="dropdown dropdown-right"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download As... <i class="icon icon-caret"></i></a>
-                                <ul class="menu text-left">
-                                    <li class="menu-item"><asp:HyperLink runat="server" id="pkg" NavigateUrl="http://up-4.net/d/QmCj" target="_blank" Text="PKG"/></li>
-                                    <li class="menu-item"><asp:HyperLink runat="server" id="eboot" NavigateUrl="http://up-4.net/d/QmAs" target="_blank" Text="eboot.bin"/></li>
-                                </ul>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <!--PKG Info-->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title h5">Base Game FPKG Hash</div>
-                        <div class="card-subtitle text-gray">In order to install the Update <kbd>PKG</kbd>, you must have installed the same base game <kbd>FPKG</kbd> I generated it from.
-                            <br>Use a program like <a href="https://download.cnet.com/HashTab/3000-2094_4-84837.html">HashTab</a> to check if your base game <kbd>FPKG</kbd> matches.
-                            <br>If it doesn't match, grab the <kbd>eboot.bin</kbd> instead and follow <a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/">the guide</a> to create your own.
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <table class="table table-striped table-hover">
-                            <tbody>
-                                <tr>
-                                    <td><b>CRC32</b></td>
-                                    <td id="crc32" runat="server">E2452B1C</td>
-                                </tr>
-                                <tr>
-                                    <td><b>MD5</b></td>
-                                    <td id="md5" runat="server">E669D7F9F9AB3989A2ED9D8D615547BD</td>
-                                </tr>
-                                <tr>
-                                    <td><b>SHA-1</b></td>
-                                    <td id="sha1" runat="server">25ABE8EFBD0D0CB7307927CD6AE6F1BB5ED506F4</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
     <script type="text/javascript">
     function ShowProgress()

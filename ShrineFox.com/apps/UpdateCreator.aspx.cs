@@ -101,7 +101,9 @@ namespace ShrineFox.com
             SidebarHtml.Text = ShrineFoxCom.Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", ShrineFoxCom.Properties.Resources.Browse + ShrineFoxCom.Properties.Resources.Apps.Replace("ps4patchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
             if (Page.IsPostBack)
-                System.Threading.Thread.Sleep(200);
+            {
+
+            }
         }
 
         protected void GameTab_Click(object sender, EventArgs e)
@@ -144,24 +146,26 @@ namespace ShrineFox.com
 
         private void SetRegion()
         {
-            // Disable radio buttons for unsupported regions
-            var games = Games.Where(x => x.ID.Equals(selectedGame));
-            usa.Enabled = false;
-            eur.Enabled = false;
-            if (games.Any(x => x.Region.Equals("usa")))
-                usa.Enabled = true;
-            if (games.Any(x => x.Region.Equals("eur")))
-                eur.Enabled = true;
-            // Maintain region selection if selected game supports the same region
-            if (!games.Any(x => x.Region.Equals(selectedRegion)))
-                selectedRegion = games.First().Region;
-            // Check radio button of currently selected region
-            usa.Checked = false;
-            eur.Checked = false;
+            // Swap region if game doesn't support it
+            if (!Games.Where(x => x.ID.Equals(selectedGame)).Any(y => y.Region.Equals(selectedRegion)))
+            {
+                if (selectedRegion == "usa")
+                    selectedRegion = "eur";
+                else
+                    selectedRegion = "usa";
+            }
+
+            // Update radio icons
             if (selectedRegion == "usa")
-                usa.Checked = true;
-            if (selectedRegion == "eur")
-                eur.Checked = true;
+            {
+                usa.Text = "<i class=\"fas fa-circle\"></i> USA";
+                eur.Text = "<i class=\"far fa-circle\"></i> EUR";
+            }
+            else
+            {
+                usa.Text = "<i class=\"far fa-circle\"></i> USA";
+                eur.Text = "<i class=\"fas fa-circle\"></i> EUR";
+            }
         }
 
         private void SetPatchTabs()
@@ -273,13 +277,18 @@ namespace ShrineFox.com
                     break;
             }
 
-            // Show image, long/short description, and whether it's enabled below tabs
+            // Show patch name, image & long/short description
             var patch = patches.First(x => x.ID.Equals(selectedPatch));
             patch_name.InnerText = patch.Name;
             image.Src = patch.Image;
             description.InnerHtml = patch.ShortDesc;
             description_long.InnerHtml = patch.LongDesc;
-            enable.Checked = patch.Enabled;
+
+            // Update checkbox icon according to whether patch is enabled
+            if (patch.Enabled)
+                enable.Text = "<i class=\"fas fa-check-square\"></i> Enable This Patch";
+            else
+                enable.Text = "<i class=\"far fa-square\"></i> Enable This Patch";
 
             // Show FPKG hash
             crc32.InnerText = game.CRC32;
@@ -361,27 +370,39 @@ namespace ShrineFox.com
             SetPatchTabs();
         }
 
-        protected void Patch_CheckedChanged(object sender, EventArgs e)
+        protected void Enable_Click(object sender, EventArgs e)
         {
-            CheckBox checkedBox = (CheckBox)sender;
+            LinkButton clickedButton = (LinkButton)sender;
             // Toggle whether patch is enabled
             switch (selectedGame)
             {
                 case "p5r":
                     foreach (var patch in P5RPatches.Where(x => x.ID.Equals(selectedPatch)))
-                        patch.Enabled = checkedBox.Checked;
+                        if (patch.Enabled)
+                            patch.Enabled = false;
+                        else
+                            patch.Enabled = true;
                     break;
                 case "p3d":
                     foreach (var patch in P3DPatches.Where(x => x.ID.Equals(selectedPatch)))
-                        patch.Enabled = checkedBox.Checked;
+                        if (patch.Enabled)
+                            patch.Enabled = false;
+                        else
+                            patch.Enabled = true;
                     break;
                 case "p4d":
                     foreach (var patch in P4DPatches.Where(x => x.ID.Equals(selectedPatch)))
-                        patch.Enabled = checkedBox.Checked;
+                        if (patch.Enabled)
+                            patch.Enabled = false;
+                        else
+                            patch.Enabled = true;
                     break;
                 case "p5d":
                     foreach (var patch in P5DPatches.Where(x => x.ID.Equals(selectedPatch)))
-                        patch.Enabled = checkedBox.Checked;
+                        if (patch.Enabled)
+                            patch.Enabled = false;
+                        else
+                            patch.Enabled = true;
                     break;
             }
 
@@ -389,14 +410,20 @@ namespace ShrineFox.com
             SetDescription();
         }
 
-        protected void Radio_CheckedChanged(object sender, EventArgs e)
+        protected void Radio_Click(object sender, EventArgs e)
         {
-            RadioButton changedRadio = (RadioButton)sender;
-            if (changedRadio.Checked)
-                selectedRegion = changedRadio.ID;
+            LinkButton clickedRadio = (LinkButton)sender;
+            // If the selected game has the clicked region, and it isn't the currently selected region...
+            if (clickedRadio.ID != selectedRegion && Games.Where(x => x.ID.Equals(selectedGame)).Any(y => y.Region.Equals(clickedRadio.ID)))
+            {
+                // Update selected region and radio button icons
+                selectedRegion = clickedRadio.ID;
+                SetRegion();
 
-            // Refresh description of selected patch(es)
-            SetDescription();
+                // Update description of selected patch(es)
+                SetDescription();
+            }
+                
         }
 
         protected void SetPKGLink()

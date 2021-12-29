@@ -51,6 +51,15 @@ namespace ShrineFox.com
         protected global::System.Web.UI.UpdatePanel UpdatePanel;
 
         /// <summary>
+        /// NoticePlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder NoticePlaceHolder;
+
+        /// <summary>
         /// p5rtab control.
         /// </summary>
         /// <remarks>

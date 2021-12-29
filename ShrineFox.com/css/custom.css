@@ -840,3 +840,8 @@ svg.svg-inline--fa.fa-angle-right.fa-w-8 path {
     transition: 0.25s;
     -webkit-transition: all .5s;
 }
+
+.aspNetDisabled {
+    opacity: 0.5 !important;
+    color: gray !important;
+}

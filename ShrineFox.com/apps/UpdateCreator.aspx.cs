@@ -1,4 +1,5 @@
 ﻿using Ionic.Zip;
+using ShrineFoxCom;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,55 +42,55 @@ namespace ShrineFox.com
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via FTP", Image = "https://66.media.tumblr.com/c3f99e21c7edb1df53e7f2fa02117621/tumblr_inline_pl680q6yWy1rp7sxh_500.gif",
                 LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file from <code>/data/p5r</code> on the PS4's internal memory via FTP." +
-                "<br><b>Enabled by default.</b>", Enabled = true },
+                "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "_0505", Name = "5.05 Backport", ShortDesc = "Run on firmware 5.05+", Image = "https://i.postimg.cc/J44my5mT/505.png",
                 LongDesc = "Allows the game to run on the lowest possible moddable PS4 firmware, and all those above it." +
-                "<br><b>Enabled by default.</b>", Enabled = true },
+                "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/Jz4DKX80/p5rintro.png",
                 LongDesc = "Skips boot logos and intro movie (can still be viewed in Thieves Den)." +
-                "<br><b>Enabled by default.</b>", Enabled = true },
+                "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "all_dlc", Name = "Content Enabler", ShortDesc = "Enables on-disc content", Image = "https://i.postimg.cc/nrJMmjTH/p5rdlc.jpg",
                 LongDesc = "<b>This will make saves created with this patch incompatible</b> with the game when the patch is disabled!" +
-                "<br>Also hides DLC unlock messages when starting a new game."},
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+                "<br>Also hides DLC unlock messages when starting a new game.", CanBeToggled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
             new Patch() { ID = "square", Name = "Global Square Menu", ShortDesc = "Square button menu usable everywhere", Image = "https://i.postimg.cc/02Zr6NSs/square.png", 
                 LongDesc = "Enables the square menu globally (e.g. in Thieves Den and in Velvet Room or during events or game sections which disable it)." +
-                "<br><b>Enabled by default.</b>", Enabled = true },
+                "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "p5_save", Name = "P5 Save Bonus", ShortDesc = "Enables P5 save bonus without P5 saves present on system", 
                 LongDesc = "><b>Enabled by default.</b>", Image = "https://i.postimg.cc/9MTrztd8/p5rsave.png", Enabled = true },
         };
         public static List<Patch> P3DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/GtxtxLSv/p3dmod.png",
-                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
+                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>data/</code> directory," +
                            $"<br>or placed in <code>/data/p3d</code> on the PS4's internal memory via FTP." +
                             "<br>The latter takes priority." +
-                            "<br><b>Enabled by default.</b>", Enabled = true },
+                            "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/yNDJCzkz/p3dintro.png",
-                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+                LongDesc = "Skips boot logos and intro movie.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
             new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", 
                 LongDesc = "<b>Enabled by default.</b>", Image = "https://i.postimg.cc/ZY8WSHK0/ps4.png", Enabled = true }
         };
         public static List<Patch> P4DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/7PSb1VFw/weedyosuke.gif",
-                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
+                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>data/</code> directory," +
                            $"<br>or placed in <code>/data/p4d</code> on the PS4's internal memory via FTP." +
-                            "<br>The latter takes priority.<br><b>Enabled by default.</b>", Enabled = true },
+                            "<br>The latter takes priority.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/527Hrt93/p4dintro.png",
-                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+                LongDesc = "Skips boot logos and intro movie.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
         };
         public static List<Patch> P5DPatches = new List<Patch>()
         {
             new Patch() { ID = "mod_support", Name = "Mod Support", ShortDesc = "mod.cpk file replacement via PKG or FTP", Image = "https://i.postimg.cc/TYc5r9ZB/Mod-Support.jpg",
-                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>USRDIR</code> directory," +
+                LongDesc = "Loads modded files from a <kbd>mod.cpk</kbd> file in the PKG's <code>data/</code> directory," +
                            $"<br>or placed in <code>/data/p5d</code> on the PS4's internal memory via FTP." +
-                            "<br>The latter takes priority.<br><b>Enabled by default.</b>", Enabled = true },
+                            "<br>The latter takes priority.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/W4xd2fkq/p5dintro.png",
-                LongDesc = "Skips boot logos and intro movie.<br><b>Enabled by default.</b>", Enabled = true },
-            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png" },
+                LongDesc = "Skips boot logos and intro movie.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
+            new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
             new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots",
                 LongDesc = "<b>Enabled by default.</b>", Image = "https://i.postimg.cc/ZY8WSHK0/ps4.png", Enabled = true }
         };
@@ -146,9 +147,18 @@ namespace ShrineFox.com
 
         private void SetRegion()
         {
-            // Swap region if game doesn't support it
+            // If games list doesn't contain combination of selected game and region...
             if (!Games.Where(x => x.ID.Equals(selectedGame)).Any(y => y.Region.Equals(selectedRegion)))
             {
+                // Show warning about selection
+                string supportedRegions = "";
+                foreach (var game in Games.Where(x => x.ID.Equals(selectedGame)))
+                    supportedRegions += $"<br>{game.TitleID} ({game.Region.ToUpper()})";
+                NoticePlaceHolder.Controls.Add(new LiteralControl { Text = Post.Notice("red", 
+                    $"Sorry, the region { selectedRegion.ToUpper() } is not supported by <b>ppp</b> for " +
+                    $"{selectedGame.ToUpper()}.<br>Supported Regions include:{supportedRegions}") });
+
+                // Swap region if game doesn't support it
                 if (selectedRegion == "usa")
                     selectedRegion = "eur";
                 else
@@ -548,5 +558,6 @@ namespace ShrineFox.com
         public string LongDesc { get; set; } = "";
         public string Image { get; set; } = "";
         public bool Enabled { get; set; } = false;
+        public bool CanBeToggled { get; set; } = false;
     }
 }

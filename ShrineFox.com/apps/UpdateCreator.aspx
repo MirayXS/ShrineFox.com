@@ -21,6 +21,14 @@
             <div>
                 <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
+                        <!--Notice-->
+                        <asp:PlaceHolder ID="NoticePlaceHolder" runat="server">
+                            <div class="notices yellow"><p>Some patches cannot be disabled, such as <b>Mod Support</b> and <b>Intro Skip</b>.
+                                <br>I did this to exponentially reduce the number of PKGs/eboots I would need to create.
+                                <br>These default patches are harmless and generally only beneficial.
+                                <br>If you would still prefer a different combination of patches, see <a href="https://shrinefox.com/guides/2021/12/28/manually-patching-ps4-persona-games/">this guide regarding patching games manually</a>.
+                        </p></div>
+                        </asp:PlaceHolder>
                         <!--Game & Region Select-->
                         <ul class="tab tab-block">
                             <li class="tab-item active" id="p5rtab" runat="server"><asp:LinkButton id="p5r" runat="server" OnClick="GameTab_Click" OnClientClick="ShowProgress();">P5R</asp:LinkButton></li>
@@ -62,7 +70,7 @@
                             </div>
                             <div class="card-footer" style="font-size:16pt;">
                                 <label class="form-checkbox float-right">
-                                    <asp:LinkButton id="enable" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Enable This Patch</asp:LinkButton>
+                                    <asp:LinkButton id="enable" enabled="false" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Enable This Patch</asp:LinkButton>
                                 </label>
                             </div>
                         </div>
@@ -89,7 +97,8 @@
                                 <div class="card-title h5">Base Game FPKG Hash</div>
                                 <div class="card-subtitle text-gray">In order to install the Update <kbd>PKG</kbd>, you must have installed the same base game <kbd>FPKG</kbd> I generated it from.
                                     <br>Use a program like <a href="https://download.cnet.com/HashTab/3000-2094_4-84837.html">HashTab</a> to check if your base game <kbd>FPKG</kbd> matches.
-                                    <br>If it doesn't match, grab the <kbd>eboot.bin</kbd> instead and follow <a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/">the guide</a> to create your own.
+                                    <br>If it doesn't match, grab the <kbd>eboot.bin</kbd> instead and follow <a href="https://shrinefox.com/guides/2021/12/28/manually-patching-ps4-persona-games/">the guide</a> to create your own.
+                                    <br><br>Read more about installing PKGs and setting up the PS4 for modding <a href="https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72/">here</a>.
                                 </div>
                             </div>
                             <div class="card-footer">

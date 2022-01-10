@@ -71,7 +71,7 @@
             For <b>p5_EX</b> and <b>p5_mod_SPRX</b>, <a href="https://gamebanana.com/wips/57221">read setup instructions here</a>.
             <br>The following are <b>incompatible with p5_EX</b> and will be removed automatically:
             <br><i>p5_ModSupport, p5_FileAccessLog, p5_FixScriptPrintingFunctions, p5_CommunityPatches, p5_BgmRandom</i>
-            <br><br>Don't worry, p5_EX includes most of this functionality, but better (except for p5_BgmRandom at the moment).
+            <br><br>Don't worry, p5_EX includes most of this functionality, but better.
         </p>
     </div>
     <br>

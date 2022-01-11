@@ -9,6 +9,11 @@
     <br>Automatically removes conflicting and unwanted patches so you only download what you need.
     <br>
     <br>
+    <div class="notices yellow">
+    <p>
+        Please check back later if downloads aren't working, I'm in the process of investigating the bug.
+    </p>
+    </div>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
     <br><br>
     <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -58,10 +63,10 @@
                             </div>
                             <br>
                             <br>
-                            <div class="column col-2">
+                            <div class="column col-6">
                                 <asp:Button class="btn btn-primary" ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click" />
                             </div>
-                            <div class="column col-2">
+                            <div class="column col-6">
                                 <asp:Button class="btn btn-primary" ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click" />
                             </div>
                         </div>
@@ -83,26 +88,28 @@
                             <br>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="dropdown dropdown-right float-right" runat="server" id="downloadBtn"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download patch.yml <i class="icon icon-caret"></i></a>
-                            <ul class="menu text-left">
-                                <li class="menu-item"><asp:LinkButton runat="server" id="newFormat" OnClick="Download_Click" OnClientCheckedChanged="ShowProgress();">New Format</asp:LinkButton></li>
-                                <li class="menu-item"><asp:LinkButton runat="server" id="oldFormat" OnClick="Download_Click" OnClientCheckedChanged="ShowProgress();">Old Format</asp:LinkButton></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="patchList" EventName="SelectedIndexChanged" />
                 <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
-                <asp:AsyncPostBackTrigger ControlID="newFormat" EventName="Click" />
-                <asp:AsyncPostBackTrigger ControlID="oldFormat" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnEnableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnDisableAll" EventName="Click" />
             </Triggers>
         </asp:UpdatePanel>
     </div>
+
+    <div class="card">
+        <div class="card-footer">
+            <div class="dropdown dropdown-right float-right"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download patch.yml <i class="icon icon-caret"></i></a>
+                <ul class="menu text-left">
+                    <li class="menu-item"><asp:LinkButton runat="server" id="newFormat" OnClick="Download_Click">New Format</asp:LinkButton></li>
+                    <li class="menu-item"><asp:LinkButton runat="server" id="oldFormat" OnClick="Download_Click">Old Format</asp:LinkButton></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
     function ShowProgress()
     {

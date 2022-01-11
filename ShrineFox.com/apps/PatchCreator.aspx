@@ -8,10 +8,9 @@
     Generate a <b>patch.yml</b> to use for modding Persona 5 (PS3). <a href="https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup/">Read more</a>
     <br>Automatically removes conflicting and unwanted patches so you only download what you need.
     <br>
-    <br>
-    <div class="notices yellow">
+    <br><div class="notices yellow">
     <p>
-        Please check back later if downloads aren't working, I'm in the process of investigating the bug.
+        Please try refreshing if buttons aren't working, I'm in the process of investigating the bug.
     </p>
     </div>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
@@ -28,7 +27,7 @@
     <!--PPU Entry-->
     <div class="card">
         <div class="card-header">
-            <div class="card-title h5">PPU Hash</div>
+            <div class="card-title h5">1. PPU Hash</div>
             <div class="card-subtitle text-gray">Provide the correct hash or this won't work!</div>
         </div>
         <div class="card-footer">
@@ -44,45 +43,56 @@
     <div>
         <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
-                <!--Notice-->
-                <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
-                <!--Patch Selection & Details-->
+                <!--Patch Selection-->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5" id="patchTitle" runat="server">Select A Patch</div>
-                        <div class="card-subtitle text-gray" id="patchInfo" runat="server">Learn about a patch's functionality & toggle it</div>
-                        <div class="card-body" id="patchNotes" runat="server"></div>
+                        <div class="card-title h5">2. Select Patch</div>
+                        <div class="card-subtitle text-gray">Choose a patch to toggle or learn more about.</div>
                     </div>
                     <div class="card-footer" style="font-size:16pt;">
                         <div class="columns">
-                            <div class="column col-6">
-                                <asp:DropDownList id="patchList" class="form-select" AutoPostBack="True" OnSelectedIndexChanged="Selection_Changed" runat="server"/>
+                            <div class="column col-7">
+                                <asp:DropDownList id="patchList" class="form-select" runat="server"/>
                             </div>
-                            <div class="column col-6">
-                                <asp:LinkButton id="enable" enabled="false" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Enable This Patch</asp:LinkButton>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="column col-6">
-                                <asp:Button class="btn btn-primary" ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click" />
-                            </div>
-                            <div class="column col-6">
-                                <asp:Button class="btn btn-primary" ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click" />
+                            <div class="column col-4">
+                                <asp:Button class="btn btn-primary" ID="btnSelect" runat="server" Text="Select" OnClick="Select_Click" AutoPostBack="True" />
                             </div>
                         </div>
-                        <label class="form-checkbox float-right">
-                            
+                        <br>
+                        <div class="columns">
+                            <div class="column col-4">
+                                <asp:Button class="btn btn-primary" ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click" />
+                            </div>
+                            <div class="column col-4">
+                                <asp:Button class="btn btn-secondary" ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Notice-->
+                <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
+                <!--Selected Patch Info-->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title h5" id="patchTitle" runat="server"></div>
+                        <div class="card-subtitle text-gray" id="patchInfo" runat="server"></div>
+                        <div class="card-body" id="patchNotes" runat="server"></div>
+                    </div>
+                    <div class="card-footer" style="font-size:16pt;">
+                        <label class="float-right">
+                            <asp:LinkButton id="enable" enabled="false" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Enable This Patch</asp:LinkButton>
                         </label>
                     </div>
                 </div>
                 <!--Download Button-->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5">Downloads</div>
+                        <div class="card-title h5">3. Choose Download Format</div>
                         <div class="card-subtitle text-gray" id="appliedPatches" runat="server"></div>
                         <div class="card-body">
                             <b>New Format</b>: Works with RPCS3's new Patch Manager. Place downloaded <kbd>patch.yml</kbd> in your <code>RPCS3/Patches</code> folder and go to <code>Manage > Game Patches</code>.
-                            <br><br><b>Old Format</b>: Can use to patch <kbd>eboot.bin</kbd> to use patches on PS3 with custom firmware. <a href="https://shrinefox.com/guides/2019/06/12/persona-5-ps3-eboot-patching/">Read more</a>
+                            <br>
+                            <br><b>Old Format</b>: Can use to patch <kbd>eboot.bin</kbd> to use patches on PS3 with custom firmware. <a href="https://shrinefox.com/guides/2019/06/12/persona-5-ps3-eboot-patching/">Read more</a>
                             <!--Notice-->
                             <br><asp:PlaceHolder ID="NoticePlaceHolder" runat="server"/>
                             <br>
@@ -92,9 +102,10 @@
             </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="patchList" EventName="SelectedIndexChanged" />
-                <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="btnSelect" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnEnableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnDisableAll" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
             </Triggers>
         </asp:UpdatePanel>
     </div>

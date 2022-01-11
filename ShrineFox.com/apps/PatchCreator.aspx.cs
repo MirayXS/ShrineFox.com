@@ -25,17 +25,22 @@ namespace ShrineFoxCom
             LiteralControl SidebarHtml = new LiteralControl();
             SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("rpcs3patchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
-            
+
             if (!Page.IsPostBack)
             {
-                // Load YML contents once
-                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
-                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
-                // Add P5EX Description
-                patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
+                if (patches.Count == 0)
+                {
+                    // Load YML contents once
+                    ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
+                    ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
+                    // Add P5EX Description
+                    patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
+                }
+
                 // Update patch list
                 SetDropdown();
             }
+
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patch.yml");
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
@@ -43,6 +48,7 @@ namespace ShrineFoxCom
 
         private void SetDropdown()
         {
+            // Repopulate dropdown list, show enabled patches
             patchList.Items.Clear();
             patchList.Items.Add("");
             foreach (var patch in patches)
@@ -52,6 +58,8 @@ namespace ShrineFoxCom
                 else
                     patchList.Items.Add(new ListItem() { Text = patch.Title, Value = patch.Title });
             }
+
+            // Re-select last patch that was enabled
             if (selectedPatchTitle != "")
                 patchList.SelectedIndex = patchList.Items.IndexOf(patchList.Items.FindByValue(selectedPatchTitle));
 
@@ -124,10 +132,10 @@ namespace ShrineFoxCom
 
         }
 
-        protected void Selection_Changed(object sender, EventArgs e)
+        protected void Select_Click(object sender, EventArgs e)
         {
-            // Save selected patch title and refresh page controls
-            selectedPatchTitle = patchList.SelectedValue;
+            // Refresh page controls based on selected dropdown value
+            selectedPatchTitle = patchList.SelectedItem.Value;
             SetDropdown();
         }
 
@@ -136,8 +144,6 @@ namespace ShrineFoxCom
             foreach (var patch in patches)
                 if (patch.Title != "P5EX" && patch.Title != "Mod SPRX")
                     patch.Enabled = true;
-
-            // Update page controls
             SetDropdown();
         }
 
@@ -145,15 +151,14 @@ namespace ShrineFoxCom
         {
             foreach (var patch in patches)
                 patch.Enabled = false;
-
-            // Update page controls
             SetDropdown();
         }
 
         protected void Enable_Click(object sender, EventArgs e)
         {
             // Toggle enabled state of selected patch
-            patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled = !patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled;
+            if (patches.Any(x => x.Title.Equals(selectedPatchTitle)))
+                patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled = !patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled;
 
             // Disable incompatible mods
             var enabledPatches = patches.Where(x => x.Enabled);
@@ -185,8 +190,7 @@ namespace ShrineFoxCom
                     }
                 }
             }
-            
-            // Update page controls
+
             SetDropdown();
         }
 

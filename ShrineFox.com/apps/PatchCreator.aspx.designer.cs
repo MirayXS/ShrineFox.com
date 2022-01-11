@@ -69,6 +69,42 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.UpdatePanel UpdatePanel;
 
         /// <summary>
+        /// patchList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList patchList;
+
+        /// <summary>
+        /// btnSelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSelect;
+
+        /// <summary>
+        /// btnEnableAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnableAll;
+
+        /// <summary>
+        /// btnDisableAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDisableAll;
+
+        /// <summary>
         /// NoticePlaceHolder2 control.
         /// </summary>
         /// <remarks>
@@ -105,15 +141,6 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl patchNotes;
 
         /// <summary>
-        /// patchList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList patchList;
-
-        /// <summary>
         /// enable control.
         /// </summary>
         /// <remarks>
@@ -121,24 +148,6 @@ namespace ShrineFoxCom
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton enable;
-
-        /// <summary>
-        /// btnEnableAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnableAll;
-
-        /// <summary>
-        /// btnDisableAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisableAll;
 
         /// <summary>
         /// appliedPatches control.

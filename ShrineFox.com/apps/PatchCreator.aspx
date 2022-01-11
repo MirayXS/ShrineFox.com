@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Patch Creator" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFoxCom.PatchCreator" %>
+﻿<%@ Page Title="Patch Creator" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFoxCom.PatchCreator" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -10,7 +10,8 @@
     <br>
     <br><div class="notices yellow">
     <p>
-        Please try refreshing if buttons aren't working, I'm in the process of investigating the bug.
+        Please try refreshing if selection isn't updating properly, I'm in the process of investigating the bug.
+        <br>In the meantime, you can <a href="https://drive.google.com/file/d/1sX5MiavGS3T6T_VtWtizcpmujLXAlnYi/view?usp=sharing">download the full patch.yml here</a> instead.
     </p>
     </div>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
@@ -41,38 +42,32 @@
         </div>
     </div>
     <div>
-        <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
+        <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Always">
             <ContentTemplate>
+                <!--Compatibility Notice-->
+                <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
                 <!--Patch Selection-->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5">2. Select Patch</div>
+                        <div class="card-title h5">2. Select & Toggle Patches</div>
                         <div class="card-subtitle text-gray">Choose a patch to toggle or learn more about.</div>
                     </div>
-                    <div class="card-footer" style="font-size:16pt;">
+                    <div class="card-footer">
                         <div class="columns">
                             <div class="column col-7">
-                                <asp:DropDownList id="patchList" class="form-select" runat="server"/>
-                            </div>
-                            <div class="column col-4">
-                                <asp:Button class="btn btn-primary" ID="btnSelect" runat="server" Text="Select" OnClick="Select_Click" AutoPostBack="True" />
+                                <asp:DropDownList id="patchList" class="form-select" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="Select_Changed"/>
                             </div>
                         </div>
-                        <br>
                         <div class="columns">
-                            <div class="column col-4">
-                                <asp:Button class="btn btn-primary" ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click" />
+                            <div class="column col-5">
+                                <asp:LinkButton ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click"/>
                             </div>
-                            <div class="column col-4">
-                                <asp:Button class="btn btn-secondary" ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click" />
+                            <div class="column col-5">
+                                <asp:LinkButton ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click"/>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--Notice-->
-                <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
-                <!--Selected Patch Info-->
-                <div class="card">
+                    <!--Selected Patch Info-->
                     <div class="card-header">
                         <div class="card-title h5" id="patchTitle" runat="server"></div>
                         <div class="card-subtitle text-gray" id="patchInfo" runat="server"></div>
@@ -84,7 +79,7 @@
                         </label>
                     </div>
                 </div>
-                <!--Download Button-->
+                <!--Download Info-->
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title h5">3. Choose Download Format</div>
@@ -102,14 +97,13 @@
             </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="patchList" EventName="SelectedIndexChanged" />
-                <asp:AsyncPostBackTrigger ControlID="btnSelect" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnEnableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnDisableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
             </Triggers>
         </asp:UpdatePanel>
     </div>
-
+    <!--Download Button-->
     <div class="card">
         <div class="card-footer">
             <div class="dropdown dropdown-right float-right"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download patch.yml <i class="icon icon-caret"></i></a>

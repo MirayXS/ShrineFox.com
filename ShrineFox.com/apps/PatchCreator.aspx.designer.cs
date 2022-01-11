@@ -69,6 +69,15 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.UpdatePanel UpdatePanel;
 
         /// <summary>
+        /// NoticePlaceHolder2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder NoticePlaceHolder2;
+
+        /// <summary>
         /// patchList control.
         /// </summary>
         /// <remarks>
@@ -78,22 +87,13 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.WebControls.DropDownList patchList;
 
         /// <summary>
-        /// btnSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelect;
-
-        /// <summary>
         /// btnEnableAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnableAll;
+        protected global::System.Web.UI.WebControls.LinkButton btnEnableAll;
 
         /// <summary>
         /// btnDisableAll control.
@@ -102,16 +102,7 @@ namespace ShrineFoxCom
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisableAll;
-
-        /// <summary>
-        /// NoticePlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder NoticePlaceHolder2;
+        protected global::System.Web.UI.WebControls.LinkButton btnDisableAll;
 
         /// <summary>
         /// patchTitle control.

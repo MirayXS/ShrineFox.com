@@ -15,7 +15,6 @@ namespace ShrineFoxCom
     public partial class PatchCreator : Page
     {
         static List<Patch> patches = new List<Patch>();
-        static string selectedPatchTitle = "";
         static bool showP5EXNotice = false;
         static bool showModSPRXNotice = false;
 
@@ -33,12 +32,11 @@ namespace ShrineFoxCom
                     // Load YML contents once
                     ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
                     ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
-                    // Add P5EX Description
-                    patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
+                    SetDropdown();
                 }
-
-                // Update patch list
-                SetDropdown();
+                
+                // Add P5EX Description
+                patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
             }
 
             // Show last updated time for P5 EX
@@ -52,27 +50,16 @@ namespace ShrineFoxCom
             patchList.Items.Clear();
             patchList.Items.Add("");
             foreach (var patch in patches)
-            {
-                if (patch.Enabled)
-                    patchList.Items.Add(new ListItem() { Text = $"✓ {patch.Title}", Value = patch.Title });
-                else
-                    patchList.Items.Add(new ListItem() { Text = patch.Title, Value = patch.Title });
-            }
-
-            // Re-select last patch that was enabled
-            if (selectedPatchTitle != "")
-                patchList.SelectedIndex = patchList.Items.IndexOf(patchList.Items.FindByValue(selectedPatchTitle));
-
-            // Show patch info & toggle
-            SetDescription();
+                patchList.Items.Add(new ListItem() { Text = patch.Title, Value = patch.Title });
+            patchList.DataBind();
         }
 
         private void SetDescription()
         {
-            if (!string.IsNullOrEmpty(selectedPatchTitle))
+            if (!string.IsNullOrEmpty(patchList.SelectedItem.Value))
             {
                 // Update patch's description box
-                Patch patch = patches.First(x => x.Title.Equals(selectedPatchTitle));
+                Patch patch = patches.First(x => x.Title.Equals(patchList.SelectedItem.Value));
                 patchTitle.InnerText = patch.Title;
                 patchInfo.InnerText = $"by {patch.Author} (v{patch.PatchVersion})";
                 patchNotes.InnerText = patch.Notes;
@@ -89,6 +76,19 @@ namespace ShrineFoxCom
                 patchNotes.InnerText = "";
                 enable.Enabled = false;
             }
+
+            // Update enabled state of dropdownlist items
+            for (int i = 0; i < patchList.Items.Count; i++)
+            {
+                if (patches.Any(x => x.Title.Equals(patchList.Items[i].Value)))
+                {
+                    var patch = patches.First(x => x.Title.Equals(patchList.Items[i].Value));
+                    if (patch.Enabled)
+                        patchList.Items[i].Text = $"✓ {patch.Title}";
+                    else
+                        patchList.Items[i].Text = patch.Title;
+                }
+            }
             
             // Show applied patches list near download button
             appliedPatches.InnerText = "";
@@ -96,26 +96,19 @@ namespace ShrineFoxCom
                 appliedPatches.InnerText += $"{enabledPatch.Title}, ";
             appliedPatches.InnerText = appliedPatches.InnerText.TrimEnd(' ').TrimEnd(',');
 
-            // Show notices related to certain mods
+            // Mod Requirement Notice
             StringBuilder sb = new StringBuilder();
-            foreach (var enabledPatch in patches.Where(x => x.Enabled))
-            {
-                switch (enabledPatch.Title)
-                {
-                    case "P5EX":
-                        sb.Append(Post.Notice("yellow", "Please <a href=\"https://gamebanana.com/wips/57221\">read the setup instructions</a> for Persona 5 EX by DeathChaos25."));
-                        break;
-                    case "4K Mod":
-                    case "4K Mod Bustups Only":
-                        sb.Append(Post.Notice("yellow", "Please also use <a href=\"https://gamebanana.com/mods/318223\">this mod</a> when using the 4K patch by Rexis.\n" +
-                            "For 4K Royal bustups, also use <a href=\"https://shrinefox.com/forum/viewtopic.php?f=15&t=527\">this mod</a>, or if you're using P5 EX, grab the compatible <kbd>.CPK</kbd> from <a href=\"https://gamebanana.com/wips/57221\">here</a>."));
-                        break;
-                    case "P5 Modding Community Patches":
-                        sb.Append(Post.Notice("yellow", "Please <a href=\"https://gamebanana.com/gamefiles/13624\">use this mod</a> with Community Patches by DeathChaos25 to prevent softlocks."));
-                        break;
-                }
-            }
+            var enabledPatches = patches.Where(x => x.Enabled);
+            if (enabledPatches.Any(x => x.Title.Equals("P5EX")))
+                sb.Append(Post.Notice("yellow", "Please <a href=\"https://gamebanana.com/wips/57221\">read the setup instructions</a> for Persona 5 EX by DeathChaos25."));
+            if (enabledPatches.Any(x => x.Title.Equals("4K Mod") || x.Title.Equals("4K Mod Bustups Only")))
+                sb.Append(Post.Notice("yellow", "Please also use <a href=\"https://gamebanana.com/mods/318223\">this mod</a> when using the 4K patch by Rexis.\n" +
+                    "For 4K Royal bustups, also use <a href=\"https://shrinefox.com/forum/viewtopic.php?f=15&t=527\">this mod</a>, or if you're using P5 EX, grab the compatible <kbd>.CPK</kbd> from <a href=\"https://gamebanana.com/wips/57221\">here</a>."));
+            if (enabledPatches.Any(x => x.Title.Equals("P5 Modding Community Patches")))
+                sb.Append(Post.Notice("yellow", "Please <a href=\"https://gamebanana.com/gamefiles/13624\">use this mod</a> with Community Patches by DeathChaos25 to prevent softlocks."));
             NoticePlaceHolder.Controls.Add(new LiteralControl { Text = sb.ToString() });
+
+            // P5EX Compatibility Notice
             sb = new StringBuilder();
             if (showP5EXNotice)
             {
@@ -129,40 +122,50 @@ namespace ShrineFoxCom
                 showModSPRXNotice = false;
             }
             NoticePlaceHolder2.Controls.Add(new LiteralControl { Text = sb.ToString() });
-
         }
 
-        protected void Select_Click(object sender, EventArgs e)
+        protected void Select_Changed(object sender, EventArgs e)
         {
-            // Refresh page controls based on selected dropdown value
-            selectedPatchTitle = patchList.SelectedItem.Value;
-            SetDropdown();
+            SetDescription();
         }
 
         protected void EnableAll_Click(object sender, EventArgs e)
         {
             foreach (var patch in patches)
                 if (patch.Title != "P5EX" && patch.Title != "Mod SPRX")
-                    patch.Enabled = true;
-            SetDropdown();
+                    TogglePatch(patch.Title, true, false);
+            SetDescription();
         }
 
         protected void DisableAll_Click(object sender, EventArgs e)
         {
             foreach (var patch in patches)
-                patch.Enabled = false;
-            SetDropdown();
+                TogglePatch(patch.Title, false, true);
+            SetDescription();
         }
 
         protected void Enable_Click(object sender, EventArgs e)
         {
+            TogglePatch(patchList.SelectedItem.Value);
+            SetDescription();
+        }
+
+        private void TogglePatch(string patchTitle, bool forceEnable = false, bool forceDisable = false)
+        {
             // Toggle enabled state of selected patch
-            if (patches.Any(x => x.Title.Equals(selectedPatchTitle)))
-                patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled = !patches.First(x => x.Title.Equals(selectedPatchTitle)).Enabled;
+            if (patches.Any(x => x.Title.Equals(patchTitle)))
+            {
+                if (forceEnable)
+                    patches.First(x => x.Title.Equals(patchTitle)).Enabled = true;
+                else if (forceDisable)
+                    patches.First(x => x.Title.Equals(patchTitle)).Enabled = false;
+                else
+                    patches.First(x => x.Title.Equals(patchTitle)).Enabled = !patches.First(x => x.Title.Equals(patchTitle)).Enabled;
+            }
 
             // Disable incompatible mods
             var enabledPatches = patches.Where(x => x.Enabled);
-            foreach (var patch in patches) 
+            foreach (var patch in patches)
             {
                 if (enabledPatches.Any(x => x.Title.Equals("P5EX")))
                 {
@@ -190,8 +193,6 @@ namespace ShrineFoxCom
                     }
                 }
             }
-
-            SetDropdown();
         }
 
         protected void Download_Click(object sender, EventArgs e)

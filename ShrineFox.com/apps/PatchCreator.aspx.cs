@@ -28,26 +28,26 @@ namespace ShrineFoxCom
             public bool Enabled { get; set; } = false;
         }
 
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (patches.Count == 0)
+            {
+                // Load YML contents once
+                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
+                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
+            }
+            SetDropdown();
+
+            // Add P5EX Description
+            patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Sidebar
             LiteralControl SidebarHtml = new LiteralControl();
             SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("rpcs3patchlink", "active"));
             Sidebar.Controls.Add(SidebarHtml);
-
-            if (!Page.IsPostBack)
-            {
-                if (patches.Count == 0)
-                {
-                    // Load YML contents once
-                    ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
-                    ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
-                    SetDropdown();
-                }
-                
-                // Add P5EX Description
-                patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
-            }
 
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patch.yml");

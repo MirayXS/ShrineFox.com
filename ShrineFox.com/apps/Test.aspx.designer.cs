@@ -11,7 +11,7 @@ namespace ShrineFoxCom
 {
 
 
-    public partial class PatchCreator
+    public partial class Test
     {
 
         /// <summary>
@@ -31,6 +31,15 @@ namespace ShrineFoxCom
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder lastUpdated;
+
+        /// <summary>
+        /// HiddenField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField;
 
         /// <summary>
         /// ScriptManager1 control.
@@ -60,13 +69,13 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.WebControls.TextBox txtBox_PPU;
 
         /// <summary>
-        /// patchList control.
+        /// NoticePlaceHolder2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList patchList;
+        protected global::System.Web.UI.WebControls.PlaceHolder NoticePlaceHolder2;
 
         /// <summary>
         /// btnEnableAll control.
@@ -87,6 +96,15 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.WebControls.LinkButton btnDisableAll;
 
         /// <summary>
+        /// chkBoxList_Patches control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chkBoxList_Patches;
+
+        /// <summary>
         /// UpdatePanel control.
         /// </summary>
         /// <remarks>
@@ -94,51 +112,6 @@ namespace ShrineFoxCom
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel;
-
-        /// <summary>
-        /// NoticePlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder NoticePlaceHolder2;
-
-        /// <summary>
-        /// patchTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patchTitle;
-
-        /// <summary>
-        /// patchInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patchInfo;
-
-        /// <summary>
-        /// patchNotes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl patchNotes;
-
-        /// <summary>
-        /// enable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton enable;
 
         /// <summary>
         /// appliedPatches control.

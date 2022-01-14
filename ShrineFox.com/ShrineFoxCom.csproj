@@ -201,6 +201,7 @@
     <Content Include="Apps.aspx" />
     <Content Include="apps\Files.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="apps\PatchCreator.aspx" />
     <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
     <Content Include="Browse.aspx" />
@@ -235,7 +236,7 @@
     <Content Include="Resources\SidebarAccordions\Browse.html" />
     <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="Wiki.aspx" />
-    <Content Include="apps\PatchCreator.aspx" />
+    <Content Include="apps\Test.aspx" />
     <Content Include="apps\TextSearch.aspx" />
     <Content Include="About.aspx" />
     <Content Include="images\logo.svg" />
@@ -281,6 +282,13 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="apps\PatchCreator.aspx.cs">
+      <DependentUpon>PatchCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\PatchCreator.aspx.designer.cs">
+      <DependentUpon>PatchCreator.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Browse.aspx.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,12 +327,12 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="apps\PatchCreator.aspx.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
+    <Compile Include="apps\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="apps\PatchCreator.aspx.designer.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
+    <Compile Include="apps\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="apps\TextSearch.aspx.cs">
       <DependentUpon>TextSearch.aspx</DependentUpon>

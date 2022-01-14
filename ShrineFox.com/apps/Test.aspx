@@ -1,16 +1,24 @@
-﻿<%@ Page Title="Patch Creator (Test)" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFoxCom.PatchCreator" %>
+﻿<%@ Page Title="Patch Creator (Test)" EnableViewState="true" MaintainScrollPositionOnPostback="true" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="ShrineFoxCom.Test" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>
-    <b><a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Apps <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %></b>
+    <b><a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true""></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Apps <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %></b>
     <h1><%: Page.Title %></h1>
     Generate a <b>patch.yml</b> to use for modding Persona 5 (PS3). <a href="https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup/">Read more</a>
     <br>Automatically removes conflicting and unwanted patches so you only download what you need.
     <br>
+    <br>
+    <div class="notices yellow">
+        <p>
+            This page exists as a testing area for deploying upcoming versions of web applications.
+            <br>Nothing seen here is final and might not work as expected.
+        </p>
     </div>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
-    <br><br>
+    <br>
+    <br>
+    <asp:HiddenField ID="HiddenField" runat="server" value="" ClientIDMode="Static" />
     <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel">
         <ProgressTemplate>
@@ -36,45 +44,31 @@
             <br>Search for <code>PPU executable hash</code> with <kbd>CTRL+F</kbd>.
         </div>
     </div>
+    <!--Compatibility Notice-->
+    <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
     <!--Patch Selection-->
     <div class="card">
         <div class="card-header">
-            <div class="card-title h5">2. Select & Toggle Patches to Include</div>
-            <div class="card-subtitle text-gray">Choose a patch to toggle or learn more about.</div>
+            <div class="card-title h5">2. Select & Toggle Patches</div>
+            <div class="card-subtitle text-gray">Choose a patch to toggle. Hover over one to learn more about it.</div>
         </div>
         <div class="card-footer">
             <div class="columns">
-                <div class="column col-7">
-                    <asp:DropDownList id="patchList" class="form-select" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="Select_Changed"/>
-                </div>
-            </div>
-            <div class="columns">
                 <div class="column col-5">
-                    <asp:LinkButton ID="btnEnableAll" runat="server" Text="Include All" OnClick="EnableAll_Click"/>
+                    <asp:LinkButton ID="btnEnableAll" runat="server" Text="Enable All" OnClick="EnableAll_Click" AutoPostBack="true"/>
                 </div>
                 <div class="column col-5">
-                    <asp:LinkButton ID="btnDisableAll" runat="server" Text="Remove All" OnClick="DisableAll_Click"/>
+                    <asp:LinkButton ID="btnDisableAll" runat="server" Text="Disable All" OnClick="DisableAll_Click" AutoPostBack="true"/>
                 </div>
             </div>
+            <br>
+            <!-- Checkboxes for Patches -->
+            <asp:CheckBoxList ID="chkBoxList_Patches" runat="server" AppendDataBoundItems="True" OnSelectedIndexChanged="CheckBox_SelectedIndexChanged" AutoPostBack="true"/>
         </div>
+    </div>
     <div>
         <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Always">
             <ContentTemplate>
-                <!--Compatibility Notice-->
-                <asp:PlaceHolder ID="NoticePlaceHolder2" runat="server"/>
-                <div class="card">
-                    <!--Selected Patch Info-->
-                    <div class="card-header">
-                        <div class="card-title h5" id="patchTitle" runat="server"></div>
-                        <div class="card-subtitle text-gray" id="patchInfo" runat="server"></div>
-                        <div class="card-body" id="patchNotes" runat="server"></div>
-                    </div>
-                    <div class="card-footer" style="font-size:16pt;">
-                        <label class="float-right">
-                            <asp:LinkButton id="enable" enabled="false" runat="server" OnClick="Enable_Click" OnClientCheckedChanged="ShowProgress();"><i class="fas fa-check-square"></i> Include This Patch</asp:LinkButton>
-                        </label>
-                    </div>
-                </div>
                 <!--Download Info-->
                 <div class="card">
                     <div class="card-header">
@@ -92,10 +86,9 @@
                 </div>
             </ContentTemplate>
             <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="patchList" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="chkBoxList_Patches" EventName="SelectedIndexChanged" />
                 <asp:AsyncPostBackTrigger ControlID="btnEnableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnDisableAll" EventName="Click" />
-                <asp:AsyncPostBackTrigger ControlID="enable" EventName="Click" />
             </Triggers>
         </asp:UpdatePanel>
     </div>

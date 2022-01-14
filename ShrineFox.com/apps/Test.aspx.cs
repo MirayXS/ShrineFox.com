@@ -12,21 +12,11 @@ using System.Web.UI.WebControls;
 
 namespace ShrineFoxCom
 {
-    public partial class PatchCreator : Page
+    public partial class Test : Page
     {
         static List<Patch> patches = new List<Patch>();
         static bool showP5EXNotice = false;
         static bool showModSPRXNotice = false;
-
-        public class Patch
-        {
-            public string Title { get; set; } = "";
-            public string Author { get; set; } = "";
-            public string Notes { get; set; } = "";
-            public string PatchVersion { get; set; } = "1.0";
-            public string PatchCode { get; set; } = "";
-            public bool Enabled { get; set; } = false;
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,70 +32,57 @@ namespace ShrineFoxCom
                     // Load YML contents once
                     ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
                     ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
-                    SetDropdown();
+                    // Add P5EX Description
+                    patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
+                    // Set up checkboxes for patches
+                    SetChkBoxes();
                 }
-                
-                // Add P5EX Description
-                patches.First(x => x.Title.Equals("P5EX")).Notes = "P5 EX is a collection of custom code patches (and also a mod) made possible by TGE's mod prx implementation that allows both the re-use and total reconstruction of original game functions.";
             }
+            UpdateChkBoxes();
 
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patch.yml");
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
         }
 
-        private void SetDropdown()
+        private void SetChkBoxes()
         {
-            // Repopulate dropdown list, show enabled patches
-            patchList.Items.Clear();
-            patchList.Items.Add("");
             foreach (var patch in patches)
-                patchList.Items.Add(new ListItem() { Text = patch.Title, Value = patch.Title });
-            patchList.DataBind();
+            {
+                ListItem chkBox = new ListItem
+                {
+                    Text = $"<b>{patch.Title}</b> (v{patch.PatchVersion}) by {patch.Author}",
+                    Value = patch.Title,
+                    Selected = patch.Enabled
+                };
+                chkBox.Attributes.Add("title", patch.Notes);
+                chkBoxList_Patches.Items.Add(chkBox);
+            }
+            chkBoxList_Patches.DataBind();
+
+            SetNotices();
         }
 
-        private void SetDescription()
+        private void UpdateChkBoxes()
         {
-            if (!string.IsNullOrEmpty(patchList.SelectedItem.Value))
+            // For each checkbox with a value matching a patch...
+            foreach (ListItem item in chkBoxList_Patches.Items)
             {
-                // Update patch's description box
-                Patch patch = patches.First(x => x.Title.Equals(patchList.SelectedItem.Value));
-                patchTitle.InnerText = patch.Title;
-                patchInfo.InnerText = $"by {patch.Author} (v{patch.PatchVersion})";
-                patchNotes.InnerText = patch.Notes;
-                enable.Enabled = true;
-                if (patch.Enabled)
-                    enable.Text = "<i class=\"fas fa-check-square\"></i> Enable This Patch";
-                else
-                    enable.Text = "<i class=\"far fa-square\"></i> Enable This Patch";
-            }
-            else
-            {
-                patchTitle.InnerText = "Select A Patch";
-                patchInfo.InnerText = "Learn about a patch's functionality & toggle it";
-                patchNotes.InnerText = "";
-                enable.Enabled = false;
-            }
-
-            // Update enabled state of dropdownlist items
-            for (int i = 0; i < patchList.Items.Count; i++)
-            {
-                if (patches.Any(x => x.Title.Equals(patchList.Items[i].Value)))
+                if (patches.Any(x => x.Title.Equals(item.Value)))
                 {
-                    var patch = patches.First(x => x.Title.Equals(patchList.Items[i].Value));
-                    if (patch.Enabled)
-                        patchList.Items[i].Text = $"✓ {patch.Title}";
-                    else
-                        patchList.Items[i].Text = patch.Title;
+                    // Update checked state of checkbox
+                    item.Selected = patches.First(x => x.Title.Equals(item.Value)).Enabled;
+                    // Re-add tooltip
+                    item.Attributes.Add("title", patches.First(x => x.Title.Equals(item.Value)).Notes);
                 }
             }
-            
-            // Show applied patches list near download button
-            appliedPatches.InnerText = "";
-            foreach (var enabledPatch in patches.Where(x => x.Enabled))
-                appliedPatches.InnerText += $"{enabledPatch.Title}, ";
-            appliedPatches.InnerText = appliedPatches.InnerText.TrimEnd(' ').TrimEnd(',');
 
+            // Show any relevant notices
+            SetNotices();
+        }
+
+        private void SetNotices()
+        {
             // Mod Requirement Notice
             StringBuilder sb = new StringBuilder();
             var enabledPatches = patches.Where(x => x.Enabled);
@@ -134,9 +111,14 @@ namespace ShrineFoxCom
             NoticePlaceHolder2.Controls.Add(new LiteralControl { Text = sb.ToString() });
         }
 
-        protected void Select_Changed(object sender, EventArgs e)
+        protected void CheckBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetDescription();
+            foreach (ListItem chkBox in chkBoxList_Patches.Items)
+            {
+                if (patches.Any(x => x.Title.Equals(chkBox.Value)))
+                    if (patches.First(x => x.Title.Equals(chkBox.Value)).Enabled != chkBox.Selected)
+                        TogglePatch(chkBox.Value, true, false);
+            }
         }
 
         protected void EnableAll_Click(object sender, EventArgs e)
@@ -144,20 +126,12 @@ namespace ShrineFoxCom
             foreach (var patch in patches)
                 if (patch.Title != "P5EX" && patch.Title != "Mod SPRX")
                     TogglePatch(patch.Title, true, false);
-            SetDescription();
         }
 
         protected void DisableAll_Click(object sender, EventArgs e)
         {
             foreach (var patch in patches)
                 TogglePatch(patch.Title, false, true);
-            SetDescription();
-        }
-
-        protected void Enable_Click(object sender, EventArgs e)
-        {
-            TogglePatch(patchList.SelectedItem.Value);
-            SetDescription();
         }
 
         private void TogglePatch(string patchTitle, bool forceEnable = false, bool forceDisable = false)
@@ -313,5 +287,15 @@ namespace ShrineFoxCom
                 }
             }
         }
+    }
+
+    public class Patch
+    {
+        public string Title { get; set; } = "";
+        public string Author { get; set; } = "";
+        public string Notes { get; set; } = "";
+        public string PatchVersion { get; set; } = "1.0";
+        public string PatchCode { get; set; } = "";
+        public bool Enabled { get; set; } = false;
     }
 }

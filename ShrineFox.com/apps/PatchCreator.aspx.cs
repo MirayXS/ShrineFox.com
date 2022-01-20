@@ -122,8 +122,9 @@ namespace ShrineFoxCom
             sb = new StringBuilder();
             if (showP5EXNotice)
             {
-                sb.Append(Post.Notice("red", "<b>Patches Incompatible with P5EX have been deselected</b>: Mod Cpk Support, P5 File Access Log, Fix Script Printing Functions, Community Patches and BGM Order" +
-                    "<br>Don't worry, P5EX reimplements most of the above functionality."));
+                sb.Append(Post.Notice("red", "<b>Patches Incompatible with P5EX have been deselected</b>:" +
+                    "<br>Mod Cpk Support, P5 File Access Log, Fix Script Printing Functions, Community Patches and BGM Order, Disable EXIST.TBL Check, Force PSZ Models" +
+                    "<br><br>Don't worry, P5EX reimplements most of the above functionality."));
                 showP5EXNotice = false;
             }
             if (showModSPRXNotice)
@@ -194,6 +195,8 @@ namespace ShrineFoxCom
                         case "P5 Modding Community Patches":
                         case "Encounter BGM in Order":
                         case "Encounter BGM Random Order":
+                        case "Disable EXIST.TBL Check":
+                        case "Force PSZ Models":
                             if (patch.Enabled)
                             {
                                 patch.Enabled = false;

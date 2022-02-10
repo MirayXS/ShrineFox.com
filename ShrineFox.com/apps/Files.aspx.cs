@@ -12,12 +12,6 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Sidebar
-            LiteralControl SidebarHtml = new LiteralControl();
-            SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("fileslink", "active"));
-            Sidebar.Controls.Add(SidebarHtml);
-
-            Page.MaintainScrollPositionOnPostBack = true;
         }
     }
 }

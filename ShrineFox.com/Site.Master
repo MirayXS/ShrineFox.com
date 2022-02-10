@@ -4,11 +4,11 @@
 <html>
     <head runat="server">
         <title>ShrineFox.com <%: Page.Title %></title>
-        <asp:PlaceHolder ID="Header" runat="server"></asp:PlaceHolder>
+        <asp:PlaceHolder ID="Head" runat="server"></asp:PlaceHolder>
     </head>
-    <asp:PlaceHolder ID="BeforeContent" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="Body" runat="server"></asp:PlaceHolder>
     <form runat="server">
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
     </form>
-    <asp:PlaceHolder ID="Footer" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="Foot" runat="server"></asp:PlaceHolder>
 </html>

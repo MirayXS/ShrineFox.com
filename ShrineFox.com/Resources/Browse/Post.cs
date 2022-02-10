@@ -165,7 +165,7 @@ namespace ShrineFoxCom
             // Tags
             string tags = "";
             foreach (string tag in post.Tags.Where(x => !String.IsNullOrWhiteSpace(x)))
-                tags += $"<span class=\"chip\"><a href=\"https://shrinefox.com/browse?tag={tag.Trim()}\">{tag}</a></span>";
+                tags += $"<div class=\"rh_tag\"><a href=\"https://shrinefox.com/browse?tag={tag.Trim()}\">{tag}</a></div>";
             result = result.Replace("POSTTAGS", tags);
 
             return result;
@@ -213,7 +213,7 @@ namespace ShrineFoxCom
 
         public static string Notice(string color, string contents)
         {
-            return $"<div class=\"notices {color}\"><p>{contents}</p></div>";
+            return $"<div class=\"notice {color}\"><p>{contents}</p></div>";
         }
     }
 }

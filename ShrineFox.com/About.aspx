@@ -1,26 +1,39 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ShrineFoxCom.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>
-<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="https://shrinefox.com/browse"><%: Page.Title %></a> <asp:PlaceHolder ID="Navigation" runat="server"></asp:PlaceHolder>
-<h1><%: Page.Title %></h1>
-I'm ShrineFox. I describe myself as a content creator that loves modding games, customizing devices, 
-	and sometimes making buggy utilities.
-Ever since I was introduced to modding,
-	I've never lost my passion for personalizing everything that I possibly can.
-<br><br>I've proudly overseen the creation and growth of Amicitia, an SMT modding community. 
-	I owe everything to my incredible friends who continue to inspire me. Much of the content on this site
-	was made possible by them.
-<br><br><hr>
-<h2>Contact</h2>
-If you would like to report a software bug, please <a href="https://shrinefox.com/forum/viewtopic.php?f=3&t=23">open an issue on Github</a>.
-<br>If you have a modding related question, ask on the <a href="https://shrinefox.com/forum">forum</a> or <a href="https://reddit.com/r/Amicitia">subreddit</a>.
-<br>For concerns about anything linked here that I didn't make, contact the creator.
-<br><br>If you still need to get in touch with me, contact <code>rуan＠shrinefox¸com</code> (retype it manually).
-<h2>Source</h2>
-This project is licensed under GPL-3.0, so it's open source and you can use any part of it to create your own projects, commercial or otherwise. 
-See the <a href="https://github.com/ShrineFox/ShrineFox.com">repository on Github</a>.
-<br><br><hr>
+	<div class="navipath">
+		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
+	</div>
+	<h1><%: Page.Title %></h1>
+ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
+<br>
+<br>I've always had an affinity for personalizing my consoles, devices and games. 
+	Software developers and researchers across the internet are always sharing new modifications, 
+	far exceeding the intended scope of the original products. I support these efforts by bringing them to light.
+<br>Here on this site, I write about the myriad of unofficial customization options-- many of which 
+	can already be found in online forums, Discord servers, and obscure Github repositories. 
+	While these resources aren't new, by compiling them in one place, I hope to make modding more 
+	accessible for the average end user.
+<br>
+<br><h2>Support</h2>
+If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
+	which accepts PayPal and Stripe. Any contribution is greatly appreciated and helps keep the site online.
+<br>You can message me there if you have any personal requests. You may also <a href="ryan@shrinefox.com">email me</a>, but please be aware I 
+	don't frequently check/respond to these emails, nor am I obligated to respond.
+<br>
+<br><h2>Troubleshooting</h2>
+To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.
+<br>If you have other modding related questions, ask on the <a href="https://shrinefox.com/forum">forum</a>.
+<br>For concerns about anything linked here that I didn't make, contact the creator from wherever they posted it.
+<br>I generally don't have control over content curated from <a href="https://gamebanana.com/">Gamebanana.com</a> 
+	(appearing in the <a href="https://shrinefox.com/browse">Browse</a> section), but I do make an effort to keep it safe for work.
+<br>
+<br><h2>Source Code</h2>
+This project is licensed under GPL-3.0, so it's open source and you can use any part of it to create your own projects, 
+commercial or otherwise. See the <a href="https://github.com/ShrineFox/ShrineFox.com">repository on Github</a>.
+<br>
+<br>
 <h2>Credits</h2>
 <table class="table table-striped table-hover">
 <tbody>
@@ -30,16 +43,16 @@ See the <a href="https://github.com/ShrineFox/ShrineFox.com">repository on Githu
 			<a href="https://github.com/jakiestfu/Youtube-TV">YouTube TV</a> by Jacob Kelley
 			<br><a href="https://jscolor.com/">jscolor</a> by Jan Odvárko
 			<br><a href="https://github.com/enginkizil/FeedEk">FeedEk</a> by enginkizil
-			<br><a href="https://github.com/TekkaGB/AemulusModManager">Aemulus</a> by TekkaGB (Gamebanana Webscraper)
+			<br><a href="https://github.com/TekkaGB/AemulusModManager">Aemulus</a> by TekkaGB 
+			(<a href="https://gamebanana.com/">Gamebanana</a> Webscraper)
 		</td>
 	</tr>
 	<tr>
 		<td>Themes</td>
 		<td>
 			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2
-			<br><a href="https://quarktheme.com/">Quark</a> by Anthony Hortin (modified by <a href="https://worproject.ml/">worproject</a>)
 			<br><a href="https://gretathemes.com/wordpress-themes/justread/">JustRead</a> by GretaThemes
-			<br><a href="https://www.phpbb.com/customise/db/style/prolight/">Prolight (phpbb)</a> by eeji
+			<br><a href="https://themeforest.net/item/milk-multipurpose-responsive-phpbb-31-theme/">Milk (phpbb theme)</a> by PlanetStyles
 		</td>
 	</tr>
 	<tr>
@@ -56,7 +69,7 @@ See the <a href="https://github.com/ShrineFox/ShrineFox.com">repository on Githu
 			<br>Alan3D
 			<br>Cherry Cream Soda
 			<br>Crowpocalypse
-			<br>DeathChaos
+			<br>DeathChaos25
 			<br>lipsum
 			<br>regularpanties
 			<br>Sierra

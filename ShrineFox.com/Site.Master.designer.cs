@@ -15,22 +15,22 @@ namespace ShrineFoxCom
     {
 
         /// <summary>
-        /// Header control.
+        /// Head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Header;
+        protected global::System.Web.UI.WebControls.PlaceHolder Head;
 
         /// <summary>
-        /// BeforeContent control.
+        /// Body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder BeforeContent;
+        protected global::System.Web.UI.WebControls.PlaceHolder Body;
 
         /// <summary>
         /// MainContent control.
@@ -42,12 +42,12 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
         /// <summary>
-        /// Footer control.
+        /// Foot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Footer;
+        protected global::System.Web.UI.WebControls.PlaceHolder Foot;
     }
 }

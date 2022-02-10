@@ -118,14 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Apps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Apps.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Blog.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Browse.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Card.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="colours" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forum\colours.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -136,29 +130,17 @@
   <data name="footer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blog\footer.php;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Forum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Forum.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Forum1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Forum.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Games" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SidebarAccordions\Games.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blog\header.php;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="IndexBeforeContent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IndexBeforeContent.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="home_body" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\home_body.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="IndexFooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IndexFooter.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="home_foot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\home_foot.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="IndexHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IndexHeader.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="IndexSidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IndexSidebar.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="home_head" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home\home_head.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\logo.svg;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

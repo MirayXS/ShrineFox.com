@@ -61,59 +61,28 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-apps&quot; type=&quot;checkbox&quot; name=&quot;apps-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-apps&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Apps&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a href=&quot;https://shrinefox.com/apps/PatchCreator&quot; class=&quot;rpcs3patchlink&quot;&gt;RPCS3 Patch Creator&lt;/a&gt;
-        ///            &lt;/li&gt;
-        ///            &lt;li class=&quot;menu- [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;column col-6 col-sm-12&quot;&gt;
+        ///    &lt;div class=&quot;card&quot;&gt;
+        ///        &lt;div class=&quot;card-image&quot;&gt;
+        ///            &lt;img class=&quot;img-responsive&quot; src=&quot;CARDIMGSOURCE&quot;&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;card-header&quot;&gt;
+        ///            &lt;div class=&quot;card-title h5&quot;&gt;
+        ///                CARDTITLE
+        ///            &lt;/div&gt;
+        ///            &lt;div class=&quot;card-subtitle text-muted&quot;&gt;
+        ///               CARDSUBTITLE
+        ///            &lt;/div&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;card-body&quot;&gt;
+        ///            CARDBODY
+        ///        &lt;/div&gt;
+        ///        &lt;br&gt;
+        ///        &lt;div class=&quot;card-foote [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Apps {
+        internal static string Card {
             get {
-                return ResourceManager.GetString("Apps", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-blog&quot; type=&quot;checkbox&quot; name=&quot;blog-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-blog&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Blog&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;div id=&quot;blog-latest&quot;&gt;&lt;/div&gt;
-        ///        &lt;/ul&gt;
-        ///    &lt;/div&gt;
-        ///&lt;/div&gt;
-        ///&lt;script&gt;
-        ///    $(&apos;#blog-latest&apos;).FeedEk({
-        ///        FeedUrl: &apos;https://shrinefox.com/blog/feed&apos;,
-        ///        MaxCount: 6,
-        ///    [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Blog {
-            get {
-                return ResourceManager.GetString("Blog", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-browse&quot; type=&quot;checkbox&quot; name=&quot;browse-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-browse&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Browse&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a href=&quot;https://shrinefox.com/browse&quot; class=&quot;typeall&quot;&gt;All&lt;/a&gt;
-        ///            &lt;/li&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Browse {
-            get {
-                return ResourceManager.GetString("Browse", resourceCulture);
+                return ResourceManager.GetString("Card", resourceCulture);
             }
         }
         
@@ -187,58 +156,6 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-forum&quot; type=&quot;checkbox&quot; name=&quot;forum-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-forum&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Community&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a href=&quot;{U_LOGIN_LOGOUT}&quot; title=&quot;{L_LOGIN_LOGOUT}&quot; accesskey=&quot;x&quot;&gt;{L_LOGIN_LOGOUT}&lt;/a&gt;
-        ///            &lt;/li&gt;
-        ///            &lt;!-- IF U_ACP --&gt;        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Forum {
-            get {
-                return ResourceManager.GetString("Forum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-forum&quot; type=&quot;checkbox&quot; name=&quot;forum-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-forum&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Community&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a href=&quot;{U_LOGIN_LOGOUT}&quot; title=&quot;{L_LOGIN_LOGOUT}&quot; accesskey=&quot;x&quot;&gt;{L_LOGIN_LOGOUT}&lt;/a&gt;
-        ///            &lt;/li&gt;
-        ///            &lt;!-- IF U_ACP --&gt;        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Forum1 {
-            get {
-                return ResourceManager.GetString("Forum1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;accordion&quot;&gt;
-        ///    &lt;input id=&quot;accordion-games&quot; type=&quot;checkbox&quot; name=&quot;games-accordion-checkbox&quot; hidden=&quot;&quot; checked=&quot;checked&quot;&gt;
-        ///    &lt;label class=&quot;accordion-header c-hand&quot; for=&quot;accordion-games&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt; Games&lt;/label&gt;
-        ///    &lt;div class=&quot;accordion-body&quot;&gt;
-        ///        &lt;ul class=&quot;menu menu-nav&quot;&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a href=&quot;https://shrinefox.com/browse&quot; class=&quot;gameall&quot;&gt;All&lt;/a&gt;
-        ///            &lt;/li&gt;
-        ///            &lt;li class=&quot;menu-item&quot;&gt;
-        ///                &lt;a hre [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Games {
-            get {
-                return ResourceManager.GetString("Games", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?php
         ////**
         /// * The header for our theme
@@ -266,77 +183,60 @@ namespace ShrineFoxCom.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;body&gt;
-        ///    &lt;div id=&quot;page-wrapper&quot;&gt;
-        ///        &lt;!--Navbar--&gt;
-        ///        &lt;section id=&quot;header&quot; class=&quot;section scrolled&quot;&gt;
-        ///            &lt;section class=&quot;container grid-lg&quot;&gt;
-        ///                &lt;nav class=&quot;navbar&quot;&gt;
-        ///                    &lt;section class=&quot;navbar-section logo&quot;&gt;
-        ///                        &lt;a onclick=&quot;toggleCookie(this)&quot; class=&quot;navbar-brand mr-10&quot;&gt;
-        ///                            &lt;!--Logo--&gt;
-        ///                            &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        ///                     [rest of string was truncated]&quot;;.
+        ///    &lt;header&gt;
+        ///        &lt;section class=&quot;navbar-section desktop-menu&quot;&gt;
+        ///            &lt;nav class=&quot;navbar dropmenu animated navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3&quot;&gt;
+        ///                &lt;div class=&quot;container accent&quot;&gt;
+        ///                    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot; onclick=&quot;window.location.reload(true);&quot;&gt;
+        ///                        &lt;!--Logo--&gt;
+        ///                        &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
+        ///                             width= [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string IndexBeforeContent {
+        internal static string home_body {
             get {
-                return ResourceManager.GetString("IndexBeforeContent", resourceCulture);
+                return ResourceManager.GetString("home_body", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                         &lt;/section&gt;
-        ///                    &lt;/section&gt;
-        ///                &lt;/section&gt;
-        ///            &lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///    &lt;/table&gt;
-        ///    &lt;!--Footer--&gt;
-        ///    &lt;footer&gt;
-        ///        &lt;table&gt;
-        ///            &lt;tbody&gt;
-        ///                &lt;tr&gt;
-        ///                    &lt;td id=&quot;social_links&quot;&gt;
-        ///                        &lt;a href=&quot;https://twitter.com/AmicitiaTeam&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt; AmicitiaTeam&lt;/a&gt;
-        ///                        &lt;br&gt;&lt;a href=&quot;https://reddit.com/r/Amicitia&quot;&gt;&lt;i class=&quot;fab fa-reddit&quot;&gt;&lt;/i&gt; r/Amicitia&lt;/a&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to     &lt;/main&gt;
+        ///&lt;/div&gt;
+        ///&lt;!-- Footer --&gt;
+        ///&lt;br&gt;
+        ///&lt;br&gt;
+        ///&lt;footer class=&quot;footer text-muted&quot;&gt;
+        ///    &lt;div class=&quot;container&quot;&gt;
+        ///        &lt;div class=&quot;columns&quot;&gt;
+        ///            &lt;div class=&quot;column col-6&quot;&gt;
+        ///                &amp;copy; ShrineFox 2020 - 2021
+        ///                &lt;script&gt;
+        ///                    document.addEventListener(&quot;DOMContentLoaded&quot;, function (event) {
+        ///                        var controller = new YTV(&apos;YourPlayerID&apos;, {
+        ///                            channelId: &apos;UCrB3t1zAQPwAeWtI8RZIOvQ&apos;,
+        ///                            play [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string IndexFooter {
+        internal static string home_foot {
             get {
-                return ResourceManager.GetString("IndexFooter", resourceCulture);
+                return ResourceManager.GetString("home_foot", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-        ///&lt;link href=&quot;https://shrinefox.com/css/all.css&quot; rel=&quot;stylesheet&quot;&gt;
-        ///&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://shrinefox.com/images/favicon.ico&quot;&gt;
-        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/spectre.min.css&quot;&gt;
-        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/theme.min.css&quot;&gt;
-        ///&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shrinefox.com/css/custom.css&quot;&gt;
-        ///&lt;link rel=&quot;styles [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        ///    &lt;title&gt;ShrineFox.com&lt;/title&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/bootstrap.min.css&quot; /&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre.css&quot; /&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre-icons.css&quot; /&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/ytv.css&quot; /&gt;
+        ///    &lt;link rel=&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string IndexHeader {
+        internal static string home_head {
             get {
-                return ResourceManager.GetString("IndexHeader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;td class=&quot;sidebar&quot; id=&quot;sidebar&quot;&gt;
-        ///    &lt;div class=&quot;accordion-container&quot;&gt;
-        ///        &lt;table&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td class=&quot;toggle-btn&quot; onclick=&quot;toggleCookie(this)&quot; style=&quot;vertical-align:top;&quot;&gt;
-        ///                    &lt;i id=&quot;toggle-icon&quot; class=&quot;fa fa-bars&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-        ///                &lt;/td&gt;
-        ///                &lt;td class=&quot;toggle-accordions&quot; id=&quot;toggle-accordions&quot;&gt;
-        ///                    &lt;div class=&quot;scroll-bar-wrap&quot;&gt;
-        ///                        &lt;div class=&quot;scroll-box&quot;&gt;
-        ///                           [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string IndexSidebar {
-            get {
-                return ResourceManager.GetString("IndexSidebar", resourceCulture);
+                return ResourceManager.GetString("home_head", resourceCulture);
             }
         }
         
@@ -395,7 +295,7 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;column col-6 col-sm-12&quot;&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;column col-4 col-sm-12&quot;&gt;
         ///    &lt;div class=&quot;card&quot;&gt;
         ///        &lt;div class=&quot;card-image&quot;&gt;
         ///            &lt;img class=&quot;img-responsive&quot; src=&quot;POSTMEDIAURL&quot;&gt;
@@ -405,8 +305,8 @@ namespace ShrineFoxCom.Properties {
         ///            &lt;div class=&quot;card-title h5&quot;&gt;
         ///                POSTID POSTTITLE
         ///            &lt;/div&gt;
-        ///            &lt;div class=&quot;card-subtitle text-gray&quot;&gt;
-        ///                GAMEBANANA POSTTYPE  [rest of string was truncated]&quot;;.
+        ///            &lt;div class=&quot;card-subtitle text-muted&quot;&gt;
+        ///                GAMEBANANA POSTTYPE [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Post {
             get {

@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="Text Search" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TextSearch.aspx.cs" Inherits="ShrineFoxCom.TextSearch" MaintainScrollPositionOnPostback="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>
-    <b><a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true""></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Apps <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %></b>
-    <h1><%: Page.Title %></h1>
+    <div class="navipath">
+		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <a href="https://shrinefox.com/WebApps">Apps</a> 
+        <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
+	</div>
+	<h1><%: Page.Title %></h1>
     <div class="container">
         <div class="columns">
             <div class="column col-4">

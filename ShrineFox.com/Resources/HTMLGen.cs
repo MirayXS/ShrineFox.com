@@ -18,12 +18,11 @@ namespace ShrineFoxCom
 
             // Overall Header
             string header = Properties.Resources.overall_header;
-            header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.IndexHeader);
-            header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.IndexBeforeContent.Replace("forumlink", "active"));
-            header = header.Replace("<!--INDEXSIDEBAR-->", Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Forum + Properties.Resources.Browse + Properties.Resources.Apps) + $"<a href=\"https://shrinefox.com\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> ShrineFox.com</a> <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i><a href=\"https://shrinefox.com/forum\">Forum</a>");
+            header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.home_head);
+            header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.home_body.Replace("forumlink", "active"));
             File.WriteAllText(Path.Combine(forumThemePath, "overall_header.html"), header);
             // Overall Footer
-            File.WriteAllText(Path.Combine(forumThemePath, "overall_footer.html"), Properties.Resources.overall_footer.Replace("<!--INDEXFOOTER-->", Properties.Resources.IndexFooter));
+            File.WriteAllText(Path.Combine(forumThemePath, "overall_footer.html"), Properties.Resources.overall_footer.Replace("<!--INDEXFOOTER-->", Properties.Resources.home_foot));
             // CSS
             var forumCssPath = forumThemePath.Replace("template", "theme");
             Directory.CreateDirectory(forumCssPath);
@@ -40,21 +39,14 @@ namespace ShrineFoxCom
 
                 // Header
                 header = Properties.Resources.header;
-                header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.IndexHeader);
-                header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.IndexBeforeContent.Replace($"{site}link", "active").Replace("articleslink", "active"));
-                header = header.Replace("<!--INDEXSIDEBAR-->", Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Blog.Replace("blog", site).Replace("Blog", FirstCharToUpper(site)) + "<!--Accordions-->"));
-                foreach (var sitee in sites)
-                {
-                    if (sitee != site)
-                        header = header.Replace("<!--Accordions-->", Properties.Resources.Blog.Replace("blog", sitee).Replace("Blog", FirstCharToUpper(sitee)).Replace("accordion\">", "accordion2\">") + "<!--Accordions-->");
-                }
-                header = header.Replace("<!--Accordions-->", Properties.Resources.Browse.Replace("accordion\">", "accordion2\">") + Properties.Resources.Apps.Replace("accordion\">", "accordion2\">") + $"</div>");
+                header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.home_head);
+                header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.home_body.Replace($"{site}link", "active").Replace("articleslink", "active"));
                 header = header.Replace("<!--MainNavigation-->", $"<a href=\"https://shrinefox.com\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> ShrineFox.com</a> <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i><a href=\"https://shrinefox.com/{site}\">{FirstCharToUpper(site)}</a>");
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
                 File.WriteAllText(Path.Combine(path, "header.php"), header);
                 // Footer
-                File.WriteAllText(Path.Combine(path, "footer.php"), Properties.Resources.IndexFooter);
+                File.WriteAllText(Path.Combine(path, "footer.php"), Properties.Resources.home_foot);
                 // CSS
                 File.WriteAllText(Path.Combine(path, "style.css"), Properties.Resources.style);
             }

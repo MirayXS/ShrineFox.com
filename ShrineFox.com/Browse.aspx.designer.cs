@@ -15,31 +15,31 @@ namespace ShrineFoxCom
     {
 
         /// <summary>
-        /// Sidebar control.
+        /// Notices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Sidebar;
+        protected global::System.Web.UI.WebControls.PlaceHolder Notices;
 
         /// <summary>
-        /// Navigation control.
+        /// LastUpdated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Navigation;
+        protected global::System.Web.UI.WebControls.PlaceHolder LastUpdated;
 
         /// <summary>
-        /// Warning control.
+        /// QueryOptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Warning;
+        protected global::System.Web.UI.WebControls.PlaceHolder QueryOptions;
 
         /// <summary>
         /// Pagination1 control.

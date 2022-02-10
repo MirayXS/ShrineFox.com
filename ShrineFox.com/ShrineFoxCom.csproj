@@ -198,23 +198,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <Content Include="Apps.aspx" />
+    <Content Include="Articles.aspx" />
+    <Content Include="images\waves.mp4" />
+    <Content Include="Legal.aspx" />
+    <Content Include="Terms.aspx" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\theme\notice.css" />
+    <Content Include="css\theme\tags.css" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="Resources\Card.html" />
+    <Content Include="Labs.aspx" />
+    <Content Include="WebApps.aspx" />
     <Content Include="apps\Files.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="apps\PatchCreator.aspx" />
     <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
     <Content Include="Browse.aspx" />
-    <Content Include="css\custom.css" />
-    <Content Include="css\spectre.min.css" />
-    <Content Include="css\theme.min.css" />
+    <Content Include="css\spectre-icons.css" />
+    <Content Include="css\spectre.css" />
+    <Content Include="css\theme\feedek.css" />
+    <Content Include="css\theme\google.css" />
+    <Content Include="css\theme\header.css" />
+    <Content Include="css\theme\scrollbar.css" />
+    <Content Include="css\theme\theme.css" />
     <Content Include="css\ytv.css" />
     <Content Include="images\favicon.ico" />
-    <Content Include="images\waves2.mp4" />
-    <Content Include="js\themes.js" />
+    <Content Include="js\theme.js" />
     <Content Include="js\FeedEk.min.js" />
     <Content Include="js\jscolor.js" />
-    <Content Include="js\togglesidebar.js" />
     <Content Include="js\ytv.js" />
     <Content Include="PatchCreator.aspx" />
     <Content Include="Resources\Blog\footer.php" />
@@ -225,15 +238,9 @@
     <Content Include="Resources\Forum\colours.css" />
     <Content Include="Resources\Forum\overall_footer.html" />
     <Content Include="Resources\Forum\overall_header.html" />
-    <Content Include="Resources\IndexBeforeContent.html" />
-    <Content Include="Resources\IndexFooter.html" />
-    <Content Include="Resources\IndexHeader.html" />
-    <Content Include="Resources\IndexSidebar.html" />
-    <Content Include="Resources\SidebarAccordions\Blog.html" />
-    <Content Include="Resources\SidebarAccordions\Forum.html" />
-    <Content Include="Resources\SidebarAccordions\Apps.html" />
-    <Content Include="Resources\SidebarAccordions\Games.html" />
-    <Content Include="Resources\SidebarAccordions\Browse.html" />
+    <Content Include="Resources\Home\home_body.html" />
+    <Content Include="Resources\Home\home_foot.html" />
+    <Content Include="Resources\Home\home_head.html" />
     <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="Wiki.aspx" />
     <Content Include="apps\Test.aspx" />
@@ -248,7 +255,7 @@
     <Content Include="App_Data\yml_patches\lipsum\patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
-    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -261,12 +268,47 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Apps.aspx.cs">
-      <DependentUpon>Apps.aspx</DependentUpon>
+    <Compile Include="Articles.aspx.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Apps.aspx.designer.cs">
-      <DependentUpon>Apps.aspx</DependentUpon>
+    <Compile Include="Articles.aspx.designer.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Legal.aspx.cs">
+      <DependentUpon>Legal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legal.aspx.designer.cs">
+      <DependentUpon>Legal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Terms.aspx.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terms.aspx.designer.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Labs.aspx.cs">
+      <DependentUpon>Labs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Labs.aspx.designer.cs">
+      <DependentUpon>Labs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebApps.aspx.cs">
+      <DependentUpon>WebApps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebApps.aspx.designer.cs">
+      <DependentUpon>WebApps.aspx</DependentUpon>
     </Compile>
     <Compile Include="apps\Files.aspx.cs">
       <DependentUpon>Files.aspx</DependentUpon>

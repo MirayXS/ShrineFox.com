@@ -2,14 +2,17 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:PlaceHolder ID="Sidebar" runat="server"></asp:PlaceHolder>
-    <b><a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true""></i> ShrineFox.com</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Apps <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %></b>
-    <h1><%: Page.Title %></h1>
+    <div class="navipath">
+		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <a href="https://shrinefox.com/WebApps">Apps</a> 
+        <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
+	</div>
+	<h1><%: Page.Title %></h1>
     Generate a <b>patch.yml</b> to use for modding Persona 5 (PS3). <a href="https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup/">Read more</a>
     <br>Automatically removes conflicting and unwanted patches so you only download what you need.
     <br>
     <br>
-    <div class="notices yellow">
+    <div class="notice yellow">
         <p>
             This page exists as a testing area for deploying upcoming versions of web applications.
             <br>Nothing seen here is final and might not work as expected.
@@ -32,7 +35,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-title h5">1. PPU Hash</div>
-            <div class="card-subtitle text-gray">Provide the correct hash or this won't work!</div>
+            <div class="card-subtitle text-muted">Provide the correct hash or this won't work!</div>
         </div>
         <div class="card-footer">
             <div class="columns">
@@ -50,7 +53,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-title h5">2. Select & Toggle Patches</div>
-            <div class="card-subtitle text-gray">Choose a patch to toggle. Hover over one to learn more about it.</div>
+            <div class="card-subtitle text-muted">Choose a patch to toggle. Hover over one to learn more about it.</div>
         </div>
         <div class="card-footer">
             <div class="columns">
@@ -73,7 +76,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title h5">3. Choose Download Format</div>
-                        <div class="card-subtitle text-gray" id="appliedPatches" runat="server"></div>
+                        <div class="card-subtitle text-muted" id="appliedPatches" runat="server"></div>
                         <div class="card-body">
                             <b>New Format</b>: Works with RPCS3's new Patch Manager. Place downloaded <kbd>patch.yml</kbd> in your <code>RPCS3/Patches</code> folder and go to <code>Manage > Game Patches</code>.
                             <br>

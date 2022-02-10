@@ -97,14 +97,6 @@ namespace ShrineFox.com
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Sidebar
-            LiteralControl SidebarHtml = new LiteralControl();
-            SidebarHtml.Text = ShrineFoxCom.Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", ShrineFoxCom.Properties.Resources.Browse + ShrineFoxCom.Properties.Resources.Apps.Replace("ps4patchlink", "active"));
-            Sidebar.Controls.Add(SidebarHtml);
-            if (Page.IsPostBack)
-            {
-
-            }
         }
 
         protected void GameTab_Click(object sender, EventArgs e)

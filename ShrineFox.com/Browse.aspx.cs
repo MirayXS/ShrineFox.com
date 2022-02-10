@@ -16,175 +16,92 @@ namespace ShrineFoxCom
 {
     public partial class Browse : Page
     {
+        public static string url = "https://shrinefox.com/browse";
+        public static Query query { get; set; } = new Query();
         protected void Page_Load(object sender, EventArgs e)
         {
             // If it's been more than half a day since an update, get Gamebanana data
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv");
             if (DateTime.Now > lastWriteTime.AddHours(6))
-                Webscraper.UpdateTSVs(Warning);
+                Webscraper.UpdateTSVs(Notices);
 
             // The number of posts on one page
             int maxPostsPerPage = 15;
-            
-            // Potential query values
-            string game = "";
-            string type = "";
-            string author = "";
-            string tag = "";
-            string post = "";
-            string page = "";
 
-            // Split values from url
-            if (Request.QueryString.Count > 0 && !String.IsNullOrEmpty(Request.QueryString[0]))
-            {
-                string[] queries = Request.Url.Query.Replace("?", "").Split('&');
-                foreach (string query in queries)
-                {
-                    if (query.StartsWith("tag="))
-                        tag = query.Replace("tag=", "");
-                    else if (query.StartsWith("author="))
-                        author = query.Replace("author=", "");
-                    else if (query.StartsWith("type="))
-                        type = query.Replace("type=", "");
-                    else if (query.StartsWith("game="))
-                        game = query.Replace("game=", "");
-                    else if (query.StartsWith("post="))
-                        post = query.Replace("post=", "");
-                    else if (query.StartsWith("page="))
-                        page = query.Replace("page=", "");
-                }
-            }
-
-            // Validate Page Number
-            // Can only be numerical, default to Page 1
-            int pageNumber = 1;
-            if (page != "")
-                try { pageNumber = Convert.ToInt32(page); } catch { pageNumber = 1; }
-                
-
-            // Validate Game
-            // Can only be a supported game, or default to none
-            if (Post.GameList.Any(x => x.Item1.ToLower().Equals(game.ToLower())))
-                game = game.ToLower();
-            else
-                game = "";
-
-            // Validate Type
-            // Can only be a supported game, or default to none
-            if (Post.TypeList.Any(x => x.ToLower().Equals(type.ToLower())))
-                type = type.ToLower();
-            else
-                type = "";
-
-            // Set Up Sidebar
-            // For the browser, only game/type accordions are shown, label is changed from browse to type (unlike home/other pages)
-            LiteralControl SidebarHtml = new LiteralControl();
-            SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse.Replace("Browse</label>", "Type</label>") + Properties.Resources.Games);
-            // For Game/Type queries, highlight the option in sidebar, adding current section to its url
-            if (type != "")
-                SidebarHtml.Text = SidebarHtml.Text.Replace("typeall","").Replace($"type{type}", "active").Replace("browse?game=", $"browse?type={type}&game=").Replace("/browse\" class=\"typeall\"", $"/browse?type={type}\" class=\"typeall\"");
-            else
-                SidebarHtml.Text = SidebarHtml.Text.Replace($"typeall", "active");
-            if (game != "")
-                SidebarHtml.Text = SidebarHtml.Text.Replace("gameall", "").Replace($"game{game}", "active").Replace("browse?type=", $"browse?game={game}&type=").Replace("/browse\" class=\"typeall\"", $"/browse?game={game}\" class=\"gameall\"");
-            else
-                SidebarHtml.Text = SidebarHtml.Text.Replace($"gameall", "active");
-            // Add Sidebar to Page
-            Sidebar.Controls.Add(SidebarHtml);
+            // Get queries from url
+            var queries = ParseQueryString(Request.Url.Query);
+            query = ParseQuery(queries);
 
             // Serialize Post data from .tsv
             List<Post> posts = Post.Get();
             // Default value for total pages
             int totalPages = 1;
 
-            // Show links to selected queries above results
-            LiteralControl NavHtml = new LiteralControl();
+            // Show options to add queries to URL and reload
+            GenerateQueryOptions();
             // Narrow down posts based on queries
             LiteralControl PostsHtml = new LiteralControl();
+            // Display Notices
+            LiteralControl NoticeHtml = new LiteralControl();
+            // Display Last Updated Time
+            LiteralControl LastUpdatedHtml = new LiteralControl();
             // Generate Pagination
-            LiteralControl Pagination1Html = new LiteralControl();
+            LiteralControl PaginationHtml = new LiteralControl();
             LiteralControl Pagination2Html = new LiteralControl();
 
             try
             {
-                if (post != "")
+                if (queries != new List<Tuple<string, string>>())
                 {
-                    // Individual posts have priority over all other queries
-                    posts = new List<Post> { posts.Single(x => x.Id.ToLower().Equals(post.ToLower())) };
-                    NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Post: <a href=\"https://shrinefox.com/browse?post={post}\">{posts.First().Title}</a>";
-                }
-                else
-                {
-                    // Posts by type are further narrowed down by game, author, and tag in that order
-                    if (type != "")
+                    if (query.PostID != "")
                     {
-                        posts = posts.Where(x => x.Type.ToLower().Equals(type)).ToList();
-                        NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Type: <a href=\"https://shrinefox.com/browse?type={type}\">{Post.FirstCharToUpper(type)}</a>";
+                        // Individual posts have priority over all other queries
+                        posts = new List<Post> { posts.Single(x => x.Id.ToLower().Equals(query.PostID.ToLower())) };
                     }
-                    if (game != "")
+                    else
                     {
-                        posts = posts.Where(x => x.Games.Any(y => y.ToLower().Equals(game))).ToList();
-                        NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Game: <a href=\"https://shrinefox.com/browse?game={game}\">{game.ToUpper()}</a>";
-                    }
-                    if (author != "")
-                    {
-                        posts = posts.Where(x => x.Authors.Contains(author, StringComparer.OrdinalIgnoreCase)).ToList();
-                        NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Author: <a href=\"https://shrinefox.com/author?type={author}\">{author}</a>";
-                    }
-                    if (tag != "")
-                    {
-                        posts = posts.Where(x => x.Tags.Contains(tag, StringComparer.OrdinalIgnoreCase)).ToList();
-                        NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Tag: <a href=\"https://shrinefox.com/browse?tag={tag}\">{tag}</a>";
-                    }
-
-                    // Reverse Post Order (latest to oldest)
-                    posts = posts.OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).Reverse().ToList();
-                    // Total Results Count
-                    Pagination1Html.Text += $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}<br><b>{posts.Count}</b> results";
-                    // Total number of pages in this query
-                    totalPages = Convert.ToInt32(RoundUp(Convert.ToDecimal(posts.Count) / Convert.ToDecimal(maxPostsPerPage), 0));
-
-                    // Include page in navigation if 2 or higher
-                    if (pageNumber > 1)
-                    {
-                        NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> Page {pageNumber}</a>";
+                        // Posts by type are further narrowed down by game, author, and tag
+                        foreach (var game in query.Games)
+                            if (Post.GameList.Any(x => x.Item1.ToUpper().Equals(game.ToUpper())))
+                                posts = posts.Where(p => p.Games.Any(g => g.ToUpper().Equals(game.ToUpper()))).ToList();
+                        foreach (var type in query.Types)
+                            if (Post.TypeList.Any(x => x.ToLower().Equals(type.ToLower())))
+                                posts = posts.Where(p => p.Type.ToLower().Equals(type.ToLower())).ToList();
+                        foreach (var author in query.Authors)
+                            if (author != "")
+                                posts = posts.Where(p => p.Authors.Any(a => a.ToLower().Equals(author.ToLower()))).ToList();
+                        foreach (var tag in query.Tags)
+                            if (tag != "")
+                                posts = posts.Where(p => p.Tags.Any(t => t.ToLower().Equals(tag.ToLower()))).ToList();
                     }
                 }
+
+                // Reverse Post Order (latest to oldest)
+                posts = posts.OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).Reverse().ToList();
+                // Total Results Count
+                LastUpdatedHtml.Text += $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}<br><b>{posts.Count}</b> results";
+                // Total number of pages in this query
+                totalPages = Convert.ToInt32(RoundUp(Convert.ToDecimal(posts.Count) / Convert.ToDecimal(maxPostsPerPage), 0));
             }
-            catch { posts = new List<Post>(); totalPages = posts.Count;  }
+            catch { posts = new List<Post>(); totalPages = posts.Count; }
             
-            if (posts.Count > 0 && pageNumber >= 1)
+            if (posts.Count > 0 && query.PageNumber >= 1)
             {
                 // Write posts to page, starting from query page number
-                for (int i = (pageNumber - 1) * maxPostsPerPage; i < posts.Count && i < ((pageNumber - 1) * maxPostsPerPage) + maxPostsPerPage; i++)
+                for (int i = (query.PageNumber - 1) * maxPostsPerPage; i < posts.Count && i < ((query.PageNumber - 1) * maxPostsPerPage) + maxPostsPerPage; i++)
                     PostsHtml.Text += Post.Write(posts[i]);
             }
             else
             {
                 // Show 404 if there's 0 posts, or if there's not enough posts to populate a given page number
-                NavHtml.Text += $" <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i> 404 Not Found";
-                PostsHtml.Text += Post.Notice("red", "No Posts Were Found!");
+                NoticeHtml.Text += Post.Notice("red", "No Posts Were Found!");
             }
-
-            // Build Pagination URL
-            string newQueryString = "";
-            if (tag != "")
-                newQueryString += $"&tag={tag}";
-            if (author != "")
-                newQueryString += $"&author={author}";
-            if (game != "")
-                newQueryString += $"&game={game}";
-            if (type != "")
-                newQueryString += $"&type={type}";
-            newQueryString += "&page=";
-            newQueryString = newQueryString.Remove(0, 1);
-            newQueryString = "?" + newQueryString;
             
             // Generate and Add Pagination HTML
-            string pagination = Pagination(pageNumber, totalPages, newQueryString);
-            Pagination1Html.Text += $"<br>{pagination}";
+            string pagination = Pagination(query, totalPages);
+            PaginationHtml.Text += $"<br>{pagination}";
+            Pagination1.Controls.Add(PaginationHtml);
             Pagination2Html.Text += $"<br>{pagination}";
-            Pagination1.Controls.Add(Pagination1Html);
             Pagination2.Controls.Add(Pagination2Html);
 
             // Add Warnings/Tip Notices
@@ -192,81 +109,225 @@ namespace ShrineFoxCom
             string[] hostFS = new string[] { "P3FES", "P4", "SMT3" };
             string[] modCpk = new string[] { "PQ", "PQ2", "P3D", "P5D", "P5" };
             // Cheats Construction
-            if (type == "cheat")
-            {
-                Pagination1Html.Text += Post.Notice("red", "The cheats section is still under construction, sorry for the inconvenience.");
-            }
+            if (query.Types.Any(x => x.Equals("cheat")))
+                NoticeHtml.Text += Post.Notice("red", "The cheats section is still under construction, sorry for the inconvenience.");
             // Pan shoutout, P5R Modding Guide
-            if (game.ToUpper().Equals("P5R") && type != "cheat")
+            if (query.Games.Any(x => x.ToUpper().Equals("P5R")) && query.Types.Any(y => y.Equals("mod") || y.Equals("tool") || y.Equals("guide")))
             {
-                Pagination1Html.Text += Post.Notice("green", "Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.");
-                Pagination1Html.Text += Post.Notice("blue", "To learn how to install and run P5R mods on PS4, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.");
+                NoticeHtml.Text += Post.Notice("green", "Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.");
+                NoticeHtml.Text += Post.Notice("blue", "To learn how to install and run P5R mods on PS4, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.");
             }
             // SMTV Modding News Link
-            if (game.ToUpper().Equals("SMTV") && type != "cheat")
-            {
-                Pagination1Html.Text += Post.Notice("green", "See <a href=\"https://shrinefox.com/news/smtv-modding-has-begun\">this article</a> for the latest info about creating and installing SMT V mods.");
-            }
+            if (query.Games.Any(x => x.ToUpper().Equals("SMTV")) && query.Types.Any(y => y.Equals("mod")))
+                NoticeHtml.Text += Post.Notice("green", "See <a href=\"https://shrinefox.com/news/smtv-modding-has-begun\">this article</a> for the latest info about creating and installing SMT V mods.");
             // Mod install guides, P4G Vita/PC difference
-            if (aemulus.Any(x => x.Equals(game.ToUpper())) && type != "tool" && type != "guide" && type != "cheat")
+            if (aemulus.Any(y => query.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && query.Types.Any(y => y.Equals("mod")))
             {
-                Pagination1Html.Text += Post.Notice("blue", "To learn how to install and run <b>Aemulus Package Manager</b> compatible mods, see <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">this guide</a>.");
-                if (game.ToUpper().Equals("P4G"))
-                    Pagination1Html.Text += Post.Notice("yellow", "PC mods are not compatible with Vita. Installing Vita mods still requires the <a href=\"https://shrinefox.com/browse?post=p4g-mod-cpk\">mod.cpk patch</a> and <a href=\"https://shrinefox.com/browse?post=modcompendium\">Mod Compendium</a>. <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">Read more</a> about the differences between mod managers.");
+                NoticeHtml.Text += Post.Notice("blue", "To learn how to install and run <b>Aemulus Package Manager</b> compatible mods, see <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">this guide</a>.");
+                if (query.Games.Any(x => x.ToUpper().Equals("P4G")))
+                    NoticeHtml.Text += Post.Notice("yellow", "PC mods are not compatible with Vita (or vice versa). Installing Vita mods still requires the <a href=\"https://shrinefox.com/browse?post=p4g-mod-cpk\">mod.cpk patch</a> and <a href=\"https://shrinefox.com/browse?post=modcompendium\">Mod Compendium</a>. <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">Read more</a> about the differences between mod managers.");
             }
             // HostFS, Nocturne difference
-            if (hostFS.Any(x => x.Equals(game.ToUpper()) && type != "tool" && type != "guide" && type != "cheat"))
+            if (hostFS.Any(y => query.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && query.Types.Any(y => y.Equals("mod")))
             {
                 string additional = "";
-                if (game.ToUpper().Equals("SMT3"))
+                if (query.Games.Any(x => x.ToUpper().Equals("SMT3")))
                     additional += "<br><b>Note:</b> This only applies to PS2 mods. PC and PS2 mods are not compatible with the opposite platform.";
-                Pagination1Html.Text += Post.Notice("yellow", $"Modding this game requires a <b>HostFS</b> patch on PCSX2. <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">Read more here</a>.{additional}<br><br>If you have to build mods into as a PS2 ISO, see <a href=\"https://shrinefox.com/browse?post=p34-modding-guide\">this guide</a> instead.");
+                NoticeHtml.Text += Post.Notice("yellow", $"Modding this game requires a <b>HostFS</b> patch on PCSX2. <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">Read more here</a>.{additional}<br><br>If you have to build mods into as a PS2 ISO, see <a href=\"https://shrinefox.com/browse?post=p34-modding-guide\">this guide</a> instead.");
             }
             // Mod.cpk Patch Required for Mod
-            if (modCpk.Any(x => x.Equals(game.ToUpper()) && type != "tool" && type != "guide" && type != "cheat"))
+            if (modCpk.Any(y => query.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && query.Types.Any(y => y.Equals("mod")))
             {
-                string link = "";
-                switch (game.ToUpper()) 
-                { 
-                    case "P5":
-                        link = "https://shrinefox.com/apps/PatchCreator";
-                        break;
-                    case "P3D":
-                        link = "https://shrinefox.com/browse?post=p5d-p5dmodloading";
-                        break;
-                    case "P5D":
-                        link = "https://shrinefox.com/browse?post=p5d-p5dmodloading";
-                        break;
-                    case "PQ":
-                        link = "https://shrinefox.com/browse?post=pq2-patchesguide";
-                        break;
-                    case "PQ2":
-                        link = "https://shrinefox.com/browse?post=pq2-patchesguide";
-                        break;
+                foreach (var game in modCpk.Where(y => query.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))))
+                {
+                    string link = "";
+                    switch (game.ToUpper())
+                    {
+                        case "P5":
+                            link = "https://shrinefox.com/apps/PatchCreator";
+                            break;
+                        case "P3D":
+                            link = "https://shrinefox.com/browse?post=p5d-p5dmodloading";
+                            break;
+                        case "P5D":
+                            link = "https://shrinefox.com/browse?post=p5d-p5dmodloading";
+                            break;
+                        case "PQ":
+                            link = "https://shrinefox.com/browse?post=pq2-patchesguide";
+                            break;
+                        case "PQ2":
+                            link = "https://shrinefox.com/browse?post=pq2-patchesguide";
+                            break;
+                    }
+                    NoticeHtml.Text += Post.Notice("yellow", $"Modding this game requires a <a href=\"{link}\">mod.cpk patch</a>.");
                 }
-
-                Pagination1Html.Text += Post.Notice("yellow", $"Modding this game requires a <a href=\"{link}\">mod.cpk patch</a>.");
             }
 
-            // Display Navigation and Post Contents
-            Navigation.Controls.Add(NavHtml);
+            // Display Posts
             Posts.Controls.Add(PostsHtml);
+            // Display Notices
+            Notices.Controls.Add(NoticeHtml);
+            // Display Last Updated Time
+            LastUpdated.Controls.Add(LastUpdatedHtml);
         }
 
-        private static string Pagination(int currentPage, int totalPages, string query)
+        private void GenerateQueryOptions()
+        {
+            LiteralControl optionsHtml = new LiteralControl();
+            Query newQuery = new Query();
+            foreach (var author in query.Authors)
+                newQuery.Authors.Add(author);
+            foreach (var game in query.Games)
+                newQuery.Games.Add(game);
+            foreach (var type in query.Types)
+                newQuery.Types.Add(type);
+            foreach (var tag in query.Tags)
+                newQuery.Tags.Add(tag);
+
+            // Add game or type to query string from list
+            foreach (var game in Post.GameList.Where(x => !newQuery.Games.Any(y => y.ToLower().Equals(x.Item1.ToLower()))))
+            {
+                Query tempQuery = new Query();
+                foreach (var author in newQuery.Authors)
+                    tempQuery.Authors.Add(author);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var type in newQuery.Types)
+                    tempQuery.Types.Add(type);
+                foreach (var tag in newQuery.Tags)
+                    tempQuery.Tags.Add(tag);
+
+                tempQuery.Games.Add(game.Item1.ToUpper());
+                optionsHtml.Text += $"<div class=\"rh_tag\"><a href=\"{url}{BuildQueryString(tempQuery)}\">{game.Item1.ToUpper()}</a></div>";
+            }
+            foreach (var type in Post.TypeList.Where(x => !newQuery.Types.Any(y => y.ToLower().Equals(x.ToLower()))))
+            {
+                Query tempQuery = new Query();
+                foreach (var author in newQuery.Authors)
+                    tempQuery.Authors.Add(author);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var t in newQuery.Types)
+                    tempQuery.Types.Add(t);
+                foreach (var tag in newQuery.Tags)
+                    tempQuery.Tags.Add(tag);
+
+                tempQuery.Types.Add(type);
+                optionsHtml.Text += $"<div class=\"rh_tag\"><a href=\"{url}{BuildQueryString(tempQuery)}\">{Post.FirstCharToUpper(type)}</a></div>";
+            }
+
+            optionsHtml.Text += "<br><div class=\"tags\"><ul class=\"tag-list\">";
+
+            // Remove query from existing query string
+            foreach (var game in newQuery.Games)
+            {
+                Query tempQuery = new Query();
+                foreach (var author in newQuery.Authors)
+                    tempQuery.Authors.Add(author);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var type in newQuery.Types)
+                    tempQuery.Types.Add(type);
+                foreach (var tag in newQuery.Tags)
+                    tempQuery.Tags.Add(tag);
+
+                tempQuery.Games.Remove(game);
+                optionsHtml.Text += $"<li class=\"tag-item\"><span>Game: {game.ToUpper()}</span> <a href=\"{url}{BuildQueryString(tempQuery)}\" class=\"remove-button ng-binding\">x</a></li>";
+            }
+            foreach (var type in newQuery.Types)
+            {
+                Query tempQuery = new Query();
+                foreach (var author in newQuery.Authors)
+                    tempQuery.Authors.Add(author);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var t in newQuery.Types)
+                    tempQuery.Types.Add(t);
+                foreach (var tag in newQuery.Tags)
+                    tempQuery.Tags.Add(tag);
+
+                tempQuery.Types.Remove(type);
+                optionsHtml.Text += $"<li class=\"tag-item\"><span>Type: {Post.FirstCharToUpper(type)}</span> <a href=\"{url}{BuildQueryString(tempQuery)}\" class=\"remove-button ng-binding\">x</a></li>";
+            }
+            foreach (var tag in newQuery.Tags)
+            {
+                Query tempQuery = new Query();
+                foreach (var author in newQuery.Authors)
+                    tempQuery.Authors.Add(author);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var type in newQuery.Types)
+                    tempQuery.Types.Add(type);
+                foreach (var t in newQuery.Tags)
+                    tempQuery.Tags.Add(t);
+
+                tempQuery.Tags.Remove(tag);
+                optionsHtml.Text += $"<li class=\"tag-item\"><span>Tag: {Post.FirstCharToUpper(tag)}</span> <a href=\"{url}{BuildQueryString(tempQuery)}\" class=\"remove-button ng-binding\">x</a></li>";
+            }
+            foreach (var author in newQuery.Authors)
+            {
+                Query tempQuery = new Query();
+                foreach (var a in newQuery.Authors)
+                    tempQuery.Authors.Add(a);
+                foreach (var g in newQuery.Games)
+                    tempQuery.Games.Add(g);
+                foreach (var type in newQuery.Types)
+                    tempQuery.Types.Add(type);
+                foreach (var tag in newQuery.Tags)
+                    tempQuery.Tags.Add(tag);
+
+                tempQuery.Authors.Remove(author);
+                optionsHtml.Text += $"<li class=\"tag-item\"><span>Author: {Post.FirstCharToUpper(author)}</span> <a href=\"{url}{BuildQueryString(tempQuery)}\" class=\"remove-button ng-binding\">x</a></li>";
+            }
+
+            optionsHtml.Text += "</ul></div>";
+
+            QueryOptions.Controls.Add(optionsHtml);
+        }
+
+        public static string BuildQueryString(Query newQuery)
+        {
+            string queryString = "";
+
+            foreach (var tag in newQuery.Tags)
+                queryString += $"&tag={tag}";
+            foreach (var author in newQuery.Authors)
+                queryString += $"&author={author}";
+            foreach (var game in newQuery.Games)
+                queryString += $"&game={game}";
+            foreach (var type in newQuery.Types)
+                queryString += $"&type={type}";
+            if (query.PostID != "")
+                queryString += $"&post={newQuery.PostID}";
+            if (query.PageNumber > 1)
+                queryString += $"&page={newQuery.PageNumber}";
+            if (queryString.Length > 0)
+                queryString = queryString.Remove(0, 1);
+            queryString = "?" + queryString;
+
+            return queryString;
+        }
+
+        private static string Pagination(Query newQuery, int totalPages)
         {
             string html = "<ul class=\"pagination\">";
-            int lastPage = 0;
+            int currentPage = newQuery.PageNumber;
 
             // Previous Button and First Page
             if (currentPage <= 1)
                 html += "<li class=\"page-item disabled\"><a href=\"#\" tabindex=\"-1\">Prev</a></li>";
             else
-                html += $"<li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}{currentPage - 1}\">Prev</a></li>";
+            {
+                newQuery.PageNumber -= 1;
+                html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">Prev</a></li>";
+            }
 
             // First Page
             if (currentPage >= 2)
-                html += $"<li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}1\">1</a></li>";
+            {
+                newQuery.PageNumber = 1;
+                html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">1</a></li>";
+            }
 
             // Previous Post Numbers
             if (currentPage > 2)
@@ -279,14 +340,15 @@ namespace ShrineFoxCom
                     // Limit to the last 2 pages
                     if (p > currentPage - 2 && currentPage - 2 > 0)
                     {
-                        lastPage = p;
-                        html += $"<li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}{p}\">{p}</a></li>";
+                        newQuery.PageNumber = p;
+                        html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">{p}</a></li>";
                     }
                 }
             }
 
             // Current Post Number
-            html += $"<li class=\"page-item active\"><a href=\"https://shrinefox.com/browse{query}{currentPage}\">{currentPage}</a></li>";
+            newQuery.PageNumber = currentPage;
+            html += $"<li class=\"page-item active\"><a href=\"{url}{BuildQueryString(newQuery)}\">{currentPage}</a></li>";
 
             // Next Post Numbers
             for (int p = currentPage + 1; p < totalPages; ++p)
@@ -294,8 +356,8 @@ namespace ShrineFoxCom
                 // Limit to the next 2 pages
                 if (p < currentPage + 2)
                 {
-                    lastPage = p;
-                    html += $"<li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}{p}\">{p}</a></li>";
+                    newQuery.PageNumber = p;
+                    html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">{p}</a></li>";
                 }   
             }
 
@@ -305,7 +367,10 @@ namespace ShrineFoxCom
                 if (currentPage + 1 < totalPages)
                     html += "<li class=\"page-item\"><span>...</span></li>";
                 // Last Post Number & Next Button
-                html += $"<li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}{totalPages}\">{totalPages}</a></li><li class=\"page-item\"><a href=\"https://shrinefox.com/browse{query}{totalPages}\">Next</a></li>";
+                newQuery.PageNumber = totalPages;
+                html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">{totalPages}</a></li>";
+                newQuery.PageNumber = currentPage + 1;
+                html += $"<li class=\"page-item\"><a href=\"{url}{BuildQueryString(newQuery)}\">Next</a></li>";
             }
             else
             {
@@ -338,5 +403,46 @@ namespace ShrineFoxCom
                 return Decimal.Round(numero * 1.00M, numDecimales, MidpointRounding.AwayFromZero);
             }
         }
+
+        public static Query ParseQuery(List<Tuple<string, string>> queries)
+        {
+            Query newQuery = new Query();
+
+            if (queries.Any(x => x.Item1.Equals("page")))
+                try { newQuery.PageNumber = Convert.ToInt32(queries.First(x => x.Item1.Equals("page")).Item2); } catch { }
+            foreach (var q in queries.Where(x => x.Item1.Equals("game") && Post.GameList.Any(y => y.Item1.ToLower().Equals(x.Item2.ToLower()))))
+                newQuery.Games.Add(q.Item2.ToUpper());
+            foreach (var q in queries.Where(x => x.Item1.Equals("type") && Post.TypeList.Any(y => y.ToLower().Equals(x.Item2.ToLower()))))
+                newQuery.Types.Add(q.Item2.ToLower());
+            foreach (var q in queries.Where(x => x.Item1.Equals("author")))
+                newQuery.Authors.Add(q.Item2);
+            foreach (var q in queries.Where(x => x.Item1.Equals("tag")))
+                newQuery.Tags.Add(Post.FirstCharToUpper(q.Item2));
+            foreach (var q in queries.Where(x => x.Item1.Equals("post")))
+                newQuery.PostID = q.Item2.ToLower();
+
+            return newQuery;
+        }
+
+        public class Query
+        {
+            public List<string> Types { get; set; } = new List<string>();
+            public List<string> Games { get; set; } = new List<string>();
+            public List<string> Authors { get; set; } = new List<string>();
+            public List<string> Tags { get; set; } = new List<string>();
+            public int PageNumber { get; set; } = 1;
+            public string PostID { get; set; } = "";
+        }
+
+        List<Tuple<string, string>> ParseQueryString(string newQuery)
+        {
+            List<Tuple<string,string>> queries = new List<Tuple<string, string>>();
+
+            foreach (var q in newQuery.Replace("?", "").Split('&'))
+                queries.Add(new Tuple<string,string>(q.Split('=').First(), q.Split('=').Last()));
+
+            return queries;
+        }
+
     }
 }

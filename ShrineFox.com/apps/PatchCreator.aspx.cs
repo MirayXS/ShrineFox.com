@@ -44,11 +44,6 @@ namespace ShrineFoxCom
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Sidebar
-            LiteralControl SidebarHtml = new LiteralControl();
-            SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("rpcs3patchlink", "active"));
-            Sidebar.Controls.Add(SidebarHtml);
-
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patch.yml");
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });

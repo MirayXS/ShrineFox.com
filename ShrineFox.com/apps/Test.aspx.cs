@@ -20,11 +20,6 @@ namespace ShrineFoxCom
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Sidebar
-            LiteralControl SidebarHtml = new LiteralControl();
-            SidebarHtml.Text = Properties.Resources.IndexSidebar.Replace("<!--Accordions-->", Properties.Resources.Browse + Properties.Resources.Apps.Replace("rpcs3patchlink", "active"));
-            Sidebar.Controls.Add(SidebarHtml);
-
             if (!Page.IsPostBack)
             {
                 if (patches.Count == 0)

@@ -9,17 +9,17 @@
 }
 
 .notice .red {
-    border-color: rgba(255,0,0,1.0) !important;
+    border-color: rgba(255,0,0,1) !important;
 }
 
 .notice .yellow {
-    border-color: rgba(255,191,0,1.0) !important;
+    border-color: rgba(255,191,0,1) !important;
 }
 
 .notice .blue {
-    border-color: rgba(0,159,255,1.0) !important;
+    border-color: rgba(0,159,255,1) !important;
 }
 
 .notice .green {
-    border-color: rgba(0,250,0,1.0) !important;
+    border-color: rgba(0,250,0,1) !important;
 }

@@ -93,29 +93,33 @@ namespace ShrineFoxCom.Properties {
         ///-------------------------------------------------------------- */
         ///
         ///html, body {
-        ///    color: var(--pagetext);
-        ///    background-color: var(--postbackground);
+        ///	color: rgba(0,0,0,.4);
+        ///	background-color: #ECF0F1;
+        ///}
+        ///
+        ///body {
+        ///	background-color: transparent; /* Required for parallax */
         ///}
         ///
         ///h1 {
-        ///	color: rgba(var(--text),0.05);
+        ///	color: #FFFFFF;
         ///}
         ///
         ///h2 {
-        ///	color: var(--pageheading);
+        ///	color: #28313F;
         ///}
         ///
         ///h3 {
-        ///	border-bottom-color: var(--pageheading);
-        ///	color: var(--pageheading);
+        ///	border-bottom-color: #CCCCCC;
         ///}
         ///
         ///hr {
-        ///	border-color: rgba(var(--text),0.05);
-        ///	border-top-color: var(--pageheading);
+        ///	border-color: #FFFFFF;
+        ///	border-top-color: #CCCCCC;
         ///}
         ///
-        ///.search-box [rest of string was truncated]&quot;;.
+        ////*
+        ///------------------ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string colours {
             get {
@@ -201,9 +205,9 @@ namespace ShrineFoxCom.Properties {
         /// <summary>
         ///   Looks up a localized string similar to     &lt;/main&gt;
         ///&lt;/div&gt;
-        ///&lt;!-- Footer --&gt;
         ///&lt;br&gt;
         ///&lt;br&gt;
+        ///&lt;!--ShrineFox Footer--&gt;
         ///&lt;footer class=&quot;footer text-muted&quot;&gt;
         ///    &lt;div class=&quot;container&quot;&gt;
         ///        &lt;div class=&quot;columns&quot;&gt;
@@ -213,7 +217,7 @@ namespace ShrineFoxCom.Properties {
         ///                    document.addEventListener(&quot;DOMContentLoaded&quot;, function (event) {
         ///                        var controller = new YTV(&apos;YourPlayerID&apos;, {
         ///                            channelId: &apos;UCrB3t1zAQPwAeWtI8RZIOvQ&apos;,
-        ///                            play [rest of string was truncated]&quot;;.
+        ///                         [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string home_foot {
             get {
@@ -228,11 +232,11 @@ namespace ShrineFoxCom.Properties {
         ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
         ///    &lt;title&gt;ShrineFox.com&lt;/title&gt;
+        ///    &lt;!--ShrineFox Styles--&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/bootstrap.min.css&quot; /&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre.css&quot; /&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre-icons.css&quot; /&gt;
-        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/ytv.css&quot; /&gt;
-        ///    &lt;link rel=&quot; [rest of string was truncated]&quot;;.
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string home_head {
             get {
@@ -259,16 +263,16 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 		&lt;!-- EVENT overall_footer_content_after --&gt;
-        ///	&lt;/div&gt;
-        ///&lt;!-- EVENT overall_footer_page_body_after --&gt;
-        ///&lt;/div&gt;
-        ///&lt;!--INDEXFOOTER--&gt;
-        ///&lt;div id=&quot;darkenwrapper&quot; class=&quot;darkenwrapper&quot; data-ajax-error-title=&quot;{L_AJAX_ERROR_TITLE}&quot; data-ajax-error-text=&quot;{L_AJAX_ERROR_TEXT}&quot; data-ajax-error-text-abort=&quot;{L_AJAX_ERROR_TEXT_ABORT}&quot; data-ajax-error-text-timeout=&quot;{L_AJAX_ERROR_TEXT_TIMEOUT}&quot; data-ajax-error-text-parsererror=&quot;{L_AJAX_ERROR_TEXT_PARSERERROR}&quot;&gt;
-        ///    &lt;div id=&quot;darken&quot; class=&quot;darken&quot;&gt;&amp;nbsp;&lt;/div&gt;
-        ///&lt;/div&gt;
+        ///   Looks up a localized string similar to 					&lt;!-- IF STYLE_SETTINGS_CONFIG_SIDEBARS --&gt;
+        ///                            		&lt;/div&gt;
+        ///                                &lt;/div&gt;
+        ///                            &lt;/div&gt;
         ///
-        ///&lt;div [rest of string was truncated]&quot;;.
+        ///							&lt;!-- IF STYLE_SETTINGS_CONFIG_SIDEBAR_PLACEMENT == &apos;Left Only&apos; || STYLE_SETTINGS_CONFIG_SIDEBAR_PLACEMENT == &apos;Both&apos; --&gt;
+        ///                            &lt;div id=&quot;leftcolumn&quot;&gt;
+        ///                            	&lt;div class=&quot;innertube&quot;&gt;&lt;!-- INCLUDE sidebar_left.html --&gt;&lt;/div&gt;
+        ///                            &lt;/div&gt;
+        ///                            &lt;!-- ENDIF [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_footer {
             get {
@@ -277,16 +281,18 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!-- INCLUDE config.html --&gt;
-        ///&lt;!DOCTYPE html&gt;
-        ///&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html dir=&quot;{S_CONTENT_DIRECTION}&quot; lang=&quot;{S_USER_LANG}&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-        ///    {META}
-        ///    &lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATIONS_COUNT --&gt;({UNREAD_NOTIFICATIONS_COUNT}) &lt;!-- ENDIF --&gt;&lt;!-- IF not S_VIEWTOPIC and not S_VIEWFORUM --&gt;{SITENAME} - [rest of string was truncated]&quot;;.
+        ///{% if STYLE_SETTINGS_CONFIG_ALLOW_USER_COLOUR %}	
+        ///	&lt;script&gt; if (localStorage.user_colour_selection === &quot;dark&quot;) { document.getElementsByTagName(&apos;html&apos;)[0].classList.add(&apos;fd_dark&apos;); }&lt;/script&gt;	
+        ///{% endif %}
+        ///	&lt;!--ShrineFox.com Styles--&gt;
+        ///&lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        ///{META}
+        ///&lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATI [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_header {
             get {

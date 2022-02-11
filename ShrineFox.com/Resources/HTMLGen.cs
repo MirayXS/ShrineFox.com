@@ -12,41 +12,46 @@ namespace ShrineFoxCom
     {
         public static void BlogForum(PlaceHolder control)
         {
-            // Forum Theme HTML
-            string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//prolight//template";
-            Directory.CreateDirectory(forumThemePath);
+            string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_v2";
 
-            // Overall Header
-            string header = Properties.Resources.overall_header;
-            header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.home_head);
-            header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.home_body.Replace("forumlink", "active"));
-            File.WriteAllText(Path.Combine(forumThemePath, "overall_header.html"), header);
-            // Overall Footer
-            File.WriteAllText(Path.Combine(forumThemePath, "overall_footer.html"), Properties.Resources.overall_footer.Replace("<!--INDEXFOOTER-->", Properties.Resources.home_foot));
-            // CSS
-            var forumCssPath = forumThemePath.Replace("template", "theme");
-            Directory.CreateDirectory(forumCssPath);
-            File.WriteAllText(Path.Combine(forumCssPath, "colours.css"), Properties.Resources.colours);
+            Directory.CreateDirectory($"{forumThemePath}//theme");
+            Directory.CreateDirectory($"{forumThemePath}//template");
+
+            // Forum Header
+            string forumHeader = Properties.Resources.overall_header;
+            string forumStyles = Between(Properties.Resources.home_head, "<!--ShrineFox Styles-->", "<!--End ShrineFox Styles-->");
+            string videoSearch = Between(Properties.Resources.home_body, "<!--ShrineFox Header-->", "<!--End ShrineFox Header-->");
+            forumHeader = forumHeader.Replace("<!--ShrineFox Styles-->", forumStyles)
+                           .Replace("<!--ShrineFox Header-->", videoSearch);
+            File.WriteAllText($"{forumThemePath}//template//overall_header.html", forumHeader);
+
+            // Forum Footer
+            string footer = Between(Properties.Resources.home_foot, "<!--ShrineFox Footer-->", "<!--End ShrineFox Footer-->");
+            File.WriteAllText($"{forumThemePath}//template//overall_footer.html", 
+                Properties.Resources.overall_footer.Replace("<!--ShrineFox Footer-->", footer));
+
+            // Forum CSS
+            File.WriteAllText($"{forumThemePath}//theme//colours.css", Properties.Resources.colours);
             
-            // Blog Theme HTML
-            string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//justread";
-            string[] sites = new string[] { "blog", "guides", "news" };
-            
-            foreach (string site in sites)
+            // Blog Theme
+            string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//primer";
+
+            string blogStyles = Between(Properties.Resources.home_head, "<!--ShrineFox AllStyles-->", "<!--End ShrineFox Styles-->");
+            string blogNavbar = Between(Properties.Resources.home_body, "<!--ShrineFox NavBar-->", "<!--End ShrineFox NavBar-->");
+            string blogHeader = Properties.Resources.header
+                               .Replace("<!--ShrineFox Styles-->", blogStyles)
+                               .Replace("<!--ShrineFox NavBar-->", blogNavbar)
+                               .Replace("<!--ShrineFox Header-->", videoSearch);
+
+            foreach (string site in new string[] { "blog", "guides", "news" })
             {
                 string path = blogThemePath.Replace("blog", site);
-                Directory.CreateDirectory(path);
-
-                // Header
-                header = Properties.Resources.header;
-                header = header.Replace("<!--INDEXHEADER-->", Properties.Resources.home_head);
-                header = header.Replace("<!--INDEXBEFORECONTENT-->", Properties.Resources.home_body.Replace($"{site}link", "active").Replace("articleslink", "active"));
-                header = header.Replace("<!--MainNavigation-->", $"<a href=\"https://shrinefox.com\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> ShrineFox.com</a> <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i><a href=\"https://shrinefox.com/{site}\">{FirstCharToUpper(site)}</a>");
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
-                File.WriteAllText(Path.Combine(path, "header.php"), header);
+                // Header
+                File.WriteAllText(Path.Combine(path, "header.php"), blogHeader);
                 // Footer
-                File.WriteAllText(Path.Combine(path, "footer.php"), Properties.Resources.home_foot);
+                File.WriteAllText(Path.Combine(path, "footer.php"), Properties.Resources.footer.Replace("<!--ShrineFox Footer-->", footer));
                 // CSS
                 File.WriteAllText(Path.Combine(path, "style.css"), Properties.Resources.style);
             }
@@ -54,6 +59,15 @@ namespace ShrineFoxCom
             LiteralControl notice = new LiteralControl();
             notice.Text = Post.Notice("green", "<b>Success</b>! Forum/Blog HTML has been updated. Clear caches to see changes.");
             control.Controls.Add(notice);
+        }
+
+        public static string Between(string STR, string FirstString, string LastString)
+        {
+            string FinalString;
+            int Pos1 = STR.IndexOf(FirstString) + FirstString.Length;
+            int Pos2 = STR.IndexOf(LastString);
+            FinalString = STR.Substring(Pos1, Pos2 - Pos1);
+            return FinalString;
         }
 
         public static string FirstCharToUpper(string input)

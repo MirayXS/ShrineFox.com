@@ -206,6 +206,9 @@
     <Content Include="Browse.aspx" />
     <Content Include="images\waves.mp4" />
     <Content Include="Legal.aspx" />
+    <Content Include="Resources\Forum\template\overall_footer.html" />
+    <Content Include="Resources\Forum\template\overall_header.html" />
+    <Content Include="Resources\Forum\theme\colours.css" />
     <Content Include="Terms.aspx" />
     <Content Include="Privacy.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -239,9 +242,6 @@
     <Content Include="Resources\Blog\style.css" />
     <Content Include="Resources\Browse\Pagination.html" />
     <Content Include="Resources\Browse\Post.html" />
-    <Content Include="Resources\Forum\colours.css" />
-    <Content Include="Resources\Forum\overall_footer.html" />
-    <Content Include="Resources\Forum\overall_header.html" />
     <Content Include="Resources\Home\home_body.html" />
     <Content Include="Resources\Home\home_foot.html" />
     <Content Include="Resources\Home\home_head.html" />

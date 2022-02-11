@@ -162,6 +162,7 @@ button:focus {
 }
 
 .navipath {
+    margin-top: var(--margin);
     margin-bottom: var(--margin);
     font-weight: bold;
 }

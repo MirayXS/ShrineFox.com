@@ -122,7 +122,7 @@
     <value>..\Resources\Card.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="colours" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forum\colours.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\resources\forum\theme\colours.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="exclude" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\App_Data\exclude.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -146,10 +146,10 @@
     <value>..\images\logo.svg;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="overall_footer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forum\overall_footer.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>..\resources\forum\template\overall_footer.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="overall_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forum\overall_header.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\resources\forum\template\overall_header.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="P3FES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\App_Data\pnach\P3FES.pnach;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

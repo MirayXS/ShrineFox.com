@@ -1,15 +1,24 @@
 <?php
 /**
- * The template for displaying the footer
+ * The template for displaying the footer.
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#footer-php
  *
- * @package Justread
+ * @package Primer
+ * @since   1.0.0
  */
 
 ?>
 
-	</div><!-- #content -->
-			<!--INDEXFOOTER-->
+		</div><!-- #content -->
+
+
+	</div><!-- #page -->
+
+	<!--ShrineFox Footer-->
+
+</body>
+
+</html>

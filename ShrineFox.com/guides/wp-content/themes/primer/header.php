@@ -1,5 +1,88 @@
-<body>
-    <!--ShrineFox NavBar-->
+<?php
+/**
+ * The template for displaying the header.
+ *
+ * Displays all of the head element and everything up until the "site-content" div.
+ *
+ * @package Primer
+ * @since   1.0.0
+ */
+
+?><!DOCTYPE html>
+
+<html <?php language_attributes(); ?>>
+
+<head>
+	
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+	<?php wp_head(); ?>
+
+	
+    <link rel="stylesheet" href="https://shrinefox.com/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/spectre.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/spectre-icons.css" />
+    <!--ShrineFox Styles-->
+    <link rel="stylesheet" href="https://shrinefox.com/css/ytv.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/theme.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/notice.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/tags.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/scrollbar.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/header.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/google.css" />
+    <link rel="stylesheet" href="https://shrinefox.com/css/theme/feedek.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://shrinefox.com/js/jquery.min.js" type="text/javascript"></script>
+    <script src="https://shrinefox.com/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="https://shrinefox.com/js/jscolor.js" type="text/javascript"></script>
+    <script src="https://shrinefox.com/js/theme.js" type="text/javascript"></script>
+    <script src="https://shrinefox.com/js/ytv.js" type="text/javascript"></script>
+    <script src="https://shrinefox.com/js/FeedEk.min.js" type="text/javascript"></script>
+    
+</head>
+
+<body <?php body_class(); ?>>
+
+	<?php
+
+	/**
+	 * Fires inside the `<body>` element.
+	 *
+	 * @since 1.0.0
+	 */
+	do_action( 'primer_body' );
+
+	?>
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'primer' ); ?></a>
+
+		<?php
+
+		/**
+		 * Fires before the `<header>` element.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'primer_before_header' );
+
+		$masthead_classes = array( 'site-header' );
+
+		if ( has_header_video() && primer_is_amp() ) {
+
+			$masthead_classes[] = 'video-header';
+
+		}
+		?>
+
+	
     <header>
         <section class="navbar-section desktop-menu">
             <nav class="navbar dropmenu animated navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
@@ -165,8 +248,9 @@
             });
         </script>
     </header>
-    <!--End ShrineFox NavBar-->
-    <!--ShrineFox Header-->
+    
+	
+    
     <!--Video Background-->
     <div class="videocontainer">
         <video autoplay muted loop class="videobg">
@@ -180,7 +264,11 @@
             <div class="gcse-search"></div>
         </div>
     </div>
-    <!--End ShrineFox Header-->
-    <!-- Page Content -->
-    <div class="container">
-        <main role="main" class="pb-3">
+    
+
+	<div class="navipath" style="margin-left:3em;">
+		<a href="https://shrinefox.com/"><i class="fa fa-home"></i> ShrineFox.com</a>
+		<i class="fa fa-angle-right"></i> <a href="https://shrinefox.com/articles">Articles</a> 
+		<i class="fa fa-angle-right"></i> <a href="<?php echo get_bloginfo( 'url' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
+	</div>
+		<div id="content" class="site-content">

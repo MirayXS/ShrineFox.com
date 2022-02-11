@@ -31,7 +31,7 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/ShrineFox.com/blob/main/ShrineFox.com/apps/PatchCreator.aspx.cs\">Source Code</a>", 
                 Image = "https://i.imgur.com/J1R3UTD.png" },
             new Card() { Title = "PS4 Update Creator", Subtitle = "Generate a pre-patched <kbd>EBOOT.bin</kbd> or <kbd>.PKG</kbd> for installing a modded PS4 Update.", 
-                Body = "Choose a set of <a href=\"https://github.com/zarroboogs/ppp\"patches created by zarroboogs</a> for P5R, P3D, P4D and P5D." +
+                Body = "Choose a set of <a href=\"https://github.com/zarroboogs/ppp\">patches created by zarroboogs</a> for P5R, P3D, P4D and P5D." +
                 "<br><a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-on-ps4/\">Learn more about setting up and installing PS4 mods.</a>",
                 Footer = "<a class=\"btn btn-primary float-right\" href=\"https://shrinefox.com/apps/UpdateCreator\">View</a> " +
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/ShrineFox.com/blob/main/ShrineFox.com/apps/UpdateCreator.aspx.cs\">Source Code</a>",

@@ -8,6 +8,7 @@
 	<h1><%: Page.Title %></h1>
 ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
 <br>
+<br><h2>Mission</h2>
 <br>I've always had an affinity for personalizing my consoles, devices and games. 
 	Software developers and researchers across the internet are always sharing new modifications, 
 	far exceeding the intended scope of the original products. I support these efforts by bringing them to light.
@@ -15,6 +16,7 @@ ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community clo
 	can already be found in online forums, Discord servers, and obscure Github repositories. 
 	While these resources aren't new, by compiling them in one place, I hope to make modding more 
 	accessible for the average end user.
+	<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
 If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 

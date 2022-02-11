@@ -38,6 +38,10 @@ namespace ShrineFoxCom
                 case "Web Apps":
                     BodyHtml.Text = BodyHtml.Text.Replace("text-dark apps", "active");
                     break;
+                case "PNACH Creator":
+                    BodyHtml.Text = BodyHtml.Text.Replace("text-dark pnachcreator", "active");
+                    BodyHtml.Text = BodyHtml.Text.Replace("text-dark apps", "active");
+                    break;
                 case "Patch Creator":
                     BodyHtml.Text = BodyHtml.Text.Replace("text-dark patchcreator", "active");
                     BodyHtml.Text = BodyHtml.Text.Replace("text-dark apps", "active");

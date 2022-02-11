@@ -19,6 +19,8 @@
     background: none;
     border-radius: 10px;
     background-color: rgba(var(--accent),0.2) !important;
+
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -27,7 +29,8 @@
 
 .rh_tag:hover, .tags .tag-item:hover {
     background-color: rgba(var(--accent),0.4) !important;
-    font-weight: 700;
+
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;

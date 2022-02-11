@@ -198,7 +198,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
+    <Content Include="Recommended.aspx" />
+    <Content Include="apps\PNACHCreator.aspx" />
     <Content Include="Articles.aspx" />
+    <Content Include="Browse.aspx" />
     <Content Include="images\waves.mp4" />
     <Content Include="Legal.aspx" />
     <Content Include="Terms.aspx" />
@@ -215,7 +218,6 @@
     <Content Include="apps\PatchCreator.aspx" />
     <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
-    <Content Include="Browse.aspx" />
     <Content Include="css\spectre-icons.css" />
     <Content Include="css\spectre.css" />
     <Content Include="css\theme\feedek.css" />
@@ -253,6 +255,9 @@
     <Content Include="App_Data\yml_patches\patch.yml" />
     <Content Include="App_Data\yml_patches\p5_ex\patch.yml" />
     <Content Include="App_Data\yml_patches\lipsum\patch.yml" />
+    <Content Include="App_Data\pnach\P3FES.pnach" />
+    <Content Include="App_Data\pnach\P4.pnach" />
+    <Content Include="App_Data\pnach\SMT3.pnach" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />
@@ -268,12 +273,33 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Recommended.aspx.cs">
+      <DependentUpon>Recommended.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recommended.aspx.designer.cs">
+      <DependentUpon>Recommended.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\PNACHCreator.aspx.cs">
+      <DependentUpon>PNACHCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\PNACHCreator.aspx.designer.cs">
+      <DependentUpon>PNACHCreator.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Articles.aspx.cs">
       <DependentUpon>Articles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Articles.aspx.designer.cs">
       <DependentUpon>Articles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Browse.aspx.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Browse.aspx.designer.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Legal.aspx.cs">
       <DependentUpon>Legal.aspx</DependentUpon>
@@ -330,13 +356,6 @@
     </Compile>
     <Compile Include="apps\PatchCreator.aspx.designer.cs">
       <DependentUpon>PatchCreator.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Browse.aspx.cs">
-      <DependentUpon>Browse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Browse.aspx.designer.cs">
-      <DependentUpon>Browse.aspx</DependentUpon>
     </Compile>
     <Compile Include="PatchCreator.aspx.cs">
       <DependentUpon>PatchCreator.aspx</DependentUpon>

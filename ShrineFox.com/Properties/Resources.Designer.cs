@@ -295,6 +295,50 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to // Title: HostFS
+        ///// Author: TGE
+        ///// Game: Persona 3 FES (USA)
+        ///// Notes: Loads external files from folders named after the game&apos;s archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.
+        ///// Expand executable memory size (default: 0x9ACC80)
+        ///patch=0,EE,0077F494,word,0xAACC80
+        ///
+        ///// Jump to loader entrypoint at 0x009ACC80
+        ///patch=0,EE,00193980,word,0826B320
+        ///patch=0,EE,00193984,word,00000000
+        ///
+        ///// &lt;PnachPatchGen:start&gt;
+        ///patch=0,EE,009ACC80,word,00000000
+        ///patch=0,EE,009ACC84 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string P3FES {
+            get {
+                return ResourceManager.GetString("P3FES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Title: HostFS
+        ///// Author: TGE
+        ///// Game: Persona 4 (USA)
+        ///// Notes: Loads external files from folders named after the game&apos;s archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.
+        ///// Expand executable memory size (default: 0x938A00)
+        ///patch=0,EE,0070C5D4,word,0xA38A00
+        ///
+        ///// Jump to loader entrypoint at 0x938A00
+        ///patch=0,EE,001002C0,word,0824E280
+        ///patch=0,EE,001002C4,word,00000000
+        ///
+        ///// &lt;PnachPatchGen:start&gt;
+        ///patch=0,EE,00938A00,word,27BDFE00
+        ///patch=0,EE,00938A04,word, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string P4 {
+            get {
+                return ResourceManager.GetString("P4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;column col-4 col-sm-12&quot;&gt;
         ///    &lt;div class=&quot;card&quot;&gt;
         ///        &lt;div class=&quot;card-image&quot;&gt;
@@ -311,6 +355,24 @@ namespace ShrineFoxCom.Properties {
         internal static string Post {
             get {
                 return ResourceManager.GetString("Post", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Title: HostFS
+        ///// Author: TGE
+        ///// Game: Shin Megami Tensei III: Nocturne (USA)
+        ///// Notes: Loads external files from folders named after the game&apos;s archive (dds3data) when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini. Also extract the MOVIE folder from the ISO into the dds3data folder.
+        ///// skip mount of dds3.ddt/img
+        ///patch=1,EE,00101CDC,word,00000000
+        ///// set host base directory to &apos;./dds3data&apos;
+        ///patch=1,EE,0052DEF8,word,64642F2E 
+        ///patch=1,EE,0052DEFC,word,61643373
+        ///patch=1, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SMT3 {
+            get {
+                return ResourceManager.GetString("SMT3", resourceCulture);
             }
         }
         

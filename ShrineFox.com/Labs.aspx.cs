@@ -59,14 +59,12 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot\">Source Code</a>",
                 },
             new Card() {
-                Title = "FrostBot",
-                Subtitle = "Personal Discord Bot.",
-                Body = "Made this to automate moderation of Amicitia's private Discord server." +
-                "<br>Its most used features are creating/managing roles and role colors. " +
-                "Eventually I'd like to host it online by integrating it with this website.",
-                Trello = "https://trello.com/c/tt06Fq1k/53-frostbot-refactor",
-                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot/releases\">Download</a> " +
-                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot\">Source Code</a>",
+                Title = "Flowscript Docs",
+                Subtitle = "Documentation on using Flowscript.",
+                Body = "An online text-based guide on using AtlusScriptCompiler to create custom .BF and .BMD for Persona/SMT games." +
+                "<br>Aimed at complete programming beginners to experts alike who want to get into creating scripting mods.",
+                Trello = "https://trello.com/c/zJH95Pqi/90-flowscript-docs",
+                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://docs.shrinefox.com/\">View</a>",
                 },
             new Card() {
                 Title = "AtlusScriptCompiler GUI",

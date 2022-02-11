@@ -18,4 +18,9 @@
 	Atlus Co., Ltd, Atlus U.S.A., Inc. or Sega Games Co., Ltd. 
 	<br><br>All media content such as screenshots, trailers, music, artwork and footage is the property of Atlus Co., Ltd., SEGA Games Co., Ltd or their 
 	affiliated companies.
+	<br>
+	<br>ShrineFox.com, its users, and its administrators are not responsible for any loss or damage to your personal data, software or devices. 
+	You are responsible for any undesired results incurred by using instructional material or software found on this website or from 
+	another website linked on ShrineFox.com.
+	<br>
 </asp:Content>

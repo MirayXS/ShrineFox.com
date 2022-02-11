@@ -5,6 +5,7 @@
     --bg: 23,37,36;
     --margin: .8rem;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -15,8 +16,9 @@ body {
     background: rgba(var(--bg), 1.0);
     color: rgba(var(--text), 1.0);
     font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 12pt;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -31,25 +33,28 @@ footer {
 a {
     color: rgba(var(--accent), 1.0) !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
     transition: all 1.2s ease-in;
 }
 
-a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
-    color: rgba(var(--accent), 1.0) !important;
-    text-decoration: underline;
+    a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
+        color: rgba(var(--accent), 1.0) !important;
+        text-decoration: underline;
 
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
-}
+        transition: 0.25s;
+        -moz-transition: all 1.2s ease-in;
+        -o-transition: all 1.2s ease-in;
+        -webkit-transition: all 1.2s ease-in;
+        transition: all 1.2s ease-in;
+    }
 
 ::selection { /* WebKit/Blink Browsers */
     background: rgba(var(--accent), 0.5);
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -59,6 +64,7 @@ a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
 ::-moz-selection { /* Gecko Browsers */
     background: rgba(var(--accent), 0.5);
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -68,6 +74,7 @@ a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
 .text-dark {
     color: rgba(var(--text), 1.0);
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -77,6 +84,7 @@ a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
 .text-muted {
     color: rgba(var(--text), 0.5) !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -86,6 +94,7 @@ a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
 .text-light {
     color: rgba(var(--accenttext), 1.0) !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -96,6 +105,7 @@ a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
     color: rgba(var(--accent), 1.0) !important;
     background: rgba(var(--bg), 1.0) !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -111,6 +121,7 @@ button:focus {
     margin-bottom: var(--margin);
     border: none !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -127,6 +138,7 @@ button:focus {
     border-color: rgba(var(--accent), 1) !important;
     color: rgba(var(--accenttext), 1) !important;
 
+    transition: 0.25s;
     -moz-transition: all 1.2s ease-in;
     -o-transition: all 1.2s ease-in;
     -webkit-transition: all 1.2s ease-in;
@@ -161,4 +173,78 @@ button:focus {
 
 .nav-item {
     cursor: pointer;
+}
+
+.table td, .table th {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.table.table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(var(--accent),0.25) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+.table.table-hover tbody tr:hover {
+    background: rgba(var(--accent),0.5) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+.table {
+    color: rgba(var(--text), 1) !important;
+}
+
+tr {
+    color: rgba(var(--text), 1) !important;
+}
+
+.menu .menu-item > a:focus, .menu .menu-item > a:hover {
+    background: rgba(var(--accent), 0.3) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+.menu .menu-item > a.active, .menu .menu-item > a:active {
+    background: rgba(var(--accent), 0.3) !important;
+    border-left: 7px solid rgba(var(--accent), 0.3) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+.menu-item active {
+    background: rgba(var(--accent), 0.3) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+.menu .menu-item > a {
+    color: var(--accent) !important;
+
+    transition: 0.25s;
+    -moz-transition: all 1.2s ease-in;
+    -o-transition: all 1.2s ease-in;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
 }

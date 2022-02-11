@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Patch Creator" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="PatchCreator.aspx.cs" Inherits="ShrineFoxCom.PatchCreator" %>
+﻿<%@ Page Title="PNACH Creator" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="PNACHCreator.aspx.cs" Inherits="ShrineFoxCom.PNACHCreator" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -8,8 +8,7 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>
-    Generate a <b>patch.yml</b> to use for modding Persona 5 (PS3). <a href="https://shrinefox.com/guides/2019/04/19/persona-5-rpcs3-modding-guide-1-downloads-and-setup/">Read more</a>
-    <br>Automatically removes conflicting and unwanted patches so you only download what you need.
+    Generate a <b>.pnach</b> to use for modding and applying cheats to PS2 games. Just put it in your PCSX2 pnach folder and enable cheats.
     <br>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
     <br>
@@ -23,20 +22,21 @@
             </div>
         </ProgressTemplate>
     </asp:UpdateProgress>
-    <!--PPU Entry-->
+    <!--CRC Entry-->
     <div class="card">
         <div class="card-header">
-            <div class="card-title h5">1. PPU Hash</div>
-            <div class="card-subtitle text-muted">Provide the correct hash or this won't work!</div>
+            <div class="card-title h5">1. Select Game & Enter CRC</div>
+            <div class="card-subtitle text-muted">Provide the correct CRC or this won't work!</div>
         </div>
         <div class="card-footer">
             <div class="columns">
-                <div class="column col-8 text-center">
-                    <asp:TextBox ID="txtBox_PPU" class="form-input" runat="server" Text="PPU-b8c34f774adb367761706a7f685d4f8d9d355426"></asp:TextBox>
+                <div class="column col-5 text-center">
+                    <asp:DropDownList id="gameList" class="form-select" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="SelectGame_Changed"/>
+                    <br>
+                    <asp:TextBox ID="txtBox_CRC" class="form-input" runat="server" Text="94A82AAA"></asp:TextBox>
                 </div>
             </div>
-            <br><br>Find your PPU hash by running the game and then opening <kbd>RPCS3.log</kbd> with a text editor.
-            <br>Search for <code>PPU executable hash</code> with <kbd>CTRL+F</kbd>.
+            <br><br>Find your CRC by running the game in PCSX2 and checking <a href="https://i.imgur.com/5b2yURr.png">the title of the Console window</a>.
         </div>
     </div>
     <!--Patch Selection-->
@@ -48,7 +48,7 @@
         <div class="card-footer">
             <div class="columns">
                 <div class="column col-7">
-                    <asp:DropDownList id="patchList" class="form-select" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="Select_Changed"/>
+                    <asp:DropDownList id="patchList" class="form-select" runat="server" AppendDataBoundItems="true" AutoPostBack="true" OnSelectedIndexChanged="SelectPatch_Changed"/>
                 </div>
             </div>
             <div class="columns">
@@ -81,12 +81,9 @@
                 <!--Download Info-->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5">3. Choose Download Format</div>
+                        <div class="card-title h5">3. Confirm & Download</div>
                         <div class="card-subtitle text-muted" id="appliedPatches" runat="server"></div>
                         <div class="card-body">
-                            <b>New Format</b>: Works with RPCS3's new Patch Manager. Place downloaded <kbd>patch.yml</kbd> in your <code>RPCS3/Patches</code> folder and go to <code>Manage > Game Patches</code>.
-                            <br>
-                            <br><b>Old Format</b>: Can use to patch <kbd>eboot.bin</kbd> to use patches on PS3 with custom firmware. <a href="https://shrinefox.com/guides/2019/06/12/persona-5-ps3-eboot-patching/">Read more</a>
                             <!--Notice-->
                             <br><asp:PlaceHolder ID="NoticePlaceHolder" runat="server"/>
                             <br>
@@ -95,6 +92,7 @@
                 </div>
             </ContentTemplate>
             <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="gameList" EventName="SelectedIndexChanged" />
                 <asp:AsyncPostBackTrigger ControlID="patchList" EventName="SelectedIndexChanged" />
                 <asp:AsyncPostBackTrigger ControlID="btnEnableAll" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnDisableAll" EventName="Click" />
@@ -105,12 +103,9 @@
     <!--Download Button-->
     <div class="card">
         <div class="card-footer">
-            <div class="dropdown dropdown-right float-right"><a class="btn btn-primary dropdown-toggle" tabindex="0">Download patch.yml <i class="icon icon-caret"></i></a>
-                <ul class="menu text-left">
-                    <li class="menu-item"><asp:LinkButton runat="server" id="newFormat" OnClick="Download_Click">New Format</asp:LinkButton></li>
-                    <li class="menu-item"><asp:LinkButton runat="server" id="oldFormat" OnClick="Download_Click">Old Format</asp:LinkButton></li>
-                </ul>
-            </div>
+            <asp:LinkButton class="btn btn-primary float-right" runat="server" OnClick="Download_Click">
+                <i class="fa fa-download"></i> Download .pnach
+            </asp:LinkButton>
         </div>
     </div>
 

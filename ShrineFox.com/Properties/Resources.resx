@@ -151,8 +151,17 @@
   <data name="overall_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forum\overall_header.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="P3FES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\App_Data\pnach\P3FES.pnach;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="P4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\App_Data\pnach\P4.pnach;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Post" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Browse\Post.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SMT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\App_Data\pnach\SMT3.pnach;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="style" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blog\style.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

@@ -33,7 +33,7 @@ namespace ShrineFoxCom
             if (patches.Count == 0)
             {
                 // Load YML contents once
-                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patch.yml"));
+                ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\p5_ex\\patches\\patch.yml"));
                 ParseYML(Server.MapPath("..\\App_Data\\yml_patches\\patch.yml"));
             }
             SetDropdown();
@@ -45,7 +45,7 @@ namespace ShrineFoxCom
         protected void Page_Load(object sender, EventArgs e)
         {
             // Show last updated time for P5 EX
-            var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patch.yml");
+            var lastWriteTime = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patches//patch.yml");
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
         }
 

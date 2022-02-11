@@ -9,6 +9,8 @@
 	</div>
 	<h1><%: Page.Title %></h1>
     Generate a <b>.pnach</b> to use for modding and applying cheats to PS2 games. Just put it in your PCSX2 pnach folder and enable cheats.
+    <br><div class="notice red">This section is still under construction, so I apologize if it isn't currently working properly.
+        <br>Please check back another time!</div>
     <br>
     <asp:PlaceHolder ID="lastUpdated" runat="server"></asp:PlaceHolder>
     <br>

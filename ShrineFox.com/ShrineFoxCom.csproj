@@ -198,6 +198,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
+    <Content Include="Resources\Dependencies\7z.dll" />
+    <Content Include="Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
     <Content Include="apps\PNACHCreator.aspx" />
     <Content Include="Articles.aspx" />
@@ -253,11 +255,11 @@
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
     <Content Include="App_Data\yml_patches\patch.yml" />
-    <Content Include="App_Data\yml_patches\p5_ex\patch.yml" />
     <Content Include="App_Data\yml_patches\lipsum\patch.yml" />
     <Content Include="App_Data\pnach\P3FES.pnach" />
     <Content Include="App_Data\pnach\P4.pnach" />
     <Content Include="App_Data\pnach\SMT3.pnach" />
+    <Content Include="App_Data\yml_patches\p5_ex\patches\patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />

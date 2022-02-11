@@ -3,9 +3,11 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -147,6 +149,15 @@ namespace ShrineFoxCom.Resources.Browse
                                             {
                                                 Posts[index].Date = item.DateUpdated.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
                                                 Posts[index].UpdateText = $"<b>Updated {Posts[index].Date}</b>";
+                                                // Download P5EX update
+                                                if (item.Title == "Persona 5 EX")
+                                                {
+                                                    var lastUpdate = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patches//patch.yml");
+                                                    if (item.DateUpdated > lastUpdate)
+                                                    {
+                                                        DownloadP5EXUpdate(item);
+                                                    }
+                                                }
                                             }
                                         }
                                         catch { }
@@ -170,6 +181,38 @@ namespace ShrineFoxCom.Resources.Browse
             File.WriteAllLines($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv", lines.ToArray());
             notice.Text = Post.Notice("green", "<b>Success</b>! Gamebanana database has been updated. Refresh to see changes.");
             control.Controls.Add(notice);
+        }
+
+        private static void DownloadP5EXUpdate(GameBananaRecord item)
+        {
+            foreach (var file in item.AllFiles)
+            {
+                if (file.FileName.Contains("p5ex_prx_patch") && file.FileName.EndsWith(".7z"))
+                {
+                    // Download .7z
+                    string path = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex";
+                    string zip = $"{path}//{file.FileName}";
+                    using (var client = new WebClient())
+                        client.DownloadFile(file.DownloadUrl, zip);
+                    // Unzip .7z
+                    if (File.Exists(zip))
+                    {
+                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        startInfo.CreateNoWindow = true;
+                        startInfo.FileName = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//Resources//Dependencies//7z.exe";
+                        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo.UseShellExecute = false;
+                        startInfo.Arguments = $"x -y \"{zip}\" -o\"" + $"{Path.GetDirectoryName(zip)}\" *.yml -r -aoa";
+                        using (Process process = new Process())
+                        {
+                            process.StartInfo = startInfo;
+                            process.Start();
+                            process.WaitForExit();
+                        }
+                    }
+                }
+            }
+            
         }
     }
 

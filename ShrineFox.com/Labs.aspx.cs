@@ -49,6 +49,16 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/Persona-4-Golden-Mod-Menu\">Source Code</a>",
                 },
             new Card() {
+                Title = "EarthBound Mod Menu",
+                Subtitle = "In-game trainer and QoL mod for EarthBound.",
+                Body = "A collection of toggle-able quality of life enhancements for the SNES cult classic RPG EarthBound.<br>" +
+                    "Improves inventory space by moving key items to a dedicated menu, lets you use your bike anywhere, even with a full party," +
+                    "adds a run button, prevents your dad from calling you, access in-game cheats, and much much more.",
+                Trello = "https://trello.com/c/ZL0zqy02/92-earthbound-mod-menu",
+                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/EarthBound-Mod-Menu/releases\">Download</a> " +
+                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/EarthBound-Mod-Menu\">Source Code</a>",
+                },
+            new Card() {
                 Title = "FrostBot",
                 Subtitle = "Personal Discord Bot.",
                 Body = "Made this to automate moderation of Amicitia's private Discord server." +

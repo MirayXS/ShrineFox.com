@@ -16,7 +16,7 @@ namespace ShrineFoxCom
             LiteralControl HeadHtml = new LiteralControl();
             HeadHtml.Text = Properties.Resources.home_head;
             #if DEBUG
-                HeadHtml.Text = HeadHtml.Text.Replace("https://shrinefox.com/", "./"); // Use relative path
+                HeadHtml.Text = HeadHtml.Text.Replace("https://shrinefox.com/", "./../"); // Use relative path
             #endif
             Head.Controls.Add(HeadHtml);
 

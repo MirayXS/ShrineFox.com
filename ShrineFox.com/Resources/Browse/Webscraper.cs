@@ -323,6 +323,9 @@ namespace ShrineFoxCom.Resources.Browse
                 case "P4G":
                     url += "8263&";
                     break;
+                case "P4AU":
+                    url += "16053&";
+                    break;
                 case "P5":
                     url += "7545&";
                     break;

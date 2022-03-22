@@ -1,6 +1,6 @@
 ﻿.notice {
     background: rgba(0,10,8, 0.2);
-    border-color: rgba(var(--accent), 1.0);
+    border-color: rgba(var(--accent), 1.0) !important;
     border-radius: 10px;
     margin: 30px 1px 30px 25px;
     overflow: hidden;
@@ -8,18 +8,18 @@
     border-left: 3px solid;
 }
 
-.notice .red {
+.notice.red {
     border-color: rgba(255,0,0,1) !important;
 }
 
-.notice .yellow {
+.notice.yellow {
     border-color: rgba(255,191,0,1) !important;
 }
 
-.notice .blue {
+.notice.blue {
     border-color: rgba(0,159,255,1) !important;
 }
 
-.notice .green {
+.notice.green {
     border-color: rgba(0,250,0,1) !important;
 }

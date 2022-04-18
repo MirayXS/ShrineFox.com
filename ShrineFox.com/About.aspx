@@ -9,13 +9,14 @@
 ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
 <br>
 <br><h2>Mission</h2>
-<br>I've always had an affinity for personalizing my consoles, devices and games. 
-	Software developers and researchers across the internet are always sharing new modifications, 
-	far exceeding the intended scope of the original products. I support these efforts by bringing them to light.
-<br>Here on this site, I write about the myriad of unofficial customization options-- many of which 
+<br>I've always had an affinity for personalizing my consoles, devices and games as much as possible.
+	Thanks to developers sharing their work, the internet offers a vast array of unofficial customization techniques. 
+	These modifications far surpass the intended scope of the original products.
+<br>I like to support these efforts by bringing them to light. Here on this site, 
+	I write about the myriad of modding options available to end users. Many of them 
 	can already be found in online forums, Discord servers, and obscure Github repositories. 
-	While these resources aren't new, by compiling them in one place, I hope to make modding more 
-	accessible for the average end user.
+	But while these resources aren't new, by compiling them in one place, I hope to make 
+	modding more accessible for everybody.
 	<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>

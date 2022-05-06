@@ -165,7 +165,7 @@ namespace ShrineFoxCom
             // Tags
             string tags = "";
             foreach (string tag in post.Tags.Where(x => !String.IsNullOrWhiteSpace(x)))
-                tags += $"<div class=\"rh_tag\"><a href=\"https://shrinefox.com/browse?tag={tag.Trim().Replace(" ","_")}\">{tag}</a></div>";
+                tags += $"<div class=\"rh_tag\"><a href=\"https://shrinefox.com/browse?tag={tag.Trim()}\">{tag}</a></div>";
             result = result.Replace("POSTTAGS", tags);
 
             return result;

@@ -11,7 +11,6 @@
     <div class="notice red">
         <p>
             Sorry, the content you were looking for has been moved or no longer exists.
-            <br>Click "<b>Explore</b>" to view the sidebar. Maybe you'll find what you need.
         </p>
     </div>
 </asp:Content>

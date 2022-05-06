@@ -409,9 +409,9 @@ namespace ShrineFoxCom
             foreach (var query in queries.Where(x => x.Item1.Equals("type") && Post.TypeList.Any(y => y.ToLower().Equals(x.Item2.ToLower()))))
                 qCollection.Types.Add(query.Item2.ToLower());
             foreach (var query in queries.Where(x => x.Item1.Equals("author")))
-                qCollection.Authors.Add(query.Item2);
+                qCollection.Authors.Add(Post.FirstCharToUpper(query.Item2).Replace("%20", " "));
             foreach (var query in queries.Where(x => x.Item1.Equals("tag")))
-                qCollection.Tags.Add(Post.FirstCharToUpper(query.Item2).Replace("_"," "));
+                qCollection.Tags.Add(Post.FirstCharToUpper(query.Item2).Replace("%20", " "));
             foreach (var query in queries.Where(x => x.Item1.Equals("post")))
                 qCollection.PostID = query.Item2.ToLower();
 

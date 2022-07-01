@@ -10,7 +10,7 @@
 	<h1><%: Page.Title %></h1>
     <p>
         Generate a PS4 Game Update with your choice of patches.
-        <br>Powered by <a href="https://github.com/zarroboogs/ppp">Lipsum's ps4 persona patches (ppp)</a>.
+        <br>Powered by <a href="https://github.com/zarroboogs/ppp">Zarroboogs' ps4 persona patches (ppp)</a>.
     </p>
     <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel">

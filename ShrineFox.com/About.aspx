@@ -9,14 +9,12 @@
 ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
 <br>
 <br><h2>Mission</h2>
-<br>I've always had an affinity for personalizing my consoles, devices and games as much as possible.
-	Thanks to developers sharing their work, the internet offers a vast array of unofficial customization techniques. 
-	These modifications far surpass the intended scope of the original products.
-<br>I like to support these efforts by bringing them to light. Here on this site, 
-	I write about the myriad of modding options available to end users. Many of them 
-	can already be found in online forums, Discord servers, and obscure Github repositories. 
-	But while these resources aren't new, by compiling them in one place, I hope to make 
-	modding more accessible for everybody.
+<br>Consumer electronics like smartphones, videogame consoles, and computers all offer some form of personalization. 
+	I've always been interested in extending my control over devices I own, even in ways the manufacturers never intended. 
+	Thanks to internet communities centered around modding, jailbreaking, and reverse engineering, almost any changes you can imagine are possible.
+<br><br>Here on my site, I write about how you can use software to customize your experience for little to no cost. 
+	Many of the methods I use are open-source and can already be found online. While these resources aren't new, 
+	by compiling them in one place and demonstrating them myself, I hope to make modding more accessible for everybody.
 	<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
@@ -73,10 +71,10 @@ commercial or otherwise. See the <a href="https://github.com/ShrineFox/ShrineFox
 			<br>Cherry Cream Soda
 			<br>Crowpocalypse
 			<br>DeathChaos25
-			<br>lipsum
 			<br>regularpanties
 			<br>Sierra
 			<br>TekkaGB
+			<br>Zarroboogs
 		</td>
 	</tr>
 </table>

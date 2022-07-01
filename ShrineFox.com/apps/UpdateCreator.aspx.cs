@@ -1,5 +1,4 @@
-﻿using Ionic.Zip;
-using ShrineFoxCom;
+﻿using ShrineFoxCom;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,11 +17,10 @@ namespace ShrineFox.com
     public partial class UpdateCreator : Page
     {
         CheckBoxList cbList = new CheckBoxList();
-        public static bool regionIsUSA = true;
-        public static bool downloadIsPKG = true;
         public static string selectedGame = "p5r";
         public static string selectedPatch = "mod_support";
         public static string selectedRegion = "usa";
+        public static string selectedPlatform = "usa";
 
         public static List<Game> Games = new List<Game>()
         {
@@ -146,7 +144,7 @@ namespace ShrineFox.com
                 string supportedRegions = "";
                 foreach (var game in Games.Where(x => x.ID.Equals(selectedGame)))
                     supportedRegions += $"<br>{game.TitleID} ({game.Region.ToUpper()})";
-                NoticePlaceHolder.Controls.Add(new LiteralControl { Text = Post.Notice("red", 
+                NoticePlaceHolder.Controls.Add(new LiteralControl { Text = Html.Notice("red", 
                     $"Sorry, the region { selectedRegion.ToUpper() } is not supported by <b>ppp</b> for " +
                     $"{selectedGame.ToUpper()}.<br>Supported Regions include:{supportedRegions}") });
 
@@ -224,15 +222,7 @@ namespace ShrineFox.com
                     mod_support_tab.Attributes.Add("class", "tab-item active");
                     enable.Enabled = false;
                     break;
-                case "_0505":
-                    _0505_tab.Attributes.Add("class", "tab-item active");
-                    enable.Enabled = false;
-                    break;
-                case "intro_skip":
-                    intro_skip_tab.Attributes.Add("class", "tab-item active");
-                    enable.Enabled = false;
-                    break;
-                case "all_dlc":
+                case "dlc":
                     all_dlc_tab.Attributes.Add("class", "tab-item active");
                     break;
                 case "no_trp":
@@ -240,10 +230,6 @@ namespace ShrineFox.com
                     break;
                 case "square":
                     square_tab.Attributes.Add("class", "tab-item active");
-                    enable.Enabled = false;
-                    break;
-                case "p5_save":
-                    p5_save_tab.Attributes.Add("class", "tab-item active");
                     enable.Enabled = false;
                     break;
                 case "overlay":
@@ -318,19 +304,13 @@ namespace ShrineFox.com
                         else
                             mod_support.Text = "Mod Support";
                         break;
-                    case "_0505":
-                        if (gamePatch.Enabled)
-                            _0505.Text = "5.05 Backport <i class=\"fas fa-check-square\"></i>";
-                        else
-                            _0505.Text = "5.05 Backport";
-                        break;
                     case "intro_skip":
                         if (gamePatch.Enabled)
                             intro_skip.Text = "Intro Skip <i class=\"fas fa-check-square\"></i>";
                         else
                             intro_skip.Text = "Intro Skip";
                         break;
-                    case "all_dlc":
+                    case "dlc":
                         if (gamePatch.Enabled)
                             all_dlc.Text = "Content Enabler <i class=\"fas fa-check-square\"></i>";
                         else
@@ -341,18 +321,6 @@ namespace ShrineFox.com
                             no_trp.Text = "Disable Trophies <i class=\"fas fa-check-square\"></i>";
                         else
                             no_trp.Text = "Disable Trophies";
-                        break;
-                    case "square":
-                        if (gamePatch.Enabled)
-                            square.Text = "Global Square Menu <i class=\"fas fa-check-square\"></i>";
-                        else
-                            square.Text = "Global Square Menu";
-                        break;
-                    case "p5_save":
-                        if (gamePatch.Enabled)
-                            p5_save.Text = "P5 Save Bonus <i class=\"fas fa-check-square\"></i>";
-                        else
-                            p5_save.Text = "P5 Save Bonus";
                         break;
                     case "overlay":
                         if (gamePatch.Enabled)

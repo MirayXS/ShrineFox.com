@@ -209,10 +209,5 @@ namespace ShrineFoxCom
 
             return str.Substring(0, Math.Min(str.Length, maxLength)) + " ... ";
         }
-
-        public static string Notice(string color, string contents)
-        {
-            return $"<div class=\"notice {color}\"><p>{contents}</p></div>";
-        }
     }
 }

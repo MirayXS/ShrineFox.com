@@ -47,9 +47,6 @@ namespace ShrineFoxCom
             if (patches.Count == 0)
             {
                 // Load Master PNACH contents once
-                ParsePNACH(Properties.Resources.P3FES);
-                ParsePNACH(Properties.Resources.P4);
-                ParsePNACH(Properties.Resources.SMT3);
                 SetGameDropDown();
             }
         }
@@ -149,7 +146,7 @@ namespace ShrineFoxCom
             StringBuilder sb = new StringBuilder();
             var enabledPatches = patches.Where(x => x.Enabled);
             if (enabledPatches.Any(x => x.Title.Equals("HostFS")))
-                sb.Append(Post.Notice("yellow", "Please read <a href=\"https://shrinefox.com/guides/2020/04/10/modding-using-hostfs-on-pcsx2-p3-p4-smt3/\">these instructions</a> for using HostFS."));
+                sb.Append(Html.Notice("yellow", "Please read <a href=\"https://shrinefox.com/guides/2020/04/10/modding-using-hostfs-on-pcsx2-p3-p4-smt3/\">these instructions</a> for using HostFS."));
             NoticePlaceHolder.Controls.Add(new LiteralControl { Text = sb.ToString() });
 
             // Compatibility Notice

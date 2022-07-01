@@ -30,7 +30,7 @@ namespace ShrineFoxCom
             int totalPages = 1;
 
             // Get queries from url
-            QueryCollection queries = ParseQueries(ParseQueryString(Request.Url.Query));
+            QueryCollection queries = ParseQueries(Asp.ParseQueryString(Request.Url.Query));
             // Show options to add queries to URL and reload
             GenerateQueryOptions(queries);
 
@@ -90,7 +90,7 @@ namespace ShrineFoxCom
             else
             {
                 // Show 404 if there's 0 posts, or if there's not enough posts to populate a given page number
-                PostsHtml.Text = Post.Notice("red", "No Posts Were Found!");
+                PostsHtml.Text = Html.Notice("red", "No Posts Were Found!");
             }
             
             // Generate and Add Pagination HTML
@@ -107,19 +107,19 @@ namespace ShrineFoxCom
             // Pan shoutout, P5R Modding Guide
             if (queries.Games.Any(x => x.ToUpper().Equals("P5R")))
             {
-                NoticeHtml.Text += Post.Notice("green", "Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.");
+                NoticeHtml.Text += Html.Notice("green", "Special thanks to <a href=\"https://twitter.com/regularpanties\">@regularpanties</a> for the generous donation of a 6.72 PS4<br>and a plethora of documentation that made this section possible.");
                 if (queries.Types.Any(y => y.Equals("mod") || y.Equals("tool") || y.Equals("guide")))
-                    NoticeHtml.Text += Post.Notice("blue", "To learn how to install and run P5R mods on PS4, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.");
+                    NoticeHtml.Text += Html.Notice("blue", "To learn how to install and run P5R mods on PS4, see <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">this guide</a>.");
             }
             // SMTV Modding News Link
             if (queries.Games.Any(x => x.ToUpper().Equals("SMTV")) && queries.Types.Any(y => y.Equals("mod")))
-                NoticeHtml.Text += Post.Notice("green", "See <a href=\"https://shrinefox.com/news/smtv-modding-has-begun\">this article</a> for the latest info about creating and installing SMT V mods.");
+                NoticeHtml.Text += Html.Notice("green", "See <a href=\"https://shrinefox.com/news/smtv-modding-has-begun\">this article</a> for the latest info about creating and installing SMT V mods.");
             // Mod install guides, P4G Vita/PC difference
             if (aemulus.Any(y => queries.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && queries.Types.Any(y => y.Equals("mod")))
             {
-                NoticeHtml.Text += Post.Notice("blue", "To learn how to install and run <b>Aemulus Package Manager</b> compatible mods, see <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">this guide</a>.");
+                NoticeHtml.Text += Html.Notice("blue", "To learn how to install and run <b>Aemulus Package Manager</b> compatible mods, see <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">this guide</a>.");
                 if (queries.Games.Any(x => x.ToUpper().Equals("P4G")))
-                    NoticeHtml.Text += Post.Notice("yellow", "PC mods are not compatible with Vita (or vice versa). Installing Vita mods still requires the <a href=\"https://shrinefox.com/browse?post=p4g-mod-cpk\">mod.cpk patch</a> and <a href=\"https://shrinefox.com/browse?post=modcompendium\">Mod Compendium</a>. <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">Read more</a> about the differences between mod managers.");
+                    NoticeHtml.Text += Html.Notice("yellow", "PC mods are not compatible with Vita (or vice versa). Installing Vita mods still requires the <a href=\"https://shrinefox.com/browse?post=p4g-mod-cpk\">mod.cpk patch</a> and <a href=\"https://shrinefox.com/browse?post=modcompendium\">Mod Compendium</a>. <a href=\"https://shrinefox.com/guides/2021/06/21/when-to-use-aemulus-or-mod-compendium/\">Read more</a> about the differences between mod managers.");
             }
             // HostFS, Nocturne difference
             if (hostFS.Any(y => queries.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && queries.Types.Any(y => y.Equals("mod")))
@@ -127,7 +127,7 @@ namespace ShrineFoxCom
                 string additional = "";
                 if (queries.Games.Any(x => x.ToUpper().Equals("SMT3")))
                     additional += "<br><b>Note:</b> This only applies to PS2 mods. PC and PS2 mods are not compatible with the opposite platform.";
-                NoticeHtml.Text += Post.Notice("yellow", $"Modding this game requires a <b>HostFS</b> patch on PCSX2. <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">Read more here</a>.{additional}<br><br>If you have to build mods into as a PS2 ISO, see <a href=\"https://shrinefox.com/browse?post=p34-modding-guide\">this guide</a> instead.");
+                NoticeHtml.Text += Html.Notice("yellow", $"Modding this game requires a <b>HostFS</b> patch on PCSX2. <a href=\"https://shrinefox.com/guides/2020/09/30/modding-persona-5-royal-jp-on-ps4-fw-6-72\">Read more here</a>.{additional}<br><br>If you have to build mods into as a PS2 ISO, see <a href=\"https://shrinefox.com/browse?post=p34-modding-guide\">this guide</a> instead.");
             }
             // Mod.cpk Patch Required for Mod
             if (modCpk.Any(y => queries.Games.Any(x => x.ToUpper().Equals(y.ToUpper()))) && queries.Types.Any(y => y.Equals("mod")))
@@ -153,7 +153,7 @@ namespace ShrineFoxCom
                             link = "https://shrinefox.com/browse?post=pq2-patchesguide";
                             break;
                     }
-                    NoticeHtml.Text += Post.Notice("yellow", $"Modding this game requires a <a href=\"{link}\">mod.cpk patch</a>.");
+                    NoticeHtml.Text += Html.Notice("yellow", $"Modding this game requires a <a href=\"{link}\">mod.cpk patch</a>.");
                 }
             }
 
@@ -428,15 +428,7 @@ namespace ShrineFoxCom
             public string PostID { get; set; } = "";
         }
 
-        List<Tuple<string, string>> ParseQueryString(string newQuery)
-        {
-            List<Tuple<string,string>> queries = new List<Tuple<string, string>>();
-
-            foreach (var q in newQuery.Replace("?", "").Split('&'))
-                queries.Add(new Tuple<string,string>(q.Split('=').First(), q.Split('=').Last()));
-
-            return queries;
-        }
+        
 
     }
 }

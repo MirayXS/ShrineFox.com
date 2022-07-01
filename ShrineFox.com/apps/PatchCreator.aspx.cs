@@ -105,26 +105,26 @@ namespace ShrineFoxCom
             StringBuilder sb = new StringBuilder();
             var enabledPatches = patches.Where(x => x.Enabled);
             if (enabledPatches.Any(x => x.Title.Equals("P5EX")))
-                sb.Append(Post.Notice("yellow", "Please <a href=\"https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/\">read the setup instructions</a> for Persona 5 EX."));
+                sb.Append(Html.Notice("yellow", "Please <a href=\"https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/\">read the setup instructions</a> for Persona 5 EX."));
             if (enabledPatches.Any(x => x.Title.Equals("4K Mod") || x.Title.Equals("4K Mod Bustups Only")))
-                sb.Append(Post.Notice("yellow", "Please also use <a href=\"https://gamebanana.com/mods/318223\">this mod</a> when using the 4K patch by Rexis.\n" +
+                sb.Append(Html.Notice("yellow", "Please also use <a href=\"https://gamebanana.com/mods/318223\">this mod</a> when using the 4K patch by Rexis.\n" +
                     "For 4K Royal bustups, also use <a href=\"https://shrinefox.com/forum/viewtopic.php?f=15&t=527\">this mod</a>, or if you're using P5 EX, grab the compatible <kbd>.CPK</kbd> from <a href=\"https://gamebanana.com/wips/57221\">here</a>."));
             if (enabledPatches.Any(x => x.Title.Equals("P5 Modding Community Patches") || x.Title.Equals("P5EX")))
-                sb.Append(Post.Notice("yellow", "Make sure you also <a href=\"https://gamebanana.com/gamefiles/13624\">install this mod</a> by DeathChaos25 to prevent softlocks."));
+                sb.Append(Html.Notice("yellow", "Make sure you also <a href=\"https://gamebanana.com/gamefiles/13624\">install this mod</a> by DeathChaos25 to prevent softlocks."));
             NoticePlaceHolder.Controls.Add(new LiteralControl { Text = sb.ToString() });
 
             // P5EX Compatibility Notice
             sb = new StringBuilder();
             if (showP5EXNotice)
             {
-                sb.Append(Post.Notice("red", "<b>Patches Incompatible with P5EX have been deselected</b>:" +
+                sb.Append(Html.Notice("red", "<b>Patches Incompatible with P5EX have been deselected</b>:" +
                     "<br>Mod Cpk Support, P5 File Access Log, Fix Script Printing Functions, Community Patches and BGM Order, Disable EXIST.TBL Check, Force PSZ Models" +
                     "<br><br>Don't worry, P5EX reimplements most of the above functionality."));
                 showP5EXNotice = false;
             }
             if (showModSPRXNotice)
             {
-                sb.Append(Post.Notice("green", "<b>Mod SPRX is required by P5EX</b>, so it has been enabled."));
+                sb.Append(Html.Notice("green", "<b>Mod SPRX is required by P5EX</b>, so it has been enabled."));
                 showModSPRXNotice = false;
             }
             NoticePlaceHolder2.Controls.Add(new LiteralControl { Text = sb.ToString() });

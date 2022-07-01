@@ -57,7 +57,7 @@ namespace ShrineFoxCom
             }
 
             LiteralControl notice = new LiteralControl();
-            notice.Text = Post.Notice("green", "<b>Success</b>! Forum/Blog HTML has been updated. Clear caches to see changes.");
+            notice.Text = Html.Notice("green", "<b>Success</b>! Forum/Blog HTML has been updated. Clear caches to see changes.");
             control.Controls.Add(notice);
         }
 

@@ -78,7 +78,7 @@ namespace ShrineFoxCom.Properties {
         ///            CARDBODY
         ///        &lt;/div&gt;
         ///        &lt;br&gt;
-        ///        &lt;div class=&quot;card-foote [rest of string was truncated]&quot;;.
+        ///        &lt;div  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Card {
             get {
@@ -128,7 +128,8 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to bloody11.
+        ///   Looks up a localized string similar to bloody11
+        ///Juza64.
         /// </summary>
         internal static string exclude {
             get {
@@ -139,19 +140,29 @@ namespace ShrineFoxCom.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?php
         ////**
-        /// * The template for displaying the footer
+        /// * The template for displaying the footer.
         /// *
         /// * Contains the closing of the #content div and all content after.
         /// *
-        /// * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+        /// * @link https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/#footer-php
         /// *
-        /// * @package Justread
+        /// * @package Primer
+        /// * @since   1.0.0
         /// */
         ///
         ///?&gt;
         ///
-        ///	&lt;/div&gt;&lt;!-- #content --&gt;
-        ///			&lt;!--INDEXFOOTER--&gt;.
+        ///		&lt;/div&gt;&lt;!-- #content --&gt;
+        ///
+        ///
+        ///	&lt;/div&gt;&lt;!-- #page --&gt;
+        ///
+        ///	&lt;!--ShrineFox Footer--&gt;
+        ///
+        ///&lt;/body&gt;
+        ///
+        ///&lt;/html&gt;
+        ///.
         /// </summary>
         internal static string footer {
             get {
@@ -162,22 +173,27 @@ namespace ShrineFoxCom.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?php
         ////**
-        /// * The header for our theme
+        /// * The template for displaying the header.
         /// *
-        /// * This is the template that displays all of the &lt;head&gt; section and everything up until &lt;div id=&quot;content&quot;&gt;
+        /// * Displays all of the head element and everything up until the &quot;site-content&quot; div.
         /// *
-        /// * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-        /// *
-        /// * @package Justread
+        /// * @package Primer
+        /// * @since   1.0.0
         /// */
         ///
-        ///?&gt;
-        ///&lt;!doctype html&gt;
-        ///&lt;html class=&quot;no-js&quot; &lt;?php language_attributes(); ?&gt;&gt;
+        ///?&gt;&lt;!DOCTYPE html&gt;
+        ///
+        ///&lt;html &lt;?php language_attributes(); ?&gt;&gt;
+        ///
         ///&lt;head&gt;
+        ///	
         ///	&lt;meta charset=&quot;&lt;?php bloginfo( &apos;charset&apos; ); ?&gt;&quot;&gt;
+        ///
         ///	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-        ///	&lt;link rel=&quot;profile&quot; href=&quot; [rest of string was truncated]&quot;;.
+        ///
+        ///	&lt;link rel=&quot;profile&quot; href=&quot;http://gmpg.org/xfn/11&quot;&gt;
+        ///
+        ///	&lt;link rel=&quot;pingback&quot; href=&quot;&lt;?php bloginfo( &apos;pingback_url&apos; );  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string header {
             get {
@@ -187,6 +203,7 @@ namespace ShrineFoxCom.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;body&gt;
+        ///    &lt;!--ShrineFox NavBar--&gt;
         ///    &lt;header&gt;
         ///        &lt;section class=&quot;navbar-section desktop-menu&quot;&gt;
         ///            &lt;nav class=&quot;navbar dropmenu animated navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3&quot;&gt;
@@ -194,7 +211,7 @@ namespace ShrineFoxCom.Properties {
         ///                    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot; onclick=&quot;window.location.reload(true);&quot;&gt;
         ///                        &lt;!--Logo--&gt;
         ///                        &lt;svg version=&quot;1.0&quot; class=&quot;amicitialogo&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
-        ///                             width= [rest of string was truncated]&quot;;.
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string home_body {
             get {
@@ -212,7 +229,7 @@ namespace ShrineFoxCom.Properties {
         ///    &lt;div class=&quot;container&quot;&gt;
         ///        &lt;div class=&quot;columns&quot;&gt;
         ///            &lt;div class=&quot;column col-6&quot;&gt;
-        ///                &amp;copy; ShrineFox 2020 - 2021
+        ///                &amp;copy; ShrineFox 2020 - 2022
         ///                &lt;script&gt;
         ///                    document.addEventListener(&quot;DOMContentLoaded&quot;, function (event) {
         ///                        var controller = new YTV(&apos;YourPlayerID&apos;, {
@@ -232,11 +249,12 @@ namespace ShrineFoxCom.Properties {
         ///    &lt;meta charset=&quot;utf-8&quot; /&gt;
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
         ///    &lt;title&gt;ShrineFox.com&lt;/title&gt;
-        ///    &lt;!--ShrineFox Styles--&gt;
+        ///    &lt;!--ShrineFox AllStyles--&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/bootstrap.min.css&quot; /&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre.css&quot; /&gt;
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css/spectre-icons.css&quot; /&gt;
-        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrinefox.com/css [rest of string was truncated]&quot;;.
+        ///    &lt;!--ShrineFox Styles--&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string home_head {
             get {
@@ -287,12 +305,12 @@ namespace ShrineFoxCom.Properties {
         ///{% if STYLE_SETTINGS_CONFIG_ALLOW_USER_COLOUR %}	
         ///	&lt;script&gt; if (localStorage.user_colour_selection === &quot;dark&quot;) { document.getElementsByTagName(&apos;html&apos;)[0].classList.add(&apos;fd_dark&apos;); }&lt;/script&gt;	
         ///{% endif %}
-        ///	&lt;!--ShrineFox.com Styles--&gt;
+        ///	&lt;!--ShrineFox Styles--&gt;
         ///&lt;meta charset=&quot;utf-8&quot; /&gt;
         ///&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
         ///&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
         ///{META}
-        ///&lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATI [rest of string was truncated]&quot;;.
+        ///&lt;title&gt;&lt;!-- IF UNREAD_NOTIFICATIONS_ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string overall_header {
             get {
@@ -301,11 +319,7 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to // Title: HostFS
-        ///// Author: TGE
-        ///// Game: Persona 3 FES (USA)
-        ///// Notes: Loads external files from folders named after the game&apos;s archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.
-        ///// Expand executable memory size (default: 0x9ACC80)
+        ///   Looks up a localized string similar to // Expand executable memory size (default: 0x9ACC80)
         ///patch=0,EE,0077F494,word,0xAACC80
         ///
         ///// Jump to loader entrypoint at 0x009ACC80
@@ -314,20 +328,22 @@ namespace ShrineFoxCom.Properties {
         ///
         ///// &lt;PnachPatchGen:start&gt;
         ///patch=0,EE,009ACC80,word,00000000
-        ///patch=0,EE,009ACC84 [rest of string was truncated]&quot;;.
+        ///patch=0,EE,009ACC84,word,00000000
+        ///patch=0,EE,009ACC88,word,00000000
+        ///patch=0,EE,009ACC8C,word,00000000
+        ///patch=0,EE,009ACC90,word,00000000
+        ///patch=0,EE,009ACC94,word,00000000
+        ///patch=0,EE,009ACC98,word,00000000
+        ///patch=0,EE,009ACC9C,word,00000000        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string P3FES {
+        internal static string P3FES_hostFS {
             get {
-                return ResourceManager.GetString("P3FES", resourceCulture);
+                return ResourceManager.GetString("P3FES_hostFS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to // Title: HostFS
-        ///// Author: TGE
-        ///// Game: Persona 4 (USA)
-        ///// Notes: Loads external files from folders named after the game&apos;s archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.
-        ///// Expand executable memory size (default: 0x938A00)
+        ///   Looks up a localized string similar to // Expand executable memory size (default: 0x938A00)
         ///patch=0,EE,0070C5D4,word,0xA38A00
         ///
         ///// Jump to loader entrypoint at 0x938A00
@@ -336,11 +352,32 @@ namespace ShrineFoxCom.Properties {
         ///
         ///// &lt;PnachPatchGen:start&gt;
         ///patch=0,EE,00938A00,word,27BDFE00
-        ///patch=0,EE,00938A04,word, [rest of string was truncated]&quot;;.
+        ///patch=0,EE,00938A04,word,FFBF0110
+        ///patch=0,EE,00938A08,word,0C24E29F
+        ///patch=0,EE,00938A0C,word,00000000
+        ///patch=0,EE,00938A10,word,3C010094
+        ///patch=0,EE,00938A14,word,24218F00
+        ///patch=0,EE,00938A18,word,FC3C0000
+        ///patch=0,EE,00938A1C,word,3C1C0095
+        ///p [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string P4 {
+        internal static string P4_hostFS {
             get {
-                return ResourceManager.GetString("P4", resourceCulture);
+                return ResourceManager.GetString("P4_hostFS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P5R PS4 USA	0505+intro_skip+p5_save+share_button+square+mod	EBOOT	http://up-4.net/d/V3pL
+        ///P5R PS4 USA	0505+intro_skip+p5_save+share_button+square+mod	PKG	http://up-4.net/d/V3qS
+        ///P5R PS4 USA	0505+intro_skip+p5_save+share_button+square+mod+dlc	EBOOT	http://up-4.net/d/V3s6
+        ///P5R PS4 USA	0505+intro_skip+p5_save+share_button+square+mod+dlc	PKG	http://up-4.net/d/V3uK
+        ///P5R PS4 USA	0505+intro_skip+p5_save+share_button+square+mod+dlc+bgm_ord	EBOOT	http://up-4.net/d/V3zB
+        ///P5R PS4 USA	0505+intro_skip+p5_save+share_butt [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string patch_downloads {
+            get {
+                return ResourceManager.GetString("patch_downloads", resourceCulture);
             }
         }
         
@@ -365,35 +402,18 @@ namespace ShrineFoxCom.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to // Title: HostFS
-        ///// Author: TGE
-        ///// Game: Shin Megami Tensei III: Nocturne (USA)
-        ///// Notes: Loads external files from folders named after the game&apos;s archive (dds3data) when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini. Also extract the MOVIE folder from the ISO into the dds3data folder.
-        ///// skip mount of dds3.ddt/img
-        ///patch=1,EE,00101CDC,word,00000000
-        ///// set host base directory to &apos;./dds3data&apos;
-        ///patch=1,EE,0052DEF8,word,64642F2E 
-        ///patch=1,EE,0052DEFC,word,61643373
-        ///patch=1, [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string SMT3 {
-            get {
-                return ResourceManager.GetString("SMT3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to /*!
-        ///Theme Name: Justread
-        ///Theme URI: https://gretathemes.com/wordpress-themes/justread/
-        ///Author: GretaThemes
-        ///Author URI: https://gretathemes.com
-        ///Description: Justread is a clean and modern WordPress theme that focuses on reading experience. Justread has a grid layout with single column content. The theme uses system fonts and SVG for fast loading. Enjoy reading long content with comfortability.
-        ///Version: 1.2.0
-        ///License: GNU General Public License v2 or later
-        ///License URI: LICENSE
-        ///Text Domain: justread
-        /// [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to /**
+        /// * Theme Name: Primer
+        /// * Theme URI: https://github.com/godaddy/wp-primer-theme
+        /// * Author: GoDaddy
+        /// * Author URI: https://www.godaddy.com/
+        /// * Description: Primer is a powerful theme that brings clarity to your content in a fresh design.
+        /// * Version: 1.8.9
+        /// * License: GPL-2.0
+        /// * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+        /// * Text Domain: primer
+        /// * Domain Path: /languages
+        /// * Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-head [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string style {
             get {

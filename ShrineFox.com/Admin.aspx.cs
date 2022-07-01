@@ -21,7 +21,7 @@ namespace ShrineFoxCom
         PlaceHolder Login = new PlaceHolder();
         PlaceHolder GameBanana = new PlaceHolder();
         PlaceHolder DiscordBot = new PlaceHolder();
-        PlaceHolder Html = new PlaceHolder();
+        PlaceHolder HtmlPlaceholder = new PlaceHolder();
         PlaceHolder PostForm = new PlaceHolder();
         // Controls
         TextBox loginTxtBox = new TextBox();
@@ -97,10 +97,10 @@ namespace ShrineFoxCom
                 && postDateTxt.Text != "" && postDownloadTxt.Text != "")
             {
                 File.AppendAllText($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv", $"\n{postIdTxt.Text}\t{postTypeTxt.Text}\t{postTitleTxt.Text}\t{postGamesTxt.Text}\t{postAuthorsTxt.Text}\t{postDateTxt.Text}\t{postTagsTxt.Text}\t{postDescriptionTxt.Text}\t\t{postThumbUrlTxt.Text}\t{postDownloadTxt.Text}\t");
-                Notice.Text = Post.Notice("green", "Updated TSV! Refresh the Browse page to see changes.");
+                Notice.Text = Html.Notice("green", "Updated TSV! Refresh the Browse page to see changes.");
             }
             else
-                Notice.Text = Post.Notice("red", "Failed to update TSV because one or more text fields were blank.");
+                Notice.Text = Html.Notice("red", "Failed to update TSV because one or more text fields were blank.");
             Warning.Controls.Add(Notice);
         }
 
@@ -126,11 +126,11 @@ namespace ShrineFoxCom
             Warning.Controls.Clear();
             string password = File.ReadAllText($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//pw.txt");
             if (loginTxtBox.Text != password)
-                Notice.Text = Post.Notice("red", "Login failed! Your credentials were incorrect, please try again.");
+                Notice.Text = Html.Notice("red", "Login failed! Your credentials were incorrect, please try again.");
             else
             {
                 Session["loggedIn"] = true;
-                Notice.Text = Post.Notice("green", "Login successful.");
+                Notice.Text = Html.Notice("green", "Login successful.");
                 AddControls(Placeholder);
             }
             Warning.Controls.Add(Notice);
@@ -142,12 +142,12 @@ namespace ShrineFoxCom
             // Create Controls
             GBControls(GameBanana);
             BotControls(DiscordBot);
-            HtmlControls(Html);
+            HtmlControls(HtmlPlaceholder);
             PostControls(PostForm);
             // Add Controls to page 
             control.Controls.Add(GameBanana);
             control.Controls.Add(DiscordBot);
-            control.Controls.Add(Html);
+            control.Controls.Add(HtmlPlaceholder);
             control.Controls.Add(PostForm);
         }
 
@@ -248,12 +248,12 @@ namespace ShrineFoxCom
             if (!FrostBot.Program.active)
             {
                 FrostBot.Program.Main();
-                notice.Text = Post.Notice("green", "<b>Bot Activated</b> successfully!");
+                notice.Text = Html.Notice("green", "<b>Bot Activated</b> successfully!");
             }
             else
             {
                 FrostBot.Program.Close();
-                notice.Text = Post.Notice("red", "<b>Bot Deactivated</b>.");
+                notice.Text = Html.Notice("red", "<b>Bot Deactivated</b>.");
             }
 
             botStatus.Controls.Clear();

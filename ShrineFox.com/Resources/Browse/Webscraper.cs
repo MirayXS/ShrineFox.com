@@ -63,23 +63,23 @@ namespace ShrineFoxCom.Resources.Browse
                                 switch (Regex.Match(FeedGenerator.exception.Message, @"\d+").Value)
                                 {
                                     case "443":
-                                        notice.Text = Post.Notice("red", "<b>Error 443</b>: Unable to connect to Gamebanana.");
+                                        notice.Text = Html.Notice("red", "<b>Error 443</b>: Unable to connect to Gamebanana.");
                                         control.Controls.Add(notice);
                                         break;
                                     case "500":
-                                        notice.Text = Post.Notice("red", "<b>Error 500</b>: Unable to connect to Gamebanana.");
+                                        notice.Text = Html.Notice("red", "<b>Error 500</b>: Unable to connect to Gamebanana.");
                                         control.Controls.Add(notice);
                                         break;
                                     case "503":
-                                        notice.Text = Post.Notice("red", "<b>Error 503</b>: Unable to connect to Gamebanana.");
+                                        notice.Text = Html.Notice("red", "<b>Error 503</b>: Unable to connect to Gamebanana.");
                                         control.Controls.Add(notice);
                                         break;
                                     case "504":
-                                        notice.Text = Post.Notice("red", "<b>Error 504</b>: Gamebanana's servers are unavailable.");
+                                        notice.Text = Html.Notice("red", "<b>Error 504</b>: Gamebanana's servers are unavailable.");
                                         control.Controls.Add(notice);
                                         break;
                                     default:
-                                        notice.Text = Post.Notice("red", $"<b>Exception</b>: {FeedGenerator.exception.Message}");
+                                        notice.Text = Html.Notice("red", $"<b>Exception</b>: {FeedGenerator.exception.Message}");
                                         control.Controls.Add(notice);
                                         break;
                                 }
@@ -88,7 +88,7 @@ namespace ShrineFoxCom.Resources.Browse
                             // Add to TSV if not empty
                             if (feed == null)
                             {
-                                notice.Text += Post.Notice("red", "<b>Exception</b>: Feed is null, Gamebanana fetch failed.");
+                                notice.Text += Html.Notice("red", "<b>Exception</b>: Feed is null, Gamebanana fetch failed.");
                                 control.Controls.Add(notice);
                             }
                             else if (feed.Count > 0)
@@ -179,7 +179,7 @@ namespace ShrineFoxCom.Resources.Browse
             foreach (var post in Posts)
                 lines.Add($"{post.Id}\t{post.Type}\t{post.Title}\t{String.Join(",", post.Games)}\t{String.Join(",", post.Authors)}\t{post.Date}\t{String.Join(",", post.Tags)}\t{post.Description}\t{post.UpdateText}\t{post.EmbedURL}\t{post.URL}\t");
             File.WriteAllLines($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv", lines.ToArray());
-            notice.Text = Post.Notice("green", "<b>Success</b>! Gamebanana database has been updated. Refresh to see changes.");
+            notice.Text = Html.Notice("green", "<b>Success</b>! Gamebanana database has been updated. Refresh to see changes.");
             control.Controls.Add(notice);
         }
 

@@ -42,16 +42,19 @@ namespace ShrineFoxCom
             },
             new GamePatch() { Name = "P5 Save Bonus Enabler", ShortName = "p5_save", Author = "zarroboogs",
                 Description = "Enables P5 save bonus without P5 saves present on system.",
-                AlwaysOn = true
+                AlwaysOn = true,
+                OnByDefault = true
             },
             new GamePatch() { Name = "Enable Share Button", ShortName = "share_button", Author = "zarroboogs",
                 Description = "Enables video recording and screenshots using share button.",
-                AlwaysOn = true
+                AlwaysOn = true,
+                OnByDefault = true
             },
             new GamePatch() { Name = "Global Square Menu", ShortName = "square", Author = "zarroboogs",
                 Description = "Enables the square menu globally (e.g. in Thieves Den and in Velvet Room or during " +
                                 "events or game sections which disable it).",
-                AlwaysOn = true
+                AlwaysOn = true,
+                OnByDefault = true
             },
             // Optional Patches
             new GamePatch() { Name = "Disable Trophies", ShortName = "no_trp", Author = "zarroboogs",

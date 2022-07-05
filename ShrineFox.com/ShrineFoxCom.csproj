@@ -198,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <Content Include="apps\Test\DynamicCtrls.aspx" />
     <Content Include="GetStarted.aspx" />
     <Content Include="Resources\Dependencies\7z.dll" />
     <Content Include="Resources\Dependencies\7z.exe" />
@@ -249,7 +248,6 @@
     <Content Include="Resources\Home\home_head.html" />
     <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="Wiki.aspx" />
-    <Content Include="apps\Test.aspx" />
     <Content Include="apps\TextSearch.aspx" />
     <Content Include="About.aspx" />
     <Content Include="images\logo.svg" />
@@ -262,6 +260,10 @@
     <Content Include="App_Data\pnach\P4_hostFS.txt" />
     <Content Include="App_Data\yml_patches\p5_ex\patches\patch.yml" />
     <Content Include="App_Data\patch_downloads.tsv" />
+    <Content Include="App_Data\yml_patches\lipsum\p4au\BLJM61209_patch.yml" />
+    <Content Include="App_Data\yml_patches\lipsum\p4au\BLUS31469_patch.yml" />
+    <Content Include="App_Data\yml_patches\lipsum\p4au\NPJB00599_patch.yml" />
+    <Content Include="App_Data\yml_patches\lipsum\p4au\NPUB31563_patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />
@@ -277,21 +279,20 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
-    <Compile Include="apps\Test\DynamicCtrls.aspx.cs">
-      <DependentUpon>DynamicCtrls.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\Test\DynamicCtrls.aspx.designer.cs">
-      <DependentUpon>DynamicCtrls.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Asp.cs" />
     <Compile Include="Classes\Game.cs" />
-    <Compile Include="Classes\Games\Patches\PSVPatches.cs" />
     <Compile Include="Classes\Games\Patches\PS3Patches.cs" />
+    <Compile Include="Classes\Games\PCGames.cs" />
+    <Compile Include="Classes\Games\Patches\PCPatches.cs" />
+    <Compile Include="Classes\Games\Patches\PSPPatches.cs" />
+    <Compile Include="Classes\Games\PSPGames.cs" />
+    <Compile Include="Classes\Games\Patches\3DSPatches.cs" />
+    <Compile Include="Classes\Games\Patches\PSVPatches.cs" />
     <Compile Include="Classes\Games\Patches\PS2Patches.cs" />
     <Compile Include="Classes\Games\Patches\PS4Patches.cs" />
     <Compile Include="Classes\Games\PS3Games.cs" />
     <Compile Include="Classes\Games\PS2Games.cs" />
+    <Compile Include="Classes\Games\3DSGames.cs" />
     <Compile Include="Classes\Games\PSVGames.cs" />
     <Compile Include="Classes\Games\PS4Games.cs" />
     <Compile Include="Classes\Html.cs" />
@@ -419,13 +420,6 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="apps\Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="apps\TextSearch.aspx.cs">
       <DependentUpon>TextSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

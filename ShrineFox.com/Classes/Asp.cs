@@ -55,6 +55,23 @@ namespace ShrineFoxCom
             return panel;
         }
 
+        public static Panel TextBoxPanel(string name, string title, string subtitle, bool visible, string defaultText = "")
+        {
+            var panel = new Panel() { ID = name };
+            var txtBox = new TextBox() { ID = name + "_txt", Text = defaultText };
+
+            panel.Controls.Add(new LiteralControl() { Text = Html.CardStart(title, subtitle) });
+            panel.Controls.Add(new LiteralControl() { Text = "<div class=\"container\"><div class=\"columns\">" });
+            txtBox.CssClass = "form-select column col-9";
+            panel.Controls.Add(txtBox);
+            panel.Controls.Add(new Button() { CssClass = "btn btn-primary float-right column col-3", Text = "Next" });
+            panel.Controls.Add(new LiteralControl() { Text = "</div></div></div>" });
+            panel.Controls.Add(new LiteralControl() { Text = Html.CardEnd() });
+            panel.Visible = visible;
+
+            return panel;
+        }
+
         public static Panel SplitCardPanel(string name, string title, string subtitle, bool visible)
         {
             var panel = new Panel();

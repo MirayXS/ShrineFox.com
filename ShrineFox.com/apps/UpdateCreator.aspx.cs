@@ -7,9 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ShrineFox.com
@@ -17,10 +15,11 @@ namespace ShrineFox.com
     public partial class UpdateCreator : Page
     {
         CheckBoxList cbList = new CheckBoxList();
+        public static bool regionIsUSA = true;
+        public static bool downloadIsPKG = true;
         public static string selectedGame = "p5r";
         public static string selectedPatch = "mod_support";
         public static string selectedRegion = "usa";
-        public static string selectedPlatform = "usa";
 
         public static List<Game> Games = new List<Game>()
         {
@@ -51,10 +50,10 @@ namespace ShrineFox.com
                 LongDesc = "<b>This will make saves created with this patch incompatible</b> with the game when the patch is disabled!" +
                 "<br>Also hides DLC unlock messages when starting a new game.", CanBeToggled = true },
             new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
-            new Patch() { ID = "square", Name = "Global Square Menu", ShortDesc = "Square button menu usable everywhere", Image = "https://i.postimg.cc/02Zr6NSs/square.png", 
+            new Patch() { ID = "square", Name = "Global Square Menu", ShortDesc = "Square button menu usable everywhere", Image = "https://i.postimg.cc/02Zr6NSs/square.png",
                 LongDesc = "Enables the square menu globally (e.g. in Thieves Den and in Velvet Room or during events or game sections which disable it)." +
                 "<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
-            new Patch() { ID = "p5_save", Name = "P5 Save Bonus", ShortDesc = "Enables P5 save bonus without P5 saves present on system", 
+            new Patch() { ID = "p5_save", Name = "P5 Save Bonus", ShortDesc = "Enables P5 save bonus without P5 saves present on system",
                 LongDesc = "><b>Enabled by default.</b>", Image = "https://i.postimg.cc/9MTrztd8/p5rsave.png", Enabled = true },
         };
         public static List<Patch> P3DPatches = new List<Patch>()
@@ -67,7 +66,7 @@ namespace ShrineFox.com
             new Patch() { ID = "intro_skip", Name = "Intro Skip", ShortDesc = "Bypass opening logos/movie", Image = "https://i.postimg.cc/yNDJCzkz/p3dintro.png",
                 LongDesc = "Skips boot logos and intro movie.<br><br><b>Selected by default and cannot be deselected.</b>", Enabled = true },
             new Patch() { ID = "no_trp", Name = "Disable Trophies", ShortDesc = "Prevents the game from unlocking trophies", Image = "https://i.postimg.cc/qMrChYZ8/notrophy.png", CanBeToggled = true },
-            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots", 
+            new Patch() { ID = "overlay", Name = "Disable Screenshot Overlay", ShortDesc = "Removes the annoying copyright overlay from in-game screenshots",
                 LongDesc = "<b>Enabled by default.</b>", Image = "https://i.postimg.cc/ZY8WSHK0/ps4.png", Enabled = true }
         };
         public static List<Patch> P4DPatches = new List<Patch>()
@@ -144,9 +143,12 @@ namespace ShrineFox.com
                 string supportedRegions = "";
                 foreach (var game in Games.Where(x => x.ID.Equals(selectedGame)))
                     supportedRegions += $"<br>{game.TitleID} ({game.Region.ToUpper()})";
-                NoticePlaceHolder.Controls.Add(new LiteralControl { Text = Html.Notice("red", 
+                NoticePlaceHolder.Controls.Add(new LiteralControl
+                {
+                    Text = Html.Notice("red",
                     $"Sorry, the region { selectedRegion.ToUpper() } is not supported by <b>ppp</b> for " +
-                    $"{selectedGame.ToUpper()}.<br>Supported Regions include:{supportedRegions}") });
+                    $"{selectedGame.ToUpper()}.<br>Supported Regions include:{supportedRegions}")
+                });
 
                 // Swap region if game doesn't support it
                 if (selectedRegion == "usa")
@@ -222,7 +224,15 @@ namespace ShrineFox.com
                     mod_support_tab.Attributes.Add("class", "tab-item active");
                     enable.Enabled = false;
                     break;
-                case "dlc":
+                case "_0505":
+                    _0505_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
+                    break;
+                case "intro_skip":
+                    intro_skip_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
+                    break;
+                case "all_dlc":
                     all_dlc_tab.Attributes.Add("class", "tab-item active");
                     break;
                 case "no_trp":
@@ -230,6 +240,10 @@ namespace ShrineFox.com
                     break;
                 case "square":
                     square_tab.Attributes.Add("class", "tab-item active");
+                    enable.Enabled = false;
+                    break;
+                case "p5_save":
+                    p5_save_tab.Attributes.Add("class", "tab-item active");
                     enable.Enabled = false;
                     break;
                 case "overlay":
@@ -304,13 +318,19 @@ namespace ShrineFox.com
                         else
                             mod_support.Text = "Mod Support";
                         break;
+                    case "_0505":
+                        if (gamePatch.Enabled)
+                            _0505.Text = "5.05 Backport <i class=\"fas fa-check-square\"></i>";
+                        else
+                            _0505.Text = "5.05 Backport";
+                        break;
                     case "intro_skip":
                         if (gamePatch.Enabled)
                             intro_skip.Text = "Intro Skip <i class=\"fas fa-check-square\"></i>";
                         else
                             intro_skip.Text = "Intro Skip";
                         break;
-                    case "dlc":
+                    case "all_dlc":
                         if (gamePatch.Enabled)
                             all_dlc.Text = "Content Enabler <i class=\"fas fa-check-square\"></i>";
                         else
@@ -321,6 +341,18 @@ namespace ShrineFox.com
                             no_trp.Text = "Disable Trophies <i class=\"fas fa-check-square\"></i>";
                         else
                             no_trp.Text = "Disable Trophies";
+                        break;
+                    case "square":
+                        if (gamePatch.Enabled)
+                            square.Text = "Global Square Menu <i class=\"fas fa-check-square\"></i>";
+                        else
+                            square.Text = "Global Square Menu";
+                        break;
+                    case "p5_save":
+                        if (gamePatch.Enabled)
+                            p5_save.Text = "P5 Save Bonus <i class=\"fas fa-check-square\"></i>";
+                        else
+                            p5_save.Text = "P5 Save Bonus";
                         break;
                     case "overlay":
                         if (gamePatch.Enabled)
@@ -393,7 +425,7 @@ namespace ShrineFox.com
                 // Update description of selected patch(es)
                 SetDescription();
             }
-                
+
         }
 
         protected void SetPKGLink()

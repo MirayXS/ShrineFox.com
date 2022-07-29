@@ -283,7 +283,6 @@
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\Games\Patches\PS3Patches.cs" />
     <Compile Include="Classes\Games\PCGames.cs" />
-    <Compile Include="Classes\Games\Patches\PCPatches.cs" />
     <Compile Include="Classes\Games\Patches\PSPPatches.cs" />
     <Compile Include="Classes\Games\PSPGames.cs" />
     <Compile Include="Classes\Games\Patches\3DSPatches.cs" />

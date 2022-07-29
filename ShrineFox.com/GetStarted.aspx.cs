@@ -431,27 +431,27 @@ namespace ShrineFoxCom
                 selectedGamePanelFooter.Controls.Add(new LiteralControl()
                 {
                     Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/\">this guide</a> to set up the P5 EX mod by DeathChaos25 on RPCS3." +
-                    $"<br><span style=\"font-size:8pt;\">The following patches aren't available for P5EX, but are reimplemented as part of the P5EX mod: {string.Join(",", Games.disabledEXPatches)}</span>"
+                    $"<br><span style=\"font-size:8pt;\">The following patches aren't available for P5EX, but are reimplemented as part of the P5EX mod: {string.Join(",", Games.disabledEXPatches)}</span></li>"
                 });
             if (selectedGame == "P4AU" && selectedPlatform == "PC")
                 selectedGamePanelFooter.Controls.Add(new LiteralControl()
                 {
-                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://gamebanana.com/mods/376984\">this guide</a> to set up mod support."
+                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://gamebanana.com/mods/376984\">this guide</a> to set up mod support.</li>"
                 });
             if (selectedGame == "P4G" && selectedPlatform == "PC")
                 selectedGamePanelFooter.Controls.Add(new LiteralControl()
                 {
-                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://gamebanana.com/tuts/13379\">this guide</a> to set up mod support."
+                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://gamebanana.com/tuts/13379\">this guide</a> to set up mod support.</li>"
                 });
             if (selectedGame == "P5S" && selectedPlatform == "PC")
                 selectedGamePanelFooter.Controls.Add(new LiteralControl()
                 {
-                    Text = "<li>Run Aemulus Package Manager and configure the settings to add mod support.<li>."
+                    Text = "<li>Run Aemulus Package Manager and configure the settings to add mod support.</li>"
                 });
             if (selectedGame == "P3P" && selectedPlatform == "PSP")
                 selectedGamePanelFooter.Controls.Add(new LiteralControl()
                 {
-                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://shrinefox.com/news/?p=266\">this guide</a> to set up mod support."
+                    Text = "<li><b>IMPORTANT:</b> Follow <a href=\"https://shrinefox.com/news/?p=266\">this guide</a> to set up mod support.</li>"
                 });
         }
 

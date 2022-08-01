@@ -202,7 +202,14 @@ namespace ShrineFoxCom.Resources.Browse
                         startInfo.FileName = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//Resources//Dependencies//7z.exe";
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo.UseShellExecute = false;
-                        startInfo.Arguments = $"x -y \"{zip}\" -o\"" + $"{Path.GetDirectoryName(zip)}\" *.yml -r -aoa";
+
+                        // Unzip to hardware subfolder if ps3 version
+                        string hardwarePath = "";
+                        if (zip.Contains("ps3_hardware"))
+                            hardwarePath = "\\hardware";
+                        string args = $"x -y \"{zip}\" -o\"" + $"{Path.Combine(Path.GetDirectoryName(zip), hardwarePath)}\" *.* -r -aoa";
+
+                        startInfo.Arguments = args;
                         using (Process process = new Process())
                         {
                             process.StartInfo = startInfo;

@@ -264,6 +264,11 @@
     <Content Include="App_Data\yml_patches\lipsum\p4au\BLUS31469_patch.yml" />
     <Content Include="App_Data\yml_patches\lipsum\p4au\NPJB00599_patch.yml" />
     <Content Include="App_Data\yml_patches\lipsum\p4au\NPUB31563_patch.yml" />
+    <Content Include="App_Data\yml_patches\p5_ex\USRDIR\config.yml" />
+    <Content Include="App_Data\yml_patches\p5_ex\USRDIR\mod.sprx" />
+    <Content Include="App_Data\yml_patches\p5_ex\hardware\p5ex\conf.yml" />
+    <Content Include="App_Data\yml_patches\p5_ex\hardware\p5ex\mod.sprx" />
+    <Content Include="App_Data\yml_patches\p5_ex\hardware\patches\patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />

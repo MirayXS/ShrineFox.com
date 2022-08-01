@@ -10,5 +10,6 @@ namespace ShrineFoxCom
         public string Name { get; set; } = "";
         public string ShortName { get; set; } = "";
         public List<Game> Games { get; set; } = new List<Game>();
+        public string EmulatorName { get; set; } = "";
     }
 }

@@ -152,10 +152,10 @@
     <value>..\resources\forum\template\overall_header.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="P3FES_hostFS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\app_data\pnach\p3fes_hostfs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\pnach\p3fes_hostfs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="P4_hostFS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\app_data\pnach\p4_hostfs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\pnach\p4_hostfs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="patch_downloads" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\App_Data\patch_downloads.tsv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

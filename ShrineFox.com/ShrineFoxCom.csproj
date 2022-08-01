@@ -199,6 +199,8 @@
   <ItemGroup>
     <Content Include="404.aspx" />
     <Content Include="GetStarted.aspx" />
+    <Content Include="pnach\P3FES_hostFS.txt" />
+    <Content Include="pnach\P4_hostFS.txt" />
     <Content Include="Resources\Dependencies\7z.dll" />
     <Content Include="Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
@@ -275,6 +277,7 @@
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
+    <Content Include="yml\patch.yml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="404.aspx.cs">
@@ -308,6 +311,11 @@
     </Compile>
     <Compile Include="GetStarted.aspx.designer.cs">
       <DependentUpon>GetStarted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Recommended.aspx.cs">
       <DependentUpon>Recommended.aspx</DependentUpon>
@@ -401,11 +409,6 @@
       <DependentUpon>PatchCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Browse\Post.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="apps\UpdateCreator.aspx.cs">
       <DependentUpon>UpdateCreator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

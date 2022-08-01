@@ -190,12 +190,12 @@ namespace ShrineFoxCom.Resources.Browse
                 if (file.FileName.Contains("p5ex_prx_patch") && file.FileName.EndsWith(".7z"))
                 {
                     // Download .7z
-                    string path = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex";
-                    string zip = $"{path}//{file.FileName}";
+                    string p5exDir = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//yml//p5_ex";
+                    string zipPath = Path.Combine(p5exDir, file.FileName);
                     using (var client = new WebClient())
-                        client.DownloadFile(file.DownloadUrl, zip);
+                        client.DownloadFile(file.DownloadUrl, zipPath);
                     // Unzip .7z
-                    if (File.Exists(zip))
+                    if (File.Exists(zipPath))
                     {
                         ProcessStartInfo startInfo = new ProcessStartInfo();
                         startInfo.CreateNoWindow = true;
@@ -204,10 +204,10 @@ namespace ShrineFoxCom.Resources.Browse
                         startInfo.UseShellExecute = false;
 
                         // Unzip to hardware subfolder if ps3 version
-                        string hardwarePath = "";
-                        if (zip.Contains("ps3_hardware"))
-                            hardwarePath = "\\hardware";
-                        string args = $"x -y \"{zip}\" -o\"" + $"{Path.Combine(Path.GetDirectoryName(zip), hardwarePath)}\" *.* -r -aoa";
+                        if (file.FileName.Contains("ps3_hardware"))
+                            p5exDir = Path.Combine(p5exDir, "hardware");
+                        Directory.CreateDirectory(p5exDir);
+                        string args = $"x -y \"{zipPath}\" -o\"" + $"{p5exDir}\" *.* -r -aoa";
 
                         startInfo.Arguments = args;
                         using (Process process = new Process())

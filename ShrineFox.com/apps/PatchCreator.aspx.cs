@@ -47,7 +47,7 @@ namespace ShrineFoxCom
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patches//patch.yml");
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" +
-               $"<br>{Html.Notice("yellow", "<b>This section is being phased out soon.</b> Use the new <a href=\"https://shrinefox.com/PatchCreator\">Get Started page</a> for the latest Persona 5 EX Patches!")}"
+               $"<br>{Html.Notice("yellow", "<b>This section is being phased out soon.</b> Use the new <a href=\"https://shrinefox.com/GetStarted\">Get Started page</a> for the latest Persona 5 EX Patches!")}"
             });
         }
 

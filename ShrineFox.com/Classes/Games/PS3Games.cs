@@ -12,9 +12,9 @@ namespace ShrineFoxCom
             "Encounter BGM Random Order", "Encounter BGM in Order", "Fix Script Printing Functions" };
 
         private static List<GamePatch> P5Patches = Patches.ParseYML(
-            HttpContext.Current.Server.MapPath(".\\App_Data\\yml_patches\\patch.yml"));
+            HttpContext.Current.Server.MapPath(".\\yml\\patch.yml"));
         private static List<GamePatch> P5EXPatches = Patches.ParseYML(
-            HttpContext.Current.Server.MapPath(".\\App_Data\\yml_patches\\p5_ex\\patches\\patch.yml"))
+            HttpContext.Current.Server.MapPath(".\\yml\\p5_ex\\patches\\patch.yml"))
             .Concat(P5Patches.Where(x => !disabledEXPatches.Any(y => y.Equals(x.Name))))
             .ToList();
 

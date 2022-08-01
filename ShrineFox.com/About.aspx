@@ -9,13 +9,12 @@
 ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
 <br>
 <br><h2>Mission</h2>
-<br>Consumer electronics like smartphones, videogame consoles, and computers all offer some form of personalization. 
-	I've always been interested in extending my control over devices I own, even in ways the manufacturers never intended. 
-	Thanks to internet communities centered around modding, jailbreaking, and reverse engineering, almost any changes you can imagine are possible.
-<br><br>Here on my site, I write about how you can use software to customize your experience for little to no cost. 
-	Many of the methods I use are open-source and can already be found online. While these resources aren't new, 
-	by compiling them in one place and demonstrating them myself, I hope to make modding more accessible for everybody.
-	<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
+I'm a software developer who writes about unconventional ways to personalize the hardware you use every day. 
+<br>Smartphones, videogame consoles, and computers all offer limited customization. I'm interested in extending control over these devices, 
+	even in ways the manufacturers never intended. 
+<br>Many of the resources I rely on are open-source and can already be found online. By gathering and exploring this info here on y site, 
+	I hope to make modding more accessible for everybody.
+<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
 If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
@@ -27,8 +26,8 @@ If you would like to support what I do, please make a donation via <a href="http
 To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.
 <br>If you have other modding related questions, ask on the <a href="https://shrinefox.com/forum">forum</a>.
 <br>For concerns about anything linked here that I didn't make, contact the creator from wherever they posted it.
-<br>I generally don't have control over content curated from <a href="https://gamebanana.com/">Gamebanana.com</a> 
-	(appearing in the <a href="https://shrinefox.com/browse">Browse</a> section), but I do make an effort to keep it safe for work.
+<br>I generally don't have much control over content curated from <a href="https://gamebanana.com/">Gamebanana.com</a> 
+	(appearing in the <a href="https://shrinefox.com/browse">Browse</a> section), but I do make an effort to keep the listing safe for work.
 <br>
 <br><h2>Source Code</h2>
 This project is licensed under GPL-3.0, so it's open source and you can use any part of it to create your own projects, 

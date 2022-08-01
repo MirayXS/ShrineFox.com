@@ -198,13 +198,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
+    <Content Include="apps\PatchCreator.aspx" />
+    <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="GetStarted.aspx" />
     <Content Include="pnach\P3FES_hostFS.txt" />
     <Content Include="pnach\P4_hostFS.txt" />
     <Content Include="Resources\Dependencies\7z.dll" />
     <Content Include="Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
-    <Content Include="apps\PNACHCreator.aspx" />
     <Content Include="Articles.aspx" />
     <Content Include="Browse.aspx" />
     <Content Include="images\waves.mp4" />
@@ -223,7 +224,6 @@
     <Content Include="WebApps.aspx" />
     <Content Include="apps\Files.aspx" />
     <Content Include="Admin.aspx" />
-    <Content Include="apps\PatchCreator.aspx" />
     <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
     <Content Include="css\spectre-icons.css" />
@@ -248,7 +248,6 @@
     <Content Include="Resources\Home\home_body.html" />
     <Content Include="Resources\Home\home_foot.html" />
     <Content Include="Resources\Home\home_head.html" />
-    <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="Wiki.aspx" />
     <Content Include="apps\TextSearch.aspx" />
     <Content Include="About.aspx" />
@@ -256,21 +255,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
-    <Content Include="App_Data\yml_patches\patch.yml" />
-    <Content Include="App_Data\yml_patches\lipsum\patch.yml" />
-    <Content Include="App_Data\pnach\P3FES_hostFS.txt" />
-    <Content Include="App_Data\pnach\P4_hostFS.txt" />
-    <Content Include="App_Data\yml_patches\p5_ex\patches\patch.yml" />
     <Content Include="App_Data\patch_downloads.tsv" />
-    <Content Include="App_Data\yml_patches\lipsum\p4au\BLJM61209_patch.yml" />
-    <Content Include="App_Data\yml_patches\lipsum\p4au\BLUS31469_patch.yml" />
-    <Content Include="App_Data\yml_patches\lipsum\p4au\NPJB00599_patch.yml" />
-    <Content Include="App_Data\yml_patches\lipsum\p4au\NPUB31563_patch.yml" />
-    <Content Include="App_Data\yml_patches\p5_ex\USRDIR\config.yml" />
-    <Content Include="App_Data\yml_patches\p5_ex\USRDIR\mod.sprx" />
-    <Content Include="App_Data\yml_patches\p5_ex\hardware\p5ex\conf.yml" />
-    <Content Include="App_Data\yml_patches\p5_ex\hardware\p5ex\mod.sprx" />
-    <Content Include="App_Data\yml_patches\p5_ex\hardware\patches\patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />
@@ -286,6 +271,20 @@
     </Compile>
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\PatchCreator.aspx.cs">
+      <DependentUpon>PatchCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\PatchCreator.aspx.designer.cs">
+      <DependentUpon>PatchCreator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\UpdateCreator.aspx.cs">
+      <DependentUpon>UpdateCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apps\UpdateCreator.aspx.designer.cs">
+      <DependentUpon>UpdateCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Asp.cs" />
     <Compile Include="Classes\Game.cs" />
@@ -323,13 +322,6 @@
     </Compile>
     <Compile Include="Recommended.aspx.designer.cs">
       <DependentUpon>Recommended.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="apps\PNACHCreator.aspx.cs">
-      <DependentUpon>PNACHCreator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\PNACHCreator.aspx.designer.cs">
-      <DependentUpon>PNACHCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Articles.aspx.cs">
       <DependentUpon>Articles.aspx</DependentUpon>
@@ -394,13 +386,6 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="apps\PatchCreator.aspx.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\PatchCreator.aspx.designer.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PatchCreator.aspx.cs">
       <DependentUpon>PatchCreator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -409,13 +394,6 @@
       <DependentUpon>PatchCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Browse\Post.cs" />
-    <Compile Include="apps\UpdateCreator.aspx.cs">
-      <DependentUpon>UpdateCreator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\UpdateCreator.aspx.designer.cs">
-      <DependentUpon>UpdateCreator.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Browse\Webscraper.cs" />
     <Compile Include="Resources\HTMLGen.cs" />
     <Compile Include="Wiki.aspx.cs">

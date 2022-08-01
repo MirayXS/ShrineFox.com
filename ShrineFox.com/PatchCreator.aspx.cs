@@ -15,7 +15,7 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("https://shrinefox.com/apps/PatchCreator");
+            Response.Redirect("https://shrinefox.com/GetStarted");
         }
     }
 }

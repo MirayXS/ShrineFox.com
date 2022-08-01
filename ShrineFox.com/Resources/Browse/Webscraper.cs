@@ -152,7 +152,7 @@ namespace ShrineFoxCom.Resources.Browse
                                                 // Download P5EX update
                                                 if (item.Title == "Persona 5 EX")
                                                 {
-                                                    var lastUpdate = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml_patches//p5_ex//patches//patch.yml");
+                                                    var lastUpdate = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//yml//p5_ex//patches//patch.yml");
                                                     if (item.DateUpdated > lastUpdate)
                                                     {
                                                         DownloadP5EXUpdate(item);

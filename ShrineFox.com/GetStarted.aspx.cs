@@ -100,7 +100,7 @@ namespace ShrineFoxCom
                         $"<br>{Html.Notice("yellow", "This section is still under construction, so not everything works as expected.<br><br>")}"
             });
             // Show last updated time for P5 EX
-            var lastWriteTime = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//yml//p5_ex//patches//patch.yml");
+            var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patches/patch.yml"));
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
         }
 

@@ -13,6 +13,7 @@
         <p>
             I write about unofficial ways you can personalize your games, consoles and devices.
         </p>
+        <br><h2>New to modding? See how to <a href="https://shrinefox.com/GetStarted">Get Started</a>.</h2>
     </div>
     <br>
     <br>

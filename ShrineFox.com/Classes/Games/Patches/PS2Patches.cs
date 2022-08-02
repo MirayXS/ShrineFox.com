@@ -14,7 +14,8 @@ namespace ShrineFoxCom
                 Description = "Loads external files from folders named after the game's archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.",
                 Text = Properties.Resources.P3FES_hostFS,
                 AlwaysOn = true,
-                OnByDefault = true
+                OnByDefault = true,
+                TargetPlatform = "emulator"
             },
             new GamePatch() { Name = "Controllable Party Members", ShortName = "control_party", Author = "TGE",
                 Description = "Allows you to choose a skill or item on your party member's turn, similar to in Persona 4 and 5. Known side effects: the protagonist's fusion skills can be used by everyone on their turns.",
@@ -585,7 +586,8 @@ namespace ShrineFoxCom
                 Description = "Loads external files from folders named after the game's archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.",
                 Text = Properties.Resources.P4_hostFS,
                 AlwaysOn = true,
-                OnByDefault = true
+                OnByDefault = true,
+                TargetPlatform = "emulator"
             },
             new GamePatch() { Name = "Debug Log", ShortName = "debug_log", Author = "TGE",
                 Description = "Prints string output from the game's original debug functions into the PCSX2 log. Also prints the filename and path of each file the game accesses in real time, helpful for finding and narrowing down the location of assets like models, fields etc.",
@@ -853,7 +855,8 @@ namespace ShrineFoxCom
                 "patch=1,EE,002BF304,word,9385D7EE" +
                 "patch=1,EE,002BF30C,word,9382D7EE",
                 AlwaysOn = true,
-                OnByDefault = true
+                OnByDefault = true,
+                TargetPlatform = "emulator"
             },
             new GamePatch() { Name = "480p Resolution", ShortName = "480p_resolution", Author = "TGE",
                 Description = "Upscale graphics to 480p natively.",

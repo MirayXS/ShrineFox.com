@@ -16,5 +16,6 @@ namespace ShrineFoxCom
         public bool AlwaysOn { get; set; } = false;
         public bool OnByDefault { get; set; } = false;
         public List<string> Conflicts { get; set; } = new List<string>();
+        public string TargetPlatform { get; set; } = "";
     }
 }

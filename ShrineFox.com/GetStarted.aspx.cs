@@ -31,6 +31,7 @@ namespace ShrineFoxCom
                              ShortName = "PS4", 
                              Games = Games.PS4Games
             },
+            /*
             new Platform() { Name = "PlayStation Vita", 
                              ShortName = "PSV",
                              Games = Games.PSVGames,
@@ -49,7 +50,7 @@ namespace ShrineFoxCom
             new Platform() { Name = "PC",
                              ShortName = "PC",
                              Games = Games.PCGames
-            },
+            },*/
         };
 
         // Current selection of game, platform and region
@@ -75,7 +76,7 @@ namespace ShrineFoxCom
                     if (query.Item1.ToLower() == "region")
                         selectedRegion = query.Item2.ToUpper();
                     if (query.Item1.ToLower() == "target")
-                        selectedTarget = query.Item2.ToUpper();
+                        selectedTarget = query.Item2.ToLower();
                 }
             }
         }
@@ -96,12 +97,11 @@ namespace ShrineFoxCom
                 Text = "Before you can install mods from <a href=\"https://shrinefox.com/browse\">ShrineFox.com/Browse</a>, " +
                         "you must patch your game." +
                         "<br>The fan-made patch for loading modded files is called <b>Mod Support</b>." +
-                        "<br><br>This page will walk you through the setup process." +
-                        $"<br>{Html.Notice("yellow", "This section is still under construction, so not everything works as expected.<br><br>")}"
+                        "<br><br>This page will walk you through the setup process."
             });
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patches/patch.yml"));
-            lastUpdated.Controls.Add(new LiteralControl { Text = $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
+            lastUpdated.Controls.Add(new LiteralControl { Text = $"<br><i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
         }
 
         public void GenerateDynamicControls()
@@ -110,6 +110,9 @@ namespace ShrineFoxCom
             List<Tuple<string, string>> platformPairs = new List<Tuple<string, string>>();
             foreach (var platform in Platforms)
                 platformPairs.Add(new Tuple<string, string>(platform.Name, platform.ShortName));
+
+            // Summary panel (hidden by default)
+            MainPlaceHolder.Controls.Add(new Panel() { ID = "pnl_Summary" });
 
             // Platform panel and options (visible by default)
             MainPlaceHolder.Controls.Add(
@@ -195,6 +198,8 @@ namespace ShrineFoxCom
         private void UpdateDynamicControls()
         {
             // Get all dynamically generated controls
+            var summaryPanel = Asp.GetControlByType<Panel>(MainPlaceHolder, c => c.ID == "pnl_Summary");
+            var platformPanel = Asp.GetControlByType<Panel>(MainPlaceHolder, c => c.ID == "pnl_Platform");
             var platformList = Asp.GetControlByType<DropDownList>(MainPlaceHolder, c => c.ID == "platformList");
             var gamePanel = Asp.GetControlByType<Panel>(MainPlaceHolder, c => c.ID == "pnl_Game");
             var gameList = Asp.GetControlByType<DropDownList>(MainPlaceHolder, c => c.ID == "gameList");
@@ -224,6 +229,18 @@ namespace ShrineFoxCom
                 if (!string.IsNullOrEmpty(gameList.SelectedValue))
                     selectedGame = gameList.SelectedValue;
 
+                // Re-select previously selected target in dropdown
+                if (!string.IsNullOrEmpty(emuList.SelectedValue))
+                    selectedTarget = emuList.SelectedValue;
+
+                if (!string.IsNullOrEmpty(selectedTarget) && emuList.Items.FindByValue(selectedTarget) != null)
+                    emuList.SelectedIndex = emuList.Items.IndexOf(emuList.Items.FindByValue(selectedTarget));
+                else
+                {
+                    emuList.SelectedIndex = emuList.Items.IndexOf(emuList.Items.FindByValue("emulator"));
+                    selectedTarget = "emulator";
+                }
+                
                 // Update Game dropdown options based on selected Platform
                 List<Tuple<string, string>> gamePairs = new List<Tuple<string, string>>();
                 Platform platform = Platforms.Single(x => x.ShortName.Equals(selectedPlatform));
@@ -267,6 +284,45 @@ namespace ShrineFoxCom
                     // Make Patches panel visible if Region selected
                     if (!string.IsNullOrEmpty(selectedRegion) || selectedPlatform == "PC")
                     {
+                        var Game = selectedGames.Single(x => x.Region.Equals(selectedRegion));
+
+                        // Make Summary panel visible and hide other panels
+                        summaryPanel.Visible = true;
+                        regionPanel.Visible = false; gamePanel.Visible = false; platformPanel.Visible = false;
+                        Panel selectedGamePanel = Asp.SplitCardPanel("pnl_SelectedGame", $"<a href=\"https://shrinefox.com/getstarted?platform={selectedPlatform}&game={selectedGame}&region={selectedRegion}&target={selectedTarget}\"><i class=\"fa fa-link\"></i></a> " +
+                            $"Selected Game: {Game.Name} {selectedRegion} ({selectedPlatform})", 
+                            $"Title ID: {Game.TitleID}", true);
+                        summaryPanel.Controls.Add(selectedGamePanel);
+                        var selectedGamePanelLeft = Asp.GetControlByType<Panel>(selectedGamePanel, c => c.ID == "pnl_SelectedGame_content_left");
+                        var selectedGamePanelRight = Asp.GetControlByType<Panel>(selectedGamePanel, c => c.ID == "pnl_SelectedGame_content_right");
+
+                        // Show game boxart with link to wiki page and other resources
+                        selectedGamePanelLeft.Controls.Add(new LiteralControl() { 
+                            Text = $"<img src=\"{Game.ImageUrl}\" style=\"max-height:150px;\" class=\"img-responsive img-fit-contain\">" +
+                            $"<br><h4><a href=\"https://shrinefox.com/GetStarted?platform=&game=&region=\"><i class=\"fa-solid fa-circle-arrow-left\"></i> Back to Game Selection</a></h4>" });
+
+                        string gameShortName = selectedGame.Replace("EX", "");
+                        string gameName = Game.Name.Replace(" EX", "");
+                        selectedGamePanelRight.Controls.Add(new LiteralControl()
+                        {
+                            Text = "<b>Need help installing these patches?</b> " +
+                            $"<br><a target='_blank' href=\"https://amicitia.miraheze.org/wiki/{gameName}\">Learn about {gameShortName} modding</a> on the Wiki!" +
+                            $"<br><br>While you're here, see also:<br><ul>" +
+                            $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=mod\">{gameShortName} Mods</a></li>" +
+                            $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=tool\">{gameShortName} Modding Tools</a></li>" +
+                            $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=guide\">{gameShortName} Modding Guides</a></li>" +
+                            "</ul></span>"
+                        });
+                        if (selectedGame == "P5")
+                        {
+                            selectedGamePanelRight.Controls.Add(new LiteralControl()
+                            {
+                                Text = $"Consider using DeathChaos25's <a target='_blank' href=\"https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/\">Persona 5 EX mod</a>!" +
+                                $"<br><a href=\"https://shrinefox.com/getstarted?platform=PS3&game=P5EX&region={selectedRegion}&target={selectedTarget}\">Click here to switch to Persona 5 EX compatible patches</a>."
+                            });
+                        }
+
+                        // Show patches panel, and PPU hash panel if PS3 game
                         patchesPanel.Visible = true;
 
                         if (selectedPlatform == "PS3")
@@ -277,22 +333,14 @@ namespace ShrineFoxCom
                         {
                             emuPanel.Visible = true;
 
-                            // Get previously selected target platform
-                            if (!string.IsNullOrEmpty(emuList.SelectedValue))
-                                selectedTarget = emuList.SelectedValue;
-                            else
-                                selectedTarget = "emulator";
-                            // Re-select previously selected target in dropdown
-                            if (emuList.Items.FindByValue(selectedTarget) != null)
-                                emuList.SelectedIndex = emuList.Items.IndexOf(emuList.Items.FindByValue(selectedTarget));
-                            else
-                                selectedTarget = "";
                             // Update name of emulator based on selected platform
                             if (selectedTarget != "console")
                                 emuList.Items.FindByValue("emulator").Text = platform.EmulatorName;
                         }
+                        else
+                            emuPanel.Visible = false;
 
-                        var Game = selectedGames.Single(x => x.Region.Equals(selectedRegion));
+
                         // Update Patches based on all prior selections
                         UpdatePatches(Game);
                         // Update Results
@@ -302,6 +350,8 @@ namespace ShrineFoxCom
                     {
                         patchesPanel.Visible = false;
                         ppuPanel.Visible = false;
+                        emuPanel.Visible = false;
+                        platformPanel.Visible = true;
                     }
                 }
                 else
@@ -309,6 +359,8 @@ namespace ShrineFoxCom
                     regionPanel.Visible = false;
                     patchesPanel.Visible = false;
                     ppuPanel.Visible = false;
+                    emuPanel.Visible = false;
+                    platformPanel.Visible = true;
                 }
             }
             else
@@ -317,6 +369,8 @@ namespace ShrineFoxCom
                 regionPanel.Visible = false;
                 patchesPanel.Visible = false;
                 ppuPanel.Visible = false;
+                emuPanel.Visible = false;
+                platformPanel.Visible = true;
             }
         }
 
@@ -342,8 +396,10 @@ namespace ShrineFoxCom
                 // Add javascript to show/hide description div
                 item.Attributes.Add("onmouseover", $"document.getElementById('desc').innerHTML=\"<b>{patch.Name}</b> (v{patch.Version}) by {patch.Author}<br><br>{patch.Description}\";");
 
-                // Add checkbox for each patch
-                items.Add(item);
+                // Add checkbox for each patch if it's compatible with current platform
+                if (patch.TargetPlatform == ""  || 
+                    (patch.TargetPlatform != "" && selectedTarget == patch.TargetPlatform))
+                    items.Add(item);
             }
             patchesCheckboxList.Items.Clear();
             patchesCheckboxList.Items.AddRange(items.ToArray());
@@ -398,38 +454,11 @@ namespace ShrineFoxCom
         private void UpdateResults(Game game)
         {
             var resultsContentPanel = Asp.GetControlByType<Panel>(MainPlaceHolder, c => c.ID == "pnl_Results");
-
-            // Show game boxart with link to wiki page and other resources
-            Panel selectedGamePanel = Asp.SplitCardPanel("pnl_SelectedGame", $"TITLE ID: {game.TitleID}", $"{selectedGame} {selectedRegion} ({selectedPlatform})", true);
-            var selectedGamePanelLeft = Asp.GetControlByType<Panel>(selectedGamePanel, c => c.ID == "pnl_SelectedGame_content_left");
-            var selectedGamePanelRight = Asp.GetControlByType<Panel>(selectedGamePanel, c => c.ID == "pnl_SelectedGame_content_right");
-            var selectedGamePanelFooter = Asp.GetControlByType<Panel>(selectedGamePanel, c => c.ID == "pnl_SelectedGame_footer");
-            selectedGamePanelLeft.Controls.Add(new LiteralControl() { Text = $"<img src=\"{game.ImageUrl}\" style=\"max-height:150px;\" class=\"img-responsive img-fit-contain\">" });
+            Panel resultsPanel = Asp.CardPanel("pnl_ResultsInner", $"Setup Info", $"Take the first steps modding {selectedGame} {selectedRegion} for {selectedPlatform}.", true);
+            var resultsPanelFooter = Asp.GetControlByType<Panel>(resultsPanel, c => c.ID == "pnl_ResultsInner_footer");
             
-            string gameShortName = selectedGame.Replace("EX","");
-            string gameName = game.Name.Replace(" EX", "");
-            selectedGamePanelRight.Controls.Add(new LiteralControl()
-            {
-                Text = "<b>Need help installing these patches?</b> " +
-                $"<br><a target='_blank' href=\"https://amicitia.miraheze.org/wiki/{gameName}\">Learn about {gameShortName} modding</a> on the Wiki!" +
-                $"<br><br><span style=\"font-size:8pt;\">While you're here, see also:<br><ul>" +
-                $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=mod\">{gameShortName} Mods</a></li>" +
-                $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=tool\">{gameShortName} Modding Tools</a></li>" +
-                $"<li><a target='_blank' href=\"https://shrinefox.com/browse?game={gameName}&type=guide\">{gameShortName} Modding Guides</a></li>" +
-                "</ul></span>"
-            });
-            if (selectedGame == "P5")
-            {
-                selectedGamePanelRight.Controls.Add(new LiteralControl()
-                {
-                    Text = "Consider using DeathChaos25's <a target='_blank' href=\"https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/\">Persona 5 EX mod</a>!" +
-                    "<br>Select <b>Persona 5 EX</b> in the \"Game Title\" section above."
-                });
-            }
-
-            UpdateInstallInstructions(game, selectedGamePanelFooter);
-
-            resultsContentPanel.Controls.Add(selectedGamePanel);
+            UpdateInstallInstructions(game, resultsPanelFooter);
+            resultsContentPanel.Controls.Add(resultsPanel);
         }
 
         private void UpdateInstallInstructions(Game game, Panel selectedGamePanelFooter)
@@ -501,8 +530,8 @@ namespace ShrineFoxCom
                         "<li>Right click your game in the game list in RPCS3, select Open Install Folder, this will bring you inside the game's USRDIR folder.</li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/F5cGhDjC#DpMaU3iCfXeAF0NqbEU9p6aPkg1rTFYzCpZpE1rCjhc\">BGM cpk</a></li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/1p8wRCpa#-Ivf-55b2hU_3Y5ZTymi75C7tACExIskjxqZPIBxlE8\">P5R Bustups cpk</a></li>" +
-                        "<li>Download <a target='_blank' href =\"https://shrinefox.com//yml//p5_ex//USRDIR//config.yml\">config.yml</a> " +
-                            "and <a target='_blank' href=\"https://shrinefox.com////yml//p5_ex//USRDIR//mod.sprx\">mod.sprx</a></li>" +
+                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/USRDIR/config.yml\">config.yml</a> " +
+                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/USRDIR/mod.sprx\">mod.sprx</a></li>" +
                         "<li>Move those two files to the USRDIR folder in game's install folder</li>" +
                         "<li>Also move downloaded CPK files to the USRDIR folder</li>" +
                         "<li>Download <a target='_blank' href=\"https://drive.google.com/file/d/1VzLwyBq5d6WcJzMz1a_NEEC5-0fCbIRL/view\">this mod (P5EX)</a> " +
@@ -520,8 +549,8 @@ namespace ShrineFoxCom
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/F5cGhDjC#DpMaU3iCfXeAF0NqbEU9p6aPkg1rTFYzCpZpE1rCjhc\">BGM cpk</a></li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/1p8wRCpa#-Ivf-55b2hU_3Y5ZTymi75C7tACExIskjxqZPIBxlE8\">P5R Bustups cpk</a></li>" +
                         "<li>Move the downloaded CPK files to the USRDIR folder in game's install folder</li>" +
-                        "<li>Download <a target='_blank' href =\"https://shrinefox.com////yml//p5_ex//hardware//p5ex//conf.yml\">conf.yml</a> " +
-                            "and <a target='_blank' href=\"https://shrinefox.com////yml//p5_ex//hardware//p5ex//mod.sprx\">mod.sprx</a></li>" +
+                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/hardware/p5ex/conf.yml\">conf.yml</a> " +
+                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/hardware/p5ex/mod.sprx\">mod.sprx</a></li>" +
                         "<li>Move those two files to the root of your PS3's dev_hdd0 folder</li>" +
                         "<li>Download <a target='_blank' href=\"https://drive.google.com/file/d/1VzLwyBq5d6WcJzMz1a_NEEC5-0fCbIRL/view\">this mod (P5EX)</a> " +
                         "with <a target='_blank' href=\"https://gamebanana.com/dl/767116\">this mod (softlock fix)</a>, build mod.cpk with both selected in Aemulus and transfer output to USRDIR folder on PS3."

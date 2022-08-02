@@ -383,6 +383,8 @@ namespace ShrineFoxCom
 
             // Patch Description placeholder for mouseover
             patchesContentPanelRight.Controls.Add(new LiteralControl() { Text = $"<span id=\"desc\"></span>" });
+            patchesContentPanelRight.CssClass = "p-sticky";
+            patchesContentPanelRight.Style.Add("top","50px");
 
             // Recreate checklist items
             List<ListItem> items = new List<ListItem>();
@@ -394,7 +396,7 @@ namespace ShrineFoxCom
                     item.Selected = patchesCheckboxList.Items.FindByValue(item.Value).Selected;
 
                 // Add javascript to show/hide description div
-                item.Attributes.Add("onmouseover", $"document.getElementById('desc').innerHTML=\"<b>{patch.Name}</b> (v{patch.Version}) by {patch.Author}<br><br>{patch.Description}\";");
+                item.Attributes.Add("onmouseover", $"document.getElementById('desc').innerHTML=\"<b>{patch.Name}</b> {patch.Version} by {patch.Author}<br><br>{patch.Description}\";");
 
                 // Add checkbox for each patch if it's compatible with current platform
                 if (patch.TargetPlatform == ""  || 

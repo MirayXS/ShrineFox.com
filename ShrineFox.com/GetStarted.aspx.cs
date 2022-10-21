@@ -97,7 +97,8 @@ namespace ShrineFoxCom
                 Text = "Before you can install mods from <a href=\"https://shrinefox.com/browse\">ShrineFox.com/Browse</a>, " +
                         "you must patch your game." +
                         "<br>The fan-made patch for loading modded files is called <b>Mod Support</b>." +
-                        "<br><br>This page will walk you through the setup process."
+                        "<br><br>This page will walk you through the setup process." +
+                        $"<br>{Html.Notice("yellow", "<b>Update PKGs for P5R and some combinations of Dancing game patches are temporarily unavailable</b> for now, due to an oversight made when generating the files. They will be reuploaded soon, <a href=\"https://shrinefox.com/forum/viewtopic.php?f=3&t=1052\">more info in this thread</a>.")}"
             });
             // Show last updated time for P5 EX
             var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patches/patch.yml"));
@@ -762,8 +763,11 @@ namespace ShrineFoxCom
                     {
                         // Redirect browser to download URL
                         string downloadUrl = splitLine[3];
-                        Response.Redirect(downloadUrl);
-                        foundDownload = true;
+                        if (!string.IsNullOrEmpty(downloadUrl))
+                        {
+                            Response.Redirect(downloadUrl);
+                            foundDownload = true;
+                        }
                         break;
                     }
                 }

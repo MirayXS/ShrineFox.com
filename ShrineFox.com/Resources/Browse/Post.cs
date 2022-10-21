@@ -174,7 +174,9 @@ namespace ShrineFoxCom
         //Games in dropdown
         public static List<Tuple<string, string>> GameList = new List<Tuple<string, string>>() {
             new Tuple<string, string>("P5", "Persona 5"),
-            new Tuple<string, string>("P5R", "Persona 5 Royal"),
+            new Tuple<string, string>("P5R", "Persona 5 Royal (PS4)"),
+            new Tuple<string, string>("P5R-NX", "Persona 5 Royal (Switch)"),
+            new Tuple<string, string>("P5R-PC", "Persona 5 Royal (PC)"),
             new Tuple<string, string>("P5S", "Persona 5 Strikers"),
             new Tuple<string, string>("P5D", "Persona 5 Dancing"),
             new Tuple<string, string>("P4", "Persona 4"),

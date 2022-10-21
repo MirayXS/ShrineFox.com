@@ -342,6 +342,12 @@ namespace ShrineFoxCom.Resources.Browse
                 case "P5R":
                     url += "8464&";
                     break;
+                case "P5R-NX":
+                    url += "17354&";
+                    break;
+                case "P5R-PC":
+                    url += "16951&";
+                    break;
                 case "P5D":
                     url += "8615&";
                     break;

@@ -13,36 +13,35 @@ namespace ShrineFoxCom
         public static void BlogForum(PlaceHolder control)
         {
             string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_v2";
-
             Directory.CreateDirectory($"{forumThemePath}//theme");
             Directory.CreateDirectory($"{forumThemePath}//template");
+            string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//primer";
+            Directory.CreateDirectory(blogThemePath);
 
             // Forum Header
-            string forumHeader = Properties.Resources.overall_header;
-            string forumStyles = Between(Properties.Resources.home_head, "<!--ShrineFox Styles-->", "<!--End ShrineFox Styles-->");
-            string videoSearch = Between(Properties.Resources.home_body, "<!--ShrineFox Header-->", "<!--End ShrineFox Header-->");
+            string forumHeader = GetFile.forum_overall_header;
+            string forumStyles = Between(GetFile.head, "<!--ShrineFox Styles-->", "<!--End ShrineFox Styles-->");
+            string videoSearch = Between(GetFile.body, "<!--ShrineFox Header-->", "<!--End ShrineFox Header-->");
             forumHeader = forumHeader.Replace("<!--ShrineFox Styles-->", forumStyles)
                            .Replace("<!--ShrineFox Header-->", videoSearch);
             File.WriteAllText($"{forumThemePath}//template//overall_header.html", forumHeader);
 
             // Forum Footer
-            string footer = Between(Properties.Resources.home_foot, "<!--ShrineFox Footer-->", "<!--End ShrineFox Footer-->");
-            File.WriteAllText($"{forumThemePath}//template//overall_footer.html", 
-                Properties.Resources.overall_footer.Replace("<!--ShrineFox Footer-->", footer));
+            string footer = Between(GetFile.footer, "<!--ShrineFox Footer-->", "<!--End ShrineFox Footer-->");
+            File.WriteAllText($"{forumThemePath}//template//overall_footer.html",
+                GetFile.forum_overall_footer.Replace("<!--ShrineFox Footer-->", footer));
 
             // Forum CSS
-            File.WriteAllText($"{forumThemePath}//theme//colours.css", Properties.Resources.colours);
-            
-            // Blog Theme
-            string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//primer";
+            File.WriteAllText($"{forumThemePath}//theme//colours.css", GetFile.forum_colours);
 
-            string blogStyles = Between(Properties.Resources.home_head, "<!--ShrineFox AllStyles-->", "<!--End ShrineFox Styles-->");
-            string blogNavbar = Between(Properties.Resources.home_body, "<!--ShrineFox NavBar-->", "<!--End ShrineFox NavBar-->");
-            string blogHeader = Properties.Resources.header
+            string blogStyles = Between(GetFile.head, "<!--ShrineFox AllStyles-->", "<!--End ShrineFox Styles-->");
+            string blogNavbar = Between(GetFile.head, "<!--ShrineFox NavBar-->", "<!--End ShrineFox NavBar-->");
+            string blogHeader = GetFile.blog_header
                                .Replace("<!--ShrineFox Styles-->", blogStyles)
                                .Replace("<!--ShrineFox NavBar-->", blogNavbar)
                                .Replace("<!--ShrineFox Header-->", videoSearch);
 
+            // Blog .PHP/.CSS
             foreach (string site in new string[] { "blog", "guides", "news" })
             {
                 string path = blogThemePath.Replace("blog", site);
@@ -51,9 +50,9 @@ namespace ShrineFoxCom
                 // Header
                 File.WriteAllText(Path.Combine(path, "header.php"), blogHeader);
                 // Footer
-                File.WriteAllText(Path.Combine(path, "footer.php"), Properties.Resources.footer.Replace("<!--ShrineFox Footer-->", footer));
+                File.WriteAllText(Path.Combine(path, "footer.php"), GetFile.blog_footer.Replace("<!--ShrineFox Footer-->", footer));
                 // CSS
-                File.WriteAllText(Path.Combine(path, "style.css"), Properties.Resources.style);
+                File.WriteAllText(Path.Combine(path, "style.css"), GetFile.blog_style);
             }
 
             LiteralControl notice = new LiteralControl();

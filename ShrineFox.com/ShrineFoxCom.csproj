@@ -201,18 +201,20 @@
     <Content Include="apps\PatchCreator.aspx" />
     <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="GetStarted.aspx" />
-    <Content Include="pnach\P3FES_hostFS.txt" />
-    <Content Include="pnach\P4_hostFS.txt" />
+    <Content Include="js\sidebar.js" />
     <Content Include="Resources\Dependencies\7z.dll" />
     <Content Include="Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
     <Content Include="Articles.aspx" />
     <Content Include="Browse.aspx" />
     <Content Include="images\waves.mp4" />
-    <Content Include="Legal.aspx" />
     <Content Include="Resources\Forum\template\overall_footer.html" />
     <Content Include="Resources\Forum\template\overall_header.html" />
     <Content Include="Resources\Forum\theme\colours.css" />
+    <Content Include="Resources\Html\footer.html" />
+    <Content Include="Resources\Html\body.html" />
+    <Content Include="Resources\Html\head.html" />
+    <Content Include="Resources\Html\theme.css" />
     <Content Include="Terms.aspx" />
     <Content Include="Privacy.aspx" />
     <Content Include="css\bootstrap.min.css" />
@@ -245,9 +247,6 @@
     <Content Include="Resources\Blog\style.css" />
     <Content Include="Resources\Browse\Pagination.html" />
     <Content Include="Resources\Browse\Post.html" />
-    <Content Include="Resources\Home\home_body.html" />
-    <Content Include="Resources\Home\home_foot.html" />
-    <Content Include="Resources\Home\home_head.html" />
     <Content Include="Wiki.aspx" />
     <Content Include="apps\TextSearch.aspx" />
     <Content Include="About.aspx" />
@@ -256,6 +255,12 @@
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
     <Content Include="App_Data\patch_downloads.tsv" />
+    <Content Include="pnach\94A82AAA.pnach">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pnach\DEDC3B71.pnach">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />
@@ -287,6 +292,7 @@
       <DependentUpon>UpdateCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Asp.cs" />
+    <Compile Include="Classes\GetFile.cs" />
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\Games\Patches\PS3Patches.cs" />
     <Compile Include="Classes\Games\PCGames.cs" />
@@ -336,13 +342,6 @@
     </Compile>
     <Compile Include="Browse.aspx.designer.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Legal.aspx.cs">
-      <DependentUpon>Legal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Legal.aspx.designer.cs">
-      <DependentUpon>Legal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Terms.aspx.cs">
       <DependentUpon>Terms.aspx</DependentUpon>

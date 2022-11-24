@@ -28,7 +28,7 @@ namespace ShrineFoxCom.Resources.Browse
             Posts = Post.Get();
             var NewPosts = new List<Post>();
             // Remove duplicate posts and exclusions
-            var exclusions = Properties.Resources.exclude.Split('\n');
+            var exclusions = GetFile.browse_exclude.Split('\n');
             for (int i = 0; i < Posts.Count(); i++)
                 if (!NewPosts.Any(x => x.URL.Contains("gamebanana") && x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
                     if (!exclusions.Any(x => Posts[i].Authors.Any(y => y.Contains(x)) || x.Contains(Posts[i].Title)))

@@ -83,7 +83,7 @@ namespace ShrineFoxCom
             string result;
 
             // Post Summary
-            result = Properties.Resources.Post;
+            result = GetFile.browse_post;
             
             // Download/Read/Clipboard Text
             if (post.Type == "cheat")

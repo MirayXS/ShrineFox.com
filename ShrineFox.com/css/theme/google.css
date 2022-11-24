@@ -9,19 +9,10 @@
 
 .ytv-canvas ::-webkit-scrollbar-thumb {
     background: rgba(var(--accent),1) !important;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .googlesearch {
     background: rgba(var(--accent), 0.8) !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .search {
@@ -43,21 +34,10 @@
     border-color: transparent !important;
     background-color: transparent !important;
     color: rgba(var(--accenttext), 1.0) !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .gsst_a:hover .gscb_a, .gsst_a:focus .gscb_a {
     color: rgba(var(--accent), 1) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
@@ -76,21 +56,11 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
     border-color: rgba(var(--text),0) !important;
     background-color: var(--text) !important;
     border: 0px solid rgba(var(--text),1) !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .gs-result .gs-image, .gs-result .gs-promotion-image {
     border: transparent !important;
     width: 80% !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b,
@@ -100,20 +70,10 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
 
 .gsc-completion-container {
     background-color: rgba(var(--accent),1) !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .gsc-completion-selected {
     background-color: rgba(var(--accent),1) !important;
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 #___gcse_0 {
@@ -124,9 +84,4 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
 .gssb_e {
     background: rgba(var(--accent), 1);
     -webkit-filter: brightness(79%);
-
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }

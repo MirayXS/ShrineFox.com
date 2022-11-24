@@ -50,9 +50,10 @@ commercial or otherwise. See the <a href="https://github.com/ShrineFox/ShrineFox
 	<tr>
 		<td>Themes</td>
 		<td>
-			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2
-			<br><a href="https://gretathemes.com/wordpress-themes/justread/">JustRead</a> by GretaThemes
-			<br><a href="https://themeforest.net/item/milk-multipurpose-responsive-phpbb-31-theme/">Milk (phpbb theme)</a> by PlanetStyles
+			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2 (All)
+			<br><a href="https://gretathemes.com/wordpress-themes/justread/">JustRead</a> by GretaThemes (Articles)
+			<br><a href="https://themeforest.net/item/milk-multipurpose-responsive-phpbb-31-theme/">Milk (phpbb theme)</a> by PlanetStyles (Forum)
+			<br><a href="https://seyche.tumblr.com/post/618566803537477632/theme-nine-lilac-one-column-sidebar-theme-with">Lilac Theme</a> by seyche (Home)
 		</td>
 	</tr>
 	<tr>

@@ -12,7 +12,7 @@ namespace ShrineFoxCom
         {
             new GamePatch() { Name = "HostFS", ShortName = "hostFS", Author = "TGE",
                 Description = "Loads external files from folders named after the game's archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.",
-                Text = Properties.Resources.P3FES_hostFS,
+                Text = GetFile.p3f_hostfs,
                 AlwaysOn = true,
                 OnByDefault = true,
                 TargetPlatform = "emulator"
@@ -584,7 +584,7 @@ namespace ShrineFoxCom
         {
             new GamePatch() { Name = "HostFS", ShortName = "hostFS", Author = "TGE",
                 Description = "Loads external files from folders named after the game's archives when running a game from an ELF in PCSX2. Make sure hostFS=enabled in PCSX2_vm.ini.",
-                Text = Properties.Resources.P4_hostFS,
+                Text = GetFile.p4_hostfs,
                 AlwaysOn = true,
                 OnByDefault = true,
                 TargetPlatform = "emulator"

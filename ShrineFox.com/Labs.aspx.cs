@@ -120,7 +120,7 @@ namespace ShrineFoxCom
             
             foreach (var card in cards)
             {
-                cardsHtml.Text += Properties.Resources.Card
+                cardsHtml.Text += GetFile.card
                     .Replace("CARDTITLE", card.Title)
                     .Replace("CARDSUBTITLE", card.Subtitle)
                     .Replace("CARDBODY", $"<blockquote class=\"trello-card\"><a href=\"{card.Trello}\">Trello Card</a></blockquote><br>{card.Body}")

@@ -10,5 +10,5 @@
     <form runat="server">
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
     </form>
-    <asp:PlaceHolder ID="Foot" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="Footer" runat="server"></asp:PlaceHolder>
 </html>

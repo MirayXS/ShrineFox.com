@@ -59,7 +59,7 @@ namespace ShrineFoxCom
             
             foreach (var card in cards)
             {
-                cardsHtml.Text += Properties.Resources.Card
+                cardsHtml.Text += GetFile.card
                     .Replace("CARDTITLE", card.Title)
                     .Replace("CARDSUBTITLE", card.Subtitle)
                     .Replace("CARDBODY", card.Body)

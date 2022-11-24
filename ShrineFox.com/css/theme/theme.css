@@ -1,15 +1,9 @@
 ﻿:root {
     --accent: 0,159,255;
-    --text: 230,230,230;
+    --text: 225,225,225;
     --accenttext: 230,230,230;
-    --bg: 23,37,36;
-    --margin: .8rem;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
+    --bg: 01,04,09;
+    --margin: 2em;
 }
 
 body {
@@ -17,99 +11,48 @@ body {
     color: rgba(var(--text), 1.0);
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12pt;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
-footer {
-    padding-top: var(--margin);
-    background: rgba(0,0,0, 0.3);
+main {
+    padding: var(--margin);
+}
+
+hr {
+    border-top: 1px solid rgba(var(--text), 0.1) !important;
 }
 
 a {
     color: rgba(var(--accent), 1.0) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
     a:hover, a:active, a.text-dark:focus, a.text-dark:hover {
         color: rgba(var(--accent), 1.0) !important;
         text-decoration: underline;
-
-        transition: 0.25s;
-        -moz-transition: all 1.2s ease-in;
-        -o-transition: all 1.2s ease-in;
-        -webkit-transition: all 1.2s ease-in;
-        transition: all 1.2s ease-in;
     }
 
 ::selection { /* WebKit/Blink Browsers */
     background: rgba(var(--accent), 0.5);
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 ::-moz-selection { /* Gecko Browsers */
     background: rgba(var(--accent), 0.5);
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .text-dark {
     color: rgba(var(--text), 1.0);
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .text-muted {
     color: rgba(var(--text), 0.5) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .text-light {
     color: rgba(var(--accenttext), 1.0) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .form-select {
     color: rgba(var(--accent), 1.0) !important;
     background: rgba(var(--bg), 1.0) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 button:focus {
@@ -120,12 +63,8 @@ button:focus {
     background: rgba(var(--text), 0.05) !important;
     margin-bottom: var(--margin);
     border: none !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(var(--text), 0.4), -1px 1px 3px rgba(var(--text), 0.4);
 }
 
 .card-header {
@@ -137,12 +76,6 @@ button:focus {
     background: rgba(var(--accent), 0.5) !important;
     border-color: rgba(var(--accent), 1) !important;
     color: rgba(var(--accenttext), 1) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .yt-overlay {
@@ -162,9 +95,8 @@ button:focus {
 }
 
 .navipath {
-    margin-top: var(--margin);
-    margin-bottom: var(--margin);
     font-weight: bold;
+    padding: var(--margin) 0 var(--margin) 0;
 }
 
 .navipath i.fa.fa-angle-right {
@@ -183,22 +115,10 @@ button:focus {
 
 .table.table-striped tbody tr:nth-of-type(odd) {
     background: rgba(var(--accent),0.25) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .table.table-hover tbody tr:hover {
     background: rgba(var(--accent),0.5) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .table {
@@ -211,41 +131,28 @@ tr {
 
 .menu .menu-item > a:focus, .menu .menu-item > a:hover {
     background: rgba(var(--accent), 0.3) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .menu .menu-item > a.active, .menu .menu-item > a:active {
     background: rgba(var(--accent), 0.3) !important;
     border-left: 7px solid rgba(var(--accent), 0.3) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .menu-item active {
     background: rgba(var(--accent), 0.3) !important;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .menu .menu-item > a {
     color: var(--accent) !important;
+}
 
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
+svg.amicitialogo {
+    width: 150px;
+    height: 150px;
+    margin-left: 25px;
+}
+
+svg path, i.fas:before, i.fab:before {
+    fill: rgba(var(--accent), 1.0) !important;
+    color: rgba(var(--accent), 1.0) !important;
 }

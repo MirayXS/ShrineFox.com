@@ -12,12 +12,6 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(var(--accent), 1);
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .maincontent {
@@ -50,12 +44,6 @@
 
 .scroll-box::-webkit-scrollbar-thumb {
     background: rgba(var(--accent), 1);
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .cover-bar {
@@ -66,12 +54,6 @@
     right: 0;
     width: .4em;
     opacity: 1;
-
-    transition: 0.25s;
-    -moz-transition: all 1.2s ease-in;
-    -o-transition: all 1.2s ease-in;
-    -webkit-transition: all 1.2s ease-in;
-    transition: all 1.2s ease-in;
 }
 
 .scroll-bar-wrap:hover .cover-bar {

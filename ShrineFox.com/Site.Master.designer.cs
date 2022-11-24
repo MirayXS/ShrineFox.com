@@ -42,12 +42,12 @@ namespace ShrineFoxCom
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
         /// <summary>
-        /// Foot control.
+        /// Footer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Foot;
+        protected global::System.Web.UI.WebControls.PlaceHolder Footer;
     }
 }

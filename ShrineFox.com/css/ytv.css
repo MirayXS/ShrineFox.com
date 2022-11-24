@@ -8,12 +8,12 @@
 }
 
 .ytv-canvas ::-webkit-scrollbar {
-	border-left: 1px solid transparent;
+	border-left: 0px solid transparent !important;
 	width: 10px;
 }
 
 .ytv-canvas ::-webkit-scrollbar-thumb {
-	background: rgba(var(--bg),1) !important;
+	background: rgba(var(--accent),1) !important;
 }
 
 /* Video */

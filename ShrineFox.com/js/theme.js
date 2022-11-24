@@ -1,6 +1,6 @@
 var accent = '9,54,109';
-var text = '230,230,230';
-var bg = '23,37,36';
+var text = '139,148,158';
+var bg = '01,04,09';
 var rgb = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -109,18 +109,18 @@ function SetDarkMode() {
 	switch (darkmode) {
 		case 'on':
 			toggle.checked = true;
-			text = '230,230,230';
-			bg = '23,37,36'; 
+			text = '139,148,158';
+			bg = '01,04,09';
 			break;
 		case 'off':
 			toggle.checked = false;
-			text = '23,37,36';
-			bg = '230,230,230';
+			text = '01,04,09';
+			bg = '225,225,225';
 			break;
 		default:
 			toggle.checked = true;
-			text = '230,230,230';
-			bg = '23,37,36'; 
+			text = '139,148,158';
+			bg = '01,04,09';
 			break;
 	}
 

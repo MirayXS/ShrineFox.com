@@ -37,8 +37,22 @@
 
 <h3><strong>License</strong></h3>
 
-<p>Unless otherwise stated, ShrineFox.com and/or its licensors own the intellectual property rights for all material 
-    on ShrineFox.com. All intellectual property rights are reserved. You may access this from ShrineFox.com for your 
+<p>ShrineFox.com is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with
+    <a href="http://www.atlus.co.jp/">Atlus Co., Ltd</a>, <a href="http://atlus.com/">Atlus U.S.A., Inc.</a> or
+    <a href="http://sega.jp/">Sega Games Co., Ltd</a>, or any of its subsidiaries or its affiliates.</p>
+
+<p>The official ATLUS website can be found at https://atlus.com. ATLUS and SEGA are registered in the
+    U.S. Patent and Trademark Office. "ATLUS", "SHIN MEGAMI TENSEI", "CATHERINE" and "PERSONA" are either registered trademarks
+    or trademarks of ATLUS Co., Ltd. or its affiliates.</p>
+
+<p>ShrineFox.com is a noncommercial fansite which does not sell goods or services in relation to
+    Atlus Co., Ltd, Atlus U.S.A., Inc. or Sega Games Co., Ltd.</p>
+
+<p>All media content such as screenshots, trailers, music, artwork and footage is the property of Atlus Co., Ltd., SEGA Games Co., Ltd or their
+    affiliated companies.</p>
+    
+<p>Unless otherwise stated, ShrineFox.com and/or its licensors own the intellectual property rights for all other material 
+    on ShrineFox.com. All intellectual property rights are reserved. You may access this material from ShrineFox.com for your 
     own personal use subjected to restrictions set in these terms and conditions.</p>
 
 <p>You must not:</p>
@@ -54,7 +68,7 @@
 
 <p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of 
     the website. ShrineFox.com does not filter, edit, publish or review Comments prior to their presence on the website. 
-    Comments do not reflect the views and opinions of ShrineFox.com,its agents and/or affiliates. Comments reflect the 
+    Comments do not reflect the views and opinions of ShrineFox.com, its agents and/or affiliates. Comments reflect the 
     views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, 
     ShrineFox.com shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered 
     as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
@@ -143,6 +157,10 @@
     defend us against all claims that is rising on your Website. No link(s) should appear on any Website 
     that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or 
     advocates the infringement or other violation of, any third party rights.</p>
+    
+<p>ShrineFox.com, its users, and its administrators are not responsible for any loss or damage to your personal data, software or devices.
+    You are responsible for any undesired results incurred by using instructional material or software found on this website or from
+    another website linked on ShrineFox.com.</p>
 
 <h3><strong>Your Privacy</strong></h3>
 

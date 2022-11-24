@@ -56,10 +56,12 @@ namespace ShrineFoxCom
         protected void Page_Load(object sender, EventArgs e)
         {
             LiteralControl cardsHtml = new LiteralControl();
-            
+
+            string cardHtml = GetFile.FromPath("./Resources/Card.html");
+
             foreach (var card in cards)
             {
-                cardsHtml.Text += GetFile.card
+                cardsHtml.Text += cardHtml
                     .Replace("CARDTITLE", card.Title)
                     .Replace("CARDSUBTITLE", card.Subtitle)
                     .Replace("CARDBODY", card.Body)

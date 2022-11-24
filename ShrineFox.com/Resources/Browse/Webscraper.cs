@@ -24,11 +24,13 @@ namespace ShrineFoxCom.Resources.Browse
 
         public static void UpdateTSVs(PlaceHolder control)
         {
+            string browse_exclude = GetFile.FromPath("./App_Data/exclude.txt");
+
             // Load existing posts that aren't from gamebanana
             Posts = Post.Get();
             var NewPosts = new List<Post>();
             // Remove duplicate posts and exclusions
-            var exclusions = GetFile.browse_exclude.Split('\n');
+            var exclusions = browse_exclude.Split('\n');
             for (int i = 0; i < Posts.Count(); i++)
                 if (!NewPosts.Any(x => x.URL.Contains("gamebanana") && x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
                     if (!exclusions.Any(x => Posts[i].Authors.Any(y => y.Contains(x)) || x.Contains(Posts[i].Title)))

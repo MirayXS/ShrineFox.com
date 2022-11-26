@@ -54,7 +54,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
 
 .gsc-search-button-v2, .gsc-search-button-v2:hover, .gsc-search-button-v2:focus {
     border-color: rgba(var(--text),0) !important;
-    background-color: var(--text) !important;
+    background-color: rgba(var(--accenttext),1) !important;
     border: 0px solid rgba(var(--text),1) !important;
 }
 
@@ -79,6 +79,10 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
 #___gcse_0 {
     margin-right: 2%;
     margin-left: 2%;
+}
+
+.gsc-completion-container span {
+    color: rgba(var(--accenttext), 1.0) !important;
 }
 
 .gssb_e {

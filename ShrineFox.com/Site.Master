@@ -1,6 +1,7 @@
 ﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ShrineFoxCom.SiteMaster" %>
 
-<!doctype html>
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
     <head runat="server">
         <title>ShrineFox.com <%: Page.Title %></title>

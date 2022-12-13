@@ -1215,7 +1215,39 @@ p.author, p.author a {
 	background: #FFFFFF;
 }
 
-/* Custom */
+/* ShrineFox Custom
+---------------------------------------- */
+
+.headerbar, body.content_block_header_block li.header, body.content_block_header_stripe li.header:before, .scrollToTop, .no_avatar, .social_links_footer, .badge, thead tr, .sidebar_block_stripe:before, .fancy_panel:before {background-color: rgba(var(--accent), 1.0) !important;}
+.pagination li a:hover, .pagination li.active span, .pagination li a:focus, blockquote, .codebox code, .jumpbox-cat-link, a.postlink, input.button1:focus, input.button2:focus, input.button3:focus, input.specialbutton, .inputbox:hover, .inputbox:focus, .specialbutton, a.specialbutton, .button:hover, .button:focus, .dark_base .social_links_footer a span, a.specialbutton, .dark_base .social_links_footer a:hover span {border-color: rgba(var(--accent), 1.0) !important;}
+.pagination li a:hover, .pagination li.active span, .pagination li a:focus, .jumpbox-cat-link, .dropdown-contents > li > a:hover, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, a.no_avatar:hover, .jumpbox-cat-link:hover, input.button1:focus, input.button2:focus, input.button3:focus, .specialbutton, input.specialbutton, .panel .specialbutton, a.specialbutton, .scrollToTop, a.specialbutton, .dark_base .social_links_footer a:hover span, .grid_unread, .tile_row_2:before   {background: rgba(var(--accent), 1.0) !important;}
+a:hover, .navbar_footer a, .copyright_bar a, .social_links_footer a:hover span, .icon.fa-file.icon-red, a:hover .icon.fa-file.icon-red, .navigation .active-subsection a, .navigation .active-subsection a:hover, .navigation a:hover, .tabs .tab > a:hover, .tabs .activetab > a, .tabs .activetab > a:hover, a.postlink, a.postlink:visited, .navbar_in_header .badge, .button:focus .icon, .button:hover .icon, .dark_base .social_links_footer a span, .dark_base h2, .dark_base h2 a, .dark_base a:link, .dark_base a:visited, .button-secondary:focus, .button-secondary:hover, .notification_unread, .topic_type, .fd_dark a {color: rgba(var(--accent), 1.0) !important;}
+
+.fd_dark #inner-wrap, .fd_dark.navbar_o_header .navbar, .fd_dark .panel-container .panel, .fd_dark .navigation .active-subsection a, .fd_dark .navigation a:hover, .fd_dark .cp-mini, .fd_dark .codebox, .fd_dark .codebox code, .fd_dark blockquote, .fd_dark blockquote blockquote blockquote, .fd_dark .panel blockquote blockquote, .fd_dark .attachbox, .fd_dark .message-box textarea, .fd_dark .phpbb_alert, .fd_dark select, .fd_dark .minitabs a:hover, .fd_dark .minitabs .activetab > a, .fd_dark .minitabs .activetab > a:hover, .fd_dark .cp-main .pm, .fd_dark .bg3 .topicreview .bg2, .fd_dark .bg3 .topicreview .bg1, .fd_dark .forumlist_grid_icons .forabg,
+.navbar_footer,
+.copyright_bar 
+{
+	background-color: rgba(var(--bg),1) !important;
+	color: rgba(var(--text),1) !important;
+}
+
+main {
+	z-index: 0;
+	position: relative;
+}
+
+#inner-wrap {
+	background: transparent !important;
+}
+
+a.button.specialbutton {
+	color: rgba(var(--accenttext), 1.0) !important;
+}
+
+.headerbar_overlay_active {
+	background-color: rgba(var(--accent), 1.0) !important;
+	opacity: 0.7 !important;
+}
 
 .body-layout-Fluid #inner-wrap {
     width: 100% !important;
@@ -1261,3 +1293,4 @@ input.input.ng-pristine.ng-untouched.ng-valid, input.input.ng-pristine.ng-valid.
 .fd_dark details.spoiler {
     background-color: rgba(var(--text), 1) !important;
 }
+

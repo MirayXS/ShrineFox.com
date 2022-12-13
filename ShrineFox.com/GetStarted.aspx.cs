@@ -101,8 +101,10 @@ namespace ShrineFoxCom
                         $"<br>{Html.Notice("yellow", "<b>Update PKGs for P5R and some combinations of Dancing game patches are temporarily unavailable</b> for now, due to an oversight made when generating the files. They will be reuploaded soon, <a href=\"https://shrinefox.com/forum/viewtopic.php?f=3&t=1052\">more info in this thread</a>.")}"
             });
             // Show last updated time for P5 EX
+            /*
             var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patches/patch.yml"));
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<br><i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
+            */
         }
 
         public void GenerateDynamicControls()

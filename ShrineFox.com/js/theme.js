@@ -109,16 +109,19 @@ function SetDarkMode() {
 	switch (darkmode) {
 		case 'on':
 			toggle.checked = true;
+			document.documentElement.className = 'fd_dark';
 			text = '139,148,158';
 			bg = '01,04,09';
 			break;
 		case 'off':
 			toggle.checked = false;
+			document.documentElement.className = 'fd_light';
 			text = '01,04,09';
 			bg = '225,225,225';
 			break;
 		default:
 			toggle.checked = true;
+			document.documentElement.className = 'fd_dark';
 			text = '139,148,158';
 			bg = '01,04,09';
 			break;

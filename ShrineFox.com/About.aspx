@@ -12,7 +12,7 @@ ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community clo
 I'm a software developer who writes about unconventional ways to personalize the hardware you use every day. 
 <br>Smartphones, videogame consoles, and computers all offer limited customization. I'm interested in extending control over these devices, 
 	even in ways the manufacturers never intended. 
-<br>Many of the resources I rely on are open-source and can already be found online. By gathering and exploring this info here on y site, 
+<br>Many of the resources I rely on are open-source and can already be found online. By gathering and exploring this info here on my site, 
 	I hope to make modding more accessible for everybody.
 <br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
@@ -20,7 +20,7 @@ I'm a software developer who writes about unconventional ways to personalize the
 If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
 	which accepts PayPal and Stripe. Any contribution is greatly appreciated and helps keep the site online.
 <br>You can message me there if you have any personal requests. You may also <a href="ryan@shrinefox.com">email me</a>, but please be aware I 
-	don't frequently check/respond to these emails, nor am I obligated to respond.
+	don't frequently check/respond to these emails.
 <br>
 <br><h2>Troubleshooting</h2>
 To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.

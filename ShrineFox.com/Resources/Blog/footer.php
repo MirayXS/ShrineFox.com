@@ -11,13 +11,11 @@
  */
 
 ?>
-
+			
 		</div><!-- #content -->
-
+	<!--ShrineFox Footer-->
 
 	</div><!-- #page -->
-
-	<!--ShrineFox Footer-->
 
 </body>
 

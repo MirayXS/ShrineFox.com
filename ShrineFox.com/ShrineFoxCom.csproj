@@ -208,9 +208,15 @@
     <Content Include="Recommended.aspx" />
     <Content Include="Articles.aspx" />
     <Content Include="Browse.aspx" />
-    <Content Include="Resources\Forum\template\overall_footer.html" />
-    <Content Include="Resources\Forum\template\overall_header.html" />
-    <Content Include="Resources\Forum\theme\colours.css" />
+    <Content Include="Resources\Forum\template\overall_footer.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Forum\template\overall_header.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Forum\theme\colours.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Html\footer.html" />
     <Content Include="Resources\Html\body.html" />
     <Content Include="Resources\Html\head.html" />
@@ -267,7 +273,21 @@
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
+    <Content Include="yml\p5_ex\hardware\P5EX 2.0.0 changelog.txt" />
+    <Content Include="yml\p5_ex\hardware\README.txt" />
+    <Content Include="yml\p5_ex\P5EX 2.0.0 changelog.txt" />
     <Content Include="yml\patch.yml" />
+    <Content Include="yml\lipsum\p4au\BLJM61209_patch.yml" />
+    <Content Include="yml\lipsum\p4au\BLUS31469_patch.yml" />
+    <Content Include="yml\lipsum\p4au\NPJB00599_patch.yml" />
+    <Content Include="yml\lipsum\p4au\NPUB31563_patch.yml" />
+    <Content Include="yml\lipsum\patch.yml" />
+    <Content Include="yml\p5_ex\hardware\p5ex\conf.yml" />
+    <Content Include="yml\p5_ex\hardware\p5ex\mod.sprx" />
+    <Content Include="yml\p5_ex\hardware\patches\patch.yml" />
+    <Content Include="yml\p5_ex\patches\patch.yml" />
+    <Content Include="yml\p5_ex\USRDIR\config.yml" />
+    <Content Include="yml\p5_ex\USRDIR\mod.sprx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="404.aspx.cs">

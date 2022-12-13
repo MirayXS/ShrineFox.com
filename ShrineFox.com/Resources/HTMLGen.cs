@@ -25,37 +25,35 @@ namespace ShrineFoxCom
             string blog_footer = GetFile.FromPath("./Resources/Blog/footer.php");
             string blog_style = GetFile.FromPath("./Resources/Blog/style.css");
 
-
+            // Generate Directories
             string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_v2";
             Directory.CreateDirectory($"{forumThemePath}//theme");
             Directory.CreateDirectory($"{forumThemePath}//template");
             string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//primer";
             Directory.CreateDirectory(blogThemePath);
 
-            // Forum Header
-            string forumHeader = head;
+            // Generate Forum Header
+            string forumHeader = forum_overall_header;
             string forumStyles = Between(head, "<!--ShrineFox Styles-->", "<!--End ShrineFox Styles-->");
             string videoSearch = Between(body, "<!--ShrineFox Header-->", "<!--End ShrineFox Header-->");
             forumHeader = forumHeader.Replace("<!--ShrineFox Styles-->", forumStyles)
                            .Replace("<!--ShrineFox Header-->", videoSearch);
             File.WriteAllText($"{forumThemePath}//template//overall_header.html", forumHeader);
 
-            // Forum Footer
+            // Generate Forum Footer
             string forum_footer = Between(footer, "<!--ShrineFox Footer-->", "<!--End ShrineFox Footer-->");
             File.WriteAllText($"{forumThemePath}//template//overall_footer.html",
-                footer.Replace("<!--ShrineFox Footer-->", footer));
+                forum_overall_footer.Replace("<!--ShrineFox Footer-->", forum_footer));
 
-            // Forum CSS
+            // Generate Forum CSS
             File.WriteAllText($"{forumThemePath}//theme//colours.css", forum_colours);
 
+            // Generate Blog .PHP/.CSS
             string blogStyles = Between(head, "<!--ShrineFox AllStyles-->", "<!--End ShrineFox Styles-->");
-            string blogNavbar = Between(head, "<!--ShrineFox NavBar-->", "<!--End ShrineFox NavBar-->");
             string blogHeader = blog_header
                                .Replace("<!--ShrineFox Styles-->", blogStyles)
-                               .Replace("<!--ShrineFox NavBar-->", blogNavbar)
                                .Replace("<!--ShrineFox Header-->", videoSearch);
 
-            // Blog .PHP/.CSS
             foreach (string site in new string[] { "blog", "guides", "news" })
             {
                 string path = blogThemePath.Replace("blog", site);

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
 <head>
 {% if STYLE_SETTINGS_CONFIG_ALLOW_USER_COLOUR %}	
@@ -94,19 +94,15 @@
     <!-- IF STYLE_SETTINGS_CONFIG_COLOUR_PRESET == 'Custom (Use colour picker below)' -->
         <style type="text/css">
 			/* Color */
-a:hover, .navbar_footer a, .copyright_bar a, .social_links_footer a:hover span, .icon.fa-file.icon-red, a:hover .icon.fa-file.icon-red, .navigation .active-subsection a, .navigation .active-subsection a:hover, .navigation a:hover, .tabs .tab > a:hover, .tabs .activetab > a, .tabs .activetab > a:hover, a.postlink, a.postlink:visited, .navbar_in_header .badge, .button:focus .icon, .button:hover .icon, .dark_base .social_links_footer a span, .dark_base h2, .dark_base h2 a, .dark_base a:link, .dark_base a:visited, .button-secondary:focus, .button-secondary:hover, .notification_unread, .topic_type, .fd_dark a 
-{color: rgba(var(--accent), 1.0); -moz-transition: all 1.2s ease-in; -o-transition: all 1.2s ease-in; -webkit-transition: all 1.2s ease-in;transition: all 1.2s ease-in;}
+a:hover, .navbar_footer a, .copyright_bar a, .social_links_footer a:hover span, .icon.fa-file.icon-red, a:hover .icon.fa-file.icon-red, .navigation .active-subsection a, .navigation .active-subsection a:hover, .navigation a:hover, .tabs .tab > a:hover, .tabs .activetab > a, .tabs .activetab > a:hover, a.postlink, a.postlink:visited, .navbar_in_header .badge, .button:focus .icon, .button:hover .icon, .dark_base .social_links_footer a span, .dark_base h2, .dark_base h2 a, .dark_base a:link, .dark_base a:visited, .button-secondary:focus, .button-secondary:hover, .notification_unread, .topic_type, .fd_dark a {color: #{STYLE_SETTINGS_CONFIG_COLOUR_PICKER};}
 			/* Background Solid  */
-			.pagination li a:hover, .pagination li.active span, .pagination li a:focus, .jumpbox-cat-link, .dropdown-contents > li > a:hover, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, a.no_avatar:hover, .jumpbox-cat-link:hover, input.button1:focus, input.button2:focus, input.button3:focus, .specialbutton, input.specialbutton, .panel .specialbutton, a.specialbutton, .scrollToTop, a.specialbutton, .dark_base .social_links_footer a:hover span, .grid_unread, .tile_row_2:before   
-			{background: rgba(var(--accent), 1.0); -moz-transition: all 1.2s ease-in; -o-transition: all 1.2s ease-in; -webkit-transition: all 1.2s ease-in;transition: all 1.2s ease-in;}
+			.pagination li a:hover, .pagination li.active span, .pagination li a:focus, .jumpbox-cat-link, .dropdown-contents > li > a:hover, a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, a.no_avatar:hover, .jumpbox-cat-link:hover, input.button1:focus, input.button2:focus, input.button3:focus, .specialbutton, input.specialbutton, .panel .specialbutton, a.specialbutton, .scrollToTop, a.specialbutton, .dark_base .social_links_footer a:hover span, .grid_unread, .tile_row_2:before   {background: #{STYLE_SETTINGS_CONFIG_COLOUR_PICKER};}
 			/* Borders Dark */
-			.pagination li a:hover, .pagination li.active span, .pagination li a:focus, blockquote, .codebox code, .jumpbox-cat-link, a.postlink, input.button1:focus, input.button2:focus, input.button3:focus, input.specialbutton, .inputbox:hover, .inputbox:focus, .specialbutton, a.specialbutton, .button:hover, .button:focus, .dark_base .social_links_footer a span, a.specialbutton, .dark_base .social_links_footer a:hover span {border-color: rgba(var(--accent), 1.0);}
+			.pagination li a:hover, .pagination li.active span, .pagination li a:focus, blockquote, .codebox code, .jumpbox-cat-link, a.postlink, input.button1:focus, input.button2:focus, input.button3:focus, input.specialbutton, .inputbox:hover, .inputbox:focus, .specialbutton, a.specialbutton, .button:hover, .button:focus, .dark_base .social_links_footer a span, a.specialbutton, .dark_base .social_links_footer a:hover span {border-color: #{STYLE_SETTINGS_CONFIG_COLOUR_PICKER};}
 			/* Background Gradient  */
-			.headerbar, body.content_block_header_block li.header, body.content_block_header_stripe li.header:before, .scrollToTop, .no_avatar, .social_links_footer, .badge, thead tr, .sidebar_block_stripe:before, .fancy_panel:before 
-			{background-color: rgba(var(--accent), 1.0); -moz-transition: all 1.2s ease-in; -o-transition: all 1.2s ease-in; -webkit-transition: all 1.2s ease-in;transition: all 1.2s ease-in;}
+			.headerbar, body.content_block_header_block li.header, body.content_block_header_stripe li.header:before, .scrollToTop, .no_avatar, .social_links_footer, .badge, thead tr, .sidebar_block_stripe:before, .fancy_panel:before {background-color: #{STYLE_SETTINGS_CONFIG_COLOUR_PICKER};}
 			/* opacity */
-			.headerbar_overlay_active 
-			{background-color: rgba(var(--accent), 1.0); opacity: 0.7; -moz-transition: all 1.2s ease-in; -o-transition: all 1.2s ease-in; -webkit-transition: all 1.2s ease-in;transition: all 1.2s ease-in;}
+			.headerbar_overlay_active {background-color: #{STYLE_SETTINGS_CONFIG_COLOUR_PICKER}; opacity: 0.7;}
 			/* Dark overlay */
 			.grid_colour_overlay:hover {background-color: rgba(0,0,0,0.7);}
 			/* Colour Hover Light */
@@ -214,22 +210,19 @@ a:hover, .navbar_footer a, .copyright_bar a, .social_links_footer a:hover span, 
 <body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}<!-- IF STYLE_SETTINGS_CONFIG_SIDEBARS and STYLE_SETTINGS_CONFIG_SIDEBAR_PLACEMENT == 'Right Only' --> sidebar-right-only<!-- ELSEIF STYLE_SETTINGS_CONFIG_SIDEBARS and STYLE_SETTINGS_CONFIG_SIDEBAR_PLACEMENT == 'Left Only' --> sidebar-left-only<!-- ELSEIF STYLE_SETTINGS_CONFIG_SIDEBARS --> sidebar-both<!-- ENDIF --><!-- IF STYLE_SETTINGS_CONFIG_LAYOUT_TYPE --> body-layout-{STYLE_SETTINGS_CONFIG_LAYOUT_TYPE}<!-- ENDIF --> content_block_header_<!-- IF STYLE_SETTINGS_CONFIG_CONTENT_BLOCK_HEADER == 'Stripe' -->stripe<!-- ELSE -->block<!-- ENDIF --><!-- IF STYLE_SETTINGS_CONFIG_HIGH_CONTRAST_LINKS --> high_contrast_links<!-- ENDIF --><!-- IF STYLE_SETTINGS_CONFIG_NAVBAR_POSITION == 'Inside Header' --> navbar_i_header<!-- ELSE --> navbar_o_header<!-- ENDIF --><!-- IF STYLE_SETTINGS_CONFIG_ROUNDED_AVATARS --> force_rounded_avatars<!-- ENDIF --><!-- IF STYLE_SETTINGS_CONFIG_CSS_IMAGE_REPLACE --> css_icons_disabled<!-- ELSE --> css_icons_enabled<!-- ENDIF -->">
 
 <!-- EVENT overall_header_body_before -->
-    <div id="wrap" class="wrap">
+	<!--ShrineFox Header-->
+    <!--<div id="wrap" class="wrap">-->
         <a id="top" class="top-anchor" accesskey="t"></a>
 
         <div id="page-header">
-
 
                 <!-- INCLUDE navbar_header.html -->
 
             	<!-- EVENT overall_header_headerbar_before -->
 
-            <div class="headerbar<!-- IF STYLE_SETTINGS_CONFIG_NAVBAR_POSITION == 'Inside Header' --> has_navbar<!-- ENDIF -->" role="banner"
+			<div class="headerbar<!-- IF STYLE_SETTINGS_CONFIG_NAVBAR_POSITION == 'Inside Header' --> has_navbar<!-- ENDIF -->" role="banner"
 				<!-- IF STYLE_SETTINGS_CONFIG_PARALLAX_HEADER --> data-parallax="scroll" data-image-src="{FORUM_HEADER}"<!-- ENDIF -->>
-				
-				<!--ShrineFox Header-->
 
-				<!--Milk Header (added display:none)-->
 				<div class="forum_header" style="display:none;">
 
 					<div class="headerbar_overlay_container<!-- IF STYLE_SETTINGS_CONFIG_HEADER_EFFECT == 'Colour Overlay' --> headerbar_overlay_active<!-- ELSEIF STYLE_SETTINGS_CONFIG_HEADER_EFFECT == 'Darken' --> headerbar_overlay_darken<!-- ENDIF -->">
@@ -268,7 +261,7 @@ a:hover, .navbar_footer a, .copyright_bar a, .social_links_footer a:hover span, 
 
 							<!-- Headerbar Elements End -->
 						</div>
-					
+
 
 				</div><!-- /.forum_header -->
 

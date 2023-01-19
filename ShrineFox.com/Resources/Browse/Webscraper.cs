@@ -160,6 +160,12 @@ namespace ShrineFoxCom.Resources.Browse
                                                         DownloadP5EXUpdate(item);
                                                     }
                                                 }
+                                                // Update game version
+                                                if (item.Game.Name == "Persona 4 Golden PC (64 Bit)" && Posts[index].Games.Any(x => x.Equals("p4g32")))
+                                                {
+                                                    Posts[index].Games.Remove("p4g32");
+                                                    Posts[index].Games.Add("p4g64");
+                                                }
                                             }
                                         }
                                         catch { }
@@ -320,6 +326,12 @@ namespace ShrineFoxCom.Resources.Browse
                 case "P3P":
                     url += "8583&";
                     break;
+                case "P3P-NX":
+                    url += "17434&";
+                    break;
+                case "P3P-PC":
+                    url += "16613&";
+                    break;
                 case "P3D":
                     url += "8747&";
                     break;
@@ -329,8 +341,17 @@ namespace ShrineFoxCom.Resources.Browse
                 case "P4D":
                     url += "16093&";
                     break;
-                case "P4G":
+                case "P4G-PSV":
+                    url += "15703&";
+                    break;
+                case "P4G32":
                     url += "8263&";
+                    break;
+                case "P4G64":
+                    url += "17755&";
+                    break;
+                case "P4G-NX":
+                    url += "17433&";
                     break;
                 case "P4AU":
                     url += "16053&";
@@ -352,6 +373,9 @@ namespace ShrineFoxCom.Resources.Browse
                     break;
                 case "P5D":
                     url += "8615&";
+                    break;
+                case "PQ":
+                    url += "14377&";
                     break;
                 case "PQ2":
                     url += "9561&";

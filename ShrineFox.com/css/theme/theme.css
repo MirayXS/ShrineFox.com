@@ -1,5 +1,5 @@
 ﻿:root {
-    --accent: 0,159,255;
+    --accent: 92,149,199;
     --text: 225,225,225;
     --accenttext: 255,255,255;
     --bg: 01,04,09;
@@ -21,6 +21,10 @@ main {
 form {
     margin-left: var(--margin);
     margin-right: var(--margin);
+}
+
+footer {
+    margin: var(--margin);
 }
 
 hr {

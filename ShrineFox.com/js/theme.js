@@ -1,4 +1,4 @@
-var accent = '9,54,109';
+var accent = '92,149,199';
 var text = '139,148,158';
 var bg = '01,04,09';
 var rgb = 0;
@@ -17,25 +17,31 @@ function SetColor() {
 
 	switch (color) {
 		case 'red':
-			accent = '250,0,0';
+			accent = '169,71,71';
 			break;
 		case 'orange':
-			accent = '250,106,0';
+			accent = '227,168,95';
 			break;
 		case 'yellow':
-			accent = '250,216,0';
+			accent = '191,175,80';
 			break;
 		case 'green':
-			accent = '0,250,0';
+			accent = '68,163,69';
 			break;
 		case 'blue':
-			accent = '0,159,255';
+			accent = '92,149,199';
 			break;
 		case 'violet':
-			accent = '255,0,220';
+			accent = '156,87,188';
+			break;
+		case 'pink':
+			accent = '234,142,226';
+			break;
+		case 'magenta':
+			accent = '195,77,127';
 			break;
 		case 'gamer':
-			accent = '250,0,0';
+			accent = '169,71,71';
 			break;
 		case 'custom':
 			ShowColorPicker();
@@ -47,7 +53,7 @@ function SetColor() {
 			accent = getCookie("color_custom");
 			break;
 		default:
-			accent = '0,159,255';
+			accent = '92,149,199';
 			break;
 	}
 
@@ -62,25 +68,25 @@ function RotateRGB() {
 		switch (rgb)
 		{
 			case 0:
-				accent = '250,0,0';
+				accent = '169,71,71';
 				break;
 			case 1:
-				accent = '250,106,0';
+				accent = '227,168,95';
 				break;
 			case 2:
-				accent = '250,216,0';
+				accent = '191,175,80';
 				break;
 			case 3:
-				accent = '0,250,0';
+				accent = '68,163,69';
 				break;
 			case 4:
-				accent = '0,159,255';
+				accent = '92,149,199';
 				break;
 			case 5:
-				accent = '255,0,220';
+				accent = '156,87,188';
 				break;
 			default:
-				accent = '250,0,0';
+				accent = '169,71,71';
 				break;
 		}
 		rgb++;

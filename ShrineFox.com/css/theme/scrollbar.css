@@ -11,7 +11,7 @@
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(var(--accent), 1);
+    background: rgba(var(--accent), 0.75);
 }
 
 .maincontent {
@@ -48,7 +48,7 @@
 
 .cover-bar {
     position: absolute;
-    background: rgba(var(--bg), 1);
+    background: rgba(var(--accent), 0.1);
     height: 100%;
     top: 0;
     right: 0;

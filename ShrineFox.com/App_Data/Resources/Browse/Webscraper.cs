@@ -25,15 +25,17 @@ namespace ShrineFoxCom.Resources.Browse
         public static void UpdateTSVs(PlaceHolder control)
         {
             string browse_exclude = GetFile.FromPath("./App_Data/exclude.txt");
+            List<string> exclusions = browse_exclude.Split('\n').ToList();
+            for (int i = 0; i < exclusions.Count; i++)
+                exclusions[i] = exclusions[i].TrimEnd('\r').Trim();
 
             // Load existing posts that aren't from gamebanana
             Posts = Post.Get();
             var NewPosts = new List<Post>();
             // Remove duplicate posts and exclusions
-            var exclusions = browse_exclude.Split('\n');
             for (int i = 0; i < Posts.Count(); i++)
                 if (!NewPosts.Any(x => x.URL.Contains("gamebanana") && x.URL.TrimEnd('/').EndsWith("/" + Posts[i].URL.TrimEnd('/').Split('/').Last())))
-                    if (!exclusions.Any(x => Posts[i].Authors.Any(y => y.Contains(x)) || x.Contains(Posts[i].Title)))
+                    if (!exclusions.Any(x => Posts[i].Title.ToLower().Contains(x.ToLower()) || Posts[i].Authors.Any(y => y.ToLower().Equals(x.ToLower()))))
                         NewPosts.Add(Posts[i]);
                     
             Posts = NewPosts;
@@ -102,7 +104,7 @@ namespace ShrineFoxCom.Resources.Browse
                                 {
                                     if (!Posts.Any(y => y.URL.TrimEnd('/').EndsWith("/" + item.Link.ToString().TrimEnd('/').Split('/').Last())))
                                     {
-                                        if (!exclusions.Any(x => item.Owner.Name.Trim(' ').Contains(x) || item.Title.Contains(x)))
+                                        if (!exclusions.Any(x => item.Title.ToLower().Contains(x.ToLower()) || item.Owner.Name.ToLower().Equals(x.ToLower())))
                                         {
                                             Post post = new Post();
                                             post.Authors = new List<string>() { item.Owner.Name.Trim(' ') };
@@ -152,14 +154,16 @@ namespace ShrineFoxCom.Resources.Browse
                                                 Posts[index].Date = item.DateUpdated.ToString("MM/dd/yyyy", new CultureInfo("en-US"));
                                                 Posts[index].UpdateText = $"<b>Updated {Posts[index].Date}</b>";
                                                 // Download P5EX update
+                                                /*
                                                 if (item.Title == "Persona 5 EX")
                                                 {
-                                                    var lastUpdate = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//yml//p5_ex//patches//patch.yml");
+                                                    var lastUpdate = File.GetCreationTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml//p5_ex//patches//patch.yml");
                                                     if (item.DateUpdated > lastUpdate)
                                                     {
                                                         DownloadP5EXUpdate(item);
                                                     }
                                                 }
+                                                */
                                                 // Update game version
                                                 if (item.Game.Name == "Persona 4 Golden PC (64 Bit)" && Posts[index].Games.Any(x => x.Equals("p4g32")))
                                                 {
@@ -198,7 +202,7 @@ namespace ShrineFoxCom.Resources.Browse
                 if (file.FileName.Contains("p5ex_prx_patch") && file.FileName.EndsWith(".7z"))
                 {
                     // Download .7z
-                    string p5exDir = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//yml//p5_ex";
+                    string p5exDir = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//yml//p5_ex";
                     string zipPath = Path.Combine(p5exDir, file.FileName);
                     using (var client = new WebClient())
                         client.DownloadFile(file.DownloadUrl, zipPath);
@@ -207,7 +211,7 @@ namespace ShrineFoxCom.Resources.Browse
                     {
                         ProcessStartInfo startInfo = new ProcessStartInfo();
                         startInfo.CreateNoWindow = true;
-                        startInfo.FileName = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//Resources//Dependencies//7z.exe";
+                        startInfo.FileName = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//Resources//Dependencies//7z.exe";
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo.UseShellExecute = false;
 

@@ -57,7 +57,7 @@ namespace ShrineFoxCom
         {
             LiteralControl cardsHtml = new LiteralControl();
 
-            string cardHtml = GetFile.FromPath("./Resources/Card.html");
+            string cardHtml = GetFile.FromPath("./App_Data/Resources/Card.html");
 
             foreach (var card in cards)
             {

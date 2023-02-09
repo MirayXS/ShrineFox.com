@@ -535,8 +535,8 @@ namespace ShrineFoxCom
                         "<li>Right click your game in the game list in RPCS3, select Open Install Folder, this will bring you inside the game's USRDIR folder.</li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/F5cGhDjC#DpMaU3iCfXeAF0NqbEU9p6aPkg1rTFYzCpZpE1rCjhc\">BGM cpk</a></li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/1p8wRCpa#-Ivf-55b2hU_3Y5ZTymi75C7tACExIskjxqZPIBxlE8\">P5R Bustups cpk</a></li>" +
-                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/USRDIR/config.yml\">config.yml</a> " +
-                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/USRDIR/mod.sprx\">mod.sprx</a></li>" +
+                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/config.yml\">config.yml</a> " +
+                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/mod.sprx\">mod.sprx</a></li>" +
                         "<li>Move those two files to the USRDIR folder in game's install folder</li>" +
                         "<li>Also move downloaded CPK files to the USRDIR folder</li>" +
                         "<li>Download <a target='_blank' href=\"https://drive.google.com/file/d/1VzLwyBq5d6WcJzMz1a_NEEC5-0fCbIRL/view\">this mod (P5EX)</a> " +
@@ -554,8 +554,8 @@ namespace ShrineFoxCom
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/F5cGhDjC#DpMaU3iCfXeAF0NqbEU9p6aPkg1rTFYzCpZpE1rCjhc\">BGM cpk</a></li>" +
                         "<li>Download <a target='_blank' href=\"https://mega.nz/file/1p8wRCpa#-Ivf-55b2hU_3Y5ZTymi75C7tACExIskjxqZPIBxlE8\">P5R Bustups cpk</a></li>" +
                         "<li>Move the downloaded CPK files to the USRDIR folder in game's install folder</li>" +
-                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/hardware/p5ex/conf.yml\">conf.yml</a> " +
-                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/hardware/p5ex/mod.sprx\">mod.sprx</a></li>" +
+                        "<li>Download <a target='_blank' href =\"https://shrinefox.com/yml/p5_ex/hardware/conf.yml\">conf.yml</a> " +
+                            "and <a target='_blank' href=\"https://shrinefox.com/yml/p5_ex/hardware/mod.sprx\">mod.sprx</a></li>" +
                         "<li>Move those two files to the root of your PS3's dev_hdd0 folder</li>" +
                         "<li>Download <a target='_blank' href=\"https://drive.google.com/file/d/1VzLwyBq5d6WcJzMz1a_NEEC5-0fCbIRL/view\">this mod (P5EX)</a> " +
                         "with <a target='_blank' href=\"https://gamebanana.com/dl/767116\">this mod (softlock fix)</a>, build mod.cpk with both selected in Aemulus and transfer output to USRDIR folder on PS3."

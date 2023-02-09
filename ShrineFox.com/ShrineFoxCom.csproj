@@ -199,27 +199,30 @@
   <ItemGroup>
     <Content Include="404.aspx" />
     <Content Include="apps\PatchCreator.aspx" />
+    <Content Include="apps\TextSearch.aspx" />
     <Content Include="apps\UpdateCreator.aspx" />
+    <Content Include="Browse.aspx" />
     <Content Include="GetStarted.aspx" />
-    <Content Include="images\waves.gif" />
+    <Content Include="images\gb.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="js\sidebar.js" />
-    <Content Include="Resources\Dependencies\7z.dll" />
-    <Content Include="Resources\Dependencies\7z.exe" />
+    <Content Include="App_Data\Resources\Dependencies\7z.dll" />
+    <Content Include="App_Data\Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
     <Content Include="Articles.aspx" />
-    <Content Include="Browse.aspx" />
-    <Content Include="Resources\Forum\template\overall_footer.html">
+    <Content Include="App_Data\Resources\Forum\template\overall_footer.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Forum\template\overall_header.html">
+    <Content Include="App_Data\Resources\Forum\template\overall_header.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Forum\theme\colours.css">
+    <Content Include="App_Data\Resources\Forum\theme\colours.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Html\footer.html" />
-    <Content Include="Resources\Html\body.html" />
-    <Content Include="Resources\Html\head.html" />
+    <Content Include="App_Data\Resources\Html\footer.html" />
+    <Content Include="App_Data\Resources\Html\body.html" />
+    <Content Include="App_Data\Resources\Html\head.html" />
     <Content Include="css\theme\sidebar.css" />
     <Content Include="Terms.aspx" />
     <Content Include="Privacy.aspx" />
@@ -227,7 +230,7 @@
     <Content Include="css\theme\notice.css" />
     <Content Include="css\theme\tags.css" />
     <Content Include="js\bootstrap.bundle.min.js" />
-    <Content Include="Resources\Card.html" />
+    <Content Include="App_Data\Resources\Card.html" />
     <Content Include="Labs.aspx" />
     <Content Include="WebApps.aspx" />
     <Content Include="apps\Files.aspx" />
@@ -242,29 +245,31 @@
     <Content Include="css\theme\scrollbar.css" />
     <Content Include="css\theme\theme.css" />
     <Content Include="css\ytv.css" />
-    <Content Include="images\favicon.ico" />
+    <Content Include="images\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="js\theme.js" />
     <Content Include="js\FeedEk.min.js" />
     <Content Include="js\jscolor.js" />
     <Content Include="js\ytv.js" />
-    <Content Include="PatchCreator.aspx" />
-    <Content Include="Resources\Blog\footer.php" />
-    <Content Include="Resources\Blog\header.php" />
-    <Content Include="Resources\Blog\style.css" />
-    <Content Include="Resources\Browse\Pagination.html" />
-    <Content Include="Resources\Browse\Post.html" />
+    <Content Include="App_Data\Resources\Blog\footer.php" />
+    <Content Include="App_Data\Resources\Blog\header.php" />
+    <Content Include="App_Data\Resources\Blog\style.css" />
+    <Content Include="App_Data\Resources\Browse\Pagination.html" />
+    <Content Include="App_Data\Resources\Browse\Post.html" />
     <Content Include="Wiki.aspx" />
-    <Content Include="apps\TextSearch.aspx" />
     <Content Include="About.aspx" />
-    <Content Include="images\logo.svg" />
+    <Content Include="images\logo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
     <Content Include="App_Data\patch_downloads.tsv" />
-    <Content Include="pnach\94A82AAA.pnach">
+    <Content Include="App_Data\pnach\94A82AAA.pnach">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="pnach\DEDC3B71.pnach">
+    <Content Include="App_Data\pnach\DEDC3B71.pnach">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
@@ -273,21 +278,30 @@
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="yml\p5_ex\hardware\P5EX 2.0.0 changelog.txt" />
-    <Content Include="yml\p5_ex\hardware\README.txt" />
-    <Content Include="yml\p5_ex\P5EX 2.0.0 changelog.txt" />
-    <Content Include="yml\patch.yml" />
-    <Content Include="yml\lipsum\p4au\BLJM61209_patch.yml" />
-    <Content Include="yml\lipsum\p4au\BLUS31469_patch.yml" />
-    <Content Include="yml\lipsum\p4au\NPJB00599_patch.yml" />
-    <Content Include="yml\lipsum\p4au\NPUB31563_patch.yml" />
-    <Content Include="yml\lipsum\patch.yml" />
-    <Content Include="yml\p5_ex\hardware\p5ex\conf.yml" />
-    <Content Include="yml\p5_ex\hardware\p5ex\mod.sprx" />
-    <Content Include="yml\p5_ex\hardware\patches\patch.yml" />
-    <Content Include="yml\p5_ex\patches\patch.yml" />
-    <Content Include="yml\p5_ex\USRDIR\config.yml" />
-    <Content Include="yml\p5_ex\USRDIR\mod.sprx" />
+    <Content Include="App_Data\yml\patch.yml" />
+    <Content Include="App_Data\yml\lipsum\p4au\BLJM61209_patch.yml" />
+    <Content Include="App_Data\yml\lipsum\p4au\BLUS31469_patch.yml" />
+    <Content Include="App_Data\yml\lipsum\p4au\NPJB00599_patch.yml" />
+    <Content Include="App_Data\yml\lipsum\p4au\NPUB31563_patch.yml" />
+    <Content Include="App_Data\yml\lipsum\patch.yml" />
+    <Content Include="App_Data\yml\p5_ex\hardware\p5ex\conf.yml" />
+    <Content Include="App_Data\yml\p5_ex\hardware\p5ex\mod.sprx" />
+    <Content Include="App_Data\yml\p5_ex\hardware\patches\patch.yml" />
+    <Content Include="App_Data\yml\p5_ex\patches\patch.yml" />
+    <Content Include="App_Data\yml\p5_ex\USRDIR\config.yml" />
+    <Content Include="App_Data\yml\p5_ex\USRDIR\mod.sprx" />
+    <Content Include="yml\p5_ex\config.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="yml\p5_ex\mod.sprx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="yml\p5_ex\hardware\conf.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="yml\p5_ex\hardware\mod.sprx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="404.aspx.cs">
@@ -304,12 +318,26 @@
     <Compile Include="apps\PatchCreator.aspx.designer.cs">
       <DependentUpon>PatchCreator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="apps\TextSearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TextSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apps\TextSearch.aspx.designer.cs">
+      <DependentUpon>TextSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="apps\UpdateCreator.aspx.cs">
       <DependentUpon>UpdateCreator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="apps\UpdateCreator.aspx.designer.cs">
       <DependentUpon>UpdateCreator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Browse.aspx.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Browse.aspx.designer.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Asp.cs" />
     <Compile Include="Classes\GetFile.cs" />
@@ -356,13 +384,6 @@
     <Compile Include="Articles.aspx.designer.cs">
       <DependentUpon>Articles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Browse.aspx.cs">
-      <DependentUpon>Browse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Browse.aspx.designer.cs">
-      <DependentUpon>Browse.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Terms.aspx.cs">
       <DependentUpon>Terms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -405,16 +426,9 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PatchCreator.aspx.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PatchCreator.aspx.designer.cs">
-      <DependentUpon>PatchCreator.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Browse\Post.cs" />
-    <Compile Include="Resources\Browse\Webscraper.cs" />
-    <Compile Include="Resources\HTMLGen.cs" />
+    <Compile Include="App_Data\Resources\Browse\Post.cs" />
+    <Compile Include="App_Data\Resources\Browse\Webscraper.cs" />
+    <Compile Include="App_Data\Resources\HTMLGen.cs" />
     <Compile Include="Wiki.aspx.cs">
       <DependentUpon>Wiki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,13 +438,6 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="apps\TextSearch.aspx.cs">
-      <DependentUpon>TextSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\TextSearch.aspx.designer.cs">
-      <DependentUpon>TextSearch.aspx</DependentUpon>
-    </Compile>
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

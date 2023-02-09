@@ -13,20 +13,20 @@ namespace ShrineFoxCom
         public static void BlogForum(PlaceHolder control)
         {
             // Main
-            string head = GetFile.FromPath("./Resources/Html/head.html");
-            string body = GetFile.FromPath("./Resources/Html/body.html");
-            string footer = GetFile.FromPath("./Resources/Html/footer.html");
+            string head = GetFile.FromPath("./App_Data/Resources/Html/head.html");
+            string body = GetFile.FromPath("./App_Data/Resources/Html/body.html");
+            string footer = GetFile.FromPath("./App_Data/Resources/Html/footer.html");
             // Forum
-            string forum_overall_header = GetFile.FromPath("./Resources/Forum/template/overall_header.html");
-            string forum_overall_footer = GetFile.FromPath("./Resources/Forum/template/overall_footer.html");
-            string forum_colours = GetFile.FromPath("./Resources/Forum/theme/colours.css");
+            string forum_overall_header = GetFile.FromPath("./App_Data/Resources/Forum/template/overall_header.html");
+            string forum_overall_footer = GetFile.FromPath("./App_Data/Resources/Forum/template/overall_footer.html");
+            string forum_colours = GetFile.FromPath("./App_Data/Resources/Forum/theme/colours.css");
             // Blog
-            string blog_header = GetFile.FromPath("./Resources/Blog/header.php");
-            string blog_footer = GetFile.FromPath("./Resources/Blog/footer.php");
-            string blog_style = GetFile.FromPath("./Resources/Blog/style.css");
+            string blog_header = GetFile.FromPath("./App_Data/Resources/Blog/header.php");
+            string blog_footer = GetFile.FromPath("./App_Data/Resources/Blog/footer.php");
+            string blog_style = GetFile.FromPath("./App_Data/Resources/Blog/style.css");
 
             // Generate Directories
-            string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_v2";
+            string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_Edit";
             Directory.CreateDirectory($"{forumThemePath}//theme");
             Directory.CreateDirectory($"{forumThemePath}//template");
             string blogThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//blog//wp-content//themes//primer";

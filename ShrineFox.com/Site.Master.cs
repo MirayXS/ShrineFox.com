@@ -12,9 +12,9 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string head = GetFile.FromPath("./Resources/Html/head.html");
-            string body = GetFile.FromPath("./Resources/Html/body.html");
-            string footer = GetFile.FromPath("./Resources/Html/footer.html");
+            string head = GetFile.FromPath("./App_Data/Resources/Html/head.html");
+            string body = GetFile.FromPath("./App_Data/Resources/Html/body.html");
+            string footer = GetFile.FromPath("./App_Data/Resources/Html/footer.html");
 
             // Head Tags
             LiteralControl HeadHtml = new LiteralControl();

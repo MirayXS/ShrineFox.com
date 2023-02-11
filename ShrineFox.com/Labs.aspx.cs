@@ -34,7 +34,7 @@ namespace ShrineFoxCom
                 Title = "Persona 5(R) Mod Menu", 
                 Subtitle = "In-game trainer for P5 and P5R.", 
                 Body = "Custom scripts for Persona 5 that replace the square button function with a fully featured trainer." +
-                "<br>Currently working on overhauling the repository.",
+                "<br>Currently working on overhauling the repository to support PC, Switch, PS4, and PS3 from the same codebase.",
                 Trello = "https://trello.com/c/On4NnqmQ/54-persona-5r-mod-menu-update",
                 Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/Persona-5-Mod-Menu/releases\">Download</a> " +
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/Persona-5-Mod-Menu\">Source Code</a>",
@@ -59,11 +59,25 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/EarthBound-Mod-Menu\">Source Code</a>",
                 },
             new Card() {
+                Title = "P5R Vinesauce Mod",
+                Subtitle = "Mod that replaces Joker with Vinny from Vinesauce.",
+                Body = "A group project commemorating many years of Vinesauce's variety livestreams. More info in <a href=\"https://shrinefox.com/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/\">this blogpost</a>.",
+                Trello = "https://trello.com/c/8DM6pdUf/101-p5r-vinesauce-mod",
+                Footer = ""
+                },
+            new Card() {
+                Title = "P5 Adachi Mod",
+                Subtitle = "Mod that replaces Joker with Adachi from Persona 4.",
+                Body = "A group project aimed at fans of the cabbage detective. More info in this <a href=\"https://shrinefox.com/blog/category/persona-5/adachi-mod/\">series of blogposts</a>." +
+                "<br>Looking forward to eventually porting this to P5R on all platforms.",
+                Trello = "https://trello.com/c/FT2nZ7wh/58-p5-adachi-mod-update",
+                Footer = "<a class=\"btn btn-primary float-right\" href=\"<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot/releases\">Download</a>"
+                },
+            new Card() {
                 Title = "FrostBot",
                 Subtitle = "Personal Discord Bot.",
                 Body = "Made this to automate moderation of Amicitia's private Discord server." +
-                "<br>Its most used features are creating/managing roles and role colors. " +
-                "Eventually I'd like to host it online by integrating it with this website.",
+                "<br>Its most used features are creating/managing roles and role colors.",
                 Trello = "https://trello.com/c/tt06Fq1k/53-frostbot-refactor",
                 Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot/releases\">Download</a> " +
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot\">Source Code</a>",
@@ -85,7 +99,15 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/AtlusScriptCompiler-GUI\">Source Code</a>",
                 },
             new Card() {
-                Title = "P4GMOdelConverter",
+                Title = "PersonaVoiceClipEditor",
+                Subtitle = "GUI tool for working with sound files in Persona games.",
+                Body = "A program made for batch encrypting audio, unpacking/repacking archives, and quickly renaming files (useful for dual-language audio mods).",
+                Trello = "https://trello.com/c/14r6yAS3/102-personavoiceclipeditor-update",
+                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/PersonaVoiceClipEditor/releases\">Download</a> " +
+                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/PersonaVoiceClipEditor\">Source Code</a>",
+                },
+            new Card() {
+                Title = "P4GMOdel",
                 Subtitle = "User interface for importing and exporting custom P4G/P3P GMO models.",
                 Body = "Automatically makes changes to custom models to make them compatible with P4G." +
                 "<br>Kind of a mess right now, started working on a WIP refactor, but I don't know when I'll finish it.",

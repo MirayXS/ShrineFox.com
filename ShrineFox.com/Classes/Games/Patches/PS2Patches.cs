@@ -17,14 +17,42 @@ namespace ShrineFoxCom
                 OnByDefault = true,
                 TargetPlatform = "emulator"
             },
-            new GamePatch() { Name = "Controllable Party Members", ShortName = "control_party", Author = "TGE",
-                Description = "Allows you to choose a skill or item on your party member's turn, similar to in Persona 4 and 5. Known side effects: the protagonist's fusion skills can be used by everyone on their turns.",
-                Text = "patch=1,EE,0029AFC8,word,00000000 // nop check for if battle unit is not mc -> ai" +
-                "\npatch=1,EE,0020207C,word,00000000 // load proper unit id for battle menu skill list" +
+            new GamePatch() { Name = "Direct Commands", ShortName = "direct_commands", Author = "TGE, updated by Alexankitty",
+                Description = "Allows you to choose a skill or item on your party member's turn, similar to in Persona 4 and 5.",
+                Text = "\npatch=1,EE,0029AFC8,word,00000000 // nop check for if battle unit is not mc -> ai (original instruction 14460005 / bne v0,a2,0x0029AFE0)" +
+                "\npatch=1,EE,0020207C,word,00000000 // load proper unit id for battle menu skill list (original instruction hex 14400006 / bnez v0,0x00202098)" +
                 "\npatch=1,EE,0020208C,word,8F84B6FC" +
-                "\npatch=1,EE,00202090,word,8C840254" +
-                "\npatch=1,EE,00202094,word,8C840030" +
-                "\npatch=1,EE,00202098,word,8C8400A4" +
+                "\npatch=1,EE,00202090,word,8C840254 //Load skill list" +
+                "\npatch=1,EE,00202094,word,8C840030 //Load skill list" +
+                "\npatch=1,EE,00202098,word,8C8400A4 //Load skill list" +
+                "\n//Fusion Skill Fix" +
+                "\n//This block is long because the code has been shifted. Further line one is a MIPS characteristic hack where the first line of a branch executes" +
+                "\npatch=1,EE,0020203C,word,14400005" +
+                "\npatch=1,EE,00202040,word,8E340254" +
+                "\npatch=1,EE,00202054,word,8E330148" +
+                "\npatch=1,EE,0020207C,word,3C040068" +
+                "\npatch=1,EE,00202080,word,24844F48" +
+                "\npatch=1,EE,00202084,word,8F84B6FC" +
+                "\npatch=1,EE,00202088,word,8C840254" +
+                "\npatch=1,EE,0020208C,word,8C840030" +
+                "\npatch=1,EE,00202090,word,8C8400A4" +
+                "\npatch=1,EE,00202094,word,0C05D200" +
+                "\npatch=1,EE,00202098,word,00000000" +
+                "\npatch=1,EE,0020209C,word,0040902D" +
+                "\npatch=1,EE,002020A0,word,0240202D" +
+                "\npatch=1,EE,002020A4,word,0C05DA8C" +
+                "\npatch=1,EE,002020A8,word,00000000" +
+                "\npatch=1,EE,002020AC,word,0040A82D" +
+                "\npatch=1,EE,002020B0,word,0240202D" +
+                "\npatch=1,EE,002020B4,word,0C05CCDC" +
+                "\npatch=1,EE,002020B8,word,00000000" +
+                "\npatch=1,EE,002020BC,word,0040B02D" +
+                "\npatch=1,EE,002020C0,word,0000902D" +
+                "\npatch=1,EE,002020C4,word,0C0C3030" +
+                "\npatch=1,EE,002020C8,word,00000000" +
+                "\npatch=1,EE,002020CC,word,10400013" +
+                "\npatch=1,EE,002020D0,word,00000000" +
+                "\npatch=1,EE,002020D4,word,16740011" +
                 "\npatch=1,EE,0028DE14,word,2405001B // fix escape" +
                 "\npatch=1,EE,0029692C,word,00000000" +
                 "\npatch=1,EE,0028AC5C,word,9683001A // disable persona menu for non-mc" +
@@ -33,10 +61,11 @@ namespace ShrineFoxCom
                 "\npatch=1,EE,0028AC68,word,96830018" +
                 "\npatch=1,EE,0028AC6C,word,00000000" +
                 "\npatch=1,EE,0028AC70,word,081A6AF8" +
-                "\npatch=1,EE,0028AC74,word,00000000" +
+                "\npatch=1,EE,0028AC74,word,92920028 //Item effect/Start of turn effect fix. Changes the register we load the one more compare into" +
+                "\npatch=1,EE,0028AC78,word,1640000B //Changes which register we branch compare." +
                 "\npatch=1,EE,0069ABE0,word,8F82B6FC" +
                 "\npatch=1,EE,0069ABE4,word,8C420148" +
-                "\npatch=1,EE,0069ABE8,word,14540004" +
+                "\npatch=1,EE,0069ABE8,word,14540004 " +
                 "\npatch=1,EE,0069ABEC,word,00000000" +
                 "\npatch=1,EE,0069ABF0,word,34630400" +
                 "\npatch=1,EE,0069ABF4,word,A6830018" +
@@ -72,22 +101,71 @@ namespace ShrineFoxCom
                 "\npatch=1,EE,0069AC40,word,00000000",
                 OnByDefault = true
             },
-            new GamePatch() { Name = "Debug Log", ShortName = "debug_log", Author = "TGE",
+            new GamePatch() { Name = "Debug Log", ShortName = "debug_log", Author = "TGE, Tupelov",
                 Description = "Prints string output from the game's original debug functions into the PCSX2 log. Also prints the filename and path of each file the game accesses in real time, helpful for finding and narrowing down the location of assets like models, fields etc.",
                 Text = "patch=1,EE,00503768,word,00000000 // always branch even if not debug" +
                 "\npatch=1,EE,005CDE83,byte,0A // patch file load print string" +
-                "\npatch=1,EE,00100DAC,word,0C14896A // patch file load function call to debug print",
+                "\npatch=1,EE,00100DAC,word,0C14896A // patch file load function call to debug print" +
+                "\npatch=0,EE,00558cd4,word,00000000// fixes sceopen error",
                 OnByDefault = true
             },
-            new GamePatch() { Name = "Unlimited Persona Changes", ShortName = "unlimited_persona_changes", Author = "TGE",
+            new GamePatch() { Name = "Unlimited Persona Changes", ShortName = "unlimited_persona_changes", Author = "TGE, Tupelov",
                 Description = "This cheat allows you to change personas multiple times per turn.",
-                Text = "patch=1,EE,00297728,word,00000000"
+                Text = "patch=1,EE,00297724,word,00000000 // // Nop setting the persona switch flag"
             },
-            new GamePatch() { Name = "Instant Persona Switch", ShortName = "instant_persona_switch", Author = "TGE",
+            new GamePatch() { Name = "Instant Persona Switch", ShortName = "instant_persona_switch", Author = "TGE, Tupelov",
                 Description = "This cheat skips the animation that occurs when you switch personas.",
-                Text = "patch=1,EE,00297700,word,00000000" +
-                "\npatch=1,EE,00297708,word,00000000" +
-                "\npatch=1,EE,002974E4,word,00000000"
+                Text = "patch=1,EE,00297708,word,00000000 // Nop checking if the battle packet is ready"
+            },
+            new GamePatch() { Name = "Field Script Anywhere", ShortName = "fldscript", Author = "Tupelov",
+                Description = "Use the Field Script Anywhere (from Tupelov's Game Patches).",
+                Text = "patch=1,EE,001c8998,word,00000000 //nops debug check",
+                OnByDefault = false
+            },
+            new GamePatch() { Name = "No Battle UI", ShortName = "nobattleui", Author = "Tupelov",
+                Description = "Hides UI graphics in battle (from Tupelov's Game Patches).",
+                Text = "// return immediatly upon entering battle_panel_draw" +
+                "\npatch=1,EE,001fdac0,word,03e00008 // jr ra" +
+                "\npatch=1,EE,001fdac4,word,00000000 // nop",
+                OnByDefault = false
+            },
+            new GamePatch() { Name = "Non-crusty Velvet Room BG", ShortName = "velvetBG", Author = "Tupelov",
+                Description = "Makes the game not load the crusty background in the Velvet Room (from Tupelov's Game Patches).",
+                Text = "patch=1,EE,003D3D84,word,24040001// Set register a0 to 1" +
+                "\npatch=1,EE,003D3D88,word,24050001// Set register a1 to 1" +
+                "\n//Edits fusion room call to not make npcs invisible" +
+                "\npatch=1,EE,003D3D98,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003D3DA8,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003D3DB8,word,24050001// Set register a1 to 1" +
+                "\n//Edits compendium call" +
+                "\npatch=1,EE,003E9320,word,24040001// Set register a0 to 1" +
+                "\npatch=1,EE,003E9324,word,24050001// Set register a1 to 1" +
+                "\n//Edits compendium call to not make npcs invisble" +
+                "\npatch=1,EE,003e9338,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003e9344,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003e9358,word,24050001// Set register a1 to 1" +
+                "\n//Edits igor call" +
+                "\npatch=1,EE,003d51a0,word,24040001// Set register a0 to 1" +
+                "\npatch=1,EE,003d51a4,word,24050001// Set register a1 to 1" +
+                "\n//Edits igor call to not make npcs invisible" +
+                "\npatch=1,EE,003d51b4,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003d51c4,word,24050001// Set register a1 to 1" +
+                "\npatch=1,EE,003d51d4,word,24050001// Set register a1 to 1" +
+                "\n//Makes the game not load the crusty background" +
+                "\npatch=1,EE,006a7a90,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006a7a94,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006a7a98,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006a7a9c,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006A7AA0,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006A7AA4,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,006A7AA8,word,00000000// Removes path to background sprite" +
+                "\npatch=1,EE,00620194,word,00000000// Removes string for background sprite" +
+                "\npatch=1,EE,00620198,word,00000000// Removes string for background sprite" +
+                "\npatch=1,EE,0062019C,word,00000000// Removes string for background sprite" +
+                "\npatch=1,EE,006201A0,word,00000000// Removes string for background sprite" +
+                "\npatch=1,EE,006201A4,word,00000000// Removes string for background sprite" +
+                "\npatch=1,EE,006201A8,word,00000000// Removes string for background sprite",
+                OnByDefault = false
             },
             new GamePatch() { Name = "Debug Options in Tartarus", ShortName = "debug_options_in_tartarus", Author = "Unknown",
                 Description = "This cheat grants you an extra menu option in Tartarus that can be used to skip to the next floor or return to the entrance.",

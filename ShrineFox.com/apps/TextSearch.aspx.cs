@@ -10,24 +10,27 @@ namespace ShrineFoxCom
 {
     public partial class TextSearch : Page
     {
-        public static List<Tuple<int, string, string>> matches = new List<Tuple<int, string, string>>();
+        //public static List<Tuple<int, string, string>> matches = new List<Tuple<int, string, string>>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Hide Next Occurence Button
-            Next.Visible = false;
+            //Next.Visible = false;
         }
 
         protected void Search_Click(object sender, EventArgs e)
         {
+            /*
             // Start with empty list of matches
             matches = new List<Tuple<int, string, string>>();
             // Get first matches
             GetMatches();
             // Show all matches so far
             ShowMatches();
+            */
         }
 
+        /*
         private void GetMatches()
         {
             // Determine type from radio buttons
@@ -151,5 +154,6 @@ namespace ShrineFoxCom
 
             return notice;
         }
+        */
     }
 }

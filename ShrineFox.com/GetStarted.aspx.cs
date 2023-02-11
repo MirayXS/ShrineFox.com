@@ -102,7 +102,7 @@ namespace ShrineFoxCom
             });
             // Show last updated time for P5 EX
             /*
-            var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patches/patch.yml"));
+            var lastWriteTime = File.GetCreationTime(System.Web.Hosting.HostingEnvironment.MapPath("~/yml/p5_ex/patch.yml"));
             lastUpdated.Controls.Add(new LiteralControl { Text = $"<br><i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}" });
             */
         }
@@ -478,7 +478,8 @@ namespace ShrineFoxCom
                 {
                     Text = "<li>Read <a target='_blank' href=\"https://shrinefox.com/guides/2020/04/10/modding-using-hostfs-on-pcsx2-p3-p4-smt3/\">this guide</a> " +
                     "to install the PNACH file on PCSX2, or <a target='_blank' href=\"https://shrinefox.com/guides/2020/03/29/loading-modded-files-in-persona-3-4-ps2/\">this one</a> to apply modded files to an ISO (for other platforms).</li>" +
-                    $"<span style=\"font-size:8pt;\"><b>Note:</b> Rename the downloaded .pnach file to <a target='_blank' href=\"https://i.imgur.com/5b2yURr.png\">match your game's CRC</a>. By default, for this game it's {game.CRC}.</span>"
+                    $"<span style=\"font-size:8pt;\"><b>Note:</b> Rename the downloaded .pnach file to <a target='_blank' href=\"https://i.imgur.com/5b2yURr.png\">match your game's CRC</a>. By default, for this game it's {game.CRC}.</span>" +
+                    $"<br><br><div class=\"notice yellow\"><b>IMPORTANT</b>: The absolute latest release of PCSX2 compatible with HostFS is <a href=\"https://github.com/PCSX2/pcsx2/releases/tag/v1.7.2577\">v1.7.2577</a>! It will not work with any later versions, so be careful not to update.</div>"
                 });
             if (selectedPlatform == "3DS" || selectedPlatform == "PSP" || selectedPlatform == "PC")
                 selectedGamePanelFooter.Controls.Add(new LiteralControl() { Text = "<li>Use <a target='_blank' href=\"https://www.7-zip.org/\">7zip</a> to extract the .7Z file.</li>" });

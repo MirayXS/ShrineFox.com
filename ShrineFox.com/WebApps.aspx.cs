@@ -41,16 +41,9 @@ namespace ShrineFoxCom
                 Body = "If you're looking for a certain file in P3P, P3FES, P4(G) or P5(R), " +
                 "you can enter part of the dialog or <a href=\"https://docs.shrinefox.com/flowscript/intro-to-scripting\">flowscript code</a> " +
                 "and narrow down where it might be.",
-                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://shrinefox.com/apps/TextSearch\">View</a> " +
+                Footer = "<a class=\"btn btn-primary float-right\" href=\"#\"><b>Discontinued</b></a> " +
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/ShrineFox.com/blob/main/ShrineFox.com/apps/TextSearch.aspx.cs\">Source Code</a>",
-                Image = "https://i.imgur.com/FhAiKde.png" },
-            new Card() { Title = "Files", Subtitle = "View pre-dumped files from each game.",
-                Body = "To save you time in case you accidentally lost or overwrote a copy of your own dumped files," +
-                " you can look for a copy of the original to download here." +
-                "<br><br><b>Important:</b> these are not \"complete\" dumps of the game, and cannot be used to install or run " +
-                "any content that you don't own. These are provided for research and development purposes only.",
-                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://shrinefox.com/apps/Files\">View</a>",
-                Image = "https://i.imgur.com/77HPhLh.png" }
+                Image = "https://i.imgur.com/FhAiKde.png" }
         };
 
         protected void Page_Load(object sender, EventArgs e)

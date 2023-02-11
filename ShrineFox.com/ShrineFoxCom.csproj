@@ -233,7 +233,6 @@
     <Content Include="App_Data\Resources\Card.html" />
     <Content Include="Labs.aspx" />
     <Content Include="WebApps.aspx" />
-    <Content Include="apps\Files.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="App_Data\exclude.txt" />
     <Content Include="App_Data\pw.txt" />
@@ -272,6 +271,9 @@
     <Content Include="App_Data\pnach\DEDC3B71.pnach">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\pnach\E8FCF8EC.pnach" />
+    <Content Include="App_Data\yml\p5_ex\patch.yml" />
+    <Content Include="App_Data\yml\p5_ex\hardware\patch.yml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="js\jquery.min.js" />
@@ -284,12 +286,6 @@
     <Content Include="App_Data\yml\lipsum\p4au\NPJB00599_patch.yml" />
     <Content Include="App_Data\yml\lipsum\p4au\NPUB31563_patch.yml" />
     <Content Include="App_Data\yml\lipsum\patch.yml" />
-    <Content Include="App_Data\yml\p5_ex\hardware\p5ex\conf.yml" />
-    <Content Include="App_Data\yml\p5_ex\hardware\p5ex\mod.sprx" />
-    <Content Include="App_Data\yml\p5_ex\hardware\patches\patch.yml" />
-    <Content Include="App_Data\yml\p5_ex\patches\patch.yml" />
-    <Content Include="App_Data\yml\p5_ex\USRDIR\config.yml" />
-    <Content Include="App_Data\yml\p5_ex\USRDIR\mod.sprx" />
     <Content Include="yml\p5_ex\config.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -411,13 +407,6 @@
     </Compile>
     <Compile Include="WebApps.aspx.designer.cs">
       <DependentUpon>WebApps.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="apps\Files.aspx.cs">
-      <DependentUpon>Files.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="apps\Files.aspx.designer.cs">
-      <DependentUpon>Files.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>

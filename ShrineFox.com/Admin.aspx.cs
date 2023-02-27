@@ -156,7 +156,7 @@ namespace ShrineFoxCom
             control.Controls.Clear();
 
             gbTxt.Text = "<h2>GameBanana</h2>" +
-                    "Click the button below to update the contents on <a href=\"https://shrinefox.com/browse\">shrinefox.com/browse</a>." +
+                    "Click the button below to update the contents on <a href=\"/browse\">shrinefox.com/browse</a>." +
                     $"<br><i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}<br><br>";
             gbBtn.Text = "Update Posts";
             gbBtn.Attributes.Add("class", "btn btn-primary");
@@ -170,7 +170,7 @@ namespace ShrineFoxCom
             control.Controls.Clear();
 
             botTxt.Text = "<h2>FrostBot</h2>" +
-                    "Remotely configure <a href=\"https://shrinefox.com/frostbot\">FrostBot</a>, Amicitia's Discord bot.<br><br>";
+                    "Remotely configure <a href=\"/frostbot\">FrostBot</a>, Amicitia's Discord bot.<br><br>";
             botActiveBtn.Text = "Activate";
             botActiveBtn.Attributes.Add("class", "btn btn-primary");
 

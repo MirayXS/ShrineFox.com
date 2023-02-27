@@ -67,8 +67,8 @@
     <!--ShrineFox Header-->
 
 	<div class="navipath" style="margin-left:2.5em;">
-		<a href="https://shrinefox.com/"><i class="fa fa-home"></i> ShrineFox.com</a>
-		<i class="fa fa-angle-right"></i> <a href="https://shrinefox.com/articles">Articles</a> 
+		<a href="/"><i class="fa fa-home"></i> ShrineFox.com</a>
+		<i class="fa fa-angle-right"></i> <a href="/articles">Articles</a> 
 		<i class="fa fa-angle-right"></i> <a href="<?php echo get_bloginfo( 'url' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 	</div>
 		<div id="content" class="site-content">

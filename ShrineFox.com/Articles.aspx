@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="navipath">
-		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<a href="/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>
@@ -12,12 +12,12 @@
             <div class="column col-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5"><a href="https://shrinefox.com/news/"><i class="fas fa-newspaper"></i> News</a></div>
+                        <div class="card-title h5"><a href="/news/"><i class="fas fa-newspaper"></i> News</a></div>
                     </div>
                     <div class="card-footer">
                         <div id="news-latest"></div>
                         <br><br>
-                        <h5><a href="https://shrinefox.com/news/">See more News articles</a></h5>
+                        <h5><a href="/news/">See more News articles</a></h5>
                     </div>
                 </div>
             </div>
@@ -25,12 +25,12 @@
             <div class="column col-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5"><a href="https://shrinefox.com/guides/"><i class="fas fa-graduation-cap"></i> Guides</a></div>
+                        <div class="card-title h5"><a href="/guides/"><i class="fas fa-graduation-cap"></i> Guides</a></div>
                     </div>
                     <div class="card-footer">
                         <div id="guides-latest"></div>
                         <br><br>
-                        <h5><a href="https://shrinefox.com/guides/">See more Guides</a></h5>
+                        <h5><a href="/guides/">See more Guides</a></h5>
                     </div>
                 </div>
             </div>
@@ -38,12 +38,12 @@
             <div class="column col-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title h5"><a href="https://shrinefox.com/blog/"><i class="fab fa-wordpress"></i> Blog</a></div>
+                        <div class="card-title h5"><a href="/blog/"><i class="fab fa-wordpress"></i> Blog</a></div>
                     </div>
                     <div class="card-footer">
                         <div id="blog-latest"></div>
                         <br><br>
-                        <h5><a href="https://shrinefox.com/blog/">See more Blogposts</a></h5>
+                        <h5><a href="/blog/">See more Blogposts</a></h5>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
     </div>
 	<script>
         $('#news-latest').FeedEk({
-            FeedUrl: 'https://shrinefox.com/news/feed',
+            FeedUrl: '/news/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,
@@ -61,7 +61,7 @@
             DateFormatLang: 'en'
         });
         $('#guides-latest').FeedEk({
-            FeedUrl: 'https://shrinefox.com/guides/feed',
+            FeedUrl: '/guides/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,
@@ -71,7 +71,7 @@
             DateFormatLang: 'en'
         });
         $('#blog-latest').FeedEk({
-            FeedUrl: 'https://shrinefox.com/blog/feed',
+            FeedUrl: '/blog/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,

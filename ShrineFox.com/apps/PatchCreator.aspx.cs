@@ -15,7 +15,7 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("https://shrinefox.com/GetStarted");
+            Response.Redirect("/GetStarted");
         }
     }
 }

@@ -2,8 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="navipath">
-		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
-		<i class="fa fa-angle-right" aria-hidden="true"></i> <a href="https://shrinefox.com/WebApps">Apps</a> 
+		<a href="/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<i class="fa fa-angle-right" aria-hidden="true"></i> <a href="/WebApps">Apps</a> 
         <i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>

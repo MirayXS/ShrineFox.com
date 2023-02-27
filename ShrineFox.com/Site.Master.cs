@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PersonaGameLib;
 using ShrineFoxCom;
 
 namespace ShrineFoxCom
@@ -12,17 +13,13 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string head = GetFile.FromPath("./App_Data/Resources/Html/head.html");
-            string body = GetFile.FromPath("./App_Data/Resources/Html/body.html");
-            string footer = GetFile.FromPath("./App_Data/Resources/Html/footer.html");
+            string head = FileUtil.GetFromPath("./App_Data/Resources/Html/head.html");
+            string body = FileUtil.GetFromPath("./App_Data/Resources/Html/body.html");
+            string footer = FileUtil.GetFromPath("./App_Data/Resources/Html/footer.html");
 
             // Head Tags
             LiteralControl HeadHtml = new LiteralControl();
             HeadHtml.Text = head;
-            #if DEBUG
-                // Use relative path
-                HeadHtml.Text = HeadHtml.Text.Replace("https://shrinefox.com/", "./");
-            #endif
             Head.Controls.Add(HeadHtml);
 
             // Body

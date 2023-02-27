@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="navipath">
-		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<a href="/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>
@@ -14,7 +14,7 @@ I'm a software developer who writes about unconventional ways to personalize the
 	even in ways the manufacturers never intended. 
 <br>Many of the resources I rely on are open-source and can already be found online. By gathering and exploring this info here on my site, 
 	I hope to make modding more accessible for everybody.
-<br><br><h5><a href="https://shrinefox.com/Recommended">See here for my personal list of recommended resources</a>.</h5>
+<br><br><h5><a href="/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
 If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
@@ -24,10 +24,10 @@ If you would like to support what I do, please make a donation via <a href="http
 <br>
 <br><h2>Troubleshooting</h2>
 To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.
-<br>If you have other modding related questions, ask on the <a href="https://shrinefox.com/forum">forum</a>.
+<br>If you have other modding related questions, ask on the <a href="/forum">forum</a>.
 <br>For concerns about anything linked here that I didn't make, contact the creator from wherever they posted it.
 <br>I generally don't have much control over content curated from <a href="https://gamebanana.com/">Gamebanana.com</a> 
-	(appearing in the <a href="https://shrinefox.com/browse">Browse</a> section), but I do make an effort to keep the listing safe for work.
+	(appearing in the <a href="/browse">Browse</a> section), but I do make an effort to keep the listing safe for work.
 <br>
 <br><h2>Source Code</h2>
 This project is licensed under GPL-3.0, so it's open source and you can use any part of it to create your own projects, 

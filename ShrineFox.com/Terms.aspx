@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="navipath">
-		<a href="https://shrinefox.com/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
+		<a href="/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>
@@ -29,7 +29,7 @@
 <h3><strong>Cookies</strong></h3>
 
 <p>We employ the use of cookies. By accessing ShrineFox.com, you agreed to use cookies in agreement with the 
-    <a href="https://shrinefox.com/privacy">ShrineFox.com's Privacy Policy</a>.</p>
+    <a href="/privacy">ShrineFox.com's Privacy Policy</a>.</p>
 
 <p>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used 
     by our website to enable the functionality of certain areas to make it easier for people visiting our website. 
@@ -164,7 +164,7 @@
 
 <h3><strong>Your Privacy</strong></h3>
 
-<p>Please read <a href="https://shrinefox.com/privacy">ShrineFox.com's Privacy Policy</a>.</p>
+<p>Please read <a href="/privacy">ShrineFox.com's Privacy Policy</a>.</p>
 
 <h3><strong>Reservation of Rights</strong></h3>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonaGameLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,7 +27,7 @@ namespace ShrineFoxCom
                 Subtitle = "This website!",
                 Trello = "https://trello.com/c/HTLOsjKh/52-shrinefoxcom",
                 Body = "I'm always looking for ways to improve this site as an educational resource, as well as to showcase my own work." +
-                "<br>Suggestions are always welcome <a href=\"https://shrinefox.com/Forum/\">on the forum</a>.",
+                "<br>Suggestions are always welcome <a href=\"/Forum/\">on the forum</a>.",
                 Footer = "<a class=\"btn btn-secondary float-right\" " +
                 "href=\"https://github.com/ShrineFox/ShrineFox.com/blob/main/ShrineFox.com\">Source Code</a>", 
                 },
@@ -61,14 +62,14 @@ namespace ShrineFoxCom
             new Card() {
                 Title = "P5R Vinesauce Mod",
                 Subtitle = "Mod that replaces Joker with Vinny from Vinesauce.",
-                Body = "A group project commemorating many years of Vinesauce's variety livestreams. More info in <a href=\"https://shrinefox.com/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/\">this blogpost</a>.",
+                Body = "A group project commemorating many years of Vinesauce's variety livestreams. More info in <a href=\"/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/\">this blogpost</a>.",
                 Trello = "https://trello.com/c/8DM6pdUf/101-p5r-vinesauce-mod",
                 Footer = ""
                 },
             new Card() {
                 Title = "P5 Adachi Mod",
                 Subtitle = "Mod that replaces Joker with Adachi from Persona 4.",
-                Body = "A group project aimed at fans of the cabbage detective. More info in this <a href=\"https://shrinefox.com/blog/category/persona-5/adachi-mod/\">series of blogposts</a>." +
+                Body = "A group project aimed at fans of the cabbage detective. More info in this <a href=\"/blog/category/persona-5/adachi-mod/\">series of blogposts</a>." +
                 "<br>Looking forward to eventually porting this to P5R on all platforms.",
                 Trello = "https://trello.com/c/FT2nZ7wh/58-p5-adachi-mod-update",
                 Footer = "<a class=\"btn btn-primary float-right\" href=\"<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/JackFrost-Bot/releases\">Download</a>"
@@ -107,6 +108,13 @@ namespace ShrineFoxCom
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/PersonaVoiceClipEditor\">Source Code</a>",
                 },
             new Card() {
+                Title = "PersonaPatchGen",
+                Subtitle = "Offline patch applicator for Persona games.",
+                Body = "A program for generating .pnach/patch.yml files, as well as patched Persona Q executables and PS4 Update PKGs. Requires Python 3+ installed.",
+                Trello = "https://trello.com/c/vqGDlBHX/103-personapatchgen",
+                Footer = "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/PersonaPatchGen\">Source Code</a>",
+                },
+            new Card() {
                 Title = "P4GMOdel",
                 Subtitle = "User interface for importing and exporting custom P4G/P3P GMO models.",
                 Body = "Automatically makes changes to custom models to make them compatible with P4G." +
@@ -140,8 +148,7 @@ namespace ShrineFoxCom
         {
             LiteralControl cardsHtml = new LiteralControl();
             
-            // Etc
-            string cardHtml = GetFile.FromPath("./App_Data/Resources/Card.html");
+            string cardHtml = FileUtil.GetFromPath("./App_Data/Resources/Card.html");
 
             foreach (var card in cards)
             {

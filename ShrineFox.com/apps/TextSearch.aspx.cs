@@ -150,7 +150,7 @@ namespace ShrineFoxCom
             if (fileName.Contains(".bvp"))
                 notice += Html.Notice("blue", "<b><a href=\"https://github.com/Meloman19/PersonaEditor/releases\">PersonaEditor</a></b> can edit text in BVP files.");
             if (fileName.Contains(".tbl"))
-                notice += Html.Notice("blue", "<b><a href=\"https://shrinefox.com/browse?post=binarytemplates\">010 Editor</a></b> can edit text in TBL files.");
+                notice += Html.Notice("blue", "<b><a href=\"/browse?post=binarytemplates\">010 Editor</a></b> can edit text in TBL files.");
 
             return notice;
         }

@@ -51,7 +51,7 @@
     </div>
 	<script>
         $('#news-latest').FeedEk({
-            FeedUrl: '/news/feed',
+            FeedUrl: 'https://shrinefox.com/news/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,
@@ -61,7 +61,7 @@
             DateFormatLang: 'en'
         });
         $('#guides-latest').FeedEk({
-            FeedUrl: '/guides/feed',
+            FeedUrl: 'https://shrinefox.com/guides/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,
@@ -71,7 +71,7 @@
             DateFormatLang: 'en'
         });
         $('#blog-latest').FeedEk({
-            FeedUrl: '/blog/feed',
+            FeedUrl: 'https://shrinefox.com/blog/feed',
             MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,

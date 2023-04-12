@@ -18,41 +18,54 @@
     <br>
     <br>
     <div class="container">
-        <div class="columns">
+        <div class="columns" id="slideshow">
             <!--News-->
-            <div class="column col-4 col-sm-12">
+            <div class="column">
                 <div class="card">
+                    <div class="card-image">
+                        <img class="img-responsive" src="https://shrinefox.com/news/wp-content/uploads/2023/03/tabablend.png">
+                    </div>
                     <div class="card-header">
-                        <div class="card-title h5"><a href="/news/"><i class="fas fa-newspaper"></i> News</a></div>
+                        <div class="card-title h5"><a href="https://shrinefox.com/news/blender-plugin-released-for-gfd/">Blender Plugin Released For GFD</a></div>
                     </div>
                     <div class="card-footer">
-                        <div id="news-latest"></div>
+                        <a href="https://shrinefox.com/news/"><i class="fas fa-newspaper"></i> News</a>
+                        <br>The first version of a Blender model importer/exporter for Persona 5 and the Dancing spinoffs has been released! Here’s what to expect and how to use it.
                     </div>
                 </div>
             </div>
             <!--Guides-->
-            <div class="column col-4 col-sm-12">
+            <div class="column">
                 <div class="card">
+                    <div class="card-image">
+                        <img class="img-responsive" src="https://shrinefox.com/guides/wp-content/uploads/2022/01/image-24.png">
+                    </div>
                     <div class="card-header">
-                        <div class="card-title h5"><a href="/guides/"><i class="fas fa-graduation-cap"></i> Guides</a></div>
+                        <div class="card-title h5"><a href="https://shrinefox.com/guides/2022/01/26/setting-up-persona-5-ex/">Setting Up Persona 5 EX</a></div>
                     </div>
                     <div class="card-footer">
-                        <div id="guides-latest"></div>
+                        <a href="https://shrinefox.com/guides/"><i class="fas fa-graduation-cap"></i> Guides</a>
+                        <br>Learn how to set up DeathChaos’s Persona 5 EX, an overhaul mod the PS3 version of P5.
                     </div>
                 </div>
             </div>
             <!--Blog-->
-            <div class="column col-4 col-sm-12">
+            <div class="column">
                 <div class="card">
+                    <div class="card-image">
+                        <img class="img-responsive" src="https://shrinefox.com/blog/wp-content/uploads/2023/03/vinesona.png">
+                    </div>
                     <div class="card-header">
-                        <div class="card-title h5"><a href="/blog/"><i class="fab fa-wordpress"></i> Blog</a></div>
+                        <div class="card-title h5"><a href="https://shrinefox.com/blog/2023/03/02/p5r-vinesauce-mod-devlog-2/">P5R Vinesauce Mod – Devlog #2</a></div>
                     </div>
                     <div class="card-footer">
-                        <div id="blog-latest"></div>
+                        <a href="https://shrinefox.com/blog/"><i class="fab fa-wordpress"></i> Blog</a>
+                        <br>Greener menus, cool glitchy effects, and talk of the eventual release– that’s the lowdown on the P5R Vinesauce mod’s current development!
                     </div>
                 </div>
             </div>
         </div>
+        <br>See <a href="https://shrinefox.com/articles">more articles</a>
     </div>
     <br>
     <br>
@@ -63,35 +76,15 @@
     <br>
     <br>
     <script>
-        $('#news-latest').FeedEk({
-            FeedUrl: '/news/feed',
-            MaxCount: 1,
-            ShowDesc: true,
-            ShowPubDate: true,
-            DescCharacterLimit: 0,
-            TitleLinkTarget: '_blank',
-            DateFormat: 'MMM d',
-            DateFormatLang: 'en'
-        });
-        $('#guides-latest').FeedEk({
-            FeedUrl: '/guides/feed',
-            MaxCount: 1,
-            ShowDesc: true,
-            ShowPubDate: true,
-            DescCharacterLimit: 0,
-            TitleLinkTarget: '_blank',
-            DateFormat: 'MMM d',
-            DateFormatLang: 'en'
-        });
-        $('#blog-latest').FeedEk({
-            FeedUrl: '/blog/feed',
-            MaxCount: 1,
-            ShowDesc: true,
-            ShowPubDate: true,
-            DescCharacterLimit: 0,
-            TitleLinkTarget: '_blank',
-            DateFormat: 'MMM d',
-            DateFormatLang: 'en'
-        });
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function () {
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(2000)
+                .end()
+                .appendTo('#slideshow');
+        }, 10000);
     </script>
 </asp:Content>

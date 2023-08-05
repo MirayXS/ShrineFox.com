@@ -1,0 +1,49 @@
+Debugging features: no
+Print Function Names: no
+
+# CPK Settings
+mod cpk: yes
+mod cpk name: mod
+Number of extra mod cpk: 5
+names of extra mod cpk: [ CommonMods, ExpandedBGM, P5RBustups, 4KMod, Events ]
+file access logging: no
+tty commands: no
+
+# Other settings
+Global Script: no
+Persona Using Enemies: yes
+Expanded BGM Patches: yes
+Kasumi patches: yes
+Randomized DLC BGM: no
+Randomized Combat Outfits: no
+Maximum random DLC BGM ID: 29
+Ambush themes override DLC Music: no
+Custom Navigator SoundPack: yes
+External navigator text file: yes
+Alternate title screens: yes
+Joker Announces Weekday: yes
+Royal Akechi patches: yes
+Automatically Unlock Baton Pass: no
+Disable Ryuji Instakill: yes
+Player Outfits in cutscenes: yes
+Force PSZ Models: no
+Force Single GAP Player Combat Animations: yes
+Prevent Game Over on Joker Death: no
+Randomized Shop Banner Colors: no
+
+# Combat Model Colors
+Enable Custom Colors for Red Combat Model Copy: yes
+Randomize Custom Colors: no
+Joker Color: 0xFF0000FF
+Skull Color: 0xF0EC00FF
+Mona Color: 0x14D8B1FF
+Panther Color: 0xF04CB8FF
+Fox Color: 0x01CBDBFF
+Queen Color: 0x3028C8FF
+Noir Color: 0xB000A8FF
+Oracle Color: 0x48E420FF
+Crow Color 1: 0xFFF8EDFF
+Crow Color 2: 0xa48252FF
+
+
+# End Config

@@ -12,14 +12,12 @@
 *.key
 *.p7b
 *.txt
-*.yml
 *.7z
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
 # Build results
-ShrineFox.com/App_Data/amicitia.tsv
 ShrineFox.com/App_Data/patch_downloads.tsv
 ShrineFox.com/App_Data/pw.txt
 ShrineFox.com/App_Data/exclude.txt

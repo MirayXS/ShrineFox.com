@@ -54,10 +54,6 @@
         transition: 1s ease-in-out;
     }
 
-#side-content {
-    background: linear-gradient(180deg, rgba(var(--accent), 0.075) 90%, rgba(var(--bg), 1));
-}
-
     #side-content #description {
         margin: calc(var(--margin)/2);
     }

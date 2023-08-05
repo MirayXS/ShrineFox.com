@@ -21,8 +21,10 @@ namespace ShrineFoxCom
         {
             // If it's been more than half a day since an update, get Gamebanana data
             var lastWriteTime = File.GetLastWriteTime($"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//App_Data//amicitia.tsv");
+#if DEBUG
             if (DateTime.Now > lastWriteTime.AddHours(6))
                 Webscraper.UpdateTSVs(Notices);
+#endif
 
             // The number of posts on one page
             int maxPostsPerPage = 15;

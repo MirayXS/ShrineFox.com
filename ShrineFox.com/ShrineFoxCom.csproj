@@ -351,15 +351,6 @@
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
     <Content Include="App_Data\patch_downloads.tsv" />
-    <Content Include="App_Data\pnach\94A82AAA.pnach">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\pnach\DEDC3B71.pnach">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\pnach\E8FCF8EC.pnach" />
-    <Content Include="App_Data\yml\p5_ex\patch.yml" />
-    <Content Include="App_Data\yml\p5_ex\hardware\patch.yml" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
@@ -367,12 +358,6 @@
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="App_Data\yml\patch.yml" />
-    <Content Include="App_Data\yml\lipsum\p4au\BLJM61209_patch.yml" />
-    <Content Include="App_Data\yml\lipsum\p4au\BLUS31469_patch.yml" />
-    <Content Include="App_Data\yml\lipsum\p4au\NPJB00599_patch.yml" />
-    <Content Include="App_Data\yml\lipsum\p4au\NPUB31563_patch.yml" />
-    <Content Include="App_Data\yml\lipsum\patch.yml" />
     <Content Include="yml\p5_ex\config.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

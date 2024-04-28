@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows;
@@ -25,7 +26,7 @@ namespace ShrineFoxCom.Resources.Browse
 
         public static void UpdateTSVs(PlaceHolder control)
         {
-            string browse_exclude = FileUtil.GetFromPath("./App_Data/exclude.txt");
+            string browse_exclude = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/exclude.txt"));
             List<string> exclusions = browse_exclude.Split('\n').ToList();
             for (int i = 0; i < exclusions.Count; i++)
                 exclusions[i] = exclusions[i].TrimEnd('\r').Trim();

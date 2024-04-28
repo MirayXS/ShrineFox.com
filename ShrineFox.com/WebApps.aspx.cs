@@ -1,6 +1,7 @@
 ﻿using PersonaGameLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,7 +53,7 @@ namespace ShrineFoxCom
         {
             LiteralControl cardsHtml = new LiteralControl();
 
-            string cardHtml = FileUtil.GetFromPath("./App_Data/Resources/Card.html");
+            string cardHtml = File.ReadAllText(Server.MapPath("~/./App_Data/Resources/Card.html"));
 
             foreach (var card in cards)
             {

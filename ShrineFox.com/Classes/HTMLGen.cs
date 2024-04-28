@@ -14,17 +14,17 @@ namespace ShrineFoxCom
         public static void BlogForum(PlaceHolder control)
         {
             // Main
-            string head = FileUtil.GetFromPath("./App_Data/Resources/Html/head.html");
-            string body = FileUtil.GetFromPath("./App_Data/Resources/Html/body.html");
-            string footer = FileUtil.GetFromPath("./App_Data/Resources/Html/footer.html");
+            string head = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Html/head.html"));
+            string body = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Html/body.html"));
+            string footer = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Html/footer.html"));
             // Forum
-            string forum_overall_header = FileUtil.GetFromPath("./App_Data/Resources/Forum/template/overall_header.html");
-            string forum_overall_footer = FileUtil.GetFromPath("./App_Data/Resources/Forum/template/overall_footer.html");
-            string forum_colours = FileUtil.GetFromPath("./App_Data/Resources/Forum/theme/colours.css");
+            string forum_overall_header = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Forum/template/overall_header.html"));
+            string forum_overall_footer = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Forum/template/overall_footer.html"));
+            string forum_colours = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Forum/theme/colours.css"));
             // Blog
-            string blog_header = FileUtil.GetFromPath("./App_Data/Resources/Blog/header.php");
-            string blog_footer = FileUtil.GetFromPath("./App_Data/Resources/Blog/footer.php");
-            string blog_style = FileUtil.GetFromPath("./App_Data/Resources/Blog/style.css");
+            string blog_header = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Blog/header.php"));
+            string blog_footer = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Blog/footer.php"));
+            string blog_style = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Blog/style.css"));
 
             // Generate Directories
             string forumThemePath = $"{System.Web.Hosting.HostingEnvironment.MapPath("~/.")}//forum//styles//Milk_Edit";
@@ -55,7 +55,7 @@ namespace ShrineFoxCom
                                .Replace("<!--ShrineFox Styles-->", blogStyles)
                                .Replace("<!--ShrineFox Header-->", videoSearch);
 
-            foreach (string site in new string[] { "blog", "guides", "news" })
+            foreach (string site in new string[] { "blog" })
             {
                 string path = blogThemePath.Replace("blog", site);
                 if (!Directory.Exists(path))

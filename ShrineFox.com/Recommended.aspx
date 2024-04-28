@@ -141,7 +141,8 @@ This is my personal list of online resources for unofficial personalization.
 			<br><a href="https://www.stardock.com/products/fences/">Stardock Fences</a> - group desktop icons into movable, resizable boxes with labels and pages
 			<br><a href="https://www.stardock.com/products/groupy/">Stardock Groupy</a> - group windows together with browser-like tabs
 			<br><a href="https://www.stardock.com/products/start11/">Stardock Start11</a> - restore and personalize the start menu from previous versions of Windows
-			<br><h5>Useful, Little-Known Programs</h5>
+			<br><a href="https://www.startallback.com/">StartAllBack</a> - an alternative Start Menu/Task Bar styling suite for Windows 10 and 11
+			<br><h5>Useful Utilities</h5>
 			<br><a href="https://gifcam.en.softonic.com/">GifCam</a> - record regions of your screen as gifs instantly
 			<br><a href="https://vb-audio.com/Voicemeeter/banana.htm">VoiceMeeter Banana</a> - virtual sound mixer for managing input/output sources and volume & recording audio
 			<br><a href="https://vb-audio.com/Cable/index.htm">Virtual Audio Cable</a> - allows you to re-route input as output and vice versa for use with VoiceMeeter
@@ -159,6 +160,8 @@ This is my personal list of online resources for unofficial personalization.
 			<br><a href="https://www.nch.com.au/wavepad/index.html">WavePad</a> - premium sound editor, similar to <a href="https://www.audacityteam.org/">Audacity</a>
 			<br><a href="https://deluge-torrent.org/">Deluge</a> - free, lightweight, portable, cross-platform torrenting software
 			<br><a href="https://jdownloader.org/">JDownloader</a> - download multiple files from Google Drive or other sites and resume even if your connection is interrupted
+			<br><a href="https://diskanalyzer.com/">WizTree</a> - A much faster alternative to WinDirStat, which graphs the storage on your PC to help you free up space.
+			<br><a href="https://www.bulkrenameutility.co.uk/Download.php">Bulk Rename Utility</a> - allows you to rename multiple files at once by replacing text, or adding/removing suffixes, prefixes etc.
 			<br><h5>Security Tools</h5>
 			<br><a href="https://adblockplus.org/">AdBlock Plus</a> or <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en">uBlock Origin</a> - browser extensions to filter out unwanted advertisements
 			<br><a href="https://www.veracrypt.fr/code/VeraCrypt/">VeraCrypt</a> - free, open-source on-the-fly file/disk encryption software

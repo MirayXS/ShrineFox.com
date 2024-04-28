@@ -1,6 +1,7 @@
 ﻿using PersonaGameLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ShrineFoxCom
 {
-    public partial class Labs : Page
+    public partial class Projects : Page
     {
         public class Card
         {
@@ -106,41 +107,6 @@ namespace ShrineFoxCom
                 Trello = "https://trello.com/c/14r6yAS3/102-personavoiceclipeditor-update",
                 Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/PersonaVoiceClipEditor/releases\">Download</a> " +
                 "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/PersonaVoiceClipEditor\">Source Code</a>",
-                },
-            new Card() {
-                Title = "PersonaPatchGen",
-                Subtitle = "Offline patch applicator for Persona games.",
-                Body = "A program for generating .pnach/patch.yml files, as well as patched Persona Q executables and PS4 Update PKGs. Requires Python 3+ installed.",
-                Trello = "https://trello.com/c/vqGDlBHX/103-personapatchgen",
-                Footer = "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/PersonaPatchGen\">Source Code</a>",
-                },
-            new Card() {
-                Title = "P4GMOdel",
-                Subtitle = "User interface for importing and exporting custom P4G/P3P GMO models.",
-                Body = "Automatically makes changes to custom models to make them compatible with P4G." +
-                "<br>Kind of a mess right now, started working on a WIP refactor, but I don't know when I'll finish it.",
-                Trello = "https://trello.com/c/aXPZ0DH1/42-p4gmodel",
-                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/P4GMOdelConverter/releases\">Download</a> " +
-                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/P4GMOdelConverter\">Source Code</a>",
-                },
-            new Card() {
-                Title = "PersonaRandomizer",
-                Subtitle = "User interface for generating \"randomized\" Persona mods.",
-                Body = "Very WIP and unstable. Uses old code by TGE for some support randomizing the TBL files of some games." +
-                "<br>Also randomizes models and BGM for P3/4. In the future I'd like to completely redo it and make features work across all games.",
-                Trello = "https://trello.com/c/GycdxuUs/86-personarandomizer",
-                Footer = "<a class=\"btn btn-primary float-right\" href=\"https://github.com/ShrineFox/P4GMOdelConverter/releases\">Download</a> " +
-                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/P4GMOdelConverter\">Source Code</a>",
-                },
-            new Card() {
-                Title = "P-Studio",
-                Subtitle = "Experimental user interface for all things Persona modding.",
-                Body = "Early concept for a workspace that conveniently unifies all the tools you need for modding Persona games." +
-                "<br>Right now it manages projects and files, and docks other applications like Amicitia, GFDStudio, and Notepad++ in the window for editing." +
-                "<br>In the future I'd like to add support for more programs and maybe integrate a mod manager. Needs lots more testing.",
-                Trello = "https://trello.com/c/eY6RXEIj/83-p-studio-v01",
-                Footer = "" +
-                "<a class=\"btn btn-secondary float-right\" href=\"https://github.com/ShrineFox/P-Studio\">Source Code</a>",
                 }
         };
 
@@ -148,7 +114,7 @@ namespace ShrineFoxCom
         {
             LiteralControl cardsHtml = new LiteralControl();
             
-            string cardHtml = FileUtil.GetFromPath("./App_Data/Resources/Card.html");
+            string cardHtml = File.ReadAllText(Server.MapPath("~/./App_Data/Resources/Card.html"));
 
             foreach (var card in cards)
             {

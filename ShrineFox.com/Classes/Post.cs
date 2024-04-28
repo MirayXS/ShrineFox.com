@@ -84,7 +84,7 @@ namespace ShrineFoxCom
             string result;
 
             // Post Summary
-            result = FileUtil.GetFromPath("./App_Data/Resources/Browse/Post.html");
+            result = File.ReadAllText(HttpContext.Current.Server.MapPath("~/App_Data/Resources/Browse/Post.html"));
             
             // Download/Read/Clipboard Text
             if (post.Type == "cheat")

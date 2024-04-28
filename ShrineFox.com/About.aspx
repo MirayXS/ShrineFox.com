@@ -6,21 +6,18 @@
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
 	<h1><%: Page.Title %></h1>
-ShrineFox.com is a fansite dedicated to <b>Amicitia</b>, a modding community close to my heart.
+	I'm a software developer who loves unconventional ways to customize tech-- romhacks, jailbreaking, OS tweaks, you name it.
 <br>
 <br><h2>Mission</h2>
-I'm a software developer who writes about unconventional ways to personalize the hardware you use every day. 
-<br>Smartphones, videogame consoles, and computers all offer limited customization. I'm interested in extending control over these devices, 
-	even in ways the manufacturers never intended. 
-<br>Many of the resources I rely on are open-source and can already be found online. By gathering and exploring this info here on my site, 
-	I hope to make modding more accessible for everybody.
+<br>I aim to provide you with all the open-source software that has helped me create my projects.
+<br>My hope is that this site makes modding more accessible for everybody.
 <br><br><h5><a href="/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
-If you would like to support what I do, please make a donation via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
+If you would like to support me, please leave a tip via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
 	which accepts PayPal and Stripe. Any contribution is greatly appreciated and helps keep the site online.
 <br>You can message me there if you have any personal requests. You may also <a href="ryan@shrinefox.com">email me</a>, but please be aware I 
-	don't frequently check/respond to these emails.
+	don't frequently check my inbox.
 <br>
 <br><h2>Troubleshooting</h2>
 To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.
@@ -48,10 +45,10 @@ commercial or otherwise. See the <a href="https://github.com/ShrineFox/ShrineFox
 		</td>
 	</tr>
 	<tr>
-		<td>Themes</td>
+		<td>Web Themes</td>
 		<td>
-			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2 (All)
-			<br><a href="https://gretathemes.com/wordpress-themes/justread/">JustRead</a> by GretaThemes (Articles)
+			<a href="https://picturepan2.github.io/spectre">Spectre CSS Framework</a> by picturepan2 (All Pages)
+			<br><a href="https://github.com/godaddy-wordpress/primer/releases">Primer</a> by GoDaddy (Blog)
 			<br><a href="https://themeforest.net/item/milk-multipurpose-responsive-phpbb-31-theme/">Milk (phpbb theme)</a> by PlanetStyles (Forum)
 			<br><a href="https://seyche.tumblr.com/post/618566803537477632/theme-nine-lilac-one-column-sidebar-theme-with">Lilac Theme</a> by seyche (Home)
 		</td>

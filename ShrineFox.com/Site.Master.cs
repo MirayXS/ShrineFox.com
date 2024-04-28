@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,9 +14,9 @@ namespace ShrineFoxCom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string head = FileUtil.GetFromPath("./App_Data/Resources/Html/head.html");
-            string body = FileUtil.GetFromPath("./App_Data/Resources/Html/body.html");
-            string footer = FileUtil.GetFromPath("./App_Data/Resources/Html/footer.html");
+            string head = File.ReadAllText(Server.MapPath("~/./App_Data/Resources/Html/head.html"));
+            string body = File.ReadAllText(Server.MapPath("~/./App_Data/Resources/Html/body.html"));
+            string footer = File.ReadAllText(Server.MapPath("~/./App_Data/Resources/Html/footer.html"));
 
             // Head Tags
             LiteralControl HeadHtml = new LiteralControl();

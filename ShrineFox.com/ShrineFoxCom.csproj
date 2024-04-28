@@ -240,7 +240,6 @@
     <Content Include="App_Data\Resources\Dependencies\7z.dll" />
     <Content Include="App_Data\Resources\Dependencies\7z.exe" />
     <Content Include="Recommended.aspx" />
-    <Content Include="Articles.aspx" />
     <Content Include="App_Data\Resources\Forum\template\overall_footer.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -316,7 +315,7 @@
     <Content Include="css\theme\tags.css" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="App_Data\Resources\Card.html" />
-    <Content Include="Labs.aspx" />
+    <Content Include="Projects.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="WebApps.aspx" />
     <Content Include="Admin.aspx" />
@@ -428,13 +427,6 @@
     <Compile Include="Recommended.aspx.designer.cs">
       <DependentUpon>Recommended.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Articles.aspx.cs">
-      <DependentUpon>Articles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Articles.aspx.designer.cs">
-      <DependentUpon>Articles.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -456,12 +448,12 @@
     <Compile Include="Privacy.aspx.designer.cs">
       <DependentUpon>Privacy.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Labs.aspx.cs">
-      <DependentUpon>Labs.aspx</DependentUpon>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Labs.aspx.designer.cs">
-      <DependentUpon>Labs.aspx</DependentUpon>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

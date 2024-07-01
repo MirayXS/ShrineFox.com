@@ -126,13 +126,13 @@
 				<center>
 					ShrineFox 2023.
 					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGEnigma</a> (programming), 
-					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a> & <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> (art), 
+					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a>, <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> 
+					& <a href="https://protokyuu.newgrounds.com/">Protokyuu</a> (character & UI artwork), 
 					<a href="https://twitter.com/kekulism">kekulism</a> (planning & bgm conversion), 
 					<a href="https://twitter.com/CherryCreamSoda">CherryCreamSoda</a> (asset recolors & logo)
 					<br>We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with ATLUS, SEGA, 
 					or any of its subsidiaries or its affiliates.<br>The official ATLUS website can be found at 
-					<a href="https://atlus.com">https://atlus.com</a>. "Persona 5", as well as all characters referenced in this project 
-					are registered trademarks of ATLUS.
+					<a href="https://atlus.com">https://atlus.com</a>. "Persona 5" is a registered trademarks of ATLUS.
 				</center>
 			</div>
 			<br>

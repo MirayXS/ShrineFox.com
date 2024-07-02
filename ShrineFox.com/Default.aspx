@@ -17,13 +17,20 @@
         <br><h2>New to modding? See how to <a href="/GetStarted">Get Started</a>.</h2>
     </div>
 
-    <center><h1 class="display-4">Latest Videos</h1></center>
+    <br><br>
+    <center><h2 class="display-4">Latest Videos</h2></center>
     <div class="card">
         <div id="YourPlayerID" style="height: 100%;"></div>
         <script src="https://apis.google.com/js/platform.js"></script>
     </div>
 
-    <center><h1 class="display-4">Latest Blogposts</h1></center>
+    <div class="notice green">
+        <b>Current Project</b>
+        <br>Learn more about the <b><a href="./vinesauce">Persona 5 Royal Vinesauce Mod</a></b>.
+    </div>
+
+    <br><br>
+    <center><h2 class="display-4">Latest Blogposts</h2></center>
     <div class="card">
         <div class="card-header">
             <div class="card-title h5"><a href="/blog/"><i class="fab fa-wordpress"></i> See more blogposts</a></div>

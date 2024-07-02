@@ -1,0 +1,30 @@
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Blank.Master.cs" Inherits="ShrineFoxCom.BlankMaster" %>
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head runat="server">
+        <title><%: Page.Title %></title>
+        <asp:PlaceHolder ID="Head" runat="server"></asp:PlaceHolder>
+        <asp:ContentPlaceHolder ID="Header" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    <asp:PlaceHolder ID="Body" runat="server"></asp:PlaceHolder>
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    </form>
+    <asp:PlaceHolder ID="Footer" runat="server"></asp:PlaceHolder>
+    <!--AdSense-->
+    <div class="ad">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9519592525056753"
+                crossorigin="anonymous"></script>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var controller = new YTV('YourPlayerID', {
+                channelId: 'UCrB3t1zAQPwAeWtI8RZIOvQ',
+                playlist: 'PLU6By7bu-RSsXcvqRkDdh3R4OGva8_No4',
+                responsive: true
+            });
+        });
+    </script>
+</html>

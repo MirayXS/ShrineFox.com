@@ -18,11 +18,13 @@
 *.userprefs
 
 # Build results
-ShrineFox.com/App_Data/patch_downloads.tsv
-ShrineFox.com/App_Data/pw.txt
-ShrineFox.com/App_Data/exclude.txt
-ShrineFox.com/App_Data/txt/*
-ShrineFox.com/App_Data/yml/p5_ex/*.7z
+[Ss]hrineFox.com/App_Data/patch_downloads.tsv
+[Ss]hrineFox.com/App_Data/pw.txt
+[Ss]hrineFox.com/App_Data/exclude.txt
+[Ss]hrineFox.com/App_Data/txt/*
+[Ss]hrineFox.com/App_Data/yml/*
+[Ss]hrineFox.com/App_Data/yml/p5_ex/*.7z
+[Ss]hrineFox.com/App_Data/pnach/*.pnach
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/

@@ -216,6 +216,7 @@
     <Content Include="apps\TextSearch.aspx" />
     <Content Include="apps\UpdateCreator.aspx" />
     <Content Include="css\projects\Adachi\adachi.css" />
+    <Content Include="css\projects\EarthBound\eb.css" />
     <Content Include="images\projects\Adachi\1.png" />
     <Content Include="images\projects\Adachi\2.png" />
     <Content Include="images\projects\Adachi\3.png" />
@@ -228,6 +229,11 @@
     <Content Include="images\projects\Adachi\AoA.png" />
     <Content Include="images\projects\Adachi\magatsu.gif" />
     <Content Include="images\projects\Adachi\sec4_bg.png" />
+    <Content Include="images\projects\EarthBound\ebmodmenu_logo.png" />
+    <Content Include="images\projects\EarthBound\eb_bottom_row.png" />
+    <Content Include="images\projects\EarthBound\eb_checkerboard.png" />
+    <Content Include="images\projects\EarthBound\eb_present.png" />
+    <Content Include="images\projects\EarthBound\eb_top_row.png" />
     <Content Include="images\projects\Vinesauce\favicon.ico" />
     <Content Include="images\projects\Vinesauce\shroom.png" />
     <Content Include="images\projects\Vinesauce\slideshow_placeholder.png" />
@@ -262,6 +268,7 @@
     <Content Include="App_Data\Resources\Dependencies\7z.dll" />
     <Content Include="App_Data\Resources\Dependencies\7z.exe" />
     <Content Include="Adachi.aspx" />
+    <Content Include="EarthBound.aspx" />
     <Content Include="Vinesauce.aspx" />
     <Content Include="Recommended.aspx" />
     <Content Include="App_Data\Resources\Forum\template\overall_footer.html">
@@ -307,6 +314,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="css\projects\Vinesauce\typesauce.woff" />
     <Content Include="css\projects\Vinesauce\typesauce.woff2" />
+    <Content Include="css\projects\EarthBound\ebfont.woff" />
+    <Content Include="css\projects\EarthBound\ebfont.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -454,6 +463,13 @@
     </Compile>
     <Compile Include="Adachi.aspx.designer.cs">
       <DependentUpon>Adachi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EarthBound.aspx.cs">
+      <DependentUpon>EarthBound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EarthBound.aspx.designer.cs">
+      <DependentUpon>EarthBound.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vinesauce.aspx.cs">
       <DependentUpon>Vinesauce.aspx</DependentUpon>
@@ -606,7 +622,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58269</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58269/</IISUrl>
+          <IISUrl>http://localhost:1025/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

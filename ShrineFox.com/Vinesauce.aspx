@@ -7,6 +7,7 @@
 	<script src="./js/jquery.min.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/spectre.css" />
 	<link rel="stylesheet" href="./css/projects/Vinesauce/vine.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans">
 </asp:Content>
 
@@ -33,6 +34,8 @@
 							<br>Join us in commemorating several years of fun and hilarious Vinesauce streams.
 							Experience P5R like never before with new art, models, music, and tons of 
 							easter eggs from Vinny’s past broadcasts.
+							<br>
+							<br><b><a href="https://x.com/P5RVinesauce"><i class="fa-brands fa-twitter"></i> Follow our Twitter for updates!</a></b> | <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee"></i> Leave a Tip on Ko-Fi!</a>
 						</div>
 					</div>
 					<div class="column col-6 col-sm-12 flex-centered">
@@ -82,28 +85,69 @@
 				<div class="container">
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>What is Vinesauce?</h3></div>
-						<div class="toggle-inner"><p>Vinesauce is a <a href="https://www.youtube.com/watch?v=oeRD_fGFhdA">variety streamer</a> named Vinny on <a href="https://www.twitch.tv/vinesauce">Twitch</a> & <a href="https://www.youtube.com/c/vinesauce">YouTube</a>. His stream's gimmick is <a href="https://www.youtube.com/playlist?list=PLHmR7c8zbVZRLORCvg7Thz-2PG126KmDA">corruptions</a>-- dismantling classic games by randomly editing RAM while playing. He's also known for his <a href="https://redvoxband.com/">music</a>, his commentary, and the community surrounding his streams.</p></div>
+						<div class="toggle-inner"><p>Vinesauce is a <a href="https://www.youtube.com/watch?v=oeRD_fGFhdA">variety streamer</a> named Vinny on 
+							<a href="https://www.twitch.tv/vinesauce">Twitch</a> & <a href="https://www.youtube.com/c/vinesauce">YouTube</a>. His stream's 
+							gimmick is <a href="https://www.youtube.com/playlist?list=PLHmR7c8zbVZRLORCvg7Thz-2PG126KmDA">corruptions</a>-- dismantling classic 
+							games by randomly editing RAM while playing. He's also known for his <a href="https://redvoxband.com/">music</a>, his commentary, 
+							and the community surrounding his streams.</p></div>
 					</div>
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>Why a Persona 5 mod?</h3></div>
-						<div class="toggle-inner"><p>A <a href="https://www.youtube.com/watch?v=d-TBs4KwWF8">running gag</a> during Vinny's streams is that chat members will request that he play a Persona game, despite him having no interest in the franchise. Although this mod does not make it any more likely that he will change his mind, fans of his streams are sure to appreciate the irony.</p></div>
+						<div class="toggle-inner"><p>A <a href="https://www.youtube.com/watch?v=d-TBs4KwWF8">running gag</a> during Vinny's streams is that chat 
+							members will request that he play a Persona game, despite him having no interest in the franchise. Although this mod doesn't aim to 
+							change his mind, fans of his streams are sure to appreciate the irony.</p></div>
 					</div>
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>What platforms is it available for?</h3></div>
 						<div class="toggle-inner"><p>Primarily, this mod is being developed for the PC (Steam/Xbox Game Pass) version of P5R.
-							<br />It may potentially be ported to PS4 and Switch at a later date, although these plans take low priority.
-							<br />The PC port will have certain exclusive features compared to any eventual console ports, such as configurable options.</p></div>
+							It may potentially be ported to PS4 and Switch at a later date, although these plans take low priority.
+							The PC port will have certain exclusive features compared to any eventual console ports, such as configurable options.</p></div>
 					</div>
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>How do I play this mod?</h3></div>
 						<div class="toggle-inner"><p>On PC, Extract and run Reloaded-II. Extract the contents of the .zip to the Reloaded-II/Mods folder. 
-						<br>Enable the mods and launch the game through Reloaded-II. See <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-pc-mod-support">here</a> for more detailed instructions.
-						<br><br>For Switch, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-switch-mod-support">here</a> for instructions on playing with mods. For PS4, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-ps4-mod-support">here</a>.</p></div>
+						<br>Enable the mods and launch the game through Reloaded-II. See <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-pc-mod-support">here</a> 
+							for more detailed instructions.
+						<br><br>For Switch, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-switch-mod-support">here</a> for instructions on playing with mods. 
+							For PS4, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-ps4-mod-support">here</a>.</p></div>
+					</div>
+					<div class="toggle">
+						<div class="toggle-title typesauce"><h3>Can You Still Play the Original Campaign?</h3></div>
+						<div class="toggle-inner"><p>If you want to experience the original P5R story with the party member replacements, 
+							you still can. Just be aware not all of the art and voices will be replaced and it will be purely cosmetic.</p></div>
+					</div>
+					<div class="toggle">
+						<div class="toggle-title typesauce"><h3>How Does the New Story Work?</h3></div>
+						<div class="toggle-inner"><p>You progress through Mementos. When you reach the end of a block, 
+							you gain access to a new dungeon. Dungeons are somewhat reskinned to follow a new theme. 
+							Most cutscenes, tutorials, interruptions etc. are gone. You can play with a 20 minute timer.</p></div>
+					</div>
+					<div class="toggle">
+						<div class="toggle-title typesauce"><h3>How Are Confidants/Romances Handled?</h3></div>
+						<div class="toggle-inner"><p>Completely removed. Vinny is a real person, so we didn't want to make it too weird.
+							Plus, writing all of that would start to make the scope of the project too ambitious for our liking.
+							For those electing to play the original campaign, mods will probably be bundled that disable romance routes.
+						</p></div>
+					</div>
+					<div class="toggle">
+						<div class="toggle-title typesauce"><h3>When Will The Mod Be Released?</h3></div>
+						<div class="toggle-inner"><p>We don't know yet. Replacing all of the party member assets is taking a very 
+							long time, and we still have to do the same for enemies. But most of the scripting logic has been 
+							completed so it's just that cosmetic stuff that's left to implement.</p></div>
+					</div>
+						<div class="toggle">
+						<div class="toggle-title typesauce"><h3>Will This Mod Be Streamed By Vinny?</h3></div>
+						<div class="toggle-inner"><p>Maybe! One of the <a href="https://www.kickstarter.com/projects/pulsebooks/vinnyvinesaucetcc">Kickstarter stretch goals</a> got met, 
+							which is to play P5 on stream for 20 minutes.
+							<br>However, it's completely up to him whether to play the modded version or the original. We will see!
+							Either way, please don't pressure anyone about streaming this. It will happen if it happens, if not 
+							that's okay. When the mod is finished, everyone is completely free to play it, stream it, or record it.</p></div>
 					</div>
 				</div>
 			</div>
 			<div class="vineborder bottom"> </div>
 		</div>
+
 		<div class="content">
 			<div class="vineborder top"> </div>
 			<div class="innercontainer">

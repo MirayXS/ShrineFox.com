@@ -37,7 +37,7 @@
 					<div class="column col-6 col-sm-12 flex-centered">
 						<!-- Trailer -->
 						<div class="video-responsive">
-							<iframe src="https://www.youtube.com/embed/cMvoJUaZ_fc" width="350" height="200" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe>
+							<iframe src="https://www.youtube.com/embed/LBg1NGfGaH8" width="350" height="200" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe>
 						</div>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column col-6 col-sm-12 flex-centered">
-						<img class="img-responsive" src="https://i.imgur.com/eL0DBtP.png" />
+						<img class="img-responsive" src="./images/projects/EarthBound/ebmodmenu_1.png">
 					</div>
 					<div class="column col-6 col-sm-12">
 						<div class="innercontainer">
@@ -94,7 +94,7 @@
 						</div>
 					</div>
 					<div class="column col-6 col-sm-12 flex-centered">
-						<img class="img-responsive" src="https://i.imgur.com/eL0DBtP.png" />
+						<img class="img-responsive" src="./images/projects/EarthBound/ebmodmenu_2.png">
 					</div>
 				</div>
 			</div>

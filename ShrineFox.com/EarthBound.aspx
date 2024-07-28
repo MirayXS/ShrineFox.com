@@ -32,6 +32,8 @@
 							<br>some made by the PK Hack community.
 							<br><br>It's open source, so anyone can use parts of it for their own mods,
 							<br>or create their own derivatives.
+							<br>
+							<br><a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee"></i> Leave a Tip on Ko-Fi!</a>
 						</div>
 					</div>
 					<div class="column col-6 col-sm-12 flex-centered">
@@ -164,10 +166,9 @@
 				<center>
 					<b>Support Nintendo by playing EarthBound on <a href="https://www.nintendo.com/us/store/products/super-nintendo-entertainment-system-nintendo-switch-online-switch/">Nintendo Switch Online</a>.</b>
 					<br><h1>DOWNLOAD</h1>
-					<a href="https://github.com/ShrineFox/EarthBound-Mod-Menu/releases/download/0.9/earthbound_mod_menu_v0.9.ips"><img src="./images/projects/EarthBound/eb_present.png" style="height:32px;"> v0.9 .IPS Patch (SNES)</a>
+					<a href="https://github.com/ShrineFox/EarthBound-Mod-Menu/releases/tag/0.9"><img src="./images/projects/EarthBound/eb_present.png" style="height:32px;"> v0.9 .IPS Patch (SNES)</a>
 					<br>
-					<br>
-					Use <a href="https://www.marcrobledo.com/RomPatcher.js/">an online ROM patcher</a> to apply the patch to your EarthBound ROM.
+					<br>Use <a href="https://www.marcrobledo.com/RomPatcher.js/">an online ROM patcher</a> to apply the patch to your EarthBound ROM.
 				</center>
 			</div>
 			<div class="ebborder bottom"> </div>

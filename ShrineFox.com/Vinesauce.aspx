@@ -137,7 +137,7 @@
 					</div>
 						<div class="toggle">
 						<div class="toggle-title typesauce"><h3>Will This Mod Be Streamed By Vinny?</h3></div>
-						<div class="toggle-inner"><p>Maybe! One of the <a href="https://www.kickstarter.com/projects/pulsebooks/vinnyvinesaucetcc">Kickstarter stretch goals</a> got met, 
+						<div class="toggle-inner"><p>Maybe! One of the <a href="https://www.kickstarter.com/projects/pulsebooks/vinnyvinesaucetcc">CardSauce Kickstarter stretch goals</a> got met, 
 							which is to play P5 on stream for 20 minutes.
 							<br>However, it's completely up to him whether to play the modded version or the original. We will see!
 							Either way, please don't pressure anyone about streaming this. It will happen if it happens, if not 
@@ -168,7 +168,7 @@
 			<div class="vineborder top"> </div>
 			<div class="innercontainer">
 				<center>
-					ShrineFox 2023.
+					ShrineFox 2023-2024.
 					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGEnigma</a> (programming), 
 					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a>, <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> 
 					& <a href="https://protokyuu.newgrounds.com/">Protokyuu</a> (character & UI artwork), 

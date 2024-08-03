@@ -121,7 +121,6 @@
 								<li>Sometimes it says the wrong character received or used a key item, or the item's name displays incorrectly.</li>
 								<li>When toggling off the Key Items mod, you may end up lacking the items required to advance. Use the Mod Menu to give yourself key items as needed.</li>
 								<li>Sometimes the spacing between "PK" and the name of an attack may be incorrect in battle.</li>
-								<li>Key Item inventory is currently based on who is in your party, so you may find yourself unable to advance if you remove i.e. Ness or Jeff.</li>
 							</ul>
 							</p>
 						</div>
@@ -166,7 +165,7 @@
 				<center>
 					<b>Support Nintendo by playing EarthBound on <a href="https://www.nintendo.com/us/store/products/super-nintendo-entertainment-system-nintendo-switch-online-switch/">Nintendo Switch Online</a>.</b>
 					<br><h1>DOWNLOAD</h1>
-					<a href="https://github.com/ShrineFox/EarthBound-Mod-Menu/releases/tag/0.9"><img src="./images/projects/EarthBound/eb_present.png" style="height:32px;"> v0.9 .IPS Patch (SNES)</a>
+					<a href="https://github.com/ShrineFox/EarthBound-Mod-Menu/releases/"><img src="./images/projects/EarthBound/eb_present.png" style="height:32px;"> v0.9.1 .IPS Patch (SNES)</a> (Update #1)
 					<br>
 					<br>Use <a href="https://www.marcrobledo.com/RomPatcher.js/">an online ROM patcher</a> to apply the patch to your EarthBound ROM.
 				</center>

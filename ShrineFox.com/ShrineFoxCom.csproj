@@ -236,6 +236,7 @@
     <Content Include="images\projects\EarthBound\eb_checkerboard.png" />
     <Content Include="images\projects\EarthBound\eb_present.png" />
     <Content Include="images\projects\EarthBound\eb_top_row.png" />
+    <Content Include="images\projects\Vinesauce\3d-box.png" />
     <Content Include="images\projects\Vinesauce\favicon.ico" />
     <Content Include="images\projects\Vinesauce\shroom.png" />
     <Content Include="images\projects\Vinesauce\slideshow_placeholder.png" />
@@ -357,7 +358,6 @@
     <Content Include="WebApps.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="App_Data\exclude.txt" />
-    <Content Include="App_Data\pw.txt" />
     <Content Include="css\spectre-icons.css" />
     <Content Include="css\spectre.css" />
     <Content Include="css\theme\feedek.css" />
@@ -386,7 +386,6 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />
-    <Content Include="App_Data\patch_downloads.tsv" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />

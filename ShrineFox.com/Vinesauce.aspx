@@ -26,7 +26,7 @@
 				<div class="columns">
 					<div class="column col-6 col-sm-12">
 						<div class="innercontainer">
-							<img class="img-responsive" src="./images/projects/Vinesauce/vine_logo.png">
+							<img class="img-responsive" src="./images/projects/Vinesauce/vine_logo.png" alt="Logo by lynlyn_cpk">
 							<h1><b><div class="typesauce">It's Time to Scoot the Burbs, Everyone.</div></b></h1>
 							Vinny finds himself stuck in the world of Persona 5, teaming up with and fighting against a large cast of familiar faces.
 							<br>Together, will they find a way out?
@@ -139,7 +139,7 @@
 						<div class="toggle-title typesauce"><h3>Will This Mod Be Streamed By Vinny?</h3></div>
 						<div class="toggle-inner"><p>Maybe! One of the <a href="https://www.kickstarter.com/projects/pulsebooks/vinnyvinesaucetcc">CardSauce Kickstarter stretch goals</a> got met, 
 							which is to play P5 on stream for 20 minutes.
-							<br>However, it's completely up to him whether to play the modded version or the original. We will see!
+							<br>However, it's completely up to him whether to play the modded version or the original. <a href="https://youtu.be/Fss-twiNn6M?t=190">We will see</a>!
 							Either way, please don't pressure anyone about streaming this. It will happen if it happens, if not 
 							that's okay. When the mod is finished, everyone is completely free to play it, stream it, or record it.</p></div>
 					</div>
@@ -150,18 +150,27 @@
 
 		<div class="content">
 			<div class="vineborder top"> </div>
-			<div class="innercontainer">
-				<center>
-					<b>Support Atlus by purchasing Persona 5 Royal on <a href="https://store.playstation.com/en-us/concept/10002771">Playstation Network</a>, <a href="https://www.nintendo.com/store/products/persona-5-royal-switch/">the Nintendo eShop</a> or <a href="https://store.steampowered.com/app/1687950/Persona_5_Royal/">Steam</a>.</b>
-					<h1><div class="typesauce">DOWNLOAD</div></h1>
-					<u>Latest Version (v0.0)</u>
-					<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Reloaded II .zip (PC)</a>
-					<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Aemulus .zip (Switch)</a>
-					<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Aemulus .zip (PS4)</a>
-					<br>
-					<br>Note: This mod has not yet been released. Everything here is a placeholder!
-				</center>
-			</div>
+				<div class="innercontainer">
+					<div class="columns">
+						<div class="column col-3 col-sm-12">
+							<center>
+								<img class="img-responsive flex-centered" src="./images/projects/Vinesauce/3d-box.png" style="max-height:312px;" alt="Boxart by Protokyuu" />
+							</center>
+						</div>
+						<div class="column col-9 col-sm-12">
+							<center>
+								<b>Support Atlus by purchasing Persona 5 Royal on <a href="https://store.playstation.com/en-us/concept/10002771">Playstation Network</a>, <a href="https://www.nintendo.com/store/products/persona-5-royal-switch/">the Nintendo eShop</a> or <a href="https://store.steampowered.com/app/1687950/Persona_5_Royal/">Steam</a>.</b>
+								<h1><div class="typesauce">DOWNLOAD</div></h1>
+								<u>Latest Version (v0.0)</u>
+								<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Reloaded II .zip (PC)</a>
+								<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Aemulus .zip (Switch)</a>
+								<br><a href="#"><i class="fas fa-folder-open" aria-hidden="true"></i> Aemulus .zip (PS4)</a>
+								<br>
+								<br>Note: This mod has not yet been released. Everything here is a placeholder!
+							</center>
+						</div>
+					</div>
+				</div>
 			<div class="vineborder bottom"> </div>
 		</div>
 		<div class="content" style="margin-bottom:0px;">
@@ -169,7 +178,7 @@
 			<div class="innercontainer">
 				<center>
 					ShrineFox 2023-2024.
-					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGEnigma</a> (programming), 
+					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGEnigma</a> (tool programming), 
 					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a>, <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> 
 					& <a href="https://protokyuu.newgrounds.com/">Protokyuu</a> (character & UI artwork), 
 					<a href="https://twitter.com/kekulism">kekulism</a> (planning & bgm conversion), 

@@ -196,7 +196,8 @@ namespace ShrineFoxCom
             new Tuple<string, string>("PQ2", "Persona Q2"),
             new Tuple<string, string>("CFB", "Catherine Full Body"),
             new Tuple<string, string>("SMT3", "SMT3: Nocturne"),
-            new Tuple<string, string>("SMTV", "SMT V")
+            new Tuple<string, string>("SMTV", "SMT V"),
+            new Tuple<string, string>("SMTVV", "SMT V Vengeance")
         };
 
         public static List<string> TypeList = new List<string>()

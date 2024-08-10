@@ -74,8 +74,9 @@ namespace ShrineFoxCom
                     }
                 }
 
-                // Reverse Post Order (latest to oldest)
-                posts = posts.OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).Reverse().ToList();
+                // Reverse Post Order (latest to oldest) and remove exclusions
+                posts = posts.Where(x => !File.ReadAllLines(HttpContext.Current.Server.MapPath("~/App_Data/exclude.txt")).Any(y => x.Authors.Contains(y)))
+                    .OrderBy(p => DateTime.Parse(p.Date, CultureInfo.CreateSpecificCulture("en-US"))).Reverse().ToList();
                 // Total Results Count
                 LastUpdatedHtml.Text += $"<i class=\"fas fa-history\" aria-hidden=\"true\"></i> Updated {lastWriteTime.Humanize()}<br><b>{posts.Count}</b> results";
                 // Total number of pages in this query

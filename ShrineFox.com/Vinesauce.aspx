@@ -36,6 +36,10 @@
 							easter eggs from Vinny’s past broadcasts.
 							<br>
 							<br><b><a href="https://x.com/P5RVinesauce"><i class="fa-brands fa-twitter"></i> Follow our Twitter for updates!</a></b> | <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee"></i> Leave a Tip on Ko-Fi!</a>
+							<br>Not feeling Twitter? <a href="https://bsky.app/profile/p5rvinesauce.bsky.social"><i class="fa-brands fa-bluesky"></i> Follow us on Bluesky instead</a>!
+							<br><br>Read the blogposts for an in-depth look at development:
+							<br><a href="https://shrinefox.com/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/">Devlog 1</a> - <a href="https://shrinefox.com/blog/2023/03/02/p5r-vinesauce-mod-devlog-2/">Devlog 2</a> - <a href="https://shrinefox.com/blog/2023/07/27/p5r-vinesauce-mod-devlog-3/">Devlog 3</a> 
+							- <a href="https://shrinefox.com/blog/2024/03/23/p5r-vinesauce-mod-devlog-4/">Devlog 4</a> - <a href="https://shrinefox.com/blog/2024/10/01/p5r-vinesauce-mod-devlog-5/">Devlog 5</a>
 						</div>
 					</div>
 					<div class="column col-6 col-sm-12 flex-centered">
@@ -182,7 +186,7 @@
 					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a>, <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> 
 					& <a href="https://protokyuu.newgrounds.com/">Protokyuu</a> (character & UI artwork), 
 					<a href="https://twitter.com/kekulism">kekulism</a> (planning & bgm conversion), 
-					<a href="https://twitter.com/CherryCreamSoda">CherryCreamSoda</a> (asset recolors & logo)
+					<a href="https://twitter.com/lyncpk">lyncpk</a> (asset recolors & logo)
 					<br>We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with ATLUS, SEGA, 
 					or any of its subsidiaries or its affiliates.<br>The official ATLUS website can be found at 
 					<a href="https://atlus.com">https://atlus.com</a>. "Persona 5" is a registered trademarks of ATLUS.

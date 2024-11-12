@@ -40,7 +40,7 @@
                     <img src="./images/projects/EarthBound/ebmodmenu_1.png" />
                 </div>
             </a>
-            <br><a href="https://shrinefox.github.io/en/Adachi">
+            <br><a href="https://shrinefox.github.io/en/adachi.html">
                 <div class="projbutton">
                     <h2>P5 Adachi Mod (PS3)</h2>
                     <img src="https://shrinefox.github.io/en/adachi/images/magatsu.gif" />

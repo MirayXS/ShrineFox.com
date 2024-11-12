@@ -124,15 +124,40 @@
 				<b>Support Nintendo by playing Zelda: Breath of the Wild on <a href="https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch//">Nintendo Switch</a>.</b>
 				<br>
 				<h1><div class="hylian">DOWNLOAD</div></h1>
-				<u>Latest Version (v2.0)</u>
+				<u><b>Latest Version (v2.0)</b></u>
 				<br><a href="#"><i class="fas fa-file" aria-hidden="true"></i> BCML .bnp (Wii U)</a>
 				<br>
-				<br>At this time there is no Switch port (aside from the old version of the mod).
+				<br>At this time there is no Switch port (aside from the <a href="https://gamebanana.com/mods/246646">old version</a> of the mod).
 			</center>
 		</div>
 		<div class="miphaborder bottom"> </div>
 	</div>
 	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
+
+	<div class="content">
+	<div class="miphaborder top"> </div>
+		<center>
+			<h1><div class="hylian">INSTALL INSTRUCTIONS</div></h1>
+		</center>
+		<div class="columns">
+			<div class="column col-6 col-sm-12">
+				<div class="innercontainer">
+					<ul>
+						<li>Download and install <a href="https://gamebanana.com/tools/6624">BCML</a></li>
+						<li>Set up paths to BotW's base/update/DLC files in BCML settings</li>
+						<li>Select downloaded .bnp file in BCML to install mod</li>
+						<li>Launch game with <a href="https://cemu.info/">CEMU</a> and enjoy!</li>
+						<li>You could also use <a href="https://gamebanana.com/tools/12110">UKMM</a> instead of BCML.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="column col-6 col-sm-12 flex-centered">
+				<img src="../../../images/projects/Mipha/LoMeephers.png" style="max-height:250px;" />
+			</div>
+		</div>
+	<div class="miphaborder bottom"> </div>
+</div>
+<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
 	<div class="miphacontainer" style="margin-top:60px"><div class="miphahealing"></div></div>
 
@@ -149,6 +174,39 @@
 		<br>
 	</div>
 
+<div class="bubble-container" id="bubble-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+		const bubbleContainer = document.getElementById('bubble-container');
+
+        // Create bubbles
+        for (let i = 0; i < 50; i++) {
+            createBubble();
+        }
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.top = `${Math.random() * 100}vh`;
+            bubble.style.setProperty('--rand', Math.random() * 2);
+            bubbleContainer.appendChild(bubble);
+
+            // Add hover event listener to make bubble poppable
+            bubble.addEventListener('mouseenter', function (event) {
+                const bubbleRect = bubble.getBoundingClientRect();
+                const bubbleCenterX = bubbleRect.left + bubbleRect.width / 2;
+                const bubbleCenterY = bubbleRect.top + bubbleRect.height / 2;
+                const distance = Math.sqrt((event.clientX - bubbleCenterX) ** 2 + (event.clientY - bubbleCenterY) ** 2);
+
+                if (distance <= 30) {
+                    bubble.remove();
+                }
+            });
+        }
+    });
+
+</script>
 <div class="wavescontainer">
 	<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">

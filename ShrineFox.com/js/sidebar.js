@@ -1,9 +1,11 @@
 ﻿$(document).ready(function () {
     $('.menu-button').click(function () {
         $('#sidebar').addClass('show');
+        $('#maincontent').addClass('show');
     });
 
-    $('.close').click(function () {
+    $('.closebtn').click(function () {
         $('#sidebar').removeClass('show');
+        $('#maincontent').removeClass('show');
     });
 });

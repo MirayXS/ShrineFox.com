@@ -9,15 +9,17 @@
 	I'm a software developer who loves unconventional ways to customize tech-- romhacks, jailbreaking, OS tweaks, you name it.
 <br>
 <br><h2>Mission</h2>
-<br>I aim to provide you with all the open-source software that has helped me create my projects.
-<br>My hope is that this site makes modding more accessible for everybody.
+<br>I want to make modding more accessible for everyone. Everything I create has been made possible by brilliant minds from all across the world.
+<br>To give back to the community, on this site I provide video tutorials, step-by-step guides, and collections of useful files.
 <br><br><h5><a href="/Recommended">See here for my personal list of recommended resources</a>.</h5>
 <br>
 <br><h2>Support</h2>
 If you would like to support me, please leave a tip via <a href="https://ko-fi.com/shrinefox">Ko-Fi</a>, 
 	which accepts PayPal and Stripe. Any contribution is greatly appreciated and helps keep the site online.
-<br>You can message me there if you have any personal requests. You may also <a href="ryan@shrinefox.com">email me</a>, but please be aware I 
-	don't frequently check my inbox.
+<br><h2>Contact</h2>
+<br>Message me on <a href="https://ko-fi.com/shrinefox">Ko-Fi</a> if you have any personal requests. This will notify me via e-mail.
+	<br>You may also <a href="ryan@shrinefox.com">email me directly</a>, but please be aware I don't frequently check this inbox.
+	<br>The best way to keep up with me on social media is on <a href="https://bsky.app/profile/shrinefox.com">BlueSky</a>.
 <br>
 <br><h2>Troubleshooting</h2>
 To report a software bug, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">open an issue on Github</a>.

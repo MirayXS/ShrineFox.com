@@ -241,3 +241,46 @@ li.row {
 .forumlist_grid_icons li.row {
     width: 100% !important;
 }
+
+.projbutton {
+    padding: 10px;
+    background: rgba(var(--accent), 0.4);
+    color: white;
+    border-radius: 1em;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(45, 255, 196, 0.68);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(45, 255, 196, 0.68);
+    box-shadow: 0px 0px 8px 2px rgba(var(--accent), 0.68);
+    transition: transform 0.2s ease-in-out;
+}
+
+    .projbutton:hover {
+        transform: scale(1.03);
+    }
+
+    .projbutton img {
+        z-index: 1;
+        top: -150%;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        transition: transform 0.2s ease-in-out;
+        mix-blend-mode: soft-light;
+    }
+
+        .projbutton img:hover {
+            transform: scale(1.05);
+        }
+
+    .projbutton h2 {
+        z-index: 3;
+        position: relative;
+        pointer-events: none;
+    }
+
+a:hover h2 {
+    text-decoration: none !important;
+}

@@ -218,6 +218,7 @@
     <Content Include="css\projects\Adachi\adachi.css" />
     <Content Include="css\projects\EarthBound\eb.css" />
     <Content Include="css\projects\Mipha\mipha.css" />
+    <Content Include="images\projects\Mipha\LoMeephers.png" />
     <Content Include="images\projects\Mipha\miphaborder-bottom.png" />
     <Content Include="images\projects\Mipha\miphaborder-top.png" />
     <Content Include="images\projects\Mipha\miphadownarrow.png" />
@@ -228,6 +229,8 @@
     <Content Include="images\projects\Mipha\MiphaScreen6.png" />
     <Content Include="images\projects\Mipha\MiphaScreen7.png" />
     <Content Include="images\projects\Mipha\VahRuta.png" />
+    <Content Include="images\logo.svg" />
+    <Content Include="images\projects\ModMenu\p5rmodmenu.png" />
     <Content Include="Mipha.aspx" />
     <Content Include="images\projects\Adachi\1.png" />
     <Content Include="images\projects\Adachi\2.png" />
@@ -396,9 +399,6 @@
     <Content Include="App_Data\Resources\Browse\Post.html" />
     <Content Include="Wiki.aspx" />
     <Content Include="About.aspx" />
-    <Content Include="images\logo.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\amicitia.tsv" />

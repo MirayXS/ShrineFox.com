@@ -27,12 +27,37 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -300px;
     box-shadow: 1px 1px 3px rgba(var(--accent), 0.1);
     overflow-y: auto;
     box-sizing: border-box;
     z-index: 2;
+    -webkit-transition: ease-in-out 0.4s;
+    -moz-transition: ease-in-out 0.4s;
+    -ms-transition: ease-in-out 0.4s;
+    -o-transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.4s;
 }
+
+    #sidebar.show {
+        left: 0;
+    }
+
+#maincontent {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+    #maincontent.show {
+        width: 100%;
+        padding: 0px 0px 0px 300px;
+    }
 
     #sidebar::-webkit-scrollbar-thumb {
         background: transparent !important;
@@ -55,7 +80,7 @@
     }
 
     #side-content #description {
-        margin: calc(var(--margin)/2);
+        margin: calc(var(--margin)/5);
     }
 
 #side-nav {
@@ -105,7 +130,6 @@
 
 #maincontent {
     position: relative;
-    margin: 0px auto 0px 300px;
     background-color: rgba(var(--accent),0.1);
 }
 
@@ -146,7 +170,7 @@
     transition: all 0.3s;
 }
 
-    .menu-button .feather, .close a .feather {
+    .menu-button .feather, .closebtn a .feather {
         color: rgba(var(--text), 1.0);
         width: 1.5em;
         height: 1.5em;
@@ -160,7 +184,7 @@
         transition: all 0.3s;
     }
 
-    .menu-button:hover .feather, .close a:hover .feather {
+    .menu-button:hover .feather, .closebtn a:hover .feather {
         background-color: rgba(var(--text), 0.4);
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
@@ -195,9 +219,10 @@
     margin-left: 1em;
 }
 
-.close {
-    margin: calc(var(--margin)/2);
+.closebtn {
+    margin: calc(var(--margin)/1.3);
     position: absolute;
+    font-size:18pt;
 }
 
 #m {
@@ -209,27 +234,12 @@
 /*---- RESPONSIVENESS -----*/
 
 @media only screen and (max-width: 1200px) {
-    #mobile-header, .close {
+    .videocontainer {
+        height: 100px !important;
+    }
+
+    #mobile-header, .closebtn {
         display: block;
-    }
-
-    #sidebar {
-        left: -300px;
-        z-index: 2;
-        -webkit-transition: ease-in-out 0.4s;
-        -moz-transition: ease-in-out 0.4s;
-        -ms-transition: ease-in-out 0.4s;
-        -o-transition: ease-in-out 0.4s;
-        transition: ease-in-out 0.4s;
-    }
-
-        #sidebar.show {
-            left: 0;
-        }
-
-    #maincontent {
-        width: 100%;
-        margin: 0px auto 0px auto;
     }
 
     .info-dropdown {
@@ -237,7 +247,11 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 650px) {
+    .videocontainer {
+        height: 80px !important;
+    }
+
     article {
         width: 90vw;
     }
@@ -256,6 +270,10 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .videocontainer {
+        height: 50px !important;
+    }
+
     article {
         width: 100vw;
         padding: 30px;
@@ -285,27 +303,30 @@
 .videocontainer {
     background: rgba(var(--accent), 1.0) !important;
     width: 100% !important;
-    height: 150px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
 }
 
-.videocontainer img {
-    z-index: -1;
+    .videocontainer img {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+.waves-img {
     mix-blend-mode: hard-light;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-radius: 0 !important;
-    margin-bottom: 0 !important;
+}
+
+.header-img {
+    mix-blend-mode: luminosity;
+    opacity: 0.5;
 }
 
 .googlesearchcontainer {
     background: inherit;
     filter: brightness(78%);
     z-index: 1;
-}
-
-@media only screen and (max-width: 1200px) {
-    .videocontainer {
-        margin-left: 0px;
-    }
 }

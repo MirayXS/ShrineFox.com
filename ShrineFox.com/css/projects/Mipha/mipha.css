@@ -34,37 +34,59 @@ body {
 	z-index:0;
 }
 
+.logo {
+    margin-top: 2em;
+}
+
+.container {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+}
+
 .content {
-	z-index: 2;
-	position: relative;
-	color: #fff;
-    margin-top:100px;
-    margin-left:4em;
-    margin-right:4em;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    margin-top: 100px;
+    margin-left: 4em;
+    margin-right: 4em;
     border-radius: 1em;
     background-color: rgba(0, 0, 0, 0.85);
     box-shadow: 0px 1px 22px #222;
+    padding-bottom: 2em;
 }
 
-.miphaborder {
-  background-repeat: repeat-x;
-  height: 32px;
+.corner {
+    height: 35px;
+    margin: 9px;
+    position: absolute;
+    opacity: 0.5;
 }
 
-    .miphaborder.top {
-        background-image: url(../../../images/projects/Mipha/miphaborder-top.png);
-        padding-top: 4em;
-        background-repeat: round;
-        opacity: 0.5;
+    .corner.top-left 
+    {
+        top:0;
+        left:0;
     }
 
-    .miphaborder.bottom {
-        background-image: url(../../../images/projects/Mipha/miphaborder-bottom.png);
-        padding-bottom: 4em;
-        background-repeat: round;
-        opacity: 0.5;
+    .corner.top-right {
+        top: 0;
+        right: 0;
     }
 
+    .corner.bottom-left {
+        bottom: 10px;
+        left: 0;
+    }
+
+    .corner.bottom-right {
+        bottom: 10px;
+        right: 0;
+    }
+
+    .corner img {
+        height: 50px;
+    }
 
 .miphadownarrow {
     background-image: url(../../../images/projects/Mipha/miphadownarrow.png);
@@ -111,7 +133,6 @@ a:hover, a:visited {
 }
 
 .toggle {
-	border-bottom: 1px solid #fff;
 	margin-bottom: 0.5em;
 }
 .toggle .toggle-title {
@@ -162,12 +183,7 @@ ul, ol {
 	height: auto;
 	position: relative;
 }
-.column:hover img {
-	max-height: 100%;
-	max-width: 100%;
-	-webkit-transition: width 1s, height 1s;
-	transition: width 1s, height 1s;
-}
+
 
 .innercontainer {
     padding: 0.5em;

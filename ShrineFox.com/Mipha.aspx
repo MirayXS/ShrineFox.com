@@ -21,12 +21,13 @@
 	</div>
 
 	<div class="content">
-		<div class="miphaborder top"> </div>
+		<div class="corner top-left"><img src="../../../images/projects/Mipha/top-left.png"></div>
+		<div class="corner top-right"><img src="../../../images/projects/Mipha/top-right.png"></div>
 		<div class="container">
 			<div class="columns">
 				<div class="column col-6 col-sm-12">
 					<div class="innercontainer">
-						<img class="img-responsive" src="./images/projects/Mipha/MiphaLogo.png">
+						<center><img class="img-responsive" src="./images/projects/Mipha/MiphaLogo.png"></center>
 						<h1><div class="hylian">Mipha's Grace is Ready.</div></h1>
 						Replay the Legend of Zelda: Breath of the Wild as your favorite Zora champion!
 						<br><a href="https://shrinefox.com/blog/2020/02/13/mipha-mod-dev-part-1-setup/">Originally 
@@ -43,7 +44,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="miphaborder bottom"> </div>
+		<div class="corner bottom-left"><img src="../../../images/projects/Mipha/bottom-left.png"></div>
+		<div class="corner bottom-right"><img src="../../../images/projects/Mipha/bottom-right.png"></div>
 	</div>
 	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
@@ -84,7 +86,8 @@
 	</div>
 
 	<div class="content">
-		<div class="miphaborder top"> </div>
+		<div class="corner top-left"><img src="../../../images/projects/Mipha/top-left.png"></div>
+		<div class="corner top-right"><img src="../../../images/projects/Mipha/top-right.png"></div>
 		<div class="container">
 			<div class="columns">
 				<div class="column col-6 col-sm-12">
@@ -113,12 +116,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="miphaborder bottom"> </div>
+		<div class="corner bottom-left"><img src="../../../images/projects/Mipha/bottom-left.png"></div>
+		<div class="corner bottom-right"><img src="../../../images/projects/Mipha/bottom-right.png"></div>
 	</div>
 	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
 	<div class="content">
-		<div class="miphaborder top"> </div>
+		<div class="corner top-left"><img src="../../../images/projects/Mipha/top-left.png"></div>
+		<div class="corner top-right"><img src="../../../images/projects/Mipha/top-right.png"></div>
 		<div class="innercontainer">
 			<center>
 				<b>Support Nintendo by playing Zelda: Breath of the Wild on <a href="https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch//">Nintendo Switch</a>.</b>
@@ -130,12 +135,14 @@
 				<br>At this time there is no Switch port (aside from the <a href="https://gamebanana.com/mods/246646">old version</a> of the mod).
 			</center>
 		</div>
-		<div class="miphaborder bottom"> </div>
+		<div class="corner bottom-left"><img src="../../../images/projects/Mipha/bottom-left.png"></div>
+		<div class="corner bottom-right"><img src="../../../images/projects/Mipha/bottom-right.png"></div>
 	</div>
 	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
 	<div class="content">
-	<div class="miphaborder top"> </div>
+		<div class="corner top-left"><img src="../../../images/projects/Mipha/top-left.png"></div>
+		<div class="corner top-right"><img src="../../../images/projects/Mipha/top-right.png"></div>
 		<center>
 			<h1><div class="hylian">INSTALL INSTRUCTIONS</div></h1>
 		</center>
@@ -152,17 +159,69 @@
 				</div>
 			</div>
 			<div class="column col-6 col-sm-12 flex-centered">
-				<img src="../../../images/projects/Mipha/LoMeephers.png" style="max-height:250px;" />
+				<img src="../../../images/projects/Mipha/LoMeephers.png" style="max-width: 95%;" />
 			</div>
 		</div>
-	<div class="miphaborder bottom"> </div>
-</div>
-<div class="miphacontainer"><div class="miphadownarrow"></div></div>
+		<div class="corner bottom-left"><img src="../../../images/projects/Mipha/bottom-left.png"></div>
+		<div class="corner bottom-right"><img src="../../../images/projects/Mipha/bottom-right.png"></div>
+	</div>
+	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
+
+	<div class="content">
+		<div class="corner top-left"><img src="../../../images/projects/Mipha/top-left.png"></div>
+		<div class="corner top-right"><img src="../../../images/projects/Mipha/top-right.png"></div>
+		<center>
+			<div class="toggle">
+				<div class="toggle-title hylian"><br><h1>CLICK TO VIEW CREDITS</h1></div>
+				<div class="toggle-inner">
+					<div class="hylian">Developed by</div>
+					PeregrineHBG
+					<br>ShrineFox
+					<br>
+					<div class="hylian">Modeling</div>
+					Lynard Killer
+					<br>Sofia Harley
+					<br>Purple Wanderer
+					<br>ToRiCoChi
+					<br>
+					<div class="hylian">Cutscenes</div>
+					Ginger
+					<br>
+					<div class="hylian">Icons</div>
+					Fazlox
+					<br>
+					<div class="hylian">Text</div>
+					KingFeraligatr
+					<br>
+					<div class="hylian">Gerudo Set Textures</div>
+					Mr. The
+					<br>Esper
+					<br>
+					<div class="hylian">Playtesting</div>
+					Eldin of Pharae
+					<br>Only By the Stars
+					<br>Tona the Zora
+					<br>
+					<div class="hylian">Ragdoll Information + Tools</div>
+					Moonling
+					<br>
+					<div class="hylian">Titlescreen Schreenshots</div>
+					Jupiter Sky
+					<br>
+					<div class="hylian">Additional Animation Tweaks</div>
+					Gray
+				</div>
+			</div>
+		</center>
+		<div class="corner bottom-left"><img src="../../../images/projects/Mipha/bottom-left.png"></div>
+		<div class="corner bottom-right"><img src="../../../images/projects/Mipha/bottom-right.png"></div>
+	</div>
+	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
 	<div class="miphacontainer" style="margin-top:60px"><div class="miphahealing"></div></div>
 
 
-	<div class="content" style="margin-bottom:0px;border-radius:0px;margin-left:0;margin-right:0;margin-top:0">
+	<div class="content" style="margin-bottom:0px;padding-bottom: 0;border-radius:0px;margin-left:0;margin-right:0;margin-top:0">
 		<div class="innercontainer">
 			<center>
 				ShrineFox 2024.
@@ -205,7 +264,20 @@
             });
         }
     });
+</script>
 
+<script>
+    if (jQuery(".toggle .toggle-title").hasClass('active')) {
+        jQuery(".toggle .toggle-title.active").closest('.toggle').find('.toggle-inner').show();
+    }
+    jQuery(".toggle .toggle-title").click(function () {
+        if (jQuery(this).hasClass('active')) {
+            jQuery(this).removeClass("active").closest('.toggle').find('.toggle-inner').slideUp(200);
+        }
+        else {
+            jQuery(this).addClass("active").closest('.toggle').find('.toggle-inner').slideDown(200);
+        }
+    });
 </script>
 <div class="wavescontainer">
 	<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

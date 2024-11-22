@@ -4,7 +4,12 @@
 		<a href="/"><i class="fa fa-home" aria-hidden="true"></i> ShrineFox.com</a> 
 		<i class="fa fa-angle-right" aria-hidden="true"></i> <%: Page.Title %>
 	</div>
-
+    <!--Latest Videos from YouTube-->
+    <div id="YourPlayerID" style="height: 100%;"></div>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <br>
+    <br>
+    <!--Welcome Text-->
     <div class="text-center">
         <br>
         <h1 class="display-4">Welcome</h1>
@@ -14,19 +19,17 @@
         <p>
             I write about unofficial ways you can personalize your games, consoles and devices.
         </p>
-        <br><h2>New to modding? See how to <a href="/GetStarted">Get Started</a>.</h2>
+        <br><h5 class="display-5"><a href="/GetStarted"><i class="fa-solid fa-circle-arrow-right"></i> Get Started</a> with modding Persona.</h5>
     </div>
-
-    <br><br>
-    <center><h4 class="display-4">Latest Videos</h4></center>
-    <div class="card">
-        <div id="YourPlayerID" style="height: 100%;"></div>
-        <script src="https://apis.google.com/js/platform.js"></script>
-    </div>
-
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <!--Project/Blog Links-->
     <div class="columns">
 	    <div class="column col-6 col-sm-12">
-            <center><h4>Popular Releases</h4></center>
+            <center><h5 class="display-5">Popular Releases</h5></center>
 
             <br><a href="https://github.com/ShrineFox/Persona-5-Mod-Menu">
                 <div class="projbutton">
@@ -58,11 +61,11 @@
                     <img src="./images/projects/Mipha/LoMeephers.png">
                 </div>
             </a>
-            <br><br><a href="/Projects" style="float: right;">
-                <i class="fas fa-flask"></i> See more of My Projects</a>
+            <br><br><a href="/Projects" class="display-5" style="float: right;">
+                <i class="fas fa-flask"></i> View all Projects</a>
         </div>
         <div class="column col-6 col-sm-12">
-            <center><h4>Latest Blogposts</h4></center>
+            <center><h5 class="display-5">Blog Posts</h5></center>
             <div class="card">
                 <div class="card-header">
                     <div class="card-title h5"><a href="/blog/"><i class="fab fa-wordpress"></i> See more blogposts</a></div>

@@ -28,7 +28,7 @@ footer {
 }
 
 hr {
-    border-top: 1px solid rgba(var(--text), 0.1) !important;
+    border-top: 1px solid rgba(var(--accent), 0.5) !important;
 }
 
 a {
@@ -283,4 +283,10 @@ li.row {
 
 a:hover h2 {
     text-decoration: none !important;
+}
+
+.display-5 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
 }

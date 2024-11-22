@@ -47,7 +47,7 @@
 .ytv-list-inner {
     overflow: auto;
     position: absolute;
-    top: 52px;
+    top: 0 !important;
     right: 0;
     bottom: 0;
     left: 0;
@@ -62,7 +62,7 @@
 
 .ytv-list .ytv-active a {
     border-left: 0px;
-    background: rgba(var(--accent),0.5) !important;
+    background: rgba(var(--accent),0.2) !important;
 }
 
 .ytv-list a {
@@ -70,16 +70,19 @@
     text-decoration: none !important;
     font-size: 11px;
     color: rgba(var(--text),1) !important;
-    padding: 10px;
-    padding-left: 8px;
+    padding: 0.5em !important;
+    padding-left: 1em !important;
     border-top: 0px;
     border-bottom: 0px;
-    border-left:0px;
+    border-left: 0px;
 }
 
     .ytv-list a b {
-        max-height: 45px;
-        overflow: hidden;
+        max-height: 33px !important;
+        overflow: visible !important;
+        font-size: 13pt !important;
+        line-height: 1.1em !important;
+        font-weight: 400 !important;
         display: block;
         text-overflow: ellipsis;
     }
@@ -255,4 +258,8 @@
     visibility: hidden;
     line-height: 0;
     height: 0;
+}
+
+.ytv-list-header.ytv-has-playlists {
+    display: none !important;
 }

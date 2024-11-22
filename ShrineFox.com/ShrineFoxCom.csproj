@@ -218,9 +218,9 @@
     <Content Include="css\projects\Adachi\adachi.css" />
     <Content Include="css\projects\EarthBound\eb.css" />
     <Content Include="css\projects\Mipha\mipha.css" />
+    <Content Include="images\projects\Mipha\bottom-left.png" />
+    <Content Include="images\projects\Mipha\bottom-right.png" />
     <Content Include="images\projects\Mipha\LoMeephers.png" />
-    <Content Include="images\projects\Mipha\miphaborder-bottom.png" />
-    <Content Include="images\projects\Mipha\miphaborder-top.png" />
     <Content Include="images\projects\Mipha\miphadownarrow.png" />
     <Content Include="images\projects\Mipha\MiphaHealing.png" />
     <Content Include="images\projects\Mipha\MiphaLogo.png" />
@@ -228,6 +228,8 @@
     <Content Include="images\projects\Mipha\MiphaScreen5.png" />
     <Content Include="images\projects\Mipha\MiphaScreen6.png" />
     <Content Include="images\projects\Mipha\MiphaScreen7.png" />
+    <Content Include="images\projects\Mipha\top-left.png" />
+    <Content Include="images\projects\Mipha\top-right.png" />
     <Content Include="images\projects\Mipha\VahRuta.png" />
     <Content Include="images\logo.svg" />
     <Content Include="images\projects\ModMenu\p5rmodmenu.png" />

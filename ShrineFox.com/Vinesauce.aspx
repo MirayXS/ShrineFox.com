@@ -34,12 +34,6 @@
 							<br>Join us in commemorating several years of fun and hilarious Vinesauce streams.
 							Experience P5R like never before with new art, models, music, and tons of 
 							easter eggs from Vinny’s past broadcasts.
-							<br>
-							<br><b><a href="https://x.com/P5RVinesauce"><i class="fa-brands fa-twitter"></i> Follow our Twitter for updates!</a></b> | <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee"></i> Leave a Tip on Ko-Fi!</a>
-							<br>Not feeling Twitter? <a href="https://bsky.app/profile/p5rvinesauce.bsky.social"><i class="fa-brands fa-bluesky"></i> Follow us on Bluesky instead</a>!
-							<br><br>Read the blogposts for an in-depth look at development:
-							<br><a href="https://shrinefox.com/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/">Devlog 1</a> - <a href="https://shrinefox.com/blog/2023/03/02/p5r-vinesauce-mod-devlog-2/">Devlog 2</a> - <a href="https://shrinefox.com/blog/2023/07/27/p5r-vinesauce-mod-devlog-3/">Devlog 3</a> 
-							- <a href="https://shrinefox.com/blog/2024/03/23/p5r-vinesauce-mod-devlog-4/">Devlog 4</a> - <a href="https://shrinefox.com/blog/2024/10/01/p5r-vinesauce-mod-devlog-5/">Devlog 5</a>
 						</div>
 					</div>
 					<div class="column col-6 col-sm-12 flex-centered">
@@ -52,6 +46,24 @@
 			</div>
 			<div class="vineborder bottom"> </div>
 		</div>
+
+		<div class="content">
+			<div class="vineborder top"> </div>
+				<div class="container">
+					<h1><div class="typesauce">KEEP UP TO DATE</div></h1>
+					<br>
+					<center>
+						<b><a href="https://x.com/P5RVinesauce"><i class="fa-brands fa-twitter"></i> Follow our Twitter for updates!</a></b> | <a href="https://ko-fi.com/shrinefox"><i class="fa fa-coffee"></i> Leave a Tip on Ko-Fi!</a>
+						<br>Not feeling Twitter? <a href="https://bsky.app/profile/p5rvinesauce.bsky.social"><i class="fa-brands fa-bluesky"></i> Follow us on Bluesky instead</a>!
+						<br>
+						<br>Read the blogposts for an in-depth look at development:
+						<br><a href="https://shrinefox.com/blog/2023/02/03/p5r-vinesauce-mod-devlog-1/">Devlog 1</a> | <a href="https://shrinefox.com/blog/2023/03/02/p5r-vinesauce-mod-devlog-2/">Devlog 2</a> | <a href="https://shrinefox.com/blog/2023/07/27/p5r-vinesauce-mod-devlog-3/">Devlog 3</a> 
+						| <a href="https://shrinefox.com/blog/2024/03/23/p5r-vinesauce-mod-devlog-4/">Devlog 4</a> | <a href="https://shrinefox.com/blog/2024/10/01/p5r-vinesauce-mod-devlog-5/">Devlog 5</a>
+					</center>
+				</div>
+			<div class="vineborder bottom"> </div>
+		</div>
+
 		<div class="content">
 			<div class="vineborder top"> </div>
 			<div class="container">
@@ -82,6 +94,8 @@
 			</div>
 			<div class="vineborder bottom"> </div>
 		</div>
+
+
 		<div class="content">
 			<div class="vineborder top"> </div>
 			<div class="innercontainer">
@@ -109,11 +123,10 @@
 					</div>
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>How do I play this mod?</h3></div>
-						<div class="toggle-inner"><p>On PC, Extract and run Reloaded-II. Extract the contents of the .zip to the Reloaded-II/Mods folder. 
+						<div class="toggle-inner"><p>It's not released yet, but when it is, you can play it on PC.
+							<br><br>Extract and run Reloaded-II. Then extract the contents of the mod's .zip to the Reloaded-II/Mods folder. 
 						<br>Enable the mods and launch the game through Reloaded-II. See <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-pc-mod-support">here</a> 
-							for more detailed instructions.
-						<br><br>For Switch, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-switch-mod-support">here</a> for instructions on playing with mods. 
-							For PS4, see <a href="https://docs.shrinefox.com/getting-started/persona-5-royal-ps4-mod-support">here</a>.</p></div>
+							for more detailed instructions.</div>
 					</div>
 					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>Can You Still Play the Original Campaign?</h3></div>
@@ -139,13 +152,11 @@
 							long time, and we still have to do the same for enemies. But most of the scripting logic has been 
 							completed so it's just that cosmetic stuff that's left to implement.</p></div>
 					</div>
-						<div class="toggle">
+					<div class="toggle">
 						<div class="toggle-title typesauce"><h3>Will This Mod Be Streamed By Vinny?</h3></div>
-						<div class="toggle-inner"><p>Maybe! One of the <a href="https://www.kickstarter.com/projects/pulsebooks/vinnyvinesaucetcc">CardSauce Kickstarter stretch goals</a> got met, 
-							which is to play P5 on stream for 20 minutes.
-							<br>However, it's completely up to him whether to play the modded version or the original. <a href="https://youtu.be/Fss-twiNn6M?t=190">We will see</a>!
-							Either way, please don't pressure anyone about streaming this. It will happen if it happens, if not 
-							that's okay. When the mod is finished, everyone is completely free to play it, stream it, or record it.</p></div>
+						<div class="toggle-inner"><p>We will see! This mod was not made with the primary intention of being streamed, but <a href="https://youtu.be/Fss-twiNn6M?t=190">anything is possible</a>.
+							Either way, please don't pressure anyone about doing it. It will happen if it happens, if not 
+							that's okay! When the mod is finished, anybody is completely free to play it, stream it, or record it if they want.</p></div>
 					</div>
 				</div>
 			</div>
@@ -181,8 +192,8 @@
 			<div class="vineborder top"> </div>
 			<div class="innercontainer">
 				<center>
-					ShrineFox 2023-2024.
-					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGEnigma</a> (tool programming), 
+					ShrineFox 2023-2025.
+					<br>Special Thanks to: <a href="https://twitter.com/tgenigma">TGE</a> (tool programming), 
 					<a href="https://twitter.com/CheesyDraws">CheesyDraws</a>, <a href="https://twitter.com/NeonWillowLeaf">NeonWillowLeaf</a> 
 					& <a href="https://protokyuu.newgrounds.com/">Protokyuu</a> (character & UI artwork), 
 					<a href="https://twitter.com/kekulism">kekulism</a> (planning & bgm conversion), 

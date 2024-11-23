@@ -290,3 +290,18 @@ a:hover h2 {
     font-weight: 300;
     line-height: 1.2;
 }
+
+.modal.active .modal-overlay, .modal:target .modal-overlay {
+    background: transparent !important;
+}
+
+.modal-container {
+    background: rgba(var(--bg), 0.9) !important;
+    border-radius: 1.1rem !important;
+}
+
+@media (min-width: 576px) {
+    .modal-sm {
+        max-width: inherit !important;
+    }
+}

@@ -105,6 +105,8 @@ body {
     background-image: url(../../../images/projects/Mipha/miphahealing.png);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 200px;
+    width: 100%;
 }
 
 @keyframes bob {

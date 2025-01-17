@@ -50,39 +50,46 @@
 	<div class="miphacontainer"><div class="miphadownarrow"></div></div>
 
 	<!--Screenshots-->
-	<div class="carousel">
-		<div class="carousel-inner">
-			<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-			<div class="carousel-item">
-				<img src="../../../images/projects/Mipha/MiphaScreen5.png">
-			</div>
-			<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-			<div class="carousel-item">
-				<img src="../../../images/projects/Mipha/MiphaScreen6.png">
-			</div>
-			<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-			<div class="carousel-item">
-				<img src="../../../images/projects/Mipha/MiphaScreen3.png">
-			</div>
-			<label for="carousel-3" class="carousel-control prev control-1">‹</label>
-			<label for="carousel-2" class="carousel-control next control-1">›</label>
-			<label for="carousel-1" class="carousel-control prev control-2">‹</label>
-			<label for="carousel-3" class="carousel-control next control-2">›</label>
-			<label for="carousel-2" class="carousel-control prev control-3">‹</label>
-			<label for="carousel-1" class="carousel-control next control-3">›</label>
-
-			<ol class="carousel-indicators">
-				<li>
-					<label for="carousel-1" class="carousel-bullet">•</label>
-				</li>
-				<li>
-					<label for="carousel-2" class="carousel-bullet">•</label>
-				</li>
-				<li>
-					<label for="carousel-3" class="carousel-bullet">•</label>
-				</li>
-			</ol>
+	<div class="carousel-inner">
+		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+		<div class="carousel-item">
+			<img src="../../../images/projects/Mipha/mipha_sidon.png">
 		</div>
+		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item">
+			<img src="../../../images/projects/Mipha/mipha_inventory.png">
+		</div>
+		<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item">
+			<img src="../../../images/projects/Mipha/mipha_ghost.png">
+		</div>
+		<input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item">
+			<img src="../../../images/projects/Mipha/mipha_glide.png">
+		</div>
+		<label for="carousel-4" class="carousel-control prev control-1">‹</label>
+		<label for="carousel-2" class="carousel-control next control-1">›</label>
+		<label for="carousel-1" class="carousel-control prev control-2">‹</label>
+		<label for="carousel-3" class="carousel-control next control-2">›</label>
+		<label for="carousel-2" class="carousel-control prev control-3">‹</label>
+		<label for="carousel-4" class="carousel-control next control-3">›</label>
+		<label for="carousel-3" class="carousel-control prev control-4">‹</label>
+		<label for="carousel-1" class="carousel-control next control-4">›</label>
+
+		<ol class="carousel-indicators">
+			<li>
+				<label for="carousel-1" class="carousel-bullet">•</label>
+			</li>
+			<li>
+				<label for="carousel-2" class="carousel-bullet">•</label>
+			</li>
+			<li>
+				<label for="carousel-3" class="carousel-bullet">•</label>
+			</li>
+			<li>
+				<label for="carousel-4" class="carousel-bullet">•</label>
+			</li>
+		</ol>
 	</div>
 
 	<div class="content">
@@ -98,7 +105,11 @@
 							<li>Faster swimming speed</li>
 							<li>Recover stamina while swimming</li>
 							<li>Swim up waterfalls & spin attack always enabled</li>
-							<li>Increased weakness to electricity</li>
+							<li>Increased weakness to electricity
+								<ul>
+									<li>(3x electric attack, 1.5x thunder based attacks)</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -106,11 +117,11 @@
 					<div class="innercontainer">
 						<h1><div class="hylian">New Features in 2.0</div></h1>
 						<ul>
-							<li>Improved ragdoll physics</li>
+							<li>WIP custom ragdoll physics</li>
 							<li>Full dialogue edits</li>
 							<li>New & tweaked animations</li>
 							<li>Edited events and cutscenes</li>
-							<li>Armor sets redesigned/re-fitted for Mipha</li>
+							<li>Most armor sets redesigned/re-fitted for Mipha</li>
 						</ul>
 					</div>
 				</div>
@@ -129,8 +140,8 @@
 				<b>Support Nintendo by playing Zelda: Breath of the Wild on <a href="https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch//">Nintendo Switch</a>.</b>
 				<br>
 				<h1><div class="hylian">DOWNLOAD</div></h1>
-				<u><b>Latest Version (v2.0)</b></u>
-				<br><a href="#"><i class="fas fa-file" aria-hidden="true"></i> BCML .bnp (Wii U)</a>
+				<h3><u><b>Latest Version (v2.0)</b></u></h3>
+				<a href="#"><i class="fas fa-file" aria-hidden="true"></i> BCML .bnp (Wii U)</a>
 				<br>
 				<br>At this time there is no Switch port (aside from the <a href="https://gamebanana.com/mods/246646">old version</a> of the mod).
 			</center>
@@ -154,8 +165,9 @@
 						<li>Set up paths to BotW's base/update/DLC files in BCML settings</li>
 						<li>Select downloaded .bnp file in BCML to install mod</li>
 						<li>Launch game with <a href="https://cemu.info/">CEMU</a> and enjoy!</li>
-						<li>You could also use <a href="https://gamebanana.com/tools/12110">UKMM</a> instead of BCML.</li>
 					</ul>
+					<br>
+					<br>See the <a href="https://zeldamods.org/wiki/Help:Using_mods">Zelda Modding Wiki</a> for more info.
 				</div>
 			</div>
 			<div class="column col-6 col-sm-12 flex-centered">

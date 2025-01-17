@@ -222,12 +222,12 @@
     <Content Include="images\projects\Mipha\bottom-right.png" />
     <Content Include="images\projects\Mipha\LoMeephers.png" />
     <Content Include="images\projects\Mipha\miphadownarrow.png" />
-    <Content Include="images\projects\Mipha\MiphaHealing.png" />
+    <Content Include="images\projects\Mipha\miphahealing.png" />
     <Content Include="images\projects\Mipha\MiphaLogo.png" />
-    <Content Include="images\projects\Mipha\MiphaScreen3.png" />
-    <Content Include="images\projects\Mipha\MiphaScreen5.png" />
-    <Content Include="images\projects\Mipha\MiphaScreen6.png" />
-    <Content Include="images\projects\Mipha\MiphaScreen7.png" />
+    <Content Include="images\projects\Mipha\mipha_ghost.png" />
+    <Content Include="images\projects\Mipha\mipha_glide.png" />
+    <Content Include="images\projects\Mipha\mipha_inventory.png" />
+    <Content Include="images\projects\Mipha\mipha_sidon.png" />
     <Content Include="images\projects\Mipha\top-left.png" />
     <Content Include="images\projects\Mipha\top-right.png" />
     <Content Include="images\projects\Mipha\VahRuta.png" />

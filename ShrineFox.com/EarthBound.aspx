@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="EarthBound Mod Menu" Language="C#" MasterPageFile="~/Blank.Master" AutoEventWireup="true" CodeBehind="EarthBound.aspx.cs" Inherits="ShrineFoxCom.EarthBound" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="Header">
-    <link rel='shortcut icon' href='./images/projects/EarthBound/favicon.ico' type='image/x-icon' />
+    <link rel='shortcut icon' href='./images/projects/EarthBound/eb_present.ico' type='image/x-icon' />
 	<meta charset="utf-8">
 	<script src="https://kit.fontawesome.com/4c3075832a.js" crossorigin="anonymous"></script>
 	<script src="./js/jquery.min.js" crossorigin="anonymous"></script>

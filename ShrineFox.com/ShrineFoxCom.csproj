@@ -218,6 +218,7 @@
     <Content Include="css\projects\Adachi\adachi.css" />
     <Content Include="css\projects\EarthBound\eb.css" />
     <Content Include="css\projects\Mipha\mipha.css" />
+    <Content Include="images\projects\EarthBound\eb_present.ico" />
     <Content Include="images\projects\Mipha\bottom-left.png" />
     <Content Include="images\projects\Mipha\bottom-right.png" />
     <Content Include="images\projects\Mipha\LoMeephers.png" />
@@ -226,8 +227,10 @@
     <Content Include="images\projects\Mipha\MiphaLogo.png" />
     <Content Include="images\projects\Mipha\mipha_ghost.png" />
     <Content Include="images\projects\Mipha\mipha_glide.png" />
+    <Content Include="images\projects\Mipha\mipha_icon.ico" />
     <Content Include="images\projects\Mipha\mipha_inventory.png" />
     <Content Include="images\projects\Mipha\mipha_sidon.png" />
+    <Content Include="images\projects\Mipha\mipha_sidon2.png" />
     <Content Include="images\projects\Mipha\top-left.png" />
     <Content Include="images\projects\Mipha\top-right.png" />
     <Content Include="images\projects\Mipha\VahRuta.png" />

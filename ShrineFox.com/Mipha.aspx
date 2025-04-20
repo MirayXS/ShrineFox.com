@@ -158,14 +158,22 @@
 						<b>Support Nintendo by playing Zelda: Breath of the Wild on <a href="https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch//">Nintendo Switch</a>.</b>
 						<br>
 						<h1><div class="hylian">DOWNLOAD</div></h1>
-						<h3><u><b>Latest Version (v1.1b)</b></u></h3>
-						<a href="https://drive.google.com/file/d/1J3wmkcmkZo0gl7jou6ygWvIreaEr_BGF/view?usp=sharing"><i class="fas fa-file" aria-hidden="true"></i> BCML .bnp (Wii U)</a>
-						<br><b>Last Updated 2/15/2025</b>
+						<h3><u><b>Latest Version (v1.2b)</b></u></h3>
+						<a href="https://drive.google.com/file/d/1VKzCc_J2IP1QvtB-k2BUnGG0fw0RrA9I/view?usp=sharing"><i class="fas fa-file" aria-hidden="true"></i> BCML .bnp (Wii U)</a>
+						<br><b>Last Updated 4/20/2025</b>
 						<br>
 						<div class="toggle">
 							<div class="toggle-title hylian"><br><h1>CLICK TO VIEW CHANGELOG</h1></div>
 							<div class="toggle-inner">
 								<ul>
+									<li><u>Beta 1.2</u> (4/20/2025)</li>
+									<li>New Armors: Fierce Deity and Vah Rudania Helm</li>
+									<li>Updated dye textures for Warm Doublet</li>
+									<li>Updated icons for Fierce Deity, Warm Doublet and Champion's Sash.</li>
+									<li>Minor material updates.</li>
+									<li>Fixed Titlebg, Mipha can now properly parry again.</li>
+									<li>Removed voice clip from Mipha's Grace activation</li>
+									<li><u>Beta 1.1</u> (2/15/2025)</li>
 									<li>Minor Typo Fixes</li>
 									<li>Removed duplicate Link.sbfres in Model folder</li>
 									<li>Vah Ruta overhaul, huge thanks to ShadowMarth, author of "Relics of the Past". Also fixes Waterblight in DLC fight.</li>
